@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
 		uic.loadUi(UI_FILE, self)
-		self.version = '0.1.3'
+		self.version = '0.1.4'
 		self.config = configparser.ConfigParser(strict=False)
 		self.cwd = os.getcwd()
 		#self.linuxcncDir = os.path.expanduser('~/linuxcnc')
