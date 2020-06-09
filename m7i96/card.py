@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QInputDialog, QLineEdit
 
 def readCard(parent):
 
-	result = subprocess.run(['mesaflash'], stdout=subprocess.PIPE,\
+	result = subprocess.run(["mesaflash"], stdout=subprocess.PIPE,\
 	stderr=subprocess.PIPE, universal_newlines=True)
 	print(result.returncode)
 	if result.returncode != 0:
@@ -16,7 +16,7 @@ a terminal with\nsudo apt-get install libpci-dev')
 		parent.outputLB.setText('An IP address must be selected')
 		return
 	ipAddress = parent.ipAddressCB.currentText()
-	command = [parent.mesaflash, "--device", "7i96", "--addr", ipAddress, "--readhmid"]
+	command = ["mesaflash", "--device", "7i96", "--addr", ipAddress, "--readhmid"]
 
 	try:
 		output = subprocess.check_output(command, stderr=subprocess.PIPE)
