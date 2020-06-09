@@ -9,6 +9,9 @@ Installing
 
     sudo apt install python3-pip python3-pyqt5 libpci-dev git
 
+Note: some OS's might not have `python-setuptools` and you would need to
+install it with apt install.
+
 2. Install the 7i96 Configuration Tool. In a terminal do:
 ::
 
