@@ -43,7 +43,6 @@ class MainWindow(QMainWindow):
 		self.helpInfo = helptext.descriptions
 		self.buildCB()
 		self.setupConnections()
-		self.miscStuff()
 		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
 		self.ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
 			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
@@ -410,12 +409,6 @@ class MainWindow(QMainWindow):
 				getattr(self, 'driveCB_' + str(i)).addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('speed'):
 			self.speedCB.addItem(item[0], item[1])
-
-	def miscStuff(self):
-		if sys.maxsize > 2**32: # test for 64bit OS
-			self.mesaflash = "mesaflash64"
-		else:
-			self.mesaflash = "mesaflash32"
 
 	def iniLoad(self):
 		# iniList section, item, value

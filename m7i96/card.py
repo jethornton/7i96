@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QInputDialog, QLineEdit
 
 def readCard(parent):
 
-	result = subprocess.run([parent.mesaflash], stdout=subprocess.PIPE,\
+	result = subprocess.run(['mesaflash'], stdout=subprocess.PIPE,\
 	stderr=subprocess.PIPE, universal_newlines=True)
 	print(result.returncode)
 	if result.returncode != 0:
@@ -41,7 +41,7 @@ def flashCard(parent):
 	ipAddress = parent.ipAddressCB.currentText()
 
 	firmware = os.path.join(os.path.dirname(__file__), parent.firmwareCB.currentData())
-	command = [parent.mesaflash, '--device', '7i96', '--addr', ipAddress, '--write', firmware]
+	command = ['mesaflash', '--device', '7i96', '--addr', ipAddress, '--write', firmware]
 	output = []
 
 	with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:

@@ -23,6 +23,9 @@ following if your using Debian 9 then log out and back in or reboot the PC.
     export PATH="$HOME/.local/bin:$PATH"
   fi
 
+5. Follow the instructions at https://github.com/LinuxCNC/mesaflash to install
+Mesaflash.
+
 4. Run the 7i96 Configuration Tool. In a terminal do:
 ::
 
