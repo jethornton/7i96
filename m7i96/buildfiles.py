@@ -572,9 +572,11 @@ def buildhal(parent):
 
 	if parent.spindleTypeCB.currentText() != 'None':
 		halContents.append('\n# Spindle\n')
-		halContents.append('setp hm2_7i96.0.pwmgen.00.output-type 0\n')
-		halContents.append('setp hm2_7i96.0.pwmgen.00.scale [SPINDLE]MAX_RPM\n')
-		halContents.append('setp hm2_7i96.0.pwmgen.pwm_frequency [SPINDLE]PWM_FREQUENCY\n')
+		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.pwmgen.00.output-type 1\n')
+		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.pwmgen.00.scale [SPINDLE]MAX_RPM\n')
+		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.pwmgen.pwm_frequency [SPINDLE]PWM_FREQUENCY\n')
+		halContents.append('net spindle-on spindle.0.on => hm2_[HOSTMOT2](BOARD).0.pwmgen.00.enable\n')
+		halContents.append('net spindle-speed spindle.0.speed-out => hm2_[HOSTMOT2](BOARD).0.pwmgen.00.value\n')
 
 	halContents.append('\n# Standard I/O Block - EStop, Etc\n')
 	halContents.append('# create a signal for the estop loopback\n')
@@ -607,7 +609,7 @@ def buildio(parent):
 	ioContents = []
 	ioContents = ['# This file was created with the 7i96 Wizard on ']
 	ioContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
-	ioContents.append('# If you make changes to this file your screwed\n\n')
+	ioContents.append('# If you make changes to this file you are screwed\n\n')
 
 	ioContents = ['\n']
 	ioContents.append('\n')
