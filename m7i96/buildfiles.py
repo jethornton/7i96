@@ -30,9 +30,9 @@ def buildini(parent):
 	if not os.path.exists(parent.configPath):
 		os.mkdir(parent.configPath)
 
-	iniContents = ['# This file was created with the 7i96 Wizard on ']
+	iniContents = ['# This file was created with the 7i96 Configuration Tool on ']
 	iniContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
-	iniContents.append('# Changes to most things are ok and will be read by the wizard\n')
+	iniContents.append('# Changes to most things are ok and will be read by the Configuration Tool\n')
 
 	# build the [EMC] section
 	iniContents.append('\n[EMC]\n')
