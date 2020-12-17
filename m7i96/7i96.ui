@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>788</width>
-    <height>743</height>
+    <width>800</width>
+    <height>766</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,43 +27,11 @@
        <attribute name="title">
         <string>Machine</string>
        </attribute>
-       <widget class="QLabel" name="label_30">
-        <property name="geometry">
-         <rect>
-          <x>580</x>
-          <y>50</y>
-          <width>59</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Version</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="versionLE">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>50</y>
-          <width>71</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>1.1</string>
-        </property>
-       </widget>
-       <widget class="QGroupBox" name="gridGroupBox">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>100</y>
-          <width>321</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox {
+       <layout class="QGridLayout" name="gridLayout_49">
+        <item row="2" column="1" colspan="2">
+         <widget class="QGroupBox" name="gridGroupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
     font: bold;
     border: 2px solid silver;
     border-radius: 6px;
@@ -75,189 +43,120 @@ QGroupBox::title {
     left: 7px;
     padding: 0px 5px 0px 5px;
 }</string>
-        </property>
-        <property name="title">
-         <string>Board Setup</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_26">
-         <item row="4" column="1">
-          <widget class="QSpinBox" name="encodersSB">
-           <property name="minimum">
-            <number>0</number>
+          </property>
+          <property name="title">
+           <string> Firmware Flasher</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_29">
+           <property name="topMargin">
+            <number>15</number>
            </property>
-           <property name="maximum">
-            <number>1</number>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="reloadPB">
+             <property name="text">
+              <string>Reload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="flashPB">
+             <property name="text">
+              <string>Flash</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="3">
+            <widget class="QComboBox" name="firmwareCB">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="testConnectionPB">
+             <property name="text">
+              <string>Read</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="copyPB">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copy the Output&lt;br/&gt;to the clipboard&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="text">
+              <string>Copy</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="3">
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>758</width>
+             <height>345</height>
+            </rect>
            </property>
-           <property name="value">
-            <number>1</number>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="outputLB">
+              <property name="font">
+               <font>
+                <family>Courier 10 Pitch</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="stepgensSB">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>5</number>
-           </property>
-           <property name="value">
-            <number>5</number>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_36">
-           <property name="text">
-            <string>Driver</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QComboBox" name="ipAddressCB"/>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_33">
-           <property name="text">
-            <string>Step Generators</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QComboBox" name="boardCB"/>
-         </item>
-         <item row="0" column="1">
-          <widget class="QComboBox" name="driverCB"/>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_34">
-           <property name="text">
-            <string>Encoders</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_32">
-           <property name="text">
-            <string>Board</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_27">
-           <property name="text">
-            <string>IP Address</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_35">
-           <property name="text">
-            <string>SSerial Port</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QSpinBox" name="sserialSB">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>1</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>510</x>
-          <y>10</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Coordinates</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="coordinatesLB">
-        <property name="geometry">
-         <rect>
-          <x>600</x>
-          <y>10</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::Box</enum>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QScrollArea" name="scrollArea">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>310</y>
-          <width>731</width>
-          <height>231</height>
-         </rect>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>729</width>
-           <height>229</height>
-          </rect>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLabel" name="outputLB">
-            <property name="font">
-             <font>
-              <family>Courier 10 Pitch</family>
-              <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-            </property>
-            <property name="textInteractionFlags">
-             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-       <widget class="QGroupBox" name="gridGroupBox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>190</y>
-          <width>401</width>
-          <height>111</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox {
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_292">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <italic>true</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>F1 for help on current tab</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" rowspan="3">
+         <widget class="QGroupBox" name="gridGroupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
     font: bold;
     border: 2px solid silver;
     border-radius: 6px;
@@ -269,86 +168,111 @@ QGroupBox::title {
     left: 7px;
     padding: 0px 5px 0px 5px;
 }</string>
-        </property>
-        <property name="title">
-         <string> Firmware</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_29">
-         <item row="1" column="2">
-          <widget class="QPushButton" name="reloadPB">
-           <property name="text">
-            <string>Reload</string>
+          </property>
+          <property name="title">
+           <string>Machine</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_46">
+           <property name="leftMargin">
+            <number>9</number>
            </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="flashPB">
-           <property name="text">
-            <string>Flash</string>
+           <property name="topMargin">
+            <number>15</number>
            </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="3">
-          <widget class="QComboBox" name="firmwareCB">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+           <property name="rightMargin">
+            <number>9</number>
            </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="testConnectionPB">
-           <property name="text">
-            <string>Read</string>
+           <property name="bottomMargin">
+            <number>9</number>
            </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QPushButton" name="copyPB">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copy the Output&lt;br/&gt;to the clipboard&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="text">
-            <string>Copy</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QLabel" name="label_292">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>550</y>
-          <width>261</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-          <weight>75</weight>
-          <italic>true</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>F1 for help on current tab</string>
-        </property>
-       </widget>
-       <widget class="QGroupBox" name="gridGroupBox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>401</width>
-          <height>171</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QGroupBox {
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>File Path</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Linear Units</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="angularUnitsCB"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="configName">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Any combination of letters and digits&lt;br/&gt;including the dash and underscore.&lt;br/&gt;Spaces are replaced with underscore.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="linearUnitsCB"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Angular Units</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="maxLinearVelocity"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_37">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Max Linear Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Configuration Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="pathLabel">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Coordinates</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLabel" name="coordinatesLB">
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2" colspan="2">
+         <widget class="QGroupBox" name="gridGroupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
     font: bold;
     border: 2px solid silver;
     border-radius: 6px;
@@ -360,86 +284,58 @@ QGroupBox::title {
     left: 7px;
     padding: 0px 5px 0px 5px;
 }</string>
-        </property>
-        <property name="title">
-         <string>Machine</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_46">
-         <property name="leftMargin">
-          <number>9</number>
-         </property>
-         <property name="topMargin">
-          <number>9</number>
-         </property>
-         <property name="rightMargin">
-          <number>9</number>
-         </property>
-         <property name="bottomMargin">
-          <number>9</number>
-         </property>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>File Path</string>
+          </property>
+          <property name="title">
+           <string>Configuration Setup</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_26">
+           <property name="topMargin">
+            <number>15</number>
            </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>Linear Units</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QComboBox" name="angularUnitsCB"/>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="configName">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Any combination of letters and digits&lt;br/&gt;including the dash and underscore.&lt;br/&gt;Spaces are replaced with underscore.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QComboBox" name="linearUnitsCB"/>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Angular Units</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="maxLinearVelocity"/>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_37">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Max Linear Velocity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Configuration Name</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLabel" name="pathLabel">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="encodersSB">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>1</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="ipAddressCB"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="boardsCB"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_34">
+             <property name="text">
+              <string>Encoders</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_32">
+             <property name="text">
+              <string>Board(s)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_27">
+             <property name="text">
+              <string>IP Address</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="display">
        <attribute name="title">
@@ -7716,8 +7612,8 @@ max speed</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>788</width>
-     <height>24</height>
+     <width>800</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -7984,10 +7880,7 @@ max speed</string>
   <tabstop>gladevcpCB</tabstop>
   <tabstop>debugCombo</tabstop>
   <tabstop>encodersSB</tabstop>
-  <tabstop>stepgensSB</tabstop>
-  <tabstop>boardCB</tabstop>
-  <tabstop>driverCB</tabstop>
-  <tabstop>sserialSB</tabstop>
+  <tabstop>boardsCB</tabstop>
   <tabstop>scrollArea</tabstop>
   <tabstop>reloadPB</tabstop>
   <tabstop>flashPB</tabstop>
@@ -7995,7 +7888,6 @@ max speed</string>
   <tabstop>testConnectionPB</tabstop>
   <tabstop>copyPB</tabstop>
   <tabstop>jointType_3</tabstop>
-  <tabstop>versionLE</tabstop>
   <tabstop>ipAddressCB</tabstop>
   <tabstop>axisCB_0</tabstop>
   <tabstop>frontToolLatheCB</tabstop>

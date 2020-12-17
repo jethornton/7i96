@@ -5,23 +5,23 @@ import sys, os, configparser, platform
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-import m7i96.buildcombos as buildcombos
-import m7i96.loadini as loadini
-import m7i96.checkit as checkit
-import m7i96.buildfiles as buildfiles
-import m7i96.card as card
-import m7i96.helptext as helptext
-from m7i96.dialog import Ui_Dialog as errorDialog
-from m7i96.help import Ui_Dialog as helpDialog
-from m7i96.about import Ui_about as aboutDialog
+import buildcombos as buildcombos
+import loadini as loadini
+import checkit as checkit
+import buildfiles as buildfiles
+import card as card
+import helptext as helptext
+from dialog import Ui_Dialog as errorDialog
+from help import Ui_Dialog as helpDialog
+from about import Ui_about as aboutDialog
 
-UI_FILE = os.path.join(os.path.dirname(__file__), "m7i96.ui")
+UI_FILE = os.path.join(os.path.dirname(__file__), "7i96.ui")
 
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
 		uic.loadUi(UI_FILE, self)
-		self.version = '0.1.5'
+		self.version = '0.1.6'
 		self.config = configparser.ConfigParser(strict=False)
 		self.cwd = os.getcwd()
 		#self.linuxcncDir = os.path.expanduser('~/linuxcnc')
@@ -157,6 +157,8 @@ class MainWindow(QMainWindow):
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
+		self.boardsCB.currentIndexChanged.connect(self.boardsChanged)
+
 		for i in range(5):
 			getattr(self, 'axisCB_' + str(i)).currentIndexChanged.connect(self.onAxisChanged)
 		for i in range(5):
@@ -250,6 +252,15 @@ class MainWindow(QMainWindow):
 		else:
 			self.axisTab.setEnabled(False)
 
+	def boardsChanged(self):
+		bitfile = self.boardsCB.itemData(self.boardsCB.currentIndex())
+		index = self.firmwareCB.findData(bitfile)
+		if index >= 0:
+			self.firmwareCB.setCurrentIndex(index)
+
+	def configChanged(self):
+		print(self.configCB.itemData(self.configCB.currentIndex()))
+
 	def onAxisChanged(self):
 		coordList = []
 		for item in self.axisList:
@@ -283,7 +294,6 @@ class MainWindow(QMainWindow):
 			getattr(self, 'stepSpace_' + joint).setEnabled(True)
 			getattr(self, 'dirSetup_' + joint).setEnabled(True)
 			getattr(self, 'dirHold_' + joint).setEnabled(True)
-
 
 	def updateAxisInfo(self):
 		if self.sender().objectName() == 'actionOpen':
@@ -372,10 +382,8 @@ class MainWindow(QMainWindow):
 	def buildCB(self):
 		for item in buildcombos.setupCombo('ipAddress'):
 			self.ipAddressCB.addItem(item[0], item[1])
-		for item in buildcombos.setupCombo('board'):
-			self.boardCB.addItem(item[0], item[1])
-		for item in buildcombos.setupCombo('driver'):
-			self.driverCB.addItem(item[0], item[1])
+		for item in buildcombos.setupCombo('boards'):
+			self.boardsCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('display'):
 			self.guiCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('linearUnits'):

@@ -102,23 +102,37 @@ def setupCombo(combo):
 								['Debug Unconditional', '0x40000000'],
 								['Debug All', '0x7FFFFFFF']]
 
-	if combo == 'board':
-		comboList = [['7i96', '7i96']]
+	if combo == 'boards':
+		comboList = [
+		['Select', False],
+		['7i96 5 Stepgens', '7i96d.bit'],
+		['7i96 4 Stepgens 1 PWM', '7i96d_1pwm.bit'],
+		['7i96 + 7i76', '7i96_7i76d.bit'],
+		['7i96 + 7i77', '7i96_7i77d.bit'],
+		['7i96 + 7i78', '7i96_7i78d.bit'],
+		['7i96 + 7i85', '7i96_7i85d.bit'],
+		['7i96 + 7i89', '7i96_7i89d.bit'],
+		]
 
-	if combo == 'driver':
-		comboList = [['HostMot2 Ethernet', 'hm2_eth']]
+	if combo == 'config':
+		comboList = [['Select', False],
+								['5 Stepgens', ['5', '0']],
+								['4 Stepgens 1 PWM', ['4', '1']]]
 
 	if combo == 'firmware':
-		comboList = [['Select', False],
-								['5 StepGens No PWM', '7i96d.bit'],
-								['4 StepGens and PWM', '7i96d_1pwm.bit'],
-								['5 StepGens 5abob', '7i96_5abob.bit'],
-								['5 StepGens 6 Encoders', '7i96_6enc_d.bit'],
-								['5 StepGens 7i76', '7i96_7i76d.bit'],
-								['5 StepGens 7i77', '7i96_7i77d.bit'],
-								['5 StepGens 7i78', '7i96_7i78d.bit'],
-								['5 StepGens 7i85', '7i96_7i85d.bit'],
-								['5 StepGens G540', '7i96_g540dpl.bit']]
+		comboList = [
+		['Select', False],
+		['5 StepGens ', '7i96d.bit'],
+		['4 StepGens 1 PWM', '7i96d_1pwm.bit'],
+		['7i96 + 5abob', '7i96_5abob.bit'],
+		['7i96 + 6 Encoders', '7i96_6enc_d.bit'],
+		['7i96 + 7i76', '7i96_7i76d.bit'],
+		['7i96 + 7i77', '7i96_7i77d.bit'],
+		['7i96 + 7i78', '7i96_7i78d.bit'],
+		['7i96 + 7i85', '7i96_7i85d.bit'],
+		['7i96 + 7i89', '7i96_7i89d.bit'],
+		['7i96 + G540', '7i96_g540dpl.bit']
+		]
 
 	if combo == 'spindle':
 		comboList = [['Select', False],
