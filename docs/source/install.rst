@@ -12,10 +12,11 @@ Installing
 Note: some OS's might not have `python-setuptools` and you would need to
 install it with apt install.
 
-2. Install the 7i96 Configuration Tool. In a terminal do:
+2. Install the 0.1.5 branch (stable) 7i96 Configuration Tool. In a terminal do:
 ::
 
-    pip3 install git+https://github.com/jethornton/7i96.git
+    pip3 install git+https://github.com/jethornton/7i96.git@0.1.5
+
 
 3. Create a file in your home directory called ``.xsessionrc`` and add the
 following if your using Debian 9 then log out and back in or reboot the PC.
@@ -35,10 +36,10 @@ Mesaflash.
     7i96
 
 
-To upgrade the 7i96 Configuration Tool. In a terminal do:
+To upgrade the 0.1.5 branch (stable) 7i96 Configuration Tool. In a terminal do:
 ::
 
-    pip3 install git+https://github.com/jethornton/7i96.git --upgrade
+    pip3 install git+https://github.com/jethornton/7i96.git@0.1.5 --upgrade
 
 
 To uninstall the 7i96 Configuration Tool In a terminal do:
@@ -46,3 +47,14 @@ To uninstall the 7i96 Configuration Tool In a terminal do:
 
     pip3 uninstall 7i96
 
+
+To install the master branch:
+::
+
+    pip3 install git+https://github.com/jethornton/7i96.git
+    
+
+To upgrade the master branch:
+::
+
+    pip3 install git+https://github.com/jethornton/7i96.git --upgrade
