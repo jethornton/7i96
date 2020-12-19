@@ -18,7 +18,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     entry_points={
-        'gui_scripts': ['7i96=m7i96.7i96:main',],
+        'gui_scripts': ['7i96=m7i96.m7i96:main',],
     },
 )
 
