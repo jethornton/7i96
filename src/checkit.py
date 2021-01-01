@@ -16,7 +16,7 @@ def config(parent):
 	if parent.linearUnitsCB.currentText() == 'Select':
 		tabError = True
 		configErrors.append('\tLinear Units must be selected')
-	if not parent.maxLinearVelocity.text():
+	if not parent.maxLinearVel.text():
 		tabError = True
 		configErrors.append('\tMaximum Linear Velocity must be set')
 	if parent.ipAddressCB.currentText() == 'Select':

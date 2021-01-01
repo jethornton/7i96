@@ -44,7 +44,7 @@ def buildini(parent):
 	iniContents.append('\n[HOSTMOT2]\n')
 	iniContents.append('DRIVER = {}\n'.format('hm2_eth'))
 	iniContents.append('IPADDRESS = {}\n'.format(parent.ipAddressCB.itemData(parent.ipAddressCB.currentIndex())))
-	iniContents.append('BOARD = {}\n'.format(parent.boardCB.itemData(parent.boardCB.currentIndex())))
+	iniContents.append('BOARD = 7i96\n')
 	iniContents.append('STEPGENS = {}\n'.format(str(parent.stepgensSB.value())))
 	iniContents.append('ENCODERS = {}\n'.format(str(parent.encodersSB.value())))
 	iniContents.append('SSERIAL_PORT = {}\n'.format(str(parent.sserialSB.value())))
@@ -99,7 +99,7 @@ def buildini(parent):
 	iniContents.append('COORDINATES = {}\n'.format(parent.coordinatesLB.text()))
 	iniContents.append('LINEAR_UNITS = {}\n'.format(parent.linearUnitsCB.itemData(parent.linearUnitsCB.currentIndex())))
 	iniContents.append('ANGULAR_UNITS = {}\n'.format(parent.angularUnitsCB.itemData(parent.angularUnitsCB.currentIndex())))
-	iniContents.append('MAX_LINEAR_VELOCITY = {}\n'.format(parent.maxLinearVelocity.text()))
+	iniContents.append('MAX_LINEAR_VELOCITY = {}\n'.format(parent.maxLinearVel.text()))
 
 	# build the [HAL] section
 	iniContents.append('\n[HAL]\n')
@@ -433,7 +433,8 @@ def buildini(parent):
 		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_4.isChecked()))
 
 	# build the [SPINDLE] section if enabled
-	if parent.spindleTypeCB.currentText() != 'None':
+	#print(parent.spindleTypeCB.currentText())
+	if parent.spindleTypeCB.currentText() != 'Select':
 		iniContents.append('\n[SPINDLE]\n')
 		iniContents.append('SPINDLE_TYPE = {}\n'.format(parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex())))
 		iniContents.append('SCALE = {}\n'.format(parent.spindleScale.text()))
@@ -570,7 +571,7 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n'.format(str(index)))
 
-	if parent.spindleTypeCB.currentText() != 'None':
+	if parent.spindleTypeCB.currentText() != 'Select':
 		halContents.append('\n# Spindle\n')
 		halContents.append('setp hm2_7i96.0.pwmgen.00.output-type 0\n')
 		halContents.append('setp hm2_7i96.0.pwmgen.00.scale [SPINDLE]MAX_RPM\n')

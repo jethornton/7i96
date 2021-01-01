@@ -15,13 +15,13 @@ from dialog import Ui_Dialog as errorDialog
 from help import Ui_Dialog as helpDialog
 from about import Ui_about as aboutDialog
 
-UI_FILE = os.path.join(os.path.dirname(__file__), "7i96.ui")
+UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
 		uic.loadUi(UI_FILE, self)
-		self.version = '1.0.0 Master'
+		self.version = '1.1'
 		self.config = configparser.ConfigParser(strict=False)
 		self.cwd = os.getcwd()
 		#self.linuxcncDir = os.path.expanduser('~/linuxcnc')
@@ -157,6 +157,7 @@ class MainWindow(QMainWindow):
 
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
+		self.maxLinearVel.textChanged[str].connect(self.onMaxLinearVelChanged)
 		self.boardsCB.currentIndexChanged.connect(self.boardsChanged)
 
 		for i in range(5):
@@ -230,6 +231,12 @@ class MainWindow(QMainWindow):
 			self.pathLabel.setText(self.configPath)
 		else:
 			self.pathLabel.setText('')
+
+	def onMaxLinearVelChanged(self, text):
+		if text:
+			fpm = str(float(text) * 60)
+			self.maxVelocityLbl.setText(f'{fpm} IPM')
+
 
 	def linearUnitsChanged(self):
 		if self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()) == 'inch':

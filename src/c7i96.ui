@@ -20,6 +20,20 @@
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    font: bold;
+    border: 2px solid silver;
+    border-radius: 6px;
+    margin-top: 6px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 7px;
+    padding: 0px 5px 0px 5px;
+}</string>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -65,16 +79,6 @@ QGroupBox::title {
              </property>
             </widget>
            </item>
-           <item row="0" column="0" colspan="3">
-            <widget class="QComboBox" name="firmwareCB">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="0">
             <widget class="QPushButton" name="testConnectionPB">
              <property name="text">
@@ -89,6 +93,16 @@ QGroupBox::title {
              </property>
              <property name="text">
               <string>Copy</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="4">
+            <widget class="QComboBox" name="firmwareCB">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
             </widget>
            </item>
@@ -199,19 +213,6 @@ QGroupBox::title {
              </property>
             </widget>
            </item>
-           <item row="3" column="1">
-            <widget class="QComboBox" name="angularUnitsCB"/>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="configName">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Any combination of letters and digits&lt;br/&gt;including the dash and underscore.&lt;br/&gt;Spaces are replaced with underscore.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QComboBox" name="linearUnitsCB"/>
-           </item>
            <item row="3" column="0">
             <widget class="QLabel" name="label_8">
              <property name="text">
@@ -220,7 +221,7 @@ QGroupBox::title {
             </widget>
            </item>
            <item row="4" column="1">
-            <widget class="QLineEdit" name="maxLinearVelocity"/>
+            <widget class="QLineEdit" name="maxLinearVel"/>
            </item>
            <item row="4" column="0">
             <widget class="QLabel" name="label_37">
@@ -236,16 +237,6 @@ QGroupBox::title {
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
-            <widget class="QLabel" name="pathLabel">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
            <item row="5" column="0">
             <widget class="QLabel" name="label_10">
              <property name="text">
@@ -256,13 +247,46 @@ QGroupBox::title {
              </property>
             </widget>
            </item>
-           <item row="5" column="1">
+           <item row="4" column="2">
+            <widget class="QLabel" name="maxVelocityLbl">
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1" colspan="2">
             <widget class="QLabel" name="coordinatesLB">
              <property name="frameShape">
               <enum>QFrame::Box</enum>
              </property>
              <property name="text">
               <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1" colspan="2">
+            <widget class="QComboBox" name="angularUnitsCB"/>
+           </item>
+           <item row="2" column="1" colspan="2">
+            <widget class="QComboBox" name="linearUnitsCB"/>
+           </item>
+           <item row="1" column="1" colspan="2">
+            <widget class="QLabel" name="pathLabel">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" colspan="2">
+            <widget class="QLineEdit" name="configName">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Any combination of letters and digits&lt;br/&gt;including the dash and underscore.&lt;br/&gt;Spaces are replaced with underscore.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
@@ -321,7 +345,7 @@ QGroupBox::title {
            <item row="1" column="0">
             <widget class="QLabel" name="label_32">
              <property name="text">
-              <string>Board(s)</string>
+              <string>Board Configuration</string>
              </property>
             </widget>
            </item>
@@ -346,7 +370,7 @@ QGroupBox::title {
          <rect>
           <x>500</x>
           <y>10</y>
-          <width>160</width>
+          <width>211</width>
           <height>80</height>
          </rect>
         </property>
@@ -389,7 +413,7 @@ QGroupBox::title {
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>381</width>
+          <width>441</width>
           <height>171</height>
          </rect>
         </property>
@@ -485,6 +509,75 @@ QGroupBox::title {
          </item>
         </layout>
        </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>250</y>
+          <width>221</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Info</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_50">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>LinuxCNC</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="driverCB"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_30">
+           <property name="text">
+            <string>Driver</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_35">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="versionLE">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_36">
+           <property name="text">
+            <string>Step Gens</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="boardCB"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="stepgensSB"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_46">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="sserialSB"/>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="axisTab">
        <property name="enabled">
@@ -525,18 +618,7 @@ QGroupBox::title {
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="title">
                <string>Axis</string>
@@ -678,6 +760,9 @@ QGroupBox::title {
                  <property name="text">
                   <string>Axis Type</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                 </property>
                 </widget>
                </item>
                <item row="1" column="2">
@@ -689,18 +774,7 @@ QGroupBox::title {
             <item row="1" column="0">
              <widget class="QGroupBox" name="groupBox_2">
               <property name="styleSheet">
-               <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="title">
                <string>PID Settings</string>
@@ -928,18 +1002,7 @@ QGroupBox::title {
             <item row="1" column="1">
              <widget class="QGroupBox" name="groupBox_3">
               <property name="styleSheet">
-               <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="title">
                <string>Homing</string>
@@ -1077,18 +1140,7 @@ QGroupBox::title {
             <item row="2" column="0">
              <widget class="QGroupBox" name="groupBox_4">
               <property name="styleSheet">
-               <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="title">
                <string>StepGen Settings</string>
@@ -1374,18 +1426,7 @@ QGroupBox::title {
             <item row="2" column="1">
              <widget class="QGroupBox" name="gridGroupBox">
               <property name="styleSheet">
-               <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="title">
                <string>Joint Information</string>
@@ -1583,6 +1624,9 @@ QGroupBox::title {
                 <widget class="QLabel" name="label_5">
                  <property name="text">
                   <string>Axis Type</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
                  </property>
                 </widget>
                </item>
@@ -2385,6 +2429,9 @@ QGroupBox::title {
                 <widget class="QLabel" name="label_6">
                  <property name="text">
                   <string>Axis Type</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
                  </property>
                 </widget>
                </item>
@@ -3191,6 +3238,9 @@ to max speed</string>
                 <widget class="QLabel" name="label_7">
                  <property name="text">
                   <string>Axis Type</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
                  </property>
                 </widget>
                </item>
@@ -4005,6 +4055,9 @@ max speed</string>
                 <widget class="QLabel" name="label_31">
                  <property name="text">
                   <string>Axis Type</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
                  </property>
                 </widget>
                </item>
@@ -7727,7 +7780,7 @@ max speed</string>
   <tabstop>configName</tabstop>
   <tabstop>linearUnitsCB</tabstop>
   <tabstop>angularUnitsCB</tabstop>
-  <tabstop>maxLinearVelocity</tabstop>
+  <tabstop>maxLinearVel</tabstop>
   <tabstop>minLimit_0</tabstop>
   <tabstop>maxLimit_0</tabstop>
   <tabstop>maxVelocity_0</tabstop>

@@ -21,7 +21,7 @@ def iniList():
 
 	iniList.append(['TRAJ', 'LINEAR_UNITS', 'linearUnitsCB'])
 	iniList.append(['TRAJ', 'COORDINATES', 'coordinatesLB'])
-	iniList.append(['TRAJ', 'MAX_LINEAR_VELOCITY', 'maxLinearVelocity'])
+	iniList.append(['TRAJ', 'MAX_LINEAR_VELOCITY', 'maxLinearVel'])
 
 	for i in range(5):
 		iniList.append(['JOINT_{}'.format(i), 'AXIS', 'axisCB_{}'.format(i)])

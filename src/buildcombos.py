@@ -115,7 +115,7 @@ def setupCombo(combo):
 		]
 
 	if combo == 'config':
-		comboList = [['Select', False],
+		comboList = [['Select', 'None'],
 								['5 Stepgens', ['5', '0']],
 								['4 Stepgens 1 PWM', ['4', '1']]]
 

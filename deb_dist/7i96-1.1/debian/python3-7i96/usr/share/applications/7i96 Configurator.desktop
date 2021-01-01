@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PyQt UI Howdy
+Comment=7i96 Configuration Tool
+Exec=uihowdy
+Icon=/usr/share/pixmaps/linuxcncicon.png
+Categories=X-CNC;
+Terminal=false
+StartupNotify=true
+StartupWMClass=c7i96.py
+Name[en_US]=7i96 Configurator
