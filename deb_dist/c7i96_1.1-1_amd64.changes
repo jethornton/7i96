@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sat, 02 Jan 2021 08:09:21 -0600
+Source: c7i96
+Binary: python3-c7i96
+Architecture: all
+Version: 1.1-1
+Distribution: unstable
+Urgency: low
+Maintainer: John Thornton <<jt@gnipsel.com>>
+Changed-By: John Thornton <<jt@gnipsel.com>>
+Description:
+ python3-c7i96 - Mesa configuration tool for 7i96
+Changes:
+ c7i96 (1.1-1) unstable; urgency=low
+ .
+   * source package automatically created by stdeb 0.8.5
+Checksums-Sha1:
+ 83b8201907893df0b042291e71918a2bfd885bd0 4971 c7i96_1.1-1_amd64.buildinfo
+ 0f79abfffdaa80bca87625206e2c1afadda87da4 1685700 python3-c7i96_1.1-1_all.deb
+Checksums-Sha256:
+ 685d43fedc22c286b73d69eb6d6829ea732d6b985d25f2bd004d59e3ee079692 4971 c7i96_1.1-1_amd64.buildinfo
+ 8bfc0f4f38ca2e477b455c2ca94cdc2e0121b4887d2d2987facd3bff3c03d937 1685700 python3-c7i96_1.1-1_all.deb
+Files:
+ 49182d06d1e5cabc2d9b4bf54a66d73e 4971 python optional c7i96_1.1-1_amd64.buildinfo
+ 6fb9460dc904006b51fae9b18c57e242 1685700 python optional python3-c7i96_1.1-1_all.deb
