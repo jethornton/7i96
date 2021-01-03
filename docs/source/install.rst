@@ -9,6 +9,19 @@ I now have a Debian deb for installing 7i96!!!
 Download the `deb <https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.1-1_all.deb>`_
 and right click on it and open with Gdebi then install.
 
+If you don't have Gdebi installed you can install it from a terminal
+::
+
+	sudo apt install gdebi
+
+To flash firmware to the 7i96 you need to install 
+`mesaflash <https://github.com/LinuxCNC/mesaflash>`_ from the LinuxCNC
+repository.
+
+
+OLD INSTALL INFO To Be Deleted Shortly
+************************************************************************
+
 1. Install required dependencies. In a terminal do:
 ::
 
