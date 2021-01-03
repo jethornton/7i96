@@ -25,6 +25,10 @@ setup(
     ],
     classifiers=[
         "License :: OSI Approved :: MIT License",
+        "Development Status :: 4 - Beta",
+        "Environment :: X11 Applications :: Qt",
+        "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python :: 3",
     ],
 )
 
