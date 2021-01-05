@@ -8,7 +8,7 @@ setup(
     name="c7i96",
     version="1.2",
     author="John Thornton",
-    author_email="<jt@gnipsel.com>",
+    author_email="jt@gnipsel.com",
     description="Mesa configuration tool for 7i96",
     long_description=long_description,
     long_description_content_type="text/markdown",
