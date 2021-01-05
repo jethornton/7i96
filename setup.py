@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="c7i96",
-    version="1.2",
+    version="1.2.1",
     author="John Thornton",
     author_email="jt@gnipsel.com",
     description="Mesa configuration tool for 7i96",

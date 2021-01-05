@@ -4,3 +4,6 @@ __pycache__/
 /old files
 *.txt
 docs/build
+*.tar.gz
+/dist
+/deb_dist
