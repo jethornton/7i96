@@ -10,11 +10,11 @@ Build-Depends: dh-python, python3-setuptools, python3-all, debhelper (>= 9)
 Package-List:
  python3-c7i96 deb python optional arch=all
 Checksums-Sha1:
- f107b90a9aaebfb804deb5f6a90883e137947a61 2174155 c7i96_1.1.orig.tar.gz
- 500b8f8cca218dd63630f179aa7d9e7d1c27aea4 1168 c7i96_1.1-1.debian.tar.xz
+ e6e303fc4f292060ad1b9e4347e38fc46019ea8b 2174320 c7i96_1.1.orig.tar.gz
+ 68561add133287bbac84f91156e1e0a36284ea5f 1168 c7i96_1.1-1.debian.tar.xz
 Checksums-Sha256:
- f4ee5fb01a2c9fdf92acb45f84c65385cea93c46017c50df2fc7302987c280ba 2174155 c7i96_1.1.orig.tar.gz
- 00ce69cfb97a70e8c8bdbdc1aff430d5d025883646e3bbdf127cc68179fbb486 1168 c7i96_1.1-1.debian.tar.xz
+ 1c1226f29534d5ddf22b1e1fb374bc6aa85ec1cc67683882b28f2a6f65cbf956 2174320 c7i96_1.1.orig.tar.gz
+ b2d499bb2da2f1bbdf13ccb31ccb1bd3e3e68edfa4771a2140352fc42f748db9 1168 c7i96_1.1-1.debian.tar.xz
 Files:
- 6933d343905299e9fb6d2abb2179b023 2174155 c7i96_1.1.orig.tar.gz
- 64e4fae7ebb22e422f792781913799bc 1168 c7i96_1.1-1.debian.tar.xz
+ 34b4ff2f1823477a53186a357bc97730 2174320 c7i96_1.1.orig.tar.gz
+ a8bf4e09874e594f0cf05b6d7ec0e74e 1168 c7i96_1.1-1.debian.tar.xz

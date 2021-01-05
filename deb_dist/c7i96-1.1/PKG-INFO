@@ -22,9 +22,13 @@ Description: # Mesa 7i96 Configuration Tool
         usage instructions.
         
         Note: The master branch might be broken from time to time while I improve the
-        configuration tool. The 1.1 branch should be stable.
+        configuration tool. The 0.1.5 branch should be stable.
         
 Platform: UNKNOWN
 Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
 Requires-Python: >=3
 Description-Content-Type: text/markdown

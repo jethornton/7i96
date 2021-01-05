@@ -3,7 +3,7 @@ Source: c7i96
 Version: 1.1-1
 Architecture: all
 Maintainer: John Thornton <<jt@gnipsel.com>>
-Installed-Size: 6743
+Installed-Size: 6744
 Depends: python3:any
 Section: python
 Priority: optional
@@ -24,4 +24,4 @@ Description: Mesa configuration tool for 7i96
  usage instructions.
  .
  Note: The master branch might be broken from time to time while I improve the
- configuration tool. The 1.1 branch should be stable.
+ configuration tool. The 0.1.5 branch should be stable.

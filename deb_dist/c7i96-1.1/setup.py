@@ -17,6 +17,7 @@ setup(
     python_requires='>=3',
     packages=['c7i96'],
     include_package_data=True,
+    install_requires=['python3-pyqt5'],
     entry_points={
         'gui_scripts': ['c7i96 = c7i96.c7i96:main',],
     },
@@ -25,6 +26,10 @@ setup(
     ],
     classifiers=[
         "License :: OSI Approved :: MIT License",
+        "Development Status :: 4 - Beta",
+        "Environment :: X11 Applications :: Qt",
+        "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python :: 3",
     ],
 )
 

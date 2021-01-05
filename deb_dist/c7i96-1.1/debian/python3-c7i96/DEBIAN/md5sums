@@ -1,7 +1,8 @@
 88f14ae5058f2186f859bce3243691aa  usr/bin/c7i96
-936cf54a8202c4e93a78e66f149a77d8  usr/lib/python3/dist-packages/c7i96-1.1.egg-info/PKG-INFO
+60ef502301b2b9ed43b1543961b6956c  usr/lib/python3/dist-packages/c7i96-1.1.egg-info/PKG-INFO
 68b329da9893e34099c7d8ad5cb9c940  usr/lib/python3/dist-packages/c7i96-1.1.egg-info/dependency_links.txt
 6c3419633af9368143c5188eb4c2c5c6  usr/lib/python3/dist-packages/c7i96-1.1.egg-info/entry_points.txt
+88929489d62964637a3ea83148779253  usr/lib/python3/dist-packages/c7i96-1.1.egg-info/requires.txt
 1e214be0462458783ecfd1ce5e1319b7  usr/lib/python3/dist-packages/c7i96-1.1.egg-info/top_level.txt
 c011b8c45f49d9f6a8da723d945b0728  usr/lib/python3/dist-packages/c7i96/7i96_5abob_d.bit
 77539e5b04d2450973058ca67d5bae88  usr/lib/python3/dist-packages/c7i96/7i96_5abob_inmd.bit
@@ -35,4 +36,4 @@ cac2e6777fa1d17beff895ca6a37477b  usr/lib/python3/dist-packages/c7i96/dialog.py
 4f1d6137c11e971668fa8bb3bf2d4e22  usr/lib/python3/dist-packages/c7i96/helptext.py
 53fa0918b3617c09c083331dc2a98b85  usr/lib/python3/dist-packages/c7i96/loadini.py
 b6cac939f240253bdeb78f22d2e89c65  usr/share/applications/7i96 Configurator.desktop
-a1b6e1dc0999292e3dd8d064ce0953e0  usr/share/doc/python3-c7i96/changelog.Debian.gz
+6b5963ee668506838ae9c9d3419e0cd4  usr/share/doc/python3-c7i96/changelog.Debian.gz
