@@ -15,6 +15,7 @@ setup(
     url="https://github.com/jethornton/7i96",
     download_url="https://github.com/jethornton/7i96/tarball/master",
     python_requires='>=3',
+    platforms=['Posix'],
     packages=['c7i96'],
     include_package_data=True,
     install_requires=['python3-pyqt5'],

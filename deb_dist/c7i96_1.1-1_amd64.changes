@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Tue, 05 Jan 2021 05:31:19 -0600
+Date: Tue, 05 Jan 2021 06:22:14 -0600
 Source: c7i96
 Binary: python3-c7i96
 Architecture: all
@@ -15,11 +15,11 @@ Changes:
  .
    * source package automatically created by stdeb 0.8.5
 Checksums-Sha1:
- 6ad35f08df2811ba6d94b99757908e2a530ee9c6 4971 c7i96_1.1-1_amd64.buildinfo
- 770cc71d178624ddc0e5ef6697307f16c4e1a1f0 1685800 python3-c7i96_1.1-1_all.deb
+ 6a40db5bfde6de7ac55b9b50c77bc54fde7dd3d4 4971 c7i96_1.1-1_amd64.buildinfo
+ ea4c77fd038af8db63cdf957a657fcc87358bce8 1685176 python3-c7i96_1.1-1_all.deb
 Checksums-Sha256:
- f717024089f81de566961037ba2c71914c2c23d809a04e5f5cfe8d185c14ef80 4971 c7i96_1.1-1_amd64.buildinfo
- 2d39c7d13882443e68bda0d7c3fd342532a7c510610b1713e0f6b73fa43f8fb4 1685800 python3-c7i96_1.1-1_all.deb
+ 2f862544a177fab81c47159780dd0bdd294911132d42bfcacf21f571ae10166e 4971 c7i96_1.1-1_amd64.buildinfo
+ b21fc1d22d8b4dad8082468f74a70ebe3d8df39826b33ad7cde1740c0de57a66 1685176 python3-c7i96_1.1-1_all.deb
 Files:
- 333ee0a2df3d0b09ed54e3cabd538346 4971 python optional c7i96_1.1-1_amd64.buildinfo
- 5b98527925328eeeba0f2649b50ee694 1685800 python optional python3-c7i96_1.1-1_all.deb
+ a2335d7f0526cb9ecb5cd7bcadd726a2 4971 python optional c7i96_1.1-1_amd64.buildinfo
+ 0fe0969450cc6552ddbd9e9b478c337c 1685176 python optional python3-c7i96_1.1-1_all.deb

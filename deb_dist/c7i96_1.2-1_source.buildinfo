@@ -1,17 +1,17 @@
 Format: 1.0
 Source: c7i96
 Binary: python3-c7i96
-Architecture: all
-Version: 1.1-1
+Architecture: source
+Version: 1.2-1
 Checksums-Md5:
- 0fe0969450cc6552ddbd9e9b478c337c 1685176 python3-c7i96_1.1-1_all.deb
+ a8194f66bc6f38e292fcbfe0b1728474 846 c7i96_1.2-1.dsc
 Checksums-Sha1:
- ea4c77fd038af8db63cdf957a657fcc87358bce8 1685176 python3-c7i96_1.1-1_all.deb
+ a8d568b8f35b5f69546a41c8684a46ab0baa2015 846 c7i96_1.2-1.dsc
 Checksums-Sha256:
- b21fc1d22d8b4dad8082468f74a70ebe3d8df39826b33ad7cde1740c0de57a66 1685176 python3-c7i96_1.1-1_all.deb
+ ca9d171eb9996ed18e0d29766037ddd60e728921b99d26242b3ff93102b1a5af 846 c7i96_1.2-1.dsc
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Tue, 05 Jan 2021 06:22:25 -0600
+Build-Date: Tue, 05 Jan 2021 06:24:36 -0600
 Build-Tainted-By:
  merged-usr-via-symlinks
  usr-local-has-libraries
@@ -176,4 +176,4 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=4"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1609849334"
+ SOURCE_DATE_EPOCH="1609849472"
