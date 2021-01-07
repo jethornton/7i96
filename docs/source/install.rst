@@ -4,10 +4,18 @@ Installing
 
 7i96 Configuration Tool
 
+https://github.com/jethornton/7i96/blob/master/deb_dist/python3-c7i96_1.2.1-1_all.deb
+
 I now have a Debian deb for installing 7i96!!!
 
-Download the `deb <https://github.com/jethornton/7i96/raw/master/python3-c7i96_1.2.1-1_all.deb>`_
-and right click on it and open with Gdebi then install.
+Download the `deb <https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.2.1-1_all.deb>`_
+
+Or use wget from a terminal
+::
+
+	wget https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.2.1-1_all.deb
+
+Then right click on the file and open with Gdebi then install.
 
 If you don't have Gdebi installed you can install it from a terminal
 ::
