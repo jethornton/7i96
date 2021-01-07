@@ -5,6 +5,7 @@ import sys, os, configparser, platform
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
+print(sys.path[0])
 import c7i96.buildcombos as buildcombos
 import c7i96.loadini as loadini
 import c7i96.checkit as checkit
