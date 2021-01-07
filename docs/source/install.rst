@@ -13,6 +13,11 @@ Or use wget from a terminal
 
 	wget https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.2.1-1_all.deb
 
+If you get wget: command not found you can install it from a terminal with
+::
+
+	sudo apt install wget
+
 Then right click on the file and open with Gdebi then install.
 
 If you don't have Gdebi installed you can install it from a terminal
