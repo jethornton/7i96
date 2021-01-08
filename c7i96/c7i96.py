@@ -60,13 +60,13 @@ class MainWindow(QMainWindow):
 
 
 	def checks(self):
-	try:
-		subprocess.call(["mesaflash", "--help"])
-	except FileNotFoundError:
-		self.outputLB.setText('Mesaflash not found\nhttps://github.com/LinuxCNC/mesaflash')
-		self.testConnectionPB.setEnabled(False)
-		self.flashPB.setEnabled(False)
-		self.reloadPB.setEnabled(False)
+		try:
+			subprocess.call(["mesaflash", "--help"])
+		except FileNotFoundError:
+			self.outputLB.setText('Mesaflash not found\nhttps://github.com/LinuxCNC/mesaflash')
+			self.testConnectionPB.setEnabled(False)
+			self.flashPB.setEnabled(False)
+			self.reloadPB.setEnabled(False)
 
 	# Auto connected menu action callbacks
 	@pyqtSlot()
