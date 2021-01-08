@@ -54,8 +54,19 @@ class MainWindow(QMainWindow):
 		# for testing
 		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
 		#self.iniLoad()
+		self.checks()
 
 		self.show()
+
+
+	def checks(self):
+	try:
+		subprocess.call(["mesaflash", "--help"])
+	except FileNotFoundError:
+		self.outputLB.setText('Mesaflash not found\nhttps://github.com/LinuxCNC/mesaflash')
+		self.testConnectionPB.setEnabled(False)
+		self.flashPB.setEnabled(False)
+		self.reloadPB.setEnabled(False)
 
 	# Auto connected menu action callbacks
 	@pyqtSlot()
