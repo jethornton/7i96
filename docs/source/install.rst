@@ -18,12 +18,16 @@ If you get `bash: wget: command not found` you can install it from a terminal wi
 
 	sudo apt install wget
 
-Then right click on the file and open with Gdebi then install.
+Open the File Manager and right click on the file and open with Gdebi then install.
 
 If you don't have Gdebi installed you can install it from a terminal
 ::
 
 	sudo apt install gdebi
+
+If you don't have LinuxCNC installed then the 7i96 Configuration tool
+will show up in the Applications > Other menu otherwise it will be in
+the CNC menu.
 
 To flash firmware to the 7i96 you need to install 
 `mesaflash <https://github.com/LinuxCNC/mesaflash>`_ from the LinuxCNC
