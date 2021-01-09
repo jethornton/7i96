@@ -4735,9 +4735,9 @@ max speed</string>
        <widget class="QLabel" name="label_142">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>10</x>
           <y>20</y>
-          <width>361</width>
+          <width>431</width>
           <height>51</height>
          </rect>
         </property>

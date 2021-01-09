@@ -136,8 +136,13 @@ def setupCombo(combo):
 
 	if combo == 'spindle':
 		comboList = [['Select', False],
-								['Open Loop', 'openLoop'],
-								['Closed Loop', 'closedLoop']]
+								['PWM Direction', 'output-type=1'],
+								['Up Down', 'output-type=2'],
+								['PDM Direction', 'output-type=3'],
+								['Direction PWM', 'output-type=4']]
+
+	#							['Open Loop', 'openLoop'],
+	#							['Closed Loop', 'closedLoop']]
 
 	if combo == 'drive':
 		comboList = [['Custom', False],

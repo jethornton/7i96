@@ -6,6 +6,18 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
 print(sys.path[0])
+
+import buildcombos
+import loadini
+import checkit
+import buildfiles
+import card
+import helptext
+from dialog import Ui_Dialog as errorDialog
+from help import Ui_Dialog as helpDialog
+from about import Ui_about as aboutDialog
+
+"""
 import c7i96.buildcombos as buildcombos
 import c7i96.loadini as loadini
 import c7i96.checkit as checkit
@@ -15,6 +27,8 @@ import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
+"""
+
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
@@ -60,10 +74,12 @@ class MainWindow(QMainWindow):
 
 
 	def checks(self):
-		try:
-			subprocess.call(["mesaflash", "--help"])
-		except FileNotFoundError:
-			self.outputLB.setText('Mesaflash not found\nhttps://github.com/LinuxCNC/mesaflash')
+		mf = subprocess.call(['which', 'mesaflash'])
+		if mf != 0:
+			t = """Mesaflash not found go to
+			https://github.com/LinuxCNC/mesaflash
+			for installation instructions."""
+			self.outputLB.setText(t)
 			self.testConnectionPB.setEnabled(False)
 			self.flashPB.setEnabled(False)
 			self.reloadPB.setEnabled(False)
