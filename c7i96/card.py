@@ -57,7 +57,7 @@ def reloadCard(parent):
 		return
 
 	ipAddress = parent.ipAddressCB.currentText()
-	command = [parent.mesaflash, '--device', '7i96', '--addr', ipAddress, '--reload']
+	command = ['mesaflash', '--device', '7i96', '--addr', ipAddress, '--reload']
 	output = []
 
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
