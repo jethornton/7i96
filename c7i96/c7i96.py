@@ -7,6 +7,7 @@ from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
 print(sys.path[0])
 
+"""
 import buildcombos
 import loadini
 import checkit
@@ -16,7 +17,6 @@ import helptext
 from dialog import Ui_Dialog as errorDialog
 from help import Ui_Dialog as helpDialog
 from about import Ui_about as aboutDialog
-
 """
 import c7i96.buildcombos as buildcombos
 import c7i96.loadini as loadini
@@ -27,7 +27,7 @@ import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
-"""
+
 
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
