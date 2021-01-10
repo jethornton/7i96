@@ -3,7 +3,7 @@
 import sys, os, configparser, platform, subprocess
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
 # print(sys.path[0])
 
 """
@@ -100,7 +100,7 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionSave_triggered(self):
-		pass
+		self.on_actionBuild_triggered()
 
 	@pyqtSlot()
 	def on_actionAbout_triggered(self):
@@ -160,7 +160,9 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
-		 print('File Save As')
+		text, ok = QInputDialog.getText(self, 'Input Dialog','Enter New Configuration Name:')
+		self.configName.setText(text)
+		self.on_actionBuild_triggered()
 
 	@pyqtSlot()
 	def on_actionExit_triggered(self):
