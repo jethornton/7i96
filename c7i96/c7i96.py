@@ -1,11 +1,10 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 
 import sys, os, configparser, platform, subprocess
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox)
-print(sys.path[0])
+# print(sys.path[0])
 
 """
 import buildcombos
@@ -359,12 +358,21 @@ class MainWindow(QMainWindow):
 		getattr(self, 'stepRateJoint_' + joint).setText('{:.0f} pulses'.format(abs(stepRate)))
 
 	def spindleTypeChanged(self): 
-		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':
-			pid = '0'
-			self.ff0_s.setText('1')
+		print(self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()))
+		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()):
 			self.spindleGB.setEnabled(True)
 			self.encoderGB.setEnabled(False)
 			self.spindlepidGB.setEnabled(False)
+		else:
+			self.spindleGB.setEnabled(False)
+			self.encoderGB.setEnabled(False)
+			self.spindlepidGB.setEnabled(False)			
+		"""
+		pid = '0'
+		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':
+			pid = '0'
+			self.ff0_s.setText('1')
+
 			self.spindle = True
 		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'closedLoop':
 			self.spindle = True
@@ -377,9 +385,7 @@ class MainWindow(QMainWindow):
 			self.spindle = False
 			pid = ''
 			self.ff0_s.setText('')
-			self.spindleGB.setEnabled(False)
-			self.encoderGB.setEnabled(False)
-			self.spindlepidGB.setEnabled(False)
+
 		self.p_s.setText(pid)
 		self.i_s.setText(pid)
 		self.d_s.setText(pid)
@@ -389,6 +395,7 @@ class MainWindow(QMainWindow):
 		self.maxOutput_s.setText(pid)
 		self.maxError_s.setText(pid)
 		self.deadband_s.setText(pid)
+		"""
 
 	def pidSetDefault(self):
 		tab = self.sender().objectName()[-1]

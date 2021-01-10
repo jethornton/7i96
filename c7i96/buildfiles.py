@@ -47,6 +47,8 @@ def buildini(parent):
 	iniContents.append('BOARD = 7i96\n')
 	iniContents.append('STEPGENS = {}\n'.format(str(parent.stepgensSB.value())))
 	iniContents.append('ENCODERS = {}\n'.format(str(parent.encodersSB.value())))
+	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
+		iniContents.append('PWMS = 1\n')
 	iniContents.append('SSERIAL_PORT = {}\n'.format(str(parent.sserialSB.value())))
 
 	# build the [DISPLAY] section maxFeedOverrideLE
@@ -434,9 +436,9 @@ def buildini(parent):
 
 	# build the [SPINDLE] section if enabled
 	#print(parent.spindleTypeCB.currentText())
-	if parent.spindleTypeCB.currentText() != 'Select':
+	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
 		iniContents.append('\n[SPINDLE]\n')
-		iniContents.append('SPINDLE_TYPE = {}\n'.format(parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex())))
+		iniContents.append('OUTPUT_TYPE = {}\n'.format(parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex())))
 		iniContents.append('SCALE = {}\n'.format(parent.spindleScale.text()))
 		iniContents.append('PWM_FREQUENCY = {}\n'.format(parent.pwmFrequencySB.value()))
 		iniContents.append('MAX_RPM = {}\n'.format(parent.spindleMaxRpm.text()))
@@ -527,6 +529,8 @@ def buildhal(parent):
 	halContents.append('board_ip=[HOSTMOT2](IPADDRESS) ')
 	halContents.append('config="num_encoders=[HOSTMOT2](ENCODERS) ')
 	halContents.append('num_stepgens=[HOSTMOT2](STEPGENS) ')
+	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
+		halContents.append('num_pwm=[HOSTMOT2](PWM) ')
 	halContents.append('sserial_port_0=[HOSTMOT2](SSERIAL_PORT)"\n')
 	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.watchdog.timeout_ns 25000000\n')
 	halContents.append('\n# THREADS\n')
@@ -571,9 +575,9 @@ def buildhal(parent):
 		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
 		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n'.format(str(index)))
 
-	if parent.spindleTypeCB.currentText() != 'Select':
+	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
 		halContents.append('\n# Spindle\n')
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.pwmgen.00.output-type 1\n')
+		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.pwmgen.00.output_type=[SPINDLE]OUTPUT_TYPE\n')
 		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.pwmgen.00.scale [SPINDLE]MAX_RPM\n')
 		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.pwmgen.pwm_frequency [SPINDLE]PWM_FREQUENCY\n')
 		halContents.append('net spindle-on spindle.0.on => hm2_[HOSTMOT2](BOARD).0.pwmgen.00.enable\n')

@@ -130,16 +130,17 @@ def setupCombo(combo):
 		['7i96 + 7i77', '7i96_7i77d.bit'],
 		['7i96 + 7i78', '7i96_7i78d.bit'],
 		['7i96 + 7i85', '7i96_7i85d.bit'],
+		['7i96 + 7i85S', '7i96_7i85sd.bit'],
 		['7i96 + 7i89', '7i96_7i89d.bit'],
 		['7i96 + G540', '7i96_g540dpl.bit']
 		]
 
 	if combo == 'spindle':
-		comboList = [['Select', False],
-								['PWM Direction', 'output-type=1'],
-								['Up Down', 'output-type=2'],
-								['PDM Direction', 'output-type=3'],
-								['Direction PWM', 'output-type=4']]
+		comboList = [['None', False],
+								['PWM Direction', '1'],
+								['Up Down', '2'],
+								['PDM Direction', '3'],
+								['Direction PWM', '4']]
 
 	#							['Open Loop', 'openLoop'],
 	#							['Closed Loop', 'closedLoop']]
