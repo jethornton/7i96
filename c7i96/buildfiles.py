@@ -530,7 +530,7 @@ def buildhal(parent):
 	halContents.append('config="num_encoders=[HOSTMOT2](ENCODERS) ')
 	halContents.append('num_stepgens=[HOSTMOT2](STEPGENS) ')
 	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
-		halContents.append('num_pwm=[HOSTMOT2](PWM) ')
+		halContents.append('num_pwm=[HOSTMOT2](PWMS) ')
 	halContents.append('sserial_port_0=[HOSTMOT2](SSERIAL_PORT)"\n')
 	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.watchdog.timeout_ns 25000000\n')
 	halContents.append('\n# THREADS\n')
