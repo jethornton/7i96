@@ -7681,6 +7681,8 @@ max speed</string>
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
+    <addaction name="actionSavePins"/>
+    <addaction name="actionSaveSignals"/>
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
     <addaction name="separator"/>
@@ -7778,6 +7780,16 @@ max speed</string>
   <action name="actionPCHelp">
    <property name="text">
     <string>&amp;PC Help</string>
+   </property>
+  </action>
+  <action name="actionSavePins">
+   <property name="text">
+    <string>Save Pins</string>
+   </property>
+  </action>
+  <action name="actionSaveSignals">
+   <property name="text">
+    <string>Save Signals</string>
    </property>
   </action>
  </widget>

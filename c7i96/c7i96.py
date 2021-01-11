@@ -103,6 +103,56 @@ class MainWindow(QMainWindow):
 		self.on_actionBuild_triggered()
 
 	@pyqtSlot()
+	def on_actionSavePins_triggered(self):
+		msgBox = QMessageBox()
+		msgBox.setIcon(QMessageBox.Information)
+		msgBox.setWindowTitle("Save Configuration Pins")
+		if self.configName.text() == '':
+			msgBox.setText("A Configuration must be loaded!")
+			msgBox.setStandardButtons(QMessageBox.Ok)
+			returnValue = msgBox.exec()
+			if returnValue == QMessageBox.Ok:
+				return
+		if "0x48414c32" in subprocess.getoutput('ipcs'):
+			self.savePins()
+		else:
+			msgBox.setText("With your configuration\nrunning in Linuxcnc\npress OK")
+			msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+			returnValue = msgBox.exec()
+			if returnValue == QMessageBox.Ok:
+				self.savePins()
+
+	@pyqtSlot()
+	def on_actionSaveSignals_triggered(self):
+		msgBox = QMessageBox()
+		msgBox.setIcon(QMessageBox.Information)
+		msgBox.setWindowTitle("Save Configuration Signals")
+		if self.configName.text() == '':
+			msgBox.setText("A Configuration must be loaded!")
+			msgBox.setStandardButtons(QMessageBox.Ok)
+			returnValue = msgBox.exec()
+			if returnValue == QMessageBox.Ok:
+				return
+		if "0x48414c32" in subprocess.getoutput('ipcs'):
+			self.saveSigs()
+		else:
+			msgBox.setText("With your configuration\nrunning in Linuxcnc\npress OK")
+			msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+			returnValue = msgBox.exec()
+			if returnValue == QMessageBox.Ok:
+				self.saveSigs()
+
+	def savePins(self):
+		fp = os.path.join(self.configPath, self.configNameUnderscored + '-pins.txt')
+		with open(fp, 'w') as f:
+			f.writelines(subprocess.getoutput("halcmd show pin"))
+
+	def saveSigs(self):
+		fp = os.path.join(self.configPath, self.configNameUnderscored + '-sigs.txt')
+		with open(fp, 'w') as f:
+			f.writelines(subprocess.getoutput("halcmd show sig"))
+
+	@pyqtSlot()
 	def on_actionAbout_triggered(self):
 		dialog = QtWidgets.QDialog()
 		dialog.ui = aboutDialog()
