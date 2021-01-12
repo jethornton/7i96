@@ -7314,86 +7314,70 @@ max speed</string>
        <attribute name="title">
         <string>Info</string>
        </attribute>
-       <widget class="QScrollArea" name="scrollArea_2">
-        <property name="geometry">
-         <rect>
-          <x>8</x>
-          <y>14</y>
-          <width>731</width>
-          <height>461</height>
-         </rect>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>729</width>
-           <height>459</height>
-          </rect>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_38">
-          <item row="0" column="0">
-           <widget class="QLabel" name="infoLB">
-            <property name="font">
-             <font>
-              <family>Courier</family>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-            </property>
-            <property name="textInteractionFlags">
-             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-       <widget class="QPushButton" name="cpuPB">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>500</y>
-          <width>80</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>Central Processing Unit</string>
-        </property>
-        <property name="text">
-         <string>CPU</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="nicPB">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>500</y>
-          <width>80</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Interface Card&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="text">
-         <string>NIC</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_51">
+        <item row="0" column="0" colspan="2">
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>758</width>
+             <height>575</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_38">
+            <item row="0" column="0">
+             <widget class="QLabel" name="infoLB">
+              <property name="font">
+               <font>
+                <family>Courier</family>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="cpuPB">
+          <property name="toolTip">
+           <string>Central Processing Unit</string>
+          </property>
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="nicPB">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Interface Card&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>NIC</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="pc">
        <attribute name="title">

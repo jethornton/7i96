@@ -71,8 +71,9 @@ class MainWindow(QMainWindow):
 
 
 	def checks(self):
-		mf = subprocess.call(['which', 'mesaflash'])
-		if mf != 0:
+		try:
+			subprocess.run('mesaflash', check=True, capture_output=True)
+		except FileNotFoundError:
 			t = "Mesaflash not found go to\nhttps://github.com/LinuxCNC/mesaflash\nfor installation instructions."
 			self.outputLB.setText(t)
 			self.testConnectionPB.setEnabled(False)
