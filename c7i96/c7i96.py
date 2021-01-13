@@ -4,7 +4,6 @@ import sys, os, configparser, platform, subprocess
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
-# print(sys.path[0])
 
 """
 import buildcombos
@@ -35,13 +34,6 @@ class MainWindow(QMainWindow):
 		uic.loadUi(UI_FILE, self)
 		self.version = '1.1'
 		self.config = configparser.ConfigParser(strict=False)
-		self.cwd = os.getcwd()
-		#self.linuxcncDir = os.path.expanduser('~/linuxcnc')
-		#self.test = '~/linuxcnc/configs/' + 'fred'
-		#print(os.path.expanduser(self.test))
-		#self.configsDir = os.path.expanduser('~/linuxcnc/configs')
-		#self.gcodeDir = os.path.expanduser('~/linuxcnc/nc_files')
-		#self.subroutineDir = os.path.expanduser('~/linuxcnc/subroutines')
 		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
@@ -62,9 +54,7 @@ class MainWindow(QMainWindow):
 			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 		self.units = False
-		# for testing
-		#self.config.read('/home/john/linuxcnc/configs/fred/fred.ini')
-		#self.iniLoad()
+
 		self.checks()
 
 		self.show()
@@ -419,7 +409,7 @@ class MainWindow(QMainWindow):
 		else:
 			self.spindleGB.setEnabled(False)
 			self.encoderGB.setEnabled(False)
-			self.spindlepidGB.setEnabled(False)			
+			self.spindlepidGB.setEnabled(False)
 		"""
 		pid = '0'
 		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':
