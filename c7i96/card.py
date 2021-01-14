@@ -68,6 +68,7 @@ def cpuInfo(parent):
 	else:
 		readError = ("An error occoured trying to read the cpu info")
 		parent.infoLB.setText(readError)
+	return
 
 def nicInfo(parent):
 	command = "lspci"
