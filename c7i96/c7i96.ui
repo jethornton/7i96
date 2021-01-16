@@ -4774,7 +4774,7 @@ max speed</string>
           <number>10</number>
          </property>
          <property name="topMargin">
-          <number>10</number>
+          <number>15</number>
          </property>
          <property name="rightMargin">
           <number>10</number>
@@ -5067,6 +5067,9 @@ max speed</string>
          <string>Spindle Settings</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_37">
+         <property name="topMargin">
+          <number>15</number>
+         </property>
          <item row="1" column="0">
           <widget class="QLabel" name="label_180">
            <property name="text">
@@ -5108,6 +5111,67 @@ max speed</string>
           <widget class="QLabel" name="label_198">
            <property name="text">
             <string>Hz</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="spindleInfoGB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>300</y>
+          <width>291</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Spindle Information</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_38">
+         <property name="topMargin">
+          <number>15</number>
+         </property>
+         <item row="2" column="0">
+          <widget class="QLabel" name="spindleInfo3Lbl">
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="spindleInfo2Lbl">
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="spindleInfo1Lbl">
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="text">
+            <string>No Spindle</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="spindleInfo4Lbl">
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </item>

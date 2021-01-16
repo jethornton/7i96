@@ -6,6 +6,7 @@ from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
 
 """
+# for local testing
 import buildcombos
 import loadini
 import checkit
@@ -16,6 +17,8 @@ from dialog import Ui_Dialog as errorDialog
 from help import Ui_Dialog as helpDialog
 from about import Ui_about as aboutDialog
 """
+
+# for installed deb
 import c7i96.buildcombos as buildcombos
 import c7i96.loadini as loadini
 import c7i96.checkit as checkit
@@ -401,15 +404,36 @@ class MainWindow(QMainWindow):
 		getattr(self, 'stepRateJoint_' + joint).setText('{:.0f} pulses'.format(abs(stepRate)))
 
 	def spindleTypeChanged(self): 
-		print(self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()))
+		#print(self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()))
 		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()):
 			self.spindleGB.setEnabled(True)
+			self.spindleInfoGB.setEnabled(True)
 			self.encoderGB.setEnabled(False)
 			self.spindlepidGB.setEnabled(False)
+			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '1':
+				self.spindleInfo1Lbl.setText("PWM on Step 4")
+				self.spindleInfo2Lbl.setText("Direction on Dir 4")
+			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '2':
+				self.spindleInfo1Lbl.setText("UP on Step 4")
+				self.spindleInfo2Lbl.setText("Down on Dir 4")
+			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '3':
+				self.spindleInfo1Lbl.setText("PDM on Step 4")
+				self.spindleInfo2Lbl.setText("Direction on Dir 4")
+			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '4':
+				self.spindleInfo1Lbl.setText("Direction on Step 4")
+				self.spindleInfo2Lbl.setText("PWM on Dir 4")
+
 		else:
 			self.spindleGB.setEnabled(False)
+			self.spindleInfoGB.setEnabled(False)
 			self.encoderGB.setEnabled(False)
 			self.spindlepidGB.setEnabled(False)
+			self.spindleInfo1Lbl.setText("No Spindle")
+			self.spindleInfo2Lbl.setText("")
+			self.spindleInfo3Lbl.setText("")
+			self.spindleInfo4Lbl.setText("")
+
+
 		"""
 		pid = '0'
 		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':

@@ -107,8 +107,12 @@ def buildini(parent):
 	iniContents.append('\n[HAL]\n')
 	iniContents.append('HALFILE = {}.hal\n'.format(parent.configNameUnderscored))
 	iniContents.append('HALFILE = io.hal\n')
-	iniContents.append('HALFILE = custom.hal\n')
-	iniContents.append('POSTGUI_HALFILE = postgui.hal\n')
+	if parent.customhalCB.isChecked():
+		iniContents.append('HALFILE = custom.hal\n')
+	if parent.postguiCB.isChecked():
+		iniContents.append('POSTGUI_HALFILE = postgui.hal\n')
+	if parent.shutdownCB.isChecked():
+		iniContents.append('SHUTDOWN = shutdown.hal\n')
 	if parent.haluiCB.isChecked():
 		iniContents.append('HALUI = halui\n')
 
@@ -638,28 +642,44 @@ def buildmisc(parent):
 		except FileExistsError:
 			pass
 
+	if parent.customhalCB.isChecked():
+		customFilePath = os.path.join(parent.configPath, 'custom.hal')
+		customContents = []
+		customContents = ['# Place any HAL commands in this file that you want to run before the GUI.\n']
+		customContents.append('# This file will not be written over by the configuration tool.\n')
+		try: # if this file exists don't write over it
+			with open(customFilePath, 'x') as customFile:
+				customFile.writelines(customContents)
+		except FileExistsError:
+			pass
 
-	customFilePath = os.path.join(parent.configPath, 'custom.hal')
-	customContents = []
-	customContents = ['# Place any HAL commands in this file that you want to run before the GUI.\n']
-	customContents.append('# This file will not be written over by the configuration tool.\n')
-	try: # if this file exists don't write over it
-		with open(customFilePath, 'x') as customFile:
-			customFile.writelines(customContents)
-	except FileExistsError:
-		pass
+	if parent.postguiCB.isChecked():
+		# create the postgui.hal file if not there
+		postguiFilePath = os.path.join(parent.configPath, 'postgui.hal')
+		postguiContents = []
+		postguiContents = ['# Place any HAL commands in this file that you want to run AFTER the GUI finishes loading.\n']
+		postguiContents.append('# GUI HAL pins are not visible until after the GUI loads.\n')
+		postguiContents.append('# This file will not be written over by the configuration tool.\n')
+		try: # if this file exists don't write over it
+			with open(postguiFilePath, 'x') as postguiFile:
+				postguiFile.writelines(postguiContents)
+		except FileExistsError:
+			pass
 
-	# create the postgui.hal file if not there
-	postguiFilePath = os.path.join(parent.configPath, 'postgui.hal')
-	postguiContents = []
-	postguiContents = ['# Place any HAL commands in this file that you want to run AFTER the GUI finishes loading.\n']
-	postguiContents.append('# GUI HAL pins are not visible until after the GUI loads.\n')
-	postguiContents.append('# This file will not be written over by the configuration tool.\n')
-	try: # if this file exists don't write over it
-		with open(postguiFilePath, 'x') as postguiFile:
-			postguiFile.writelines(postguiContents)
-	except FileExistsError:
-		pass
+
+	if parent.shutdownCB.isChecked():
+		# create the shutdown.hal file if not there
+		postguiFilePath = os.path.join(parent.configPath, 'shutdown.hal')
+		shutdownContents = []
+		shutdownContents = ['# Place any HAL commands in this file that you want to run AFTER the GUI shuts down.\n']
+		shutdownContents.append('# this may make it possible to set outputs when LinuxCNC is exited normally.\n')
+		shutdownContents.append('# This file will not be written over by the configuration tool.\n')
+		try: # if this file exists don't write over it
+			with open(shutdownFilePath, 'x') as shutdownFile:
+				shutdownFile.writelines(shutdownContents)
+		except FileExistsError:
+			pass
+
 
 	# create the tool file if not there
 	toolFilePath = os.path.join(parent.configPath, 'tool.tbl')
