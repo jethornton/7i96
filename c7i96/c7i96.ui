@@ -5672,45 +5672,6 @@ max speed</string>
          <string>On Screen Prompt for Manual Tool Change</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="haluiCB">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>261</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Halui User Interface</string>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="pyvcpCB">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>271</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PyVCP Panel</string>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="gladevcpCB">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>160</y>
-          <width>271</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>GladeVCP Panel</string>
-        </property>
-       </widget>
        <widget class="QComboBox" name="debugCombo">
         <property name="geometry">
          <rect>
@@ -5765,6 +5726,84 @@ max speed</string>
         <property name="text">
          <string>Thread Period</string>
         </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_6">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>240</y>
+          <width>231</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>HAL Options</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_51">
+         <property name="topMargin">
+          <number>15</number>
+         </property>
+         <item row="3" column="0">
+          <widget class="QCheckBox" name="shutdownCB">
+           <property name="text">
+            <string>Shutdown HAL File</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="customhalCB">
+           <property name="text">
+            <string>Custom HAL File</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="postguiCB">
+           <property name="text">
+            <string>Post GUI HAL File</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QCheckBox" name="haluiCB">
+           <property name="text">
+            <string>Halui User Interface</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_10">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>400</y>
+          <width>164</width>
+          <height>86</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>VCP Panels</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_53">
+         <property name="topMargin">
+          <number>15</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="pyvcpCB">
+           <property name="text">
+            <string>PyVCP Panel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="gladevcpCB">
+           <property name="text">
+            <string>GladeVCP Panel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="plc">
@@ -6269,1050 +6308,1072 @@ max speed</string>
            <attribute name="title">
             <string>Terminals</string>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_52">
-            <item row="0" column="0">
-             <widget class="QGroupBox" name="gridGroupBox">
-              <property name="title">
-               <string>TB1</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_42">
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_223">
-                 <property name="text">
-                  <string>Pin 22</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_212">
-                 <property name="text">
-                  <string>Pin 24</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="0">
-                <widget class="QLabel" name="label_275">
-                 <property name="text">
-                  <string>Pin 16</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="label_251">
-                 <property name="text">
-                  <string>Pin 19</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="15" column="0">
-                <widget class="QLabel" name="label_282">
-                 <property name="text">
-                  <string>Pin 9</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="label_241">
-                 <property name="text">
-                  <string>Pin 20</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="0">
-                <widget class="QLabel" name="label_278">
-                 <property name="text">
-                  <string>Pin 13</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="0">
-                <widget class="QLabel" name="label_276">
-                 <property name="text">
-                  <string>Pin 15</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="13" column="0">
-                <widget class="QLabel" name="label_280">
-                 <property name="text">
-                  <string>Pin 11</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="0">
-                <widget class="QLabel" name="label_283">
-                 <property name="text">
-                  <string>Pin 8</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <widget class="QLabel" name="label_261">
-                 <property name="text">
-                  <string>Pin 18</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="12" column="0">
-                <widget class="QLabel" name="label_279">
-                 <property name="text">
-                  <string>Pin 12</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_213">
-                 <property name="text">
-                  <string>Pin 23</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="0">
-                <widget class="QLabel" name="label_277">
-                 <property name="text">
-                  <string>Pin 14</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_231">
-                 <property name="text">
-                  <string>Pin 21</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="17" column="0">
-                <widget class="QLabel" name="label_284">
-                 <property name="text">
-                  <string>Pin 7</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="0">
-                <widget class="QLabel" name="label_285">
-                 <property name="text">
-                  <string>Pin 6</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="19" column="0">
-                <widget class="QLabel" name="label_286">
-                 <property name="text">
-                  <string>Pin 5</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="0">
-                <widget class="QLabel" name="label_287">
-                 <property name="text">
-                  <string>Pin 4</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="0">
-                <widget class="QLabel" name="label_288">
-                 <property name="text">
-                  <string>Pin 3</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="22" column="0">
-                <widget class="QLabel" name="label_289">
-                 <property name="text">
-                  <string>Pin 2</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="23" column="0">
-                <widget class="QLabel" name="label_290">
-                 <property name="text">
-                  <string>Pin 1</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="14" column="0">
-                <widget class="QLabel" name="label_281">
-                 <property name="text">
-                  <string>Pin 10</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="0">
-                <widget class="QLabel" name="label_274">
-                 <property name="text">
-                  <string>Pin 17</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_291">
-                 <property name="text">
-                  <string>+5v</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="tb1p23LB">
-                 <property name="text">
-                  <string>Direction 3 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="tb1p22LB">
-                 <property name="text">
-                  <string>Direction 3 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="tb1p21LB">
-                 <property name="text">
-                  <string>Step 3 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="tb1p20LB">
-                 <property name="text">
-                  <string>Step 3 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLabel" name="label_296">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLabel" name="label_297">
-                 <property name="text">
-                  <string>+5v</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="1">
-                <widget class="QLabel" name="label_298">
-                 <property name="text">
-                  <string>Direction 2 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="1">
-                <widget class="QLabel" name="label_299">
-                 <property name="text">
-                  <string>Direction 2 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="1">
-                <widget class="QLabel" name="label_300">
-                 <property name="text">
-                  <string>Step 2 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="1">
-                <widget class="QLabel" name="label_301">
-                 <property name="text">
-                  <string>Step 2 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="1">
-                <widget class="QLabel" name="label_302">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="12" column="1">
-                <widget class="QLabel" name="label_303">
-                 <property name="text">
-                  <string>+5v</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="13" column="1">
-                <widget class="QLabel" name="label_304">
-                 <property name="text">
-                  <string>Direction 1 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="14" column="1">
-                <widget class="QLabel" name="label_305">
-                 <property name="text">
-                  <string>Direction 1 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="15" column="1">
-                <widget class="QLabel" name="label_306">
-                 <property name="text">
-                  <string>Step 1 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="1">
-                <widget class="QLabel" name="label_307">
-                 <property name="text">
-                  <string>Step 1 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="17" column="1">
-                <widget class="QLabel" name="label_308">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="1">
-                <widget class="QLabel" name="label_309">
-                 <property name="text">
-                  <string>+5v</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="19" column="1">
-                <widget class="QLabel" name="label_310">
-                 <property name="text">
-                  <string>Direction 0 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="1">
-                <widget class="QLabel" name="label_311">
-                 <property name="text">
-                  <string>Direction 0 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="1">
-                <widget class="QLabel" name="label_312">
-                 <property name="text">
-                  <string>Step 0 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="22" column="1">
-                <widget class="QLabel" name="label_313">
-                 <property name="text">
-                  <string>Step 0 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="23" column="1">
-                <widget class="QLabel" name="label_314">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QGroupBox" name="gridGroupBox_2">
-              <property name="title">
-               <string>TB2</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_43">
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_315">
-                 <property name="text">
-                  <string>Pin 22</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_316">
-                 <property name="text">
-                  <string>Pin 24</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="0">
-                <widget class="QLabel" name="label_317">
-                 <property name="text">
-                  <string>Pin 16</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="label_318">
-                 <property name="text">
-                  <string>Pin 19</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="15" column="0">
-                <widget class="QLabel" name="label_319">
-                 <property name="text">
-                  <string>Pin 9</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="label_320">
-                 <property name="text">
-                  <string>Pin 20</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="0">
-                <widget class="QLabel" name="label_321">
-                 <property name="text">
-                  <string>Pin 13</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="0">
-                <widget class="QLabel" name="label_322">
-                 <property name="text">
-                  <string>Pin 15</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="13" column="0">
-                <widget class="QLabel" name="label_323">
-                 <property name="text">
-                  <string>Pin 11</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="0">
-                <widget class="QLabel" name="label_324">
-                 <property name="text">
-                  <string>Pin 8</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <widget class="QLabel" name="label_325">
-                 <property name="text">
-                  <string>Pin 18</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="12" column="0">
-                <widget class="QLabel" name="label_326">
-                 <property name="text">
-                  <string>Pin 12</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_327">
-                 <property name="text">
-                  <string>Pin 23</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="0">
-                <widget class="QLabel" name="label_328">
-                 <property name="text">
-                  <string>Pin 14</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_329">
-                 <property name="text">
-                  <string>Pin 21</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="17" column="0">
-                <widget class="QLabel" name="label_330">
-                 <property name="text">
-                  <string>Pin 7</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="0">
-                <widget class="QLabel" name="label_331">
-                 <property name="text">
-                  <string>Pin 6</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="19" column="0">
-                <widget class="QLabel" name="label_332">
-                 <property name="text">
-                  <string>Pin 5</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="0">
-                <widget class="QLabel" name="label_333">
-                 <property name="text">
-                  <string>Pin 4</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="0">
-                <widget class="QLabel" name="label_334">
-                 <property name="text">
-                  <string>Pin 3</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="22" column="0">
-                <widget class="QLabel" name="label_335">
-                 <property name="text">
-                  <string>Pin 2</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="23" column="0">
-                <widget class="QLabel" name="label_336">
-                 <property name="text">
-                  <string>Pin 1</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="14" column="0">
-                <widget class="QLabel" name="label_337">
-                 <property name="text">
-                  <string>Pin 10</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="0">
-                <widget class="QLabel" name="label_338">
-                 <property name="text">
-                  <string>Pin 17</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_339">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_340">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="label_341">
-                 <property name="text">
-                  <string>5v In</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="label_342">
-                 <property name="text">
-                  <string>5v In</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="label_343">
-                 <property name="text">
-                  <string>+5v</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLabel" name="label_344">
-                 <property name="text">
-                  <string>RS-422/485 TX-</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLabel" name="label_345">
-                 <property name="text">
-                  <string>RS-422/485 TX+</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="1">
-                <widget class="QLabel" name="label_346">
-                 <property name="text">
-                  <string>RS-422/485 RX-</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="1">
-                <widget class="QLabel" name="label_347">
-                 <property name="text">
-                  <string>RS-422/485 RX+</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="1">
-                <widget class="QLabel" name="label_348">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="1">
-                <widget class="QLabel" name="label_349">
-                 <property name="text">
-                  <string>Index -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="1">
-                <widget class="QLabel" name="label_350">
-                 <property name="text">
-                  <string>Index +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="12" column="1">
-                <widget class="QLabel" name="label_351">
-                 <property name="text">
-                  <string>+5v</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="13" column="1">
-                <widget class="QLabel" name="label_352">
-                 <property name="text">
-                  <string>Encoder B-</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="14" column="1">
-                <widget class="QLabel" name="label_353">
-                 <property name="text">
-                  <string>Encoder B+</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="15" column="1">
-                <widget class="QLabel" name="label_354">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="1">
-                <widget class="QLabel" name="label_355">
-                 <property name="text">
-                  <string>Encoder A-</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="17" column="1">
-                <widget class="QLabel" name="label_356">
-                 <property name="text">
-                  <string>Encoder A+</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="1">
-                <widget class="QLabel" name="label_357">
-                 <property name="text">
-                  <string>+5v</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="19" column="1">
-                <widget class="QLabel" name="tb2p5LB">
-                 <property name="text">
-                  <string>Direction 4 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="1">
-                <widget class="QLabel" name="tb2p4LB">
-                 <property name="text">
-                  <string>Direction 4 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="1">
-                <widget class="QLabel" name="tb2p3LB">
-                 <property name="text">
-                  <string>Step 4 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="22" column="1">
-                <widget class="QLabel" name="tb2p2LB">
-                 <property name="text">
-                  <string>Step 4 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="23" column="1">
-                <widget class="QLabel" name="label_362">
-                 <property name="text">
-                  <string>Ground</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="2">
-             <widget class="QGroupBox" name="gridGroupBox_3">
-              <property name="title">
-               <string>TB3</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_44">
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_363">
-                 <property name="text">
-                  <string>Pin 22</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_364">
-                 <property name="text">
-                  <string>Pin 24</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="0">
-                <widget class="QLabel" name="label_365">
-                 <property name="text">
-                  <string>Pin 16</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="label_366">
-                 <property name="text">
-                  <string>Pin 19</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="15" column="0">
-                <widget class="QLabel" name="label_367">
-                 <property name="text">
-                  <string>Pin 9</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="label_368">
-                 <property name="text">
-                  <string>Pin 20</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="0">
-                <widget class="QLabel" name="label_369">
-                 <property name="text">
-                  <string>Pin 13</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="0">
-                <widget class="QLabel" name="label_370">
-                 <property name="text">
-                  <string>Pin 15</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="13" column="0">
-                <widget class="QLabel" name="label_371">
-                 <property name="text">
-                  <string>Pin 11</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="0">
-                <widget class="QLabel" name="label_372">
-                 <property name="text">
-                  <string>Pin 8</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <widget class="QLabel" name="label_373">
-                 <property name="text">
-                  <string>Pin 18</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="12" column="0">
-                <widget class="QLabel" name="label_374">
-                 <property name="text">
-                  <string>Pin 12</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_375">
-                 <property name="text">
-                  <string>Pin 23</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="0">
-                <widget class="QLabel" name="label_376">
-                 <property name="text">
-                  <string>Pin 14</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_377">
-                 <property name="text">
-                  <string>Pin 21</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="17" column="0">
-                <widget class="QLabel" name="label_378">
-                 <property name="text">
-                  <string>Pin 7</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="0">
-                <widget class="QLabel" name="label_379">
-                 <property name="text">
-                  <string>Pin 6</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="19" column="0">
-                <widget class="QLabel" name="label_380">
-                 <property name="text">
-                  <string>Pin 5</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="0">
-                <widget class="QLabel" name="label_381">
-                 <property name="text">
-                  <string>Pin 4</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="0">
-                <widget class="QLabel" name="label_382">
-                 <property name="text">
-                  <string>Pin 3</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="22" column="0">
-                <widget class="QLabel" name="label_383">
-                 <property name="text">
-                  <string>Pin 2</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="23" column="0">
-                <widget class="QLabel" name="label_384">
-                 <property name="text">
-                  <string>Pin 1</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="14" column="0">
-                <widget class="QLabel" name="label_385">
-                 <property name="text">
-                  <string>Pin 10</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="0">
-                <widget class="QLabel" name="label_386">
-                 <property name="text">
-                  <string>Pin 17</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_387">
-                 <property name="text">
-                  <string>Output 5 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_388">
-                 <property name="text">
-                  <string>Output 5 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="label_389">
-                 <property name="text">
-                  <string>Output 4 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="label_390">
-                 <property name="text">
-                  <string>Output 4 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="label_391">
-                 <property name="text">
-                  <string>Output 3 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLabel" name="label_392">
-                 <property name="text">
-                  <string>Output 3 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLabel" name="label_393">
-                 <property name="text">
-                  <string>Output 2 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="1">
-                <widget class="QLabel" name="label_394">
-                 <property name="text">
-                  <string>Output 2 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="1">
-                <widget class="QLabel" name="label_395">
-                 <property name="text">
-                  <string>Output 1 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="1">
-                <widget class="QLabel" name="label_396">
-                 <property name="text">
-                  <string>Output 1 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="1">
-                <widget class="QLabel" name="label_397">
-                 <property name="text">
-                  <string>Output 0 +</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="1">
-                <widget class="QLabel" name="label_398">
-                 <property name="text">
-                  <string>Output 0 -</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="12" column="1">
-                <widget class="QLabel" name="label_399">
-                 <property name="text">
-                  <string>Input Common</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="13" column="1">
-                <widget class="QLabel" name="label_400">
-                 <property name="text">
-                  <string>Input 10</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="14" column="1">
-                <widget class="QLabel" name="label_401">
-                 <property name="text">
-                  <string>Input 9</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="15" column="1">
-                <widget class="QLabel" name="label_402">
-                 <property name="text">
-                  <string>Input 8</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="16" column="1">
-                <widget class="QLabel" name="label_403">
-                 <property name="text">
-                  <string>Input 7</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="17" column="1">
-                <widget class="QLabel" name="label_404">
-                 <property name="text">
-                  <string>Input 6</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="18" column="1">
-                <widget class="QLabel" name="label_405">
-                 <property name="text">
-                  <string>Input 5</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="19" column="1">
-                <widget class="QLabel" name="label_406">
-                 <property name="text">
-                  <string>Input 4</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="20" column="1">
-                <widget class="QLabel" name="label_407">
-                 <property name="text">
-                  <string>Input 3</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="21" column="1">
-                <widget class="QLabel" name="label_408">
-                 <property name="text">
-                  <string>Input 2</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="22" column="1">
-                <widget class="QLabel" name="label_409">
-                 <property name="text">
-                  <string>Input 1</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="23" column="1">
-                <widget class="QLabel" name="label_410">
-                 <property name="text">
-                  <string>Input 0</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="1" column="0" colspan="3">
-             <widget class="QLabel" name="label_54">
-              <property name="text">
-               <string>Note: Step and Direction 4 is used for PWM when flashed for PWM</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <widget class="QGroupBox" name="gridGroupBox">
+            <property name="geometry">
+             <rect>
+              <x>9</x>
+              <y>9</y>
+              <width>242</width>
+              <height>499</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>TB1</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_42">
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_223">
+               <property name="text">
+                <string>Pin 22</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_212">
+               <property name="text">
+                <string>Pin 24</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_275">
+               <property name="text">
+                <string>Pin 16</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_251">
+               <property name="text">
+                <string>Pin 19</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="0">
+              <widget class="QLabel" name="label_282">
+               <property name="text">
+                <string>Pin 9</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_241">
+               <property name="text">
+                <string>Pin 20</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="0">
+              <widget class="QLabel" name="label_278">
+               <property name="text">
+                <string>Pin 13</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="label_276">
+               <property name="text">
+                <string>Pin 15</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="0">
+              <widget class="QLabel" name="label_280">
+               <property name="text">
+                <string>Pin 11</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="0">
+              <widget class="QLabel" name="label_283">
+               <property name="text">
+                <string>Pin 8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_261">
+               <property name="text">
+                <string>Pin 18</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="0">
+              <widget class="QLabel" name="label_279">
+               <property name="text">
+                <string>Pin 12</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_213">
+               <property name="text">
+                <string>Pin 23</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="0">
+              <widget class="QLabel" name="label_277">
+               <property name="text">
+                <string>Pin 14</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_231">
+               <property name="text">
+                <string>Pin 21</string>
+               </property>
+              </widget>
+             </item>
+             <item row="17" column="0">
+              <widget class="QLabel" name="label_284">
+               <property name="text">
+                <string>Pin 7</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="0">
+              <widget class="QLabel" name="label_285">
+               <property name="text">
+                <string>Pin 6</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="0">
+              <widget class="QLabel" name="label_286">
+               <property name="text">
+                <string>Pin 5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="0">
+              <widget class="QLabel" name="label_287">
+               <property name="text">
+                <string>Pin 4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="0">
+              <widget class="QLabel" name="label_288">
+               <property name="text">
+                <string>Pin 3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="0">
+              <widget class="QLabel" name="label_289">
+               <property name="text">
+                <string>Pin 2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="0">
+              <widget class="QLabel" name="label_290">
+               <property name="text">
+                <string>Pin 1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="14" column="0">
+              <widget class="QLabel" name="label_281">
+               <property name="text">
+                <string>Pin 10</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_274">
+               <property name="text">
+                <string>Pin 17</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_291">
+               <property name="text">
+                <string>+5v</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="tb1p23LB">
+               <property name="text">
+                <string>Direction 3 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="tb1p22LB">
+               <property name="text">
+                <string>Direction 3 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="tb1p21LB">
+               <property name="text">
+                <string>Step 3 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="tb1p20LB">
+               <property name="text">
+                <string>Step 3 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="label_296">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLabel" name="label_297">
+               <property name="text">
+                <string>+5v</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLabel" name="label_298">
+               <property name="text">
+                <string>Direction 2 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QLabel" name="label_299">
+               <property name="text">
+                <string>Direction 2 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QLabel" name="label_300">
+               <property name="text">
+                <string>Step 2 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QLabel" name="label_301">
+               <property name="text">
+                <string>Step 2 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="1">
+              <widget class="QLabel" name="label_302">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="1">
+              <widget class="QLabel" name="label_303">
+               <property name="text">
+                <string>+5v</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="1">
+              <widget class="QLabel" name="label_304">
+               <property name="text">
+                <string>Direction 1 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="14" column="1">
+              <widget class="QLabel" name="label_305">
+               <property name="text">
+                <string>Direction 1 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="1">
+              <widget class="QLabel" name="label_306">
+               <property name="text">
+                <string>Step 1 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="1">
+              <widget class="QLabel" name="label_307">
+               <property name="text">
+                <string>Step 1 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="17" column="1">
+              <widget class="QLabel" name="label_308">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="1">
+              <widget class="QLabel" name="label_309">
+               <property name="text">
+                <string>+5v</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="1">
+              <widget class="QLabel" name="label_310">
+               <property name="text">
+                <string>Direction 0 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="1">
+              <widget class="QLabel" name="label_311">
+               <property name="text">
+                <string>Direction 0 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="1">
+              <widget class="QLabel" name="label_312">
+               <property name="text">
+                <string>Step 0 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="1">
+              <widget class="QLabel" name="label_313">
+               <property name="text">
+                <string>Step 0 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="1">
+              <widget class="QLabel" name="label_314">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="gridGroupBox_2">
+            <property name="geometry">
+             <rect>
+              <x>257</x>
+              <y>9</y>
+              <width>242</width>
+              <height>499</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>TB2</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_43">
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_315">
+               <property name="text">
+                <string>Pin 22</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_316">
+               <property name="text">
+                <string>Pin 24</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_317">
+               <property name="text">
+                <string>Pin 16</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_318">
+               <property name="text">
+                <string>Pin 19</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="0">
+              <widget class="QLabel" name="label_319">
+               <property name="text">
+                <string>Pin 9</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_320">
+               <property name="text">
+                <string>Pin 20</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="0">
+              <widget class="QLabel" name="label_321">
+               <property name="text">
+                <string>Pin 13</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="label_322">
+               <property name="text">
+                <string>Pin 15</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="0">
+              <widget class="QLabel" name="label_323">
+               <property name="text">
+                <string>Pin 11</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="0">
+              <widget class="QLabel" name="label_324">
+               <property name="text">
+                <string>Pin 8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_325">
+               <property name="text">
+                <string>Pin 18</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="0">
+              <widget class="QLabel" name="label_326">
+               <property name="text">
+                <string>Pin 12</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_327">
+               <property name="text">
+                <string>Pin 23</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="0">
+              <widget class="QLabel" name="label_328">
+               <property name="text">
+                <string>Pin 14</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_329">
+               <property name="text">
+                <string>Pin 21</string>
+               </property>
+              </widget>
+             </item>
+             <item row="17" column="0">
+              <widget class="QLabel" name="label_330">
+               <property name="text">
+                <string>Pin 7</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="0">
+              <widget class="QLabel" name="label_331">
+               <property name="text">
+                <string>Pin 6</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="0">
+              <widget class="QLabel" name="label_332">
+               <property name="text">
+                <string>Pin 5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="0">
+              <widget class="QLabel" name="label_333">
+               <property name="text">
+                <string>Pin 4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="0">
+              <widget class="QLabel" name="label_334">
+               <property name="text">
+                <string>Pin 3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="0">
+              <widget class="QLabel" name="label_335">
+               <property name="text">
+                <string>Pin 2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="0">
+              <widget class="QLabel" name="label_336">
+               <property name="text">
+                <string>Pin 1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="14" column="0">
+              <widget class="QLabel" name="label_337">
+               <property name="text">
+                <string>Pin 10</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_338">
+               <property name="text">
+                <string>Pin 17</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_339">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="label_340">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="label_341">
+               <property name="text">
+                <string>5v In</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="label_342">
+               <property name="text">
+                <string>5v In</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="label_343">
+               <property name="text">
+                <string>+5v</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="label_344">
+               <property name="text">
+                <string>RS-422/485 TX-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLabel" name="label_345">
+               <property name="text">
+                <string>RS-422/485 TX+</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLabel" name="label_346">
+               <property name="text">
+                <string>RS-422/485 RX-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QLabel" name="label_347">
+               <property name="text">
+                <string>RS-422/485 RX+</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QLabel" name="label_348">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QLabel" name="label_349">
+               <property name="text">
+                <string>Index -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="1">
+              <widget class="QLabel" name="label_350">
+               <property name="text">
+                <string>Index +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="1">
+              <widget class="QLabel" name="label_351">
+               <property name="text">
+                <string>+5v</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="1">
+              <widget class="QLabel" name="label_352">
+               <property name="text">
+                <string>Encoder B-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="14" column="1">
+              <widget class="QLabel" name="label_353">
+               <property name="text">
+                <string>Encoder B+</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="1">
+              <widget class="QLabel" name="label_354">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="1">
+              <widget class="QLabel" name="label_355">
+               <property name="text">
+                <string>Encoder A-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="17" column="1">
+              <widget class="QLabel" name="label_356">
+               <property name="text">
+                <string>Encoder A+</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="1">
+              <widget class="QLabel" name="label_357">
+               <property name="text">
+                <string>+5v</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="1">
+              <widget class="QLabel" name="tb2p5LB">
+               <property name="text">
+                <string>Direction 4 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="1">
+              <widget class="QLabel" name="tb2p4LB">
+               <property name="text">
+                <string>Direction 4 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="1">
+              <widget class="QLabel" name="tb2p3LB">
+               <property name="text">
+                <string>Step 4 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="1">
+              <widget class="QLabel" name="tb2p2LB">
+               <property name="text">
+                <string>Step 4 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="1">
+              <widget class="QLabel" name="label_362">
+               <property name="text">
+                <string>Ground</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="gridGroupBox_3">
+            <property name="geometry">
+             <rect>
+              <x>505</x>
+              <y>9</y>
+              <width>242</width>
+              <height>499</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>TB3</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_44">
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_363">
+               <property name="text">
+                <string>Pin 22</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_364">
+               <property name="text">
+                <string>Pin 24</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_365">
+               <property name="text">
+                <string>Pin 16</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_366">
+               <property name="text">
+                <string>Pin 19</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="0">
+              <widget class="QLabel" name="label_367">
+               <property name="text">
+                <string>Pin 9</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_368">
+               <property name="text">
+                <string>Pin 20</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="0">
+              <widget class="QLabel" name="label_369">
+               <property name="text">
+                <string>Pin 13</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="label_370">
+               <property name="text">
+                <string>Pin 15</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="0">
+              <widget class="QLabel" name="label_371">
+               <property name="text">
+                <string>Pin 11</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="0">
+              <widget class="QLabel" name="label_372">
+               <property name="text">
+                <string>Pin 8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_373">
+               <property name="text">
+                <string>Pin 18</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="0">
+              <widget class="QLabel" name="label_374">
+               <property name="text">
+                <string>Pin 12</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_375">
+               <property name="text">
+                <string>Pin 23</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="0">
+              <widget class="QLabel" name="label_376">
+               <property name="text">
+                <string>Pin 14</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_377">
+               <property name="text">
+                <string>Pin 21</string>
+               </property>
+              </widget>
+             </item>
+             <item row="17" column="0">
+              <widget class="QLabel" name="label_378">
+               <property name="text">
+                <string>Pin 7</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="0">
+              <widget class="QLabel" name="label_379">
+               <property name="text">
+                <string>Pin 6</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="0">
+              <widget class="QLabel" name="label_380">
+               <property name="text">
+                <string>Pin 5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="0">
+              <widget class="QLabel" name="label_381">
+               <property name="text">
+                <string>Pin 4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="0">
+              <widget class="QLabel" name="label_382">
+               <property name="text">
+                <string>Pin 3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="0">
+              <widget class="QLabel" name="label_383">
+               <property name="text">
+                <string>Pin 2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="0">
+              <widget class="QLabel" name="label_384">
+               <property name="text">
+                <string>Pin 1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="14" column="0">
+              <widget class="QLabel" name="label_385">
+               <property name="text">
+                <string>Pin 10</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_386">
+               <property name="text">
+                <string>Pin 17</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_387">
+               <property name="text">
+                <string>Output 5 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="label_388">
+               <property name="text">
+                <string>Output 5 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="label_389">
+               <property name="text">
+                <string>Output 4 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="label_390">
+               <property name="text">
+                <string>Output 4 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="label_391">
+               <property name="text">
+                <string>Output 3 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="label_392">
+               <property name="text">
+                <string>Output 3 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLabel" name="label_393">
+               <property name="text">
+                <string>Output 2 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLabel" name="label_394">
+               <property name="text">
+                <string>Output 2 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QLabel" name="label_395">
+               <property name="text">
+                <string>Output 1 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QLabel" name="label_396">
+               <property name="text">
+                <string>Output 1 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QLabel" name="label_397">
+               <property name="text">
+                <string>Output 0 +</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="1">
+              <widget class="QLabel" name="label_398">
+               <property name="text">
+                <string>Output 0 -</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="1">
+              <widget class="QLabel" name="label_399">
+               <property name="text">
+                <string>Input Common</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="1">
+              <widget class="QLabel" name="label_400">
+               <property name="text">
+                <string>Input 10</string>
+               </property>
+              </widget>
+             </item>
+             <item row="14" column="1">
+              <widget class="QLabel" name="label_401">
+               <property name="text">
+                <string>Input 9</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="1">
+              <widget class="QLabel" name="label_402">
+               <property name="text">
+                <string>Input 8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="1">
+              <widget class="QLabel" name="label_403">
+               <property name="text">
+                <string>Input 7</string>
+               </property>
+              </widget>
+             </item>
+             <item row="17" column="1">
+              <widget class="QLabel" name="label_404">
+               <property name="text">
+                <string>Input 6</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="1">
+              <widget class="QLabel" name="label_405">
+               <property name="text">
+                <string>Input 5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="1">
+              <widget class="QLabel" name="label_406">
+               <property name="text">
+                <string>Input 4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="1">
+              <widget class="QLabel" name="label_407">
+               <property name="text">
+                <string>Input 3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="1">
+              <widget class="QLabel" name="label_408">
+               <property name="text">
+                <string>Input 2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="1">
+              <widget class="QLabel" name="label_409">
+               <property name="text">
+                <string>Input 1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="1">
+              <widget class="QLabel" name="label_410">
+               <property name="text">
+                <string>Input 0</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QLabel" name="label_54">
+            <property name="geometry">
+             <rect>
+              <x>9</x>
+              <y>514</y>
+              <width>475</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Note: Step and Direction 4 is used for PWM when flashed for PWM</string>
+            </property>
+           </widget>
           </widget>
           <widget class="QWidget" name="tab_5">
            <attribute name="title">
@@ -7989,7 +8050,6 @@ max speed</string>
   <tabstop>output_3</tabstop>
   <tabstop>output_4</tabstop>
   <tabstop>manualToolChangeCB</tabstop>
-  <tabstop>haluiCB</tabstop>
   <tabstop>pyvcpCB</tabstop>
   <tabstop>gladevcpCB</tabstop>
   <tabstop>debugCombo</tabstop>
