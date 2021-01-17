@@ -9,6 +9,16 @@ def setupCombo(combo):
 		['192.168.1.121', '"192.168.1.121"']
 		]
 
+	if combo == 'encoders':
+		comboList = [
+		['Default', False],
+		['1', '1'],
+		['2', '2'],
+		['3', '3'],
+		['4', '4'],
+		['5', '5']
+		]
+
 	if combo == 'axis':
 		comboList = [
 		['Select', False],
@@ -145,16 +155,17 @@ def setupCombo(combo):
 		comboList = [
 		['Select', False],
 		['5 StepGens ', '7i96d.bit'],
-		['4 StepGens 1 PWM', '7i96d_1pwm.bit'],
-		['7i96 + 5abob', '7i96_5abob.bit'],
-		['7i96 + 6 Encoders', '7i96_6enc_d.bit'],
-		['7i96 + 7i76', '7i96_7i76d.bit'],
-		['7i96 + 7i77', '7i96_7i77d.bit'],
-		['7i96 + 7i78', '7i96_7i78d.bit'],
-		['7i96 + 7i85', '7i96_7i85d.bit'],
-		['7i96 + 7i85S', '7i96_7i85sd.bit'],
-		['7i96 + 7i89', '7i96_7i89d.bit'],
-		['7i96 + G540', '7i96_g540dpl.bit']
+		['4 StepGens 1 PWM', 'firmware/7i96d_1pwm.bit'],
+		['7i96 + 5abob', 'firmware/7i96_5abob.bit'],
+		['7i96 + 6 Encoders', 'firmware/7i96_6enc_d.bit'],
+		['7i96 + 7i76', 'firmware/7i96_7i76d.bit'],
+		['7i96 + 7i77', 'firmware/7i96_7i77d.bit'],
+		['7i96 + 7i78', 'firmware/7i96_7i78d.bit'],
+		['7i96 + 7i85', 'firmware/7i96_7i85d.bit'],
+		['7i96 + 7i85S', 'firmware/7i96_7i85sd.bit'],
+		['7i96 1 PWM + 7i85S', 'firmware/7i961pwm_7i85s.bit'],
+		['7i96 + 7i89', 'firmware/7i96_7i89d.bit'],
+		['7i96 + G540', 'firmware/7i96_g540dpl.bit']
 		]
 
 	if combo == 'spindle':

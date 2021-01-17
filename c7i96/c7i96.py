@@ -5,7 +5,7 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
 
-"""
+
 # for local testing
 import buildcombos
 import loadini
@@ -28,7 +28,7 @@ import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
-
+"""
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
 class MainWindow(QMainWindow):
@@ -487,6 +487,8 @@ class MainWindow(QMainWindow):
 	def buildCB(self):
 		for item in buildcombos.setupCombo('ipAddress'):
 			self.ipAddressCB.addItem(item[0], item[1])
+		for item in buildcombos.setupCombo('encoders'):
+			self.encodersCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('boards'):
 			self.boardsCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('display'):

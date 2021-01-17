@@ -9,7 +9,7 @@ def iniList():
 	iniList.append(['HOSTMOT2', 'IPADDRESS', 'ipAddressCB'])
 	iniList.append(['HOSTMOT2', 'BOARD', 'boardCB'])
 	iniList.append(['HOSTMOT2', 'STEPGENS', 'stepgensSB'])
-	iniList.append(['HOSTMOT2', 'ENCODERS', 'encodersSB'])
+	iniList.append(['HOSTMOT2', 'ENCODERS', 'encodersCB'])
 	iniList.append(['HOSTMOT2', 'SSERIAL_PORT', 'sserialSB'])
 
 	iniList.append(['DISPLAY', 'DISPLAY', 'guiCB'])

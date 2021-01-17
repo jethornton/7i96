@@ -46,7 +46,8 @@ def buildini(parent):
 	iniContents.append('IPADDRESS = {}\n'.format(parent.ipAddressCB.itemData(parent.ipAddressCB.currentIndex())))
 	iniContents.append('BOARD = 7i96\n')
 	iniContents.append('STEPGENS = {}\n'.format(str(parent.stepgensSB.value())))
-	iniContents.append('ENCODERS = {}\n'.format(str(parent.encodersSB.value())))
+	if parent.encodersCB.itemData(parent.spindleTypeCB.currentIndex()):
+		iniContents.append('ENCODERS = {}\n'.format(parent.guiCB.itemData(parent.encodersCB.currentIndex())))
 	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
 		iniContents.append('PWMS = 1\n')
 	iniContents.append('SSERIAL_PORT = {}\n'.format(str(parent.sserialSB.value())))

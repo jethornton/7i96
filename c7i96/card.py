@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QInputDialog, QLineEdit
 
 def readCard(parent):
 
-	result = subprocess.run([parent.mesaflash], stdout=subprocess.PIPE,\
+	result = subprocess.run(["mesaflash"], stdout=subprocess.PIPE,\
 	stderr=subprocess.PIPE, universal_newlines=True)
 	#print(result.returncode)
 	if result.returncode != 0:
@@ -16,7 +16,7 @@ a terminal with\nsudo apt-get install libpci-dev')
 		parent.outputLB.setText('An IP address must be selected')
 		return
 	ipAddress = parent.ipAddressCB.currentText()
-	command = [parent.mesaflash, "--device", "7i92", "--addr", ipAddress, "--readhmid"]
+	command = ["mesaflash", "--device", "7i96", "--addr", ipAddress, "--readhmid"]
 
 	try:
 		output = subprocess.check_output(command, stderr=subprocess.PIPE)
@@ -36,11 +36,11 @@ def flashCard(parent):
 	if not parent.ipAddressCB.currentData():
 		parent.outputLB.setText('An IP address must be selected')
 		return
-	parent.statusbar.showMessage('Flashing the 7i92...')
+	parent.statusbar.showMessage('Flashing the 7i96...')
 	parent.outputLB.setText('')
 	ipAddress = parent.ipAddressCB.currentText()
 	firmware = os.path.join(os.path.dirname(__file__), parent.firmwareCB.currentData())
-	command = [parent.mesaflash, '--device', '7i92', '--addr', ipAddress, '--write', firmware]
+	command = ["mesaflash", '--device', '7i96', '--addr', ipAddress, '--write', firmware]
 	output = []
 
 	with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT) as proc:
@@ -56,7 +56,7 @@ def reloadCard(parent):
 		return
 
 	ipAddress = parent.ipAddressCB.currentText()
-	command = [parent.mesaflash, '--device', '7i92', '--addr', ipAddress, '--reload']
+	command = ["mesaflash", '--device', '7i96', '--addr', ipAddress, '--reload']
 	output = []
 
 	process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -64,7 +64,7 @@ def reloadCard(parent):
 	if process.returncode == 0:
 		parent.outputLB.setText('Reload Sucessful')
 	elif process.returncode == 255:
-		parent.outputLB.setText('No 7i92 board found')
+		parent.outputLB.setText('No 7i96 board found')
 	else:
 		parent.outputLB.setText('Reload returned an error code of {}'.format(process.returncode))
 

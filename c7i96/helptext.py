@@ -49,6 +49,8 @@ To read the current firmware select the IP Address first.
 	After reading the current firmware the Copy button will place the text in the clipboard.
 To flash a card select the firmware and IP Address first.
 	After flashing Reload or Power Cycle the card
+
+Only select encoders and stepgens if you want less that default.
 """
 
 text_1 = """
