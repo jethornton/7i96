@@ -12,5 +12,6 @@ ini file.
 See the [documentation](https://jethornton.github.io/7i96/) for installation and
 usage instructions.
 
-Note: The master branch might be broken from time to time while I improve the
-configuration tool. The 0.1.5 branch should be stable.
+Note: The 7i76 requires LinuxCNC 2.8 Uspace or newer to work.
+[Debian 10 RT](https://gnipsel.com/linuxcnc/uspace/debian10-rt.html)
+[LinuxCNC 2.8](ttps://gnipsel.com/linuxcnc/uspace/debian10-emc.html)
