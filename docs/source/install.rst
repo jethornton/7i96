@@ -4,6 +4,9 @@ Installing
 
 7i96 Configuration Tool
 
+.. Note:: Tested on Debian 10, no other OS is supported but it should
+	work on other Debian type OS's.
+
 I now have a Debian deb for installing 7i96!!!
 
 Download the `deb <https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.2.3-1_all.deb>`_
