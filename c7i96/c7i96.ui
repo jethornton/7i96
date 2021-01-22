@@ -80,7 +80,7 @@ QGroupBox::title {
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QPushButton" name="testConnectionPB">
+            <widget class="QPushButton" name="readCardPB">
              <property name="text">
               <string>Read</string>
              </property>
@@ -125,28 +125,7 @@ QGroupBox::title {
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QLabel" name="outputLB">
-              <property name="font">
-               <font>
-                <family>Courier 10 Pitch</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::Box</enum>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-              </property>
-              <property name="textInteractionFlags">
-               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
-              </property>
-             </widget>
+             <widget class="QPlainTextEdit" name="outputPTE"/>
             </item>
            </layout>
           </widget>
@@ -7369,49 +7348,38 @@ max speed</string>
            <attribute name="title">
             <string>Raw output</string>
            </attribute>
-           <widget class="QScrollArea" name="scrollArea_4">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>10</y>
-              <width>711</width>
-              <height>441</height>
-             </rect>
-            </property>
-            <property name="widgetResizable">
-             <bool>true</bool>
-            </property>
-            <widget class="QWidget" name="scrollAreaWidgetContents_4">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>709</width>
-               <height>439</height>
-              </rect>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_41">
-              <item row="0" column="0">
-               <widget class="QLabel" name="pinsLB">
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </widget>
+           <layout class="QGridLayout" name="gridLayout_54">
+            <item row="0" column="0">
+             <widget class="QScrollArea" name="scrollArea_4">
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_4">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>140</width>
+                 <height>122</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_41">
+                <item row="0" column="0">
+                 <widget class="QPlainTextEdit" name="pinsPTE"/>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QPushButton" name="pinsPB">
+                  <property name="text">
+                   <string>Get Card Pinout</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
           </widget>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pinsPB">
-          <property name="text">
-           <string>Get Pins</string>
-          </property>
          </widget>
         </item>
        </layout>
@@ -7420,67 +7388,45 @@ max speed</string>
        <attribute name="title">
         <string>Info</string>
        </attribute>
-       <widget class="QPushButton" name="nicPB">
-        <property name="geometry">
-         <rect>
-          <x>500</x>
-          <y>570</y>
-          <width>261</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Interface Card&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="text">
-         <string>NIC</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="cpuPB">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>570</y>
-          <width>241</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>Central Processing Unit</string>
-        </property>
-        <property name="text">
-         <string>CPU</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="infoLB">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>740</width>
-          <height>557</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Courier</family>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::Box</enum>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-        </property>
-        <property name="textInteractionFlags">
-         <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_52">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="nicPB">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Network Interface Card&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>NIC</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="cpuPB">
+          <property name="toolTip">
+           <string>Central Processing Unit</string>
+          </property>
+          <property name="text">
+           <string>CPU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="copyInfoPB">
+          <property name="text">
+           <string>Copy</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QPlainTextEdit" name="infoPTE">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="pc">
        <attribute name="title">
@@ -7674,30 +7620,7 @@ max speed</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_40">
           <item row="0" column="0">
-           <widget class="QLabel" name="tMaxLB">
-            <property name="font">
-             <font>
-              <family>Courier</family>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::ClickFocus</enum>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Box</enum>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-            </property>
-            <property name="textInteractionFlags">
-             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
-            </property>
-           </widget>
+           <widget class="QPlainTextEdit" name="tmaxPTE"/>
           </item>
          </layout>
         </widget>
@@ -7753,6 +7676,19 @@ max speed</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The 7i96 must be connected and LinuxCNC running a&lt;br/&gt;7i96 configuration before trying to read tMax.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="testMePB">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>200</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Test Me</string>
         </property>
        </widget>
       </widget>
@@ -7880,10 +7816,16 @@ max speed</string>
    <property name="text">
     <string>Save Pins</string>
    </property>
+   <property name="toolTip">
+    <string>Save HAL Pins to a File</string>
+   </property>
   </action>
   <action name="actionSaveSignals">
    <property name="text">
     <string>Save Signals</string>
+   </property>
+   <property name="toolTip">
+    <string>Save HAL Signals to a File</string>
    </property>
   </action>
  </widget>
@@ -8048,7 +7990,7 @@ max speed</string>
   <tabstop>reloadPB</tabstop>
   <tabstop>flashPB</tabstop>
   <tabstop>firmwareCB</tabstop>
-  <tabstop>testConnectionPB</tabstop>
+  <tabstop>readCardPB</tabstop>
   <tabstop>copyPB</tabstop>
   <tabstop>jointType_3</tabstop>
   <tabstop>ipAddressCB</tabstop>
@@ -8121,7 +8063,6 @@ max speed</string>
   <tabstop>ladderFloatOutputsSB</tabstop>
   <tabstop>tabWidget_2</tabstop>
   <tabstop>scrollArea_4</tabstop>
-  <tabstop>pinsPB</tabstop>
   <tabstop>calcNicPB</tabstop>
   <tabstop>speedCB</tabstop>
   <tabstop>cpuSpeedLE</tabstop>

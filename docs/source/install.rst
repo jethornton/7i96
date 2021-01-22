@@ -6,7 +6,7 @@ Installing
 
 I now have a Debian deb for installing 7i96!!!
 
-Download the `deb <https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.2.2-1_all.deb>`_
+Download the `deb <https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.2.3-1_all.deb>`_
 
 Or use wget from a terminal
 ::

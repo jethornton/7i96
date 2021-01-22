@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import sys, os, configparser, platform, subprocess
+from functools import partial
 from PyQt5 import uic, QtWidgets
-from PyQt5.QtCore import pyqtSlot, Qt
+from PyQt5.QtCore import pyqtSlot, Qt, QProcess
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
 
 """
@@ -12,22 +13,30 @@ import loadini
 import checkit
 import buildfiles
 import card
+import pcinfo
+#import extcmd
+from extcmd import ext_cmd as extCmd
+from extjob import extjob
 import helptext
 from dialog import Ui_Dialog as errorDialog
 from help import Ui_Dialog as helpDialog
 from about import Ui_about as aboutDialog
-"""
 
+"""
 # for installed deb
 import c7i96.buildcombos as buildcombos
 import c7i96.loadini as loadini
 import c7i96.checkit as checkit
 import c7i96.buildfiles as buildfiles
 import c7i96.card as card
+import c7i96.pcinfo as pcinfo
+import c7i96.extjob as extjob
+from c7i96.extcmd import ext_cmd as extCmd
 import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
+
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
@@ -35,7 +44,7 @@ class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
 		uic.loadUi(UI_FILE, self)
-		self.version = '1.1'
+		self.version = '1.2.3'
 		self.config = configparser.ConfigParser(strict=False)
 		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
 		self.configNameUnderscored = ''
@@ -57,6 +66,9 @@ class MainWindow(QMainWindow):
 			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 		self.units = False
+		self.extcmd = extCmd()
+		self.extjob = extjob
+		self.results = ""
 
 		self.checks()
 
@@ -68,7 +80,7 @@ class MainWindow(QMainWindow):
 			subprocess.run('mesaflash', check=True, capture_output=True)
 		except FileNotFoundError:
 			t = "Mesaflash not found go to\nhttps://github.com/LinuxCNC/mesaflash\nfor installation instructions."
-			self.outputLB.setText(t)
+			self.outputPTE.appendPlainText(t)
 			self.testConnectionPB.setEnabled(False)
 			self.flashPB.setEnabled(False)
 			self.reloadPB.setEnabled(False)
@@ -98,6 +110,8 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionSavePins_triggered(self):
+		card.saveHalPins(self)
+		"""
 		msgBox = QMessageBox()
 		msgBox.setIcon(QMessageBox.Information)
 		msgBox.setWindowTitle("Save Configuration Pins")
@@ -115,6 +129,7 @@ class MainWindow(QMainWindow):
 			returnValue = msgBox.exec()
 			if returnValue == QMessageBox.Ok:
 				self.savePins()
+		"""
 
 	@pyqtSlot()
 	def on_actionSaveSignals_triggered(self):
@@ -151,7 +166,6 @@ class MainWindow(QMainWindow):
 		dialog = QtWidgets.QDialog()
 		dialog.ui = aboutDialog()
 		dialog.ui.setupUi(dialog)
-		#dialog.ui.label.setText(text)
 		dialog.ui.versionLB.setText('Version {}'.format(self.version))
 		dialog.ui.systemLB.setText(self.pcStats.system)
 		dialog.ui.releaseLB.setText('Kernel {}'.format(self.pcStats.release))
@@ -243,45 +257,41 @@ class MainWindow(QMainWindow):
 			getattr(self, 'driveCB_' + str(i)).currentIndexChanged.connect(self.driveChanged)
 
 		self.pidDefault_s.clicked.connect(self.pidSetDefault)
-		self.testConnectionPB.clicked.connect(self.cardRead)
-		self.flashPB.clicked.connect(self.flashCard)
-		self.reloadPB.clicked.connect(self.reloadCard)
 		self.copyPB.clicked.connect(self.copyOutput)
+		self.copyInfoPB.clicked.connect(self.copyInfo)
 		self.spindleTypeCB.currentIndexChanged.connect(self.spindleTypeChanged)
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
-		self.pinsPB.clicked.connect(self.getPins)
-		self.cpuPB.clicked.connect(self.cpuInfo)
-		self.nicPB.clicked.connect(self.nicInfo)
-		self.calcNicPB.clicked.connect(self.calcNic)
-		self.readTmaxPB.clicked.connect(self.readTmax)
+		self.cpuPB.clicked.connect(partial(pcinfo.cpuInfo, self))
+		self.nicPB.clicked.connect(partial(pcinfo.nicInfo, self))
+		self.calcNicPB.clicked.connect(partial(pcinfo.nicCalc, self))
+		self.readTmaxPB.clicked.connect(partial(pcinfo.readTmax, self))
+		#     obj.signal.connect(partial(fun, args1, arg2, ... ))
+		self.readCardPB.clicked.connect(partial(card.readCard, self))
+		self.flashPB.clicked.connect(partial(card.flashCard, self))
+		self.reloadPB.clicked.connect(partial(card.reloadCard, self))
+		self.pinsPB.clicked.connect(partial(card.getCardPins, self))
 
+	"""
 	def readTmax(self):
 		card.readTmax(self)
 
 	def calcNic(self):
 		card.nicCalc(self)
 
-	def getPins(self):
-		card.pins(self)
-
-	def cardRead(self):
-		card.readCard(self)
-
-	def flashCard(self):
-		card.flashCard(self)
-
-	def reloadCard(self):
-		card.reloadCard(self)
-
 	def cpuInfo(self):
-		card.cpuInfo(self)
+		self.extcmd.job(cmd="lscpu", args=None, dest=self.infoTE)
 
 	def nicInfo(self):
-		card.nicInfo(self)
-
+		self.extcmd.pipe_job(cmd1="lspci", arg1=None, cmd2="grep",
+			arg2="Ethernet", dest=self.infoTE)
+	"""
 
 	def copyOutput(self):
-		self.qclip.setText(self.outputLB.text())
+		self.qclip.setText(self.outputPTE.toPlainText())
+		self.statusbar.showMessage('Output copied to clipboard')
+
+	def copyInfo(self): # this is a QPlainTextEdit
+		self.qclip.setText(self.infoTE.toPlainText())
 		self.statusbar.showMessage('Output copied to clipboard')
 
 	def isNumber(self, s):
@@ -551,9 +561,33 @@ class MainWindow(QMainWindow):
 		dialog = QtWidgets.QDialog()
 		dialog.ui = errorDialog()
 		dialog.ui.setupUi(dialog)
-		#dialog.ui.windowTitle('Configuration Errors')
 		dialog.ui.label.setText(text)
 		dialog.exec_()
+
+	def errorMsg(self, text, title=None):
+		msgBox = QMessageBox()
+		msgBox.setIcon(QMessageBox.Warning)
+		msgBox.setWindowTitle(title)
+		msgBox.setText(text)
+		msgBox.setStandardButtons(QMessageBox.Cancel | QMessageBox.Ok)
+		returnValue = msgBox.exec()
+		if returnValue == QMessageBox.Ok:
+			return True
+		else:
+			return False
+
+	def errorMsgOk(self, text, title=None):
+		msgBox = QMessageBox()
+		msgBox.setIcon(QMessageBox.Warning)
+		msgBox.setWindowTitle(title)
+		msgBox.setText(text)
+		msgBox.setStandardButtons(QMessageBox.Ok)
+		returnValue = msgBox.exec()
+		if returnValue == QMessageBox.Ok:
+			return True
+		else:
+			return False
+
 
 	def help(self, index):
 		dialog = QtWidgets.QDialog()
