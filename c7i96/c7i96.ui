@@ -125,7 +125,13 @@ QGroupBox::title {
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QPlainTextEdit" name="outputPTE"/>
+             <widget class="QPlainTextEdit" name="outputPTE">
+              <property name="font">
+               <font>
+                <family>Courier</family>
+               </font>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
@@ -7359,13 +7365,19 @@ max speed</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>140</width>
-                 <height>122</height>
+                 <width>736</width>
+                 <height>557</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_41">
                 <item row="0" column="0">
-                 <widget class="QPlainTextEdit" name="pinsPTE"/>
+                 <widget class="QPlainTextEdit" name="pinsPTE">
+                  <property name="font">
+                   <font>
+                    <family>Courier</family>
+                   </font>
+                  </property>
+                 </widget>
                 </item>
                 <item row="1" column="0">
                  <widget class="QPushButton" name="pinsPB">
@@ -7420,6 +7432,11 @@ max speed</string>
          <widget class="QPlainTextEdit" name="infoPTE">
           <property name="enabled">
            <bool>true</bool>
+          </property>
+          <property name="font">
+           <font>
+            <family>Courier</family>
+           </font>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -7620,7 +7637,13 @@ max speed</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_40">
           <item row="0" column="0">
-           <widget class="QPlainTextEdit" name="tmaxPTE"/>
+           <widget class="QPlainTextEdit" name="tmaxPTE">
+            <property name="font">
+             <font>
+              <family>Courier</family>
+             </font>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
