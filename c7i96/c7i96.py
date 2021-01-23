@@ -6,7 +6,7 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt, QProcess
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
 
-"""
+
 # for local testing
 import buildcombos
 import loadini
@@ -16,7 +16,6 @@ import card
 import pcinfo
 #import extcmd
 from extcmd import ext_cmd as extCmd
-from extjob import extjob
 import helptext
 from dialog import Ui_Dialog as errorDialog
 from help import Ui_Dialog as helpDialog
@@ -30,13 +29,12 @@ import c7i96.checkit as checkit
 import c7i96.buildfiles as buildfiles
 import c7i96.card as card
 import c7i96.pcinfo as pcinfo
-import c7i96.extjob as extjob
 from c7i96.extcmd import ext_cmd as extCmd
 import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
-
+"""
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
@@ -67,7 +65,6 @@ class MainWindow(QMainWindow):
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 		self.units = False
 		self.extcmd = extCmd()
-		self.extjob = extjob
 		self.results = ""
 
 		self.checks()
@@ -111,25 +108,6 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionSavePins_triggered(self):
 		card.saveHalPins(self)
-		"""
-		msgBox = QMessageBox()
-		msgBox.setIcon(QMessageBox.Information)
-		msgBox.setWindowTitle("Save Configuration Pins")
-		if self.configName.text() == '':
-			msgBox.setText("A Configuration must be loaded!")
-			msgBox.setStandardButtons(QMessageBox.Ok)
-			returnValue = msgBox.exec()
-			if returnValue == QMessageBox.Ok:
-				return
-		if "0x48414c32" in subprocess.getoutput('ipcs'):
-			self.savePins()
-		else:
-			msgBox.setText("With your configuration\nrunning in Linuxcnc\npress OK")
-			msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-			returnValue = msgBox.exec()
-			if returnValue == QMessageBox.Ok:
-				self.savePins()
-		"""
 
 	@pyqtSlot()
 	def on_actionSaveSignals_triggered(self):
@@ -215,7 +193,6 @@ class MainWindow(QMainWindow):
 		else:
 			self.statusbar.showMessage('Build Misc Files Failed')
 
-
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
 		text, ok = QInputDialog.getText(self, 'Input Dialog','Enter New Configuration Name:')
@@ -271,21 +248,6 @@ class MainWindow(QMainWindow):
 		self.reloadPB.clicked.connect(partial(card.reloadCard, self))
 		self.pinsPB.clicked.connect(partial(card.getCardPins, self))
 
-	"""
-	def readTmax(self):
-		card.readTmax(self)
-
-	def calcNic(self):
-		card.nicCalc(self)
-
-	def cpuInfo(self):
-		self.extcmd.job(cmd="lscpu", args=None, dest=self.infoTE)
-
-	def nicInfo(self):
-		self.extcmd.pipe_job(cmd1="lspci", arg1=None, cmd2="grep",
-			arg2="Ethernet", dest=self.infoTE)
-	"""
-
 	def copyOutput(self):
 		self.qclip.setText(self.outputPTE.toPlainText())
 		self.statusbar.showMessage('Output copied to clipboard')
@@ -315,7 +277,6 @@ class MainWindow(QMainWindow):
 		if text:
 			fpm = str(float(text) * 60)
 			self.maxVelocityLbl.setText(f'{fpm} IPM')
-
 
 	def linearUnitsChanged(self):
 		if self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()) == 'inch':
@@ -588,14 +549,12 @@ class MainWindow(QMainWindow):
 		else:
 			return False
 
-
 	def help(self, index):
 		dialog = QtWidgets.QDialog()
 		dialog.ui = helpDialog()
 		dialog.ui.setupUi(dialog)
 		dialog.ui.label.setText(self.helpInfo(index))
 		dialog.exec_()
-
 
 def main():
 	app = QApplication(sys.argv)
