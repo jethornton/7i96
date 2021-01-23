@@ -10,7 +10,7 @@ Usage ext_cmd.pipe_job(self, cmd1="something", arg1="", cmd2="pipe to",
 arg2, "", dest=self.QPlainTextEdit)
 """
 
-class ext_cmd:
+class extcmd:
 	def __init__(self):
 		super().__init__()
 

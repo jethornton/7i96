@@ -15,7 +15,7 @@ import buildfiles
 import card
 import pcinfo
 #import extcmd
-from extcmd import ext_cmd as extCmd
+import extcmd
 import helptext
 from dialog import Ui_Dialog as errorDialog
 from help import Ui_Dialog as helpDialog
@@ -29,12 +29,11 @@ import c7i96.checkit as checkit
 import c7i96.buildfiles as buildfiles
 import c7i96.card as card
 import c7i96.pcinfo as pcinfo
-from c7i96.extcmd import ext_cmd as extCmd
+import c7i96.extcmd as extcmd
 import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
-
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
@@ -44,7 +43,7 @@ class MainWindow(QMainWindow):
 		uic.loadUi(UI_FILE, self)
 		self.version = '1.2.3'
 		self.config = configparser.ConfigParser(strict=False)
-		self.setWindowTitle('7i96 Configuration Tool Version {}'.format(self.version))
+		self.setWindowTitle(f'7i96 Configuration Tool Version {self.version}')
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
 		self.builddirs = buildfiles.builddirs
@@ -64,8 +63,8 @@ class MainWindow(QMainWindow):
 			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 		self.units = False
-		self.extcmd = extCmd()
 		self.results = ""
+		self.extcmd = extcmd.extcmd()
 
 		self.checks()
 
@@ -144,10 +143,10 @@ class MainWindow(QMainWindow):
 		dialog = QtWidgets.QDialog()
 		dialog.ui = aboutDialog()
 		dialog.ui.setupUi(dialog)
-		dialog.ui.versionLB.setText('Version {}'.format(self.version))
+		dialog.ui.versionLB.setText(f'Version {self.version}')
 		dialog.ui.systemLB.setText(self.pcStats.system)
-		dialog.ui.releaseLB.setText('Kernel {}'.format(self.pcStats.release))
-		dialog.ui.machineLB.setText('Processor {}'.format(self.pcStats.machine))
+		dialog.ui.releaseLB.setText(f'Kernel {self.pcStats.release}')
+		dialog.ui.machineLB.setText(f'Processor {self.pcStats.machine}')
 		if sys.maxsize > 2**32: # test for 64bit OS
 			dialog.ui.bitsLB.setText('64 bit OS')
 		else:
@@ -368,11 +367,11 @@ class MainWindow(QMainWindow):
 			self.errorDialog('Machine Tab:\nLinear Units must be selected')
 			return
 		accelTime = maxVelocity / maxAccel
-		getattr(self, 'timeJoint_' + joint).setText('{:.2f} seconds'.format(accelTime))
+		getattr(self, 'timeJoint_' + joint).setText(f'{accelTime:.2f} seconds')
 		accelDistance = accelTime * 0.5 * maxVelocity
-		getattr(self, 'distanceJoint_' + joint).setText('{:.2f} {}'.format(accelDistance, self.units))
+		getattr(self, 'distanceJoint_' + joint).setText('f{accelDistance:.2f} {self.units}')
 		stepRate = scale * maxVelocity
-		getattr(self, 'stepRateJoint_' + joint).setText('{:.0f} pulses'.format(abs(stepRate)))
+		getattr(self, 'stepRateJoint_' + joint).setText('f{abs(stepRate):.0f} pulses')
 
 	def spindleTypeChanged(self): 
 		#print(self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()))

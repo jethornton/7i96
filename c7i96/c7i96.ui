@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>766</height>
+    <width>900</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,8 +119,8 @@ QGroupBox::title {
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>758</width>
-             <height>345</height>
+             <width>858</width>
+             <height>379</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout">
@@ -7724,7 +7724,7 @@ max speed</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>900</width>
      <height>25</height>
     </rect>
    </property>

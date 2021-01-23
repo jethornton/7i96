@@ -34,7 +34,7 @@ def getCardPins(parent):
 	if check_ip(parent):
 		with open('temp.hal', 'w') as f:
 			f.write('loadrt hostmot2\n')
-			f.write('loadrt hm2_eth board_ip={}\n'.format(parent.ipAddressCB.currentData()))
+			f.write(f'loadrt hm2_eth board_ip={parent.ipAddressCB.currentData()}\n')
 			f.write('quit')
 		arguments = ["-f", "temp.hal"]
 		parent.extcmd.job(cmd="halrun", args=arguments, dest=parent.pinsPTE, clean='temp.hal')
