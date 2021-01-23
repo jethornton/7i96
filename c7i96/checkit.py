@@ -58,7 +58,8 @@ def config(parent):
 	else: #check the joints
 		# make this a loop getattr(parent, '_' + str(index))
 		for index in range(5):
-			if not getattr(parent, 'axisCB_' + str(index)).currentData():
+			print(getattr(parent, 'axisCB_' + str(index)).currentData())
+			if getattr(parent, 'axisCB_' + str(index)).currentData():
 				if not getattr(parent, 'scale_' + str(index)).text():
 					tabError = True
 					configErrors.append('\tThe Scale must be specified for Joint {}'.format(index))
