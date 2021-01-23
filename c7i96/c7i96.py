@@ -6,7 +6,7 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt, QProcess
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
 
-
+"""
 # for local testing
 import buildcombos
 import loadini
@@ -34,7 +34,7 @@ import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
-"""
+
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
