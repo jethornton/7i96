@@ -58,7 +58,6 @@ def config(parent):
 	else: #check the joints
 		# make this a loop getattr(parent, '_' + str(index))
 		for index in range(5):
-			print(getattr(parent, 'axisCB_' + str(index)).currentData())
 			if getattr(parent, 'axisCB_' + str(index)).currentData():
 				if not getattr(parent, 'scale_' + str(index)).text():
 					tabError = True
