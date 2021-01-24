@@ -320,6 +320,11 @@ class MainWindow(QMainWindow):
 				self.stepgensCB.addItem(item[0], item[1])
 			for item in buildcombos.setupCombo('pwms_' + pwms):
 				self.pwmsCB.addItem(item[0], item[1])
+			if pwms != '0':
+				self.spindleTypeCB.setEnabled(True)
+			else:
+				self.spindleTypeCB.setEnabled(False)
+				self.spindleTypeCB.setCurrentIndex(0)
 		else:
 			for item in buildcombos.setupCombo('encoders'):
 				self.encodersCB.addItem(item[0], item[1])
