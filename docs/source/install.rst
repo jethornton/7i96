@@ -7,6 +7,8 @@ Installing
 .. Note:: Tested on Debian 10, no other OS is supported but it should
 	work on other Debian type OS's.
 
+.. Note:: Requires Python 3.6 or newer to work.
+
 I now have a Debian deb for installing 7i96!!!
 
 Download the `deb <https://github.com/jethornton/7i96/raw/master/deb_dist/python3-c7i96_1.2.4-1_all.deb>`_
