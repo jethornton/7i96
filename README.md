@@ -9,6 +9,8 @@ Machine > Calibration to tune each axis. Save the values to the ini file and
 next time you run the 7i96 Configuration Tool it will read the values from the
 ini file.
 
+The 7i96 Configuration Tool requires Python 3.6 or newer to work.
+
 See the [documentation](https://jethornton.github.io/7i96/) for installation and
 usage instructions.
 
