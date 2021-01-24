@@ -42,116 +42,6 @@ QGroupBox::title {
         <string>Machine</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_49">
-        <item row="2" column="1" colspan="2">
-         <widget class="QGroupBox" name="gridGroupBox">
-          <property name="styleSheet">
-           <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
-          </property>
-          <property name="title">
-           <string> Firmware Flasher</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_29">
-           <property name="topMargin">
-            <number>15</number>
-           </property>
-           <item row="1" column="2">
-            <widget class="QPushButton" name="reloadPB">
-             <property name="text">
-              <string>Reload</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QPushButton" name="flashPB">
-             <property name="text">
-              <string>Flash</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="readCardPB">
-             <property name="text">
-              <string>Read</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="QPushButton" name="copyPB">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copy the Output&lt;br/&gt;to the clipboard&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="text">
-              <string>Copy</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0" colspan="4">
-            <widget class="QComboBox" name="firmwareCB">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="3" column="0" colspan="3">
-         <widget class="QScrollArea" name="scrollArea">
-          <property name="widgetResizable">
-           <bool>true</bool>
-          </property>
-          <widget class="QWidget" name="scrollAreaWidgetContents">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>858</width>
-             <height>345</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QPlainTextEdit" name="outputPTE">
-              <property name="font">
-               <font>
-                <family>Courier</family>
-               </font>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_292">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <weight>75</weight>
-            <italic>true</italic>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>F1 for help on current tab</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0" rowspan="3">
          <widget class="QGroupBox" name="gridGroupBox">
           <property name="styleSheet">
@@ -278,7 +168,117 @@ QGroupBox::title {
           </layout>
          </widget>
         </item>
-        <item row="0" column="1" rowspan="2" colspan="2">
+        <item row="4" column="0" colspan="3">
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>858</width>
+             <height>325</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QPlainTextEdit" name="outputPTE">
+              <property name="font">
+               <font>
+                <family>Courier</family>
+               </font>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_292">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <italic>true</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>F1 for help on current tab</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="3">
+         <widget class="QGroupBox" name="gridGroupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font: bold;
+    border: 2px solid silver;
+    border-radius: 6px;
+    margin-top: 6px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 7px;
+    padding: 0px 5px 0px 5px;
+}</string>
+          </property>
+          <property name="title">
+           <string> Firmware</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_29">
+           <property name="topMargin">
+            <number>15</number>
+           </property>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="reloadPB">
+             <property name="text">
+              <string>Reload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="flashPB">
+             <property name="text">
+              <string>Flash</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="readCardPB">
+             <property name="text">
+              <string>Read</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="copyPB">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copy the Output&lt;br/&gt;to the clipboard&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="text">
+              <string>Copy</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QComboBox" name="firmwareCB">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="3" colspan="2">
          <widget class="QGroupBox" name="gridGroupBox">
           <property name="styleSheet">
            <string notr="true">QGroupBox {
@@ -331,13 +331,23 @@ QGroupBox::title {
            <item row="3" column="1">
             <widget class="QComboBox" name="encodersCB"/>
            </item>
-           <item row="2" column="1">
-            <widget class="QComboBox" name="stepgensCB"/>
-           </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label_57">
              <property name="text">
               <string>Step Generators</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="stepgensCB"/>
+           </item>
+           <item row="4" column="1">
+            <widget class="QComboBox" name="pwmsCB"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_60">
+             <property name="text">
+              <string>PWM Generators</string>
              </property>
             </widget>
            </item>
@@ -8022,7 +8032,6 @@ max speed</string>
   <tabstop>scrollArea</tabstop>
   <tabstop>reloadPB</tabstop>
   <tabstop>flashPB</tabstop>
-  <tabstop>firmwareCB</tabstop>
   <tabstop>readCardPB</tabstop>
   <tabstop>copyPB</tabstop>
   <tabstop>jointType_3</tabstop>

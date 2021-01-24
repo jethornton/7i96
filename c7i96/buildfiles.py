@@ -42,13 +42,12 @@ def buildini(parent):
 
 	# build the [HOSTMOT2] section
 	iniContents.append('\n[HOSTMOT2]\n')
-	iniContents.append('DRIVER = {}\n'.format('hm2_eth'))
-	iniContents.append('IPADDRESS = {}\n'.format(parent.ipAddressCB.itemData(parent.ipAddressCB.currentIndex())))
+	iniContents.append('DRIVER = hm2_eth\n')
+	iniContents.append(f'IPADDRESS = {parent.ipAddressCB.currentData()}\n')
 	iniContents.append('BOARD = 7i96\n')
 	iniContents.append(f'STEPGENS = {parent.stepgensCB.currentData()}\n')
 	iniContents.append(f'ENCODERS = {parent.encodersCB.currentData()}\n')
-	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
-		iniContents.append('PWMS = 1\n')
+	iniContents.append(f'PWMS = {parent.pwmsCB.currentData()}\n')
 	iniContents.append('SSERIAL_PORT = {}\n'.format(str(parent.sserialSB.value())))
 
 	# build the [DISPLAY] section maxFeedOverrideLE
@@ -533,8 +532,7 @@ def buildhal(parent):
 	halContents.append('board_ip=[HOSTMOT2](IPADDRESS) ')
 	halContents.append('config="num_encoders=[HOSTMOT2](ENCODERS) ')
 	halContents.append('num_stepgens=[HOSTMOT2](STEPGENS) ')
-	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
-		halContents.append('num_pwmgens=[HOSTMOT2](PWMS) ')
+	halContents.append('num_pwmgens=[HOSTMOT2](PWMS) ')
 	halContents.append('sserial_port_0=[HOSTMOT2](SSERIAL_PORT)"\n')
 	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.watchdog.timeout_ns 25000000\n')
 	halContents.append('\n# THREADS\n')

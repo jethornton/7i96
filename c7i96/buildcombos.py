@@ -83,11 +83,6 @@ def setupCombo(combo):
 		['No Firmware Selected', False],
 		]
 
-	if combo == 'encoders_0':
-		comboList = [
-		['None', False],
-		]
-
 	if combo == 'encoders_1':
 		comboList = [
 		['1 Encoder', 1],
@@ -156,6 +151,22 @@ def setupCombo(combo):
 		['2 Encoders', 2],
 		['1 Encoder', 1],
 		['0 Encoders', 0],
+		]
+
+	if combo == 'pwms':
+		comboList = [
+		['No Firmware Selected', False],
+		]
+
+	if combo == 'pwms_0':
+		comboList = [
+		['0 PWM', 0],
+		]
+
+	if combo == 'pwms_1':
+		comboList = [
+		['1 PWM', 1],
+		['0 PWM', 0],
 		]
 
 	if combo == 'axis':
@@ -290,21 +301,21 @@ def setupCombo(combo):
 		['4 Stepgens 1 PWM', ['4', '1']]
 		]
 
-	if combo == 'firmware':# [Name, [firmware, encoders, stepgens]]
+	if combo == 'firmware':# [Name, [firmware, encoders, stepgens, pwms]]
 		comboList = [
 		['Select', False],
-		['5 StepGens ', ['firmware/7i96d.bit', '1', '5']],
-		['4 StepGens 1 PWM', ['firmware/7i96d_1pwm.bit', '1', '4']],
-		['7i96 + 5abob', ['firmware/7i96_5abob_d.bit', '2', '8']],
-		['7i96 + 6 Encoders', ['firmware/7i96_6enc_d.bit', '6', '5']],
-		['7i96 + 7i76', ['firmware/7i96_7i76d.bit', '2', '10']],
-		['7i96 + 7i77', ['firmware/7i96_7i77d.bit', '8', '5']],
-		['7i96 + 7i78', ['firmware/7i96_7i78d.bit', '2', '9']],
-		['7i96 + 7i85', ['firmware/7i96_7i85d.bit', '6', '9']],
-		['7i96 + 7i85S', ['firmware/7i96_7i85sd.bit', '6', '8']],
-		['7i96 1 PWM + 7i85S', ['firmware/7i961pwm_7i85s.bit', '6', '8']],
-		['7i96 + 7i89', ['firmware/7i96_7i89d.bit', '10', '5']],
-		['7i96 + G540', ['firmware/7i96_g540dpl.bit', '3', '9']]
+		['5 StepGens ', ['firmware/7i96d.bit', '1', '5', '0']],
+		['4 StepGens 1 PWM', ['firmware/7i96d_1pwm.bit', '1', '4', '1']],
+		['7i96 + 5abob', ['firmware/7i96_5abob_d.bit', '2', '8', '0']],
+		['7i96 + 6 Encoders', ['firmware/7i96_6enc_d.bit', '6', '5', '0']],
+		['7i96 + 7i76', ['firmware/7i96_7i76d.bit', '2', '10', '0']],
+		['7i96 + 7i77', ['firmware/7i96_7i77d.bit', '8', '5', '0']],
+		['7i96 + 7i78', ['firmware/7i96_7i78d.bit', '2', '9', '0']],
+		['7i96 + 7i85', ['firmware/7i96_7i85d.bit', '6', '9', '0']],
+		['7i96 + 7i85S', ['firmware/7i96_7i85sd.bit', '6', '8', '0']],
+		['7i96 1 PWM + 7i85S', ['firmware/7i961pwm_7i85s.bit', '6', '8', '1']],
+		['7i96 + 7i89', ['firmware/7i96_7i89d.bit', '10', '5', '0']],
+		['7i96 + G540', ['firmware/7i96_g540dpl.bit', '3', '9', '0']]
 		]
 
 	if combo == 'spindle':

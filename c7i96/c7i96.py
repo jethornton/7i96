@@ -309,18 +309,24 @@ class MainWindow(QMainWindow):
 	def onFirmwareChanged(self):
 		self.encodersCB.clear()
 		self.stepgensCB.clear()
+		self.pwmsCB.clear()
 		if self.firmwareCB.currentData():
 			encoders = self.firmwareCB.currentData()[1]
 			stepgens = self.firmwareCB.currentData()[2]
+			pwms = self.firmwareCB.currentData()[3]
 			for item in buildcombos.setupCombo('encoders_' + encoders):
 				self.encodersCB.addItem(item[0], item[1])
 			for item in buildcombos.setupCombo('stepgens_' + stepgens):
 				self.stepgensCB.addItem(item[0], item[1])
+			for item in buildcombos.setupCombo('pwms_' + pwms):
+				self.pwmsCB.addItem(item[0], item[1])
 		else:
 			for item in buildcombos.setupCombo('encoders'):
 				self.encodersCB.addItem(item[0], item[1])
 			for item in buildcombos.setupCombo('stepgens'):
 				self.stepgensCB.addItem(item[0], item[1])
+			for item in buildcombos.setupCombo('pwms'):
+				self.pwmsCB.addItem(item[0], item[1])
 
 	def configChanged(self):
 		print(self.configCB.itemData(self.configCB.currentIndex()))
@@ -479,6 +485,8 @@ class MainWindow(QMainWindow):
 			self.stepgensCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('encoders'):
 			self.encodersCB.addItem(item[0], item[1])
+		for item in buildcombos.setupCombo('pwms'):
+			self.pwmsCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('boards'):
 			self.boardsCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('display'):
