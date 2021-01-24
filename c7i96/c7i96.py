@@ -217,7 +217,8 @@ class MainWindow(QMainWindow):
 	def setupConnections(self):
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
 		self.maxLinearVel.textChanged[str].connect(self.onMaxLinearVelChanged)
-		self.boardsCB.currentIndexChanged.connect(self.boardsChanged)
+		self.boardsCB.currentIndexChanged.connect(self.onBoardsChanged)
+		self.firmwareCB.currentIndexChanged.connect(self.onFirmwareChanged)
 
 		for i in range(5):
 			getattr(self, 'axisCB_' + str(i)).currentIndexChanged.connect(self.onAxisChanged)
@@ -298,11 +299,21 @@ class MainWindow(QMainWindow):
 		else:
 			self.axisTab.setEnabled(False)
 
-	def boardsChanged(self):
+	def onBoardsChanged(self):
 		bitfile = self.boardsCB.itemData(self.boardsCB.currentIndex())
 		index = self.firmwareCB.findData(bitfile)
 		if index >= 0:
 			self.firmwareCB.setCurrentIndex(index)
+
+	def onFirmwareChanged(self):
+		self.encodersCB.clear()
+		if self.firmwareCB.currentData():
+			encoders = self.firmwareCB.currentData()[1]
+			for item in buildcombos.setupCombo('encoders_' + encoders):
+				self.encodersCB.addItem(item[0], item[1])
+		else:
+			for item in buildcombos.setupCombo('encoders'):
+				self.encodersCB.addItem(item[0], item[1])
 
 	def configChanged(self):
 		print(self.configCB.itemData(self.configCB.currentIndex()))
