@@ -45,7 +45,7 @@ def buildini(parent):
 	iniContents.append('DRIVER = {}\n'.format('hm2_eth'))
 	iniContents.append('IPADDRESS = {}\n'.format(parent.ipAddressCB.itemData(parent.ipAddressCB.currentIndex())))
 	iniContents.append('BOARD = 7i96\n')
-	iniContents.append('STEPGENS = {}\n'.format(str(parent.stepgensSB.value())))
+	iniContents.append(f'STEPGENS = {parent.stepgensCB.currentData()}\n')
 	iniContents.append(f'ENCODERS = {parent.encodersCB.currentData()}\n')
 	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
 		iniContents.append('PWMS = 1\n')

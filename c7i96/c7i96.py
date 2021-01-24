@@ -35,13 +35,14 @@ from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
 
+
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
 		uic.loadUi(UI_FILE, self)
-		self.version = '1.2.3'
+		self.version = '1.2.4'
 		self.config = configparser.ConfigParser(strict=False)
 		self.setWindowTitle(f'7i96 Configuration Tool Version {self.version}')
 		self.configNameUnderscored = ''
@@ -307,13 +308,19 @@ class MainWindow(QMainWindow):
 
 	def onFirmwareChanged(self):
 		self.encodersCB.clear()
+		self.stepgensCB.clear()
 		if self.firmwareCB.currentData():
 			encoders = self.firmwareCB.currentData()[1]
+			stepgens = self.firmwareCB.currentData()[2]
 			for item in buildcombos.setupCombo('encoders_' + encoders):
 				self.encodersCB.addItem(item[0], item[1])
+			for item in buildcombos.setupCombo('stepgens_' + stepgens):
+				self.stepgensCB.addItem(item[0], item[1])
 		else:
 			for item in buildcombos.setupCombo('encoders'):
 				self.encodersCB.addItem(item[0], item[1])
+			for item in buildcombos.setupCombo('stepgens'):
+				self.stepgensCB.addItem(item[0], item[1])
 
 	def configChanged(self):
 		print(self.configCB.itemData(self.configCB.currentIndex()))
@@ -468,6 +475,8 @@ class MainWindow(QMainWindow):
 	def buildCB(self):
 		for item in buildcombos.setupCombo('ipAddress'):
 			self.ipAddressCB.addItem(item[0], item[1])
+		for item in buildcombos.setupCombo('stepgens'):
+			self.stepgensCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('encoders'):
 			self.encodersCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('boards'):

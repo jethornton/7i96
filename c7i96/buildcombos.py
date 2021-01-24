@@ -9,6 +9,75 @@ def setupCombo(combo):
 		['192.168.1.121', '"192.168.1.121"']
 		]
 
+	if combo == 'stepgens':
+		comboList = [
+		['No Firmware Selected', False],
+		]
+
+	if combo == 'stepgens_4':
+		comboList = [
+		['4 Stepgens', 4],
+		['3 Stepgens', 3],
+		['2 Stepgens', 2],
+		['1 Stepgen', 1],
+		['0 Stepgens', 0],
+		]
+
+	if combo == 'stepgens_5':
+		comboList = [
+		['5 Stepgens', 5],
+		['4 Stepgens', 4],
+		['3 Stepgens', 3],
+		['2 Stepgens', 2],
+		['1 Stepgen', 1],
+		['0 Stepgens', 0],
+		]
+
+
+	if combo == 'stepgens_8':
+		comboList = [
+		['8 Stepgens', 8],
+		['7 Stepgens', 7],
+		['6 Stepgens', 6],
+		['5 Stepgens', 5],
+		['4 Stepgens', 4],
+		['3 Stepgens', 3],
+		['2 Stepgens', 2],
+		['1 Stepgen', 1],
+		['0 Stepgens', 0],
+		]
+
+	if combo == 'stepgens_9':
+		comboList = [
+		['9 Stepgens', 9],
+		['8 Stepgens', 8],
+		['7 Stepgens', 7],
+		['6 Stepgens', 6],
+		['5 Stepgens', 5],
+		['4 Stepgens', 4],
+		['3 Stepgens', 3],
+		['2 Stepgens', 2],
+		['1 Stepgen', 1],
+		['0 Stepgens', 0],
+		]
+
+	if combo == 'stepgens_10':
+		comboList = [
+		['10 Stepgens', 10],
+		['9 Stepgens', 9],
+		['8 Stepgens', 8],
+		['7 Stepgens', 7],
+		['6 Stepgens', 6],
+		['5 Stepgens', 5],
+		['4 Stepgens', 4],
+		['3 Stepgens', 3],
+		['2 Stepgens', 2],
+		['1 Stepgen', 1],
+		['0 Stepgens', 0],
+		]
+
+
+
 	if combo == 'encoders':
 		comboList = [
 		['No Firmware Selected', False],
@@ -59,6 +128,20 @@ def setupCombo(combo):
 		['1 Encoder', 1],
 		['0 Encoders', 0],
 		]
+
+	if combo == 'encoders_8':
+		comboList = [
+		['8 Encoders', 8],
+		['7 Encoders', 7],
+		['6 Encoders', 6],
+		['5 Encoders', 5],
+		['4 Encoders', 4],
+		['3 Encoders', 3],
+		['2 Encoders', 2],
+		['1 Encoder', 1],
+		['0 Encoders', 0],
+		]
+
 
 	if combo == 'encoders_10':
 		comboList = [
@@ -207,21 +290,21 @@ def setupCombo(combo):
 		['4 Stepgens 1 PWM', ['4', '1']]
 		]
 
-	if combo == 'firmware':
+	if combo == 'firmware':# [Name, [firmware, encoders, stepgens]]
 		comboList = [
 		['Select', False],
-		['5 StepGens ', ['firmware/7i96d.bit', '1']],
-		['4 StepGens 1 PWM', ['firmware/7i96d_1pwm.bit', '1']],
-		['7i96 + 5abob', ['firmware/7i96_5abob_d.bit', '2']],
-		['7i96 + 6 Encoders', ['firmware/7i96_6enc_d.bit', '6']],
-		['7i96 + 7i76', ['firmware/7i96_7i76d.bit', '2']],
-		['7i96 + 7i77', ['firmware/7i96_7i77d.bit', '4']],
-		['7i96 + 7i78', ['firmware/7i96_7i78d.bit', '2']],
-		['7i96 + 7i85', ['firmware/7i96_7i85d.bit', '6']],
-		['7i96 + 7i85S', ['firmware/7i96_7i85sd.bit', '6']],
-		['7i96 1 PWM + 7i85S', ['firmware/7i961pwm_7i85s.bit', '6']],
-		['7i96 + 7i89', ['firmware/7i96_7i89d.bit', '10']],
-		['7i96 + G540', ['firmware/7i96_g540dpl.bit', '3']]
+		['5 StepGens ', ['firmware/7i96d.bit', '1', '5']],
+		['4 StepGens 1 PWM', ['firmware/7i96d_1pwm.bit', '1', '4']],
+		['7i96 + 5abob', ['firmware/7i96_5abob_d.bit', '2', '8']],
+		['7i96 + 6 Encoders', ['firmware/7i96_6enc_d.bit', '6', '5']],
+		['7i96 + 7i76', ['firmware/7i96_7i76d.bit', '2', '10']],
+		['7i96 + 7i77', ['firmware/7i96_7i77d.bit', '8', '5']],
+		['7i96 + 7i78', ['firmware/7i96_7i78d.bit', '2', '9']],
+		['7i96 + 7i85', ['firmware/7i96_7i85d.bit', '6', '9']],
+		['7i96 + 7i85S', ['firmware/7i96_7i85sd.bit', '6', '8']],
+		['7i96 1 PWM + 7i85S', ['firmware/7i961pwm_7i85s.bit', '6', '8']],
+		['7i96 + 7i89', ['firmware/7i96_7i89d.bit', '10', '5']],
+		['7i96 + G540', ['firmware/7i96_g540dpl.bit', '3', '9']]
 		]
 
 	if combo == 'spindle':
