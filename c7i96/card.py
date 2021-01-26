@@ -18,7 +18,7 @@ def flashCard(parent):
 		if parent.firmwareCB.currentData():
 			parent.statusbar.showMessage('Flashing the 7i96...')
 			ipAddress = parent.ipAddressCB.currentText()
-			firmware = os.path.join(os.path.dirname(__file__), 'firmware', parent.firmwareCB.currentData()[0])
+			firmware = os.path.join(os.path.dirname(__file__), 'firmware', parent.firmwareCB.currentData())
 			arguments = ["--device", "7i96", "--addr", ipAddress, "--write", firmware]
 			parent.extcmd.job(cmd="mesaflash", args=arguments, dest=parent.outputPTE)
 		else:
