@@ -304,18 +304,18 @@ def setupCombo(combo):
 	if combo == 'firmware':# [Name, [firmware, encoders, stepgens, pwms]]
 		comboList = [
 		['Select', False],
-		['5 StepGens ', ['firmware/7i96d.bit', '1', '5', '0']],
-		['4 StepGens 1 PWM', ['firmware/7i96d_1pwm.bit', '1', '4', '1']],
-		['7i96 + 5abob', ['firmware/7i96_5abob_d.bit', '2', '8', '0']],
-		['7i96 + 6 Encoders', ['firmware/7i96_6enc_d.bit', '6', '5', '0']],
-		['7i96 + 7i76', ['firmware/7i96_7i76d.bit', '2', '10', '0']],
-		['7i96 + 7i77', ['firmware/7i96_7i77d.bit', '8', '5', '0']],
-		['7i96 + 7i78', ['firmware/7i96_7i78d.bit', '2', '9', '0']],
-		['7i96 + 7i85', ['firmware/7i96_7i85d.bit', '6', '9', '0']],
-		['7i96 + 7i85S', ['firmware/7i96_7i85sd.bit', '6', '8', '0']],
-		['7i96 1 PWM + 7i85S', ['firmware/7i961pwm_7i85s.bit', '6', '8', '1']],
-		['7i96 + 7i89', ['firmware/7i96_7i89d.bit', '10', '5', '0']],
-		['7i96 + G540', ['firmware/7i96_g540dpl.bit', '3', '9', '0']]
+		['5 StepGens ', '7i96d.bit'],
+		['4 StepGens 1 PWM', '7i96d_1pwm.bit'],
+		['7i96 + 5abob', '7i96_5abob_d.bit'],
+		['7i96 + 6 Encoders', '7i96_6enc_d.bit'],
+		['7i96 + 7i76', '7i96_7i76d.bit'],
+		['7i96 + 7i77', '7i96_7i77d.bit'],
+		['7i96 + 7i78', '7i96_7i78d.bit'],
+		['7i96 + 7i85', '7i96_7i85d.bit'],
+		['7i96 + 7i85S', '7i96_7i85sd.bit'],
+		['7i96 1 PWM + 7i85S', '7i961pwm_7i85s.bit'],
+		['7i96 + 7i89', '7i96_7i89d.bit'],
+		['7i96 + G540', '7i96_g540dpl.bit']
 		]
 
 	if combo == 'spindle':

@@ -11,6 +11,7 @@ def iniList():
 	iniList.append(['HOSTMOT2', 'STEPGENS', 'stepgensSB'])
 	iniList.append(['HOSTMOT2', 'ENCODERS', 'encodersCB'])
 	iniList.append(['HOSTMOT2', 'SSERIAL_PORT', 'sserialSB'])
+	iniList.append(['HOSTMOT2', 'FIRMWARE', 'firmwareCB'])
 
 	iniList.append(['DISPLAY', 'DISPLAY', 'guiCB'])
 	iniList.append(['DISPLAY', 'POSITION_OFFSET', 'positionOffsetCB'])

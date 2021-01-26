@@ -4,7 +4,9 @@ import sys, os, configparser, platform, subprocess
 from functools import partial
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt, QProcess
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog, QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog,
+	QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox,
+	QDoubleSpinBox, QMessageBox, QInputDialog)
 
 """
 # for local testing
@@ -14,7 +16,6 @@ import checkit
 import buildfiles
 import card
 import pcinfo
-#import extcmd
 import extcmd
 import helptext
 from dialog import Ui_Dialog as errorDialog
@@ -63,6 +64,23 @@ class MainWindow(QMainWindow):
 			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
 			'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 			'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
+
+		self.firmware = {
+		'7i96d.bit': ['1', '5', '0'],
+		'7i96d_1pwm.bit':['1', '4', '1'],
+		'7i96_5abob_d.bit':['2', '8', '0'],
+		'7i96_6enc_d.bit':['6', '5', '0'],
+		'7i96_7i76d.bit':['2', '10', '0'],
+		'7i96_7i77d.bit':['8', '5', '0'],
+		'7i96_7i78d.bit':['2', '9', '0'],
+		'7i96_7i85d.bit':['6', '9', '0'],
+		'7i96_7i85sd.bit':['6', '8', '0'],
+		'7i961pwm_7i85s.bit':['6', '8', '1'],
+		'7i96_7i89d.bit':['10', '5', '0'],
+		'7i96_g540dpl.bit':['3', '9', '0']
+		}
+
+
 		self.units = False
 		self.results = ""
 		self.extcmd = extcmd.extcmd()
@@ -311,9 +329,10 @@ class MainWindow(QMainWindow):
 		self.stepgensCB.clear()
 		self.pwmsCB.clear()
 		if self.firmwareCB.currentData():
-			encoders = self.firmwareCB.currentData()[1]
-			stepgens = self.firmwareCB.currentData()[2]
-			pwms = self.firmwareCB.currentData()[3]
+			encoders = self.firmware[self.firmwareCB.currentData()][0]
+			stepgens = self.firmware[self.firmwareCB.currentData()][1]
+			pwms = self.firmware[self.firmwareCB.currentData()][2]
+
 			for item in buildcombos.setupCombo('encoders_' + encoders):
 				self.encodersCB.addItem(item[0], item[1])
 			for item in buildcombos.setupCombo('stepgens_' + stepgens):
@@ -529,6 +548,12 @@ class MainWindow(QMainWindow):
 			self.speedCB.addItem(item[0], item[1])
 
 	def iniLoad(self):
+		# this can be removed after some time
+		if self.config.has_option("HOSTMOT2", "FIRMWARE"):
+			if self.config["HOSTMOT2"] ["FIRMWARE"].split('/')[0] == "firmware":
+				index = self.firmwareCB.findData(self.config["HOSTMOT2"] ["FIRMWARE"].split('/')[1])
+				if index > 0:
+					self.firmwareCB.setCurrentIndex(index)
 		# iniList section, item, value
 		for item in loadini.iniList():
 			if self.config.has_option(item[0], item[1]):
@@ -544,7 +569,6 @@ class MainWindow(QMainWindow):
 					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
 				if isinstance(getattr(self, item[2]), QGroupBox):
 					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
-					#print(self.config[item[0]][item[1]])
 				if isinstance(getattr(self, item[2]), QComboBox):
 					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
 					if index >= 0:

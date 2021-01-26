@@ -22,7 +22,9 @@ def config(parent):
 	if not parent.ipAddressCB.currentData():
 		tabError = True
 		configErrors.append('\tAn IP address must be selected, 10.10.10.10 is recommended')
-
+	if not parent.firmwareCB.currentData():
+		tabError = True
+		configErrors.append('\tA firmware must be selected')
 	if tabError:
 		configErrors.insert(nextHeader, 'Machine Tab:')
 		nextHeader = len(configErrors)

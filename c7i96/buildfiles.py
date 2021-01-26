@@ -36,19 +36,20 @@ def buildini(parent):
 
 	# build the [EMC] section
 	iniContents.append('\n[EMC]\n')
-	iniContents.append('VERSION = {}\n'.format(parent.versionLE.text()))
-	iniContents.append('MACHINE = {}\n'.format(parent.configNameUnderscored))
-	iniContents.append('DEBUG = {}\n'.format(parent.debugCombo.itemData(parent.debugCombo.currentIndex())))
+	iniContents.append(f'VERSION = {parent.versionLE.text()}\n')
+	iniContents.append(f'MACHINE = {parent.configNameUnderscored}\n')
+	iniContents.append(f'DEBUG = {parent.debugCombo.currentText}\n')
 
 	# build the [HOSTMOT2] section
 	iniContents.append('\n[HOSTMOT2]\n')
 	iniContents.append('DRIVER = hm2_eth\n')
 	iniContents.append(f'IPADDRESS = {parent.ipAddressCB.currentData()}\n')
 	iniContents.append('BOARD = 7i96\n')
-	iniContents.append(f'STEPGENS = {parent.stepgensCB.currentData()}\n')
-	iniContents.append(f'ENCODERS = {parent.encodersCB.currentData()}\n')
-	iniContents.append(f'PWMS = {parent.pwmsCB.currentData()}\n')
-	iniContents.append('SSERIAL_PORT = {}\n'.format(str(parent.sserialSB.value())))
+	iniContents.append(f'STEPGENS = {str(parent.stepgensCB.currentData())}\n')
+	iniContents.append(f'ENCODERS = {str(parent.encodersCB.currentData())}\n')
+	iniContents.append(f'PWMS = {str(parent.pwmsCB.currentData())}\n')
+	iniContents.append(f'SSERIAL_PORT = {str(parent.sserialSB.value())}\n')
+	iniContents.append(f'FIRMWARE = {parent.firmwareCB.currentData()}\n')
 
 	# build the [DISPLAY] section maxFeedOverrideLE
 	iniContents.append('\n[DISPLAY]\n')
