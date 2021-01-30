@@ -1,4 +1,4 @@
-import os, sys, subprocess, time
+import os, sys, subprocess
 from PyQt5.QtWidgets import QInputDialog, QLineEdit
 
 def check_ip(parent):
