@@ -2,13 +2,14 @@
 
 import sys, os, configparser, platform, subprocess
 from functools import partial
+
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt, QProcess
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog,
 	QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox,
 	QDoubleSpinBox, QMessageBox, QInputDialog)
 
-"""
+
 # for local testing
 import buildcombos
 import loadini
@@ -35,7 +36,7 @@ import c7i96.helptext as helptext
 from c7i96.dialog import Ui_Dialog as errorDialog
 from c7i96.help import Ui_Dialog as helpDialog
 from c7i96.about import Ui_about as aboutDialog
-
+"""
 
 UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
@@ -91,8 +92,14 @@ class MainWindow(QMainWindow):
 
 
 	def checks(self):
+		if sys.version_info < (3, 6):
+			print(sys.version_info)
+			self.errorMsgOk("Python Version 3.6 or later is required", "Python Errort")
+			sys.exit()
+
 		try:
-			subprocess.run('mesaflash', check=True, capture_output=True)
+			subprocess.check_output('mesaflush', encoding='UTF-8')
+			# subprocess.run('mesaflash', check=True, capture_output=True) python 3.7 only
 		except FileNotFoundError:
 			t = "Mesaflash not found go to\nhttps://github.com/LinuxCNC/mesaflash\nfor installation instructions."
 			self.outputPTE.appendPlainText(t)
