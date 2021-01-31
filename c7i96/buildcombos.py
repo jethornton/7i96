@@ -324,7 +324,9 @@ def setupCombo(combo):
 		['PWM Direction', '1'],
 		['Up Down', '2'],
 		['PDM Direction', '3'],
-		['Direction PWM', '4']
+		['Direction PWM', '4'],
+		['Step Direction', False],
+		['On Off', False],
 		]
 
 	if combo == 'drive':
