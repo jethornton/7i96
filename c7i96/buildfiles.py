@@ -888,7 +888,7 @@ def buildio(parent):
 			ioContents.append('net digital-input-3 motion.digital-in-03 <= hm2_7i96.0.gpio.0{:02}.in\n'.format(index))
 
 	# build the outputs
-	for index in range(5):
+	for index in range(6):
 		outputText = getattr(parent, 'output_' + str(index)).currentText()
 		if outputText == 'Coolant Flood':
 			ioContents.append('net flood-output iocontrol.0.coolant-flood => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
@@ -907,7 +907,7 @@ def buildio(parent):
 		if outputText == 'Digital Out 0':
 			ioContents.append('net digital-out-0 motion.digital-out-00 => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
 		if outputText == 'Digital Out 1':
-			ioContents.append('net digital-out-2 motion.digital-out-01 => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
+			ioContents.append('net digital-out-1 motion.digital-out-01 => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
 		if outputText == 'Digital Out 2':
 			ioContents.append('net digital-out-2 motion.digital-out-02 => hm2_7i96.0.ssr.00.out-0{}\n'.format(index))
 		if outputText == 'Digital Out 3':
