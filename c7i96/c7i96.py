@@ -437,16 +437,32 @@ class MainWindow(QMainWindow):
 			self.spindlepidGB.setEnabled(False)
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '1':
 				self.spindleInfo1Lbl.setText("PWM on Step 4")
+				self.tb2p3LB.setText("PWM +")
+				self.tb2p2LB.setText("PWM -")
 				self.spindleInfo2Lbl.setText("Direction on Dir 4")
+				self.tb2p5LB.setText("Direction +")
+				self.tb2p4LB.setText("Direction -")
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '2':
 				self.spindleInfo1Lbl.setText("UP on Step 4")
+				self.tb2p3LB.setText("UP +")
+				self.tb2p2LB.setText("UP -")
 				self.spindleInfo2Lbl.setText("Down on Dir 4")
+				self.tb2p5LB.setText("DOWN +")
+				self.tb2p4LB.setText("DOWN -")
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '3':
 				self.spindleInfo1Lbl.setText("PDM on Step 4")
+				self.tb2p3LB.setText("PDM +")
+				self.tb2p2LB.setText("PDM -")
 				self.spindleInfo2Lbl.setText("Direction on Dir 4")
+				self.tb2p5LB.setText("Direction +")
+				self.tb2p4LB.setText("Direction -")
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '4':
 				self.spindleInfo1Lbl.setText("Direction on Step 4")
+				self.tb2p3LB.setText("Direction +")
+				self.tb2p2LB.setText("Direction -")
 				self.spindleInfo2Lbl.setText("PWM on Dir 4")
+				self.tb2p5LB.setText("PWM +")
+				self.tb2p4LB.setText("PWM -")
 
 		else:
 			self.spindleGB.setEnabled(False)
