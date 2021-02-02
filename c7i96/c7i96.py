@@ -430,11 +430,11 @@ class MainWindow(QMainWindow):
 
 	def spindleTypeChanged(self): 
 		#print(self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()))
-		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()):
+		if self.spindleTypeCB.currentData():
 			self.spindleGB.setEnabled(True)
 			self.spindleInfoGB.setEnabled(True)
-			self.encoderGB.setEnabled(False)
-			self.spindlepidGB.setEnabled(False)
+			self.encoderGB.setEnabled(True)
+			self.spindlepidGB.setEnabled(True)
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '1':
 				self.spindleInfo1Lbl.setText("PWM on Step 4")
 				self.tb2p3LB.setText("PWM +")

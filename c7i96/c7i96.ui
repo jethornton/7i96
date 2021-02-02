@@ -5052,9 +5052,9 @@ max speed</string>
         </property>
         <property name="geometry">
          <rect>
-          <x>39</x>
+          <x>29</x>
           <y>220</y>
-          <width>321</width>
+          <width>331</width>
           <height>111</height>
          </rect>
         </property>
