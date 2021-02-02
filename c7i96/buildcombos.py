@@ -301,7 +301,7 @@ def setupCombo(combo):
 		['4 Stepgens 1 PWM', ['4', '1']]
 		]
 
-	if combo == 'firmware':# [Name, [firmware, encoders, stepgens, pwms]]
+	if combo == 'firmware':# [Name, firmware]
 		comboList = [
 		['Select', False],
 		['5 StepGens ', '7i96d.bit'],
@@ -326,7 +326,6 @@ def setupCombo(combo):
 		['PDM Direction', '3'],
 		['Direction PWM', '4'],
 		['Step Direction', False],
-		['On Off', False],
 		]
 
 	if combo == 'drive':
