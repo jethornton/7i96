@@ -5212,397 +5212,300 @@ max speed</string>
        <attribute name="title">
         <string>Inputs</string>
        </attribute>
-       <widget class="QLabel" name="label_11">
+       <widget class="QWidget" name="widget" native="true">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>59</width>
-          <height>15</height>
+          <x>0</x>
+          <y>0</y>
+          <width>351</width>
+          <height>431</height>
          </rect>
         </property>
-        <property name="text">
-         <string>Input 0</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_12">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>90</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 1</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_13">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>120</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 2</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_14">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>150</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 3</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_15">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>180</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 4</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_16">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>200</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 5</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_17">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>230</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 6</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_18">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>260</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 7</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_19">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>290</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 8</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_20">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>320</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 9</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_21">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>350</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Input 10</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_0">
-        <property name="geometry">
-         <rect>
-          <x>71</x>
-          <y>50</y>
-          <width>121</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_1">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>80</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_2">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>110</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_3">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>140</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_4">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>170</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_5">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>200</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_6">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>230</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_7">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>260</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_8">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>290</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_9">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>320</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="input_10">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>350</y>
-          <width>120</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_28">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>20</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Type</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_29">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>20</y>
-          <width>59</width>
-          <height>15</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Joint</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_0">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>50</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_1">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>80</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_2">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>110</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_3">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>140</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_4">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>170</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_5">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>200</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_6">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>230</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_7">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>260</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_8">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>290</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_9">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>320</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="inputJoint_10">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>350</y>
-          <width>79</width>
-          <height>23</height>
-         </rect>
-        </property>
+        <layout class="QGridLayout" name="gridLayout_55">
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Input 6</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QComboBox" name="inputJoint_0"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Input 4</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QComboBox" name="inputJoint_3"/>
+         </item>
+         <item row="7" column="1">
+          <widget class="QComboBox" name="input_6"/>
+         </item>
+         <item row="6" column="3">
+          <widget class="QComboBox" name="inputJoint_5"/>
+         </item>
+         <item row="8" column="1">
+          <widget class="QComboBox" name="input_7"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Input 5</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="3">
+          <widget class="QComboBox" name="inputJoint_7"/>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>Input 9</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="3">
+          <widget class="QComboBox" name="inputJoint_9"/>
+         </item>
+         <item row="9" column="1">
+          <widget class="QComboBox" name="input_8"/>
+         </item>
+         <item row="10" column="1">
+          <widget class="QComboBox" name="input_9"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QComboBox" name="inputJoint_1"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="input_0"/>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>Input 10</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QComboBox" name="inputJoint_2"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="input_2"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="input_4"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QComboBox" name="input_3"/>
+         </item>
+         <item row="7" column="3">
+          <widget class="QComboBox" name="inputJoint_6"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Input 0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QComboBox" name="inputJoint_4"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="input_1"/>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>Input 7</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Input 3</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QComboBox" name="input_10"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>Type</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="3">
+          <widget class="QComboBox" name="inputJoint_8"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Input 1</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="3">
+          <widget class="QComboBox" name="inputJoint_10"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Input 2</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>Input 8</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QComboBox" name="input_5"/>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="label_29">
+           <property name="text">
+            <string>Joint</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QCheckBox" name="inputInvert_0">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_358">
+           <property name="text">
+            <string>Invert</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QCheckBox" name="inputInvert_1">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QCheckBox" name="inputInvert_2">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QCheckBox" name="inputInvert_3">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QCheckBox" name="inputInvert_4">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="QCheckBox" name="inputInvert_5">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2">
+          <widget class="QCheckBox" name="inputInvert_6">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="2">
+          <widget class="QCheckBox" name="inputInvert_7">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="2">
+          <widget class="QCheckBox" name="inputInvert_8">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="2">
+          <widget class="QCheckBox" name="inputInvert_9">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="2">
+          <widget class="QCheckBox" name="inputInvert_10">
+           <property name="text">
+            <string>In Not</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="outputs">

@@ -872,6 +872,7 @@ def buildio(parent):
 	for index in range(11):
 		inputText = getattr(parent, 'input_' + str(index)).currentText()
 		inputJoint = getattr(parent, 'inputJoint_' + str(index)).currentData()
+		invert = getattr(parent, 'inputInvert_' + str(index)).isChecked()
 		if inputText == 'Home':
 			ioContents.append('net home-joint-{0} joint.{0}.home-sw-in <= hm2_7i96.0.gpio.0{1:02}.in\n'.format(inputJoint, index))
 		elif inputText == 'Both Limit':

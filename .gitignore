@@ -1,13 +1,9 @@
-__pycache__/
-*.egg-info
-*.pyc
-/old files
-*.txt
+*.dsc
+*.gz
+*.buildinfo
+*.changes
+*/debian/c7i96
+*/debian/*.substvars
+*/debian/debhelper-build-stamp
 docs/build
-*.tar.gz
-/dist
-/deb_dist/*.gz
-/deb_dist/*.buildinfo
-/deb_dist/*.changes
-/deb_dist/*.dsc
-/deb_dist/c7i96*
+old-files

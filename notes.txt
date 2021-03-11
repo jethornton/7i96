@@ -1,0 +1,15 @@
+create a changelog file
+
+dch --create
+
+change to released
+
+dch --release
+
+Ctrl o to write out then Ctrl x
+
+Append a new entry to the current changelog
+dch --append
+
+to build a deb from the top most directory
+fakeroot dpkg-buildpackage -b -uc
