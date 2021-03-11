@@ -5,5 +5,6 @@
 */debian/c7i96
 */debian/*.substvars
 */debian/debhelper-build-stamp
+*/debian/.debhelper
 docs/build
 old-files
