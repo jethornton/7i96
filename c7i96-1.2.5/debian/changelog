@@ -1,3 +1,9 @@
+c7i96 (1.2.5) unstable; urgency=medium
+
+  * Fix ui import
+
+ -- John Thornton <jt@gnipsel.com>  Sun, 14 Mar 2021 09:34:42 -0500
+
 c7i96 (1.0.0) unstable; urgency=medium
 
   * New version

@@ -1,5 +1,5 @@
 src/c7i96 usr/bin
-src/c7i96.ui usr/bin
+src/c7i96.ui usr/lib/c7i96
 src/libc7i96/*.* usr/lib/python3/dist-packages/libc7i96
-src/firmware/*.* usr/lib/python3/dist-packages/libc7i96
+src/firmware/*.* usr/lib/c7i96
 *.desktop usr/share/applications
