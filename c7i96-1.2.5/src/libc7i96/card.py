@@ -7,24 +7,39 @@ def check_ip(parent):
 		return False
 	return True
 
+def check_emc():
+	if "0x48414c32" in subprocess.getoutput('ipcs'):
+		return True
+	else:
+		return False
+
 def readCard(parent):
+	if check_emc():
+		parent.errorMsgOk(f'LinuxCNC must NOT be running\n to read the card', 'Error')
+		return
 	if check_ip(parent):
 		ipAddress = parent.ipAddressCB.currentText()
 		arguments = ["--device", "7i96", "--addr", ipAddress, "--readhmid"]
 		parent.extcmd.job(cmd="mesaflash", args=arguments, dest=parent.outputPTE)
 
 def flashCard(parent):
+	if check_emc():
+		parent.errorMsgOk(f'LinuxCNC must NOT be running\n to flash the card', 'Error')
+		return
 	if check_ip(parent):
 		if parent.firmwareCB.currentData():
 			parent.statusbar.showMessage('Flashing the 7i96...')
 			ipAddress = parent.ipAddressCB.currentText()
-			firmware = os.path.join(os.path.dirname(__file__), parent.firmwareCB.currentData())
+			firmware = os.path.join(parent.lib_path, parent.firmwareCB.currentData())
 			arguments = ["--device", "7i96", "--addr", ipAddress, "--write", firmware]
 			parent.extcmd.job(cmd="mesaflash", args=arguments, dest=parent.outputPTE)
 		else:
 			parent.errorMsgOk('A firmware must be selected', 'Error!')
 
 def reloadCard(parent):
+	if check_emc():
+		parent.errorMsgOk(f'LinuxCNC must NOT be running\n to reload the card', 'Error')
+		return
 	if check_ip(parent):
 		ipAddress = parent.ipAddressCB.currentText()
 		arguments = ["--device", "7i96", "--addr", ipAddress, "--reload"]
@@ -39,19 +54,21 @@ def getCardPins(parent):
 		arguments = ["-f", "temp.hal"]
 		parent.extcmd.job(cmd="halrun", args=arguments, dest=parent.pinsPTE, clean='temp.hal')
 
-def saveHalPins(parent):
+def saveHal(parent, item):
 	if parent.configName.text() == '':
 		parent.errorMsgOk('A Configuration\nmust be loaded', 'Error')
 		return
 	if not "0x48414c32" in subprocess.getoutput('ipcs'):
 		parent.errorMsgOk(f'LinuxCNC must be running\nthe {parent.configName.text()} configuration', 'Error')
 		return
-	parent.results = subprocess.getoutput("halcmd show pin")
-	fp = os.path.join(parent.configPath, parent.configNameUnderscored + '-pins.txt')
+	print(f'Getting {item}')
+	parent.results = subprocess.getoutput(f"halcmd show {item}")
+	fp = os.path.join(parent.configPath, parent.configNameUnderscored + f'-{item}.txt')
 	with open(fp, 'w') as f:
 		f.writelines(parent.results)
+	parent.statusbar.showMessage(f'{item}s saved to {fp}')
 
-def saveHalSigs(parent):
+def saveHalSignals(parent):
 	if parent.configName.text() == '':
 		parent.errorMsgOk('A Configuration\nmust be loaded', 'Error')
 		return
@@ -62,3 +79,18 @@ def saveHalSigs(parent):
 	fp = os.path.join(parent.configPath, parent.configNameUnderscored + '-sigs.txt')
 	with open(fp, 'w') as f:
 		f.writelines(parent.results)
+	parent.statusbar.showMessage(f'Signals saved to {fp}')
+
+def saveHalParameters(parent):
+	if parent.configName.text() == '':
+		parent.errorMsgOk('A Configuration\nmust be loaded', 'Error')
+		return
+	if not "0x48414c32" in subprocess.getoutput('ipcs'):
+		parent.errorMsgOk(f'LinuxCNC must be running\nthe {parent.configName.text()} configuration', 'Error')
+		return
+	parent.results = subprocess.getoutput("halcmd show parameter")
+	fp = os.path.join(parent.configPath, parent.configNameUnderscored + '-parameters.txt')
+	with open(fp, 'w') as f:
+		f.writelines(parent.results)
+	parent.statusbar.showMessage(f'Parameters saved to {fp}')
+

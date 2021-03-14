@@ -7694,6 +7694,7 @@ max speed</string>
     <addaction name="actionOpen"/>
     <addaction name="actionSavePins"/>
     <addaction name="actionSaveSignals"/>
+    <addaction name="actionSaveParameters"/>
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
     <addaction name="separator"/>
@@ -7807,6 +7808,11 @@ max speed</string>
    </property>
    <property name="toolTip">
     <string>Save HAL Signals to a File</string>
+   </property>
+  </action>
+  <action name="actionSaveParameters">
+   <property name="text">
+    <string>Save Parameters</string>
    </property>
   </action>
  </widget>
