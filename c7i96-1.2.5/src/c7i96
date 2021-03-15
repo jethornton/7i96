@@ -217,6 +217,7 @@ class MainWindow(QMainWindow):
 		self.maxLinearVel.textChanged[str].connect(self.onMaxLinearVelChanged)
 		self.boardsCB.currentIndexChanged.connect(self.onBoardsChanged)
 		self.firmwareCB.currentIndexChanged.connect(self.onFirmwareChanged)
+		self.servoPeriodSB.valueChanged.connect(self.servoPeriodChanged)
 
 		for i in range(5):
 			getattr(self, 'axisCB_' + str(i)).currentIndexChanged.connect(self.onAxisChanged)
@@ -371,6 +372,9 @@ class MainWindow(QMainWindow):
 			getattr(self, 'dirSetup_' + joint).setEnabled(True)
 			getattr(self, 'dirHold_' + joint).setEnabled(True)
 
+	def servoPeriodChanged(self):
+		print(f'{self.servoPeriodSB.cleanText()}')
+
 	def updateAxisInfo(self):
 		if self.sender().objectName() == 'actionOpen':
 			return
@@ -485,7 +489,8 @@ class MainWindow(QMainWindow):
 		if not self.linearUnitsCB.itemData(self.linearUnitsCB.currentIndex()):
 			QMessageBox.warning(self,'Warning', 'Machine Tab\nLinear Units\nmust be selected', QMessageBox.Ok)
 			return
-		getattr(self, 'p_' + tab).setText('1000')
+		p = int(1000/(int(self.servoPeriodSB.cleanText())/1000000))
+		getattr(self, 'p_' + tab).setText(f'{p}')
 		getattr(self, 'i_' + tab).setText('0')
 		getattr(self, 'd_' + tab).setText('0')
 		getattr(self, 'ff0_' + tab).setText('0')

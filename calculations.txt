@@ -1,0 +1,10 @@
+ Is there a formula that can be used to calculate P from servo period?
+
+Yes, for the stepgen, 1/servo period is a good value
+(so 1000 for a 1 ms servo thread and 500 for a 2 ms thread time)
+
+A P value of 1/servo_period means that any position error
+in a velocity mode loop (like the stepgen) is corrected by the next
+servo thread period.
+
+A value any greater than 1/servo_period will overcorrect 
