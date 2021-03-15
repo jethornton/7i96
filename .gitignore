@@ -1,5 +1,9 @@
 old-files
 pins
+*.dsc
+*.xz
+*.buildinfo
+*.changes
 c7i96-1.2.5/src/firmware
 c7i96-1.2.5/debian/c7i96
 c7i96-1.2.5/debian/.debhelper
