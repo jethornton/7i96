@@ -80,6 +80,19 @@ def iniList():
 	iniList.append(['INPUTS', 'INPUT_9', 'input_9'])
 	iniList.append(['INPUTS', 'INPUT_10', 'input_10'])
 
+	iniList.append(['INPUTS', 'INPUT_DIR_0', 'inputInvert_0'])
+	iniList.append(['INPUTS', 'INPUT_DIR_1', 'inputInvert_1'])
+	iniList.append(['INPUTS', 'INPUT_DIR_2', 'inputInvert_2'])
+	iniList.append(['INPUTS', 'INPUT_DIR_3', 'inputInvert_3'])
+	iniList.append(['INPUTS', 'INPUT_DIR_4', 'inputInvert_4'])
+	iniList.append(['INPUTS', 'INPUT_DIR_5', 'inputInvert_5'])
+	iniList.append(['INPUTS', 'INPUT_DIR_6', 'inputInvert_6'])
+	iniList.append(['INPUTS', 'INPUT_DIR_7', 'inputInvert_7'])
+	iniList.append(['INPUTS', 'INPUT_DIR_8', 'inputInvert_8'])
+	iniList.append(['INPUTS', 'INPUT_DIR_9', 'inputInvert_9'])
+	iniList.append(['INPUTS', 'INPUT_DIR_10', 'inputInvert_10'])
+
+
 	iniList.append(['INPUTS', 'INPUT_JOINT_0', 'inputJoint_0'])
 	iniList.append(['INPUTS', 'INPUT_JOINT_1', 'inputJoint_1'])
 	iniList.append(['INPUTS', 'INPUT_JOINT_2', 'inputJoint_2'])

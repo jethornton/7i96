@@ -472,8 +472,8 @@ def buildini(parent):
 		iniContents.append('BIAS = {}\n'.format(parent.bias_s.text()))
 		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_s.text()))
 
-	iniContents.append('\nEverything below this line is only used to\n')
-	iniContents.append('\nsetup the Configuration Tool when loading the ini.\n')
+	iniContents.append('\n# Everything below this line is only used to\n')
+	iniContents.append('# setup the Configuration Tool when loading the ini.\n')
 
 	# build the [INPUTS] section
 	iniContents.append('\n[INPUTS]\n')
@@ -482,34 +482,34 @@ def buildini(parent):
 	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_0.currentText()))
 	iniContents.append('INPUT_JOINT_0 = {}\n'.format(parent.inputJoint_0.currentData()))
 	iniContents.append('INPUT_1 = {}\n'.format(parent.input_1.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_1.currentText()))
+	iniContents.append('INPUT_DIR_1 = {}\n'.format(parent.inputInvert_1.currentText()))
 	iniContents.append('INPUT_JOINT_1 = {}\n'.format(parent.inputJoint_1.currentData()))
 	iniContents.append('INPUT_2 = {}\n'.format(parent.input_2.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_2.currentText()))
+	iniContents.append('INPUT_DIR_2 = {}\n'.format(parent.inputInvert_2.currentText()))
 	iniContents.append('INPUT_JOINT_2 = {}\n'.format(parent.inputJoint_2.currentData()))
 	iniContents.append('INPUT_3 = {}\n'.format(parent.input_3.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_3.currentText()))
+	iniContents.append('INPUT_DIR_3 = {}\n'.format(parent.inputInvert_3.currentText()))
 	iniContents.append('INPUT_JOINT_3 = {}\n'.format(parent.inputJoint_3.currentData()))
 	iniContents.append('INPUT_4 = {}\n'.format(parent.input_4.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_4.currentText()))
+	iniContents.append('INPUT_DIR_4 = {}\n'.format(parent.inputInvert_4.currentText()))
 	iniContents.append('INPUT_JOINT_4 = {}\n'.format(parent.inputJoint_4.currentData()))
 	iniContents.append('INPUT_5 = {}\n'.format(parent.input_5.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_5.currentText()))
+	iniContents.append('INPUT_DIR_5 = {}\n'.format(parent.inputInvert_5.currentText()))
 	iniContents.append('INPUT_JOINT_5 = {}\n'.format(parent.inputJoint_5.currentData()))
 	iniContents.append('INPUT_6 = {}\n'.format(parent.input_6.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_6.currentText()))
+	iniContents.append('INPUT_DIR_6 = {}\n'.format(parent.inputInvert_6.currentText()))
 	iniContents.append('INPUT_JOINT_6 = {}\n'.format(parent.inputJoint_6.currentData()))
 	iniContents.append('INPUT_7 = {}\n'.format(parent.input_7.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_7.currentText()))
+	iniContents.append('INPUT_DIR_7 = {}\n'.format(parent.inputInvert_7.currentText()))
 	iniContents.append('INPUT_JOINT_7 = {}\n'.format(parent.inputJoint_7.currentData()))
 	iniContents.append('INPUT_8 = {}\n'.format(parent.input_8.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_8.currentText()))
+	iniContents.append('INPUT_DIR_8 = {}\n'.format(parent.inputInvert_8.currentText()))
 	iniContents.append('INPUT_JOINT_8 = {}\n'.format(parent.inputJoint_8.currentData()))
 	iniContents.append('INPUT_9 = {}\n'.format(parent.input_9.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_9.currentText()))
+	iniContents.append('INPUT_DIR_9 = {}\n'.format(parent.inputInvert_9.currentText()))
 	iniContents.append('INPUT_JOINT_9 = {}\n'.format(parent.inputJoint_9.currentData()))
 	iniContents.append('INPUT_10 = {}\n'.format(parent.input_10.currentText()))
-	iniContents.append('INPUT_DIR_0 = {}\n'.format(parent.inputInvert_10.currentText()))
+	iniContents.append('INPUT_DIR_10 = {}\n'.format(parent.inputInvert_10.currentText()))
 	iniContents.append('INPUT_JOINT_10 = {}\n'.format(parent.inputJoint_10.currentData()))
 
 
@@ -934,8 +934,10 @@ def buildio(parent):
 	# build the outputs
 	for index in range(6):
 		outputText = getattr(parent, 'output_' + str(index)).currentText()
-		netLine = outputDict[outputText]
-		ioContents.append(f'{netLine}hm2_7i96.0.ssr.00.out-0{index}\n')
+		if outputText != 'Select':
+			netLine = outputDict[outputText]
+			ioContents.append(f'{netLine}hm2_7i96.0.ssr.00.out-0{index}\n')
+
 		"""
 		if outputText == 'Coolant Flood':
 			ioContents.append(f'net flood-output iocontrol.0.coolant-flood => hm2_7i96.0.ssr.00.out-0{index}\n')
