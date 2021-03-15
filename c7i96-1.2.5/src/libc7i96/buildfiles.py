@@ -886,7 +886,10 @@ def buildio(parent):
 	for index in range(11):
 		inputText = getattr(parent, 'input_' + str(index)).currentText()
 		joint = getattr(parent, 'inputJoint_' + str(index)).currentData()
-		invert = getattr(parent, 'inputInvert_' + str(index)).currentData()
+		if getattr(parent, 'inputInvert_' + str(index)).currentData() == 'Inverted':
+			invert = '_not'
+		else:
+			invert = ''
 		if inputText == 'Home':
 			ioContents.append(f'net home-joint-{joint} joint.{joint}.home-sw-in <= hm2_7i96.0.gpio.0{index:02}.in{invert}\n')
 		elif inputText == 'Both Limit':

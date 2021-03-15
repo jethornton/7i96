@@ -246,8 +246,8 @@ def setupCombo(combo):
 	if combo == 'input_invert':
 		comboList = [
 		['Select', False],
-		['Normal', ''],
-		['Inverted', '_not']
+		['Normal', 'Normal'],
+		['Inverted', 'Inverted']
 		]
 
 	if combo == 'output':
