@@ -243,6 +243,12 @@ def setupCombo(combo):
 		['Digital In 3', 'Digital In 3']
 		]
 
+	if combo == 'input_invert':
+		comboList = [
+		['Normal', ''],
+		['Inverted', '_not']
+		]
+
 	if combo == 'output':
 		comboList = [
 		['Select', False],

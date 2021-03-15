@@ -5217,7 +5217,7 @@ max speed</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>351</width>
+          <width>451</width>
           <height>431</height>
          </rect>
         </property>
@@ -5418,92 +5418,48 @@ max speed</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="2">
-          <widget class="QCheckBox" name="inputInvert_0">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="2">
           <widget class="QLabel" name="label_358">
            <property name="text">
-            <string>Invert</string>
+            <string>Sense</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
+         <item row="1" column="2">
+          <widget class="QComboBox" name="inputInvert_0"/>
+         </item>
          <item row="2" column="2">
-          <widget class="QCheckBox" name="inputInvert_1">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_1"/>
          </item>
          <item row="3" column="2">
-          <widget class="QCheckBox" name="inputInvert_2">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_2"/>
          </item>
          <item row="4" column="2">
-          <widget class="QCheckBox" name="inputInvert_3">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_3"/>
          </item>
          <item row="5" column="2">
-          <widget class="QCheckBox" name="inputInvert_4">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_4"/>
          </item>
          <item row="6" column="2">
-          <widget class="QCheckBox" name="inputInvert_5">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_5"/>
          </item>
          <item row="7" column="2">
-          <widget class="QCheckBox" name="inputInvert_6">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_6"/>
          </item>
          <item row="8" column="2">
-          <widget class="QCheckBox" name="inputInvert_7">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_7"/>
          </item>
          <item row="9" column="2">
-          <widget class="QCheckBox" name="inputInvert_8">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_8"/>
          </item>
          <item row="10" column="2">
-          <widget class="QCheckBox" name="inputInvert_9">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_9"/>
          </item>
          <item row="11" column="2">
-          <widget class="QCheckBox" name="inputInvert_10">
-           <property name="text">
-            <string>In Not</string>
-           </property>
-          </widget>
+          <widget class="QComboBox" name="inputInvert_10"/>
          </item>
         </layout>
        </widget>
