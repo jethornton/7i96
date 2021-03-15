@@ -128,12 +128,30 @@ def config(parent):
 						tabError = True
 						configErrors.append(f'\tThe for Home Sequence for Joint {index} must be a number')
 
-
 	if tabError:
 		configErrors.insert(nextHeader, 'Axis Tab:')
 		nextHeader = len(configErrors)
 		tabError = False
 	# end of Axis Tab
+
+	# check the Inputs Tab for errors
+
+	inputList = ['Home', 'Both Limit', 'Min Limit', 'Max Limit',
+	'Home & Limit', 'Min Limit & Home', 'Max Limit & Home']
+	for index in range(11):
+		inputType = getattr(parent, 'input_' + str(index)).currentText()
+		joint = getattr(parent, 'inputJoint_' + str(index)).currentData()
+		if inputType in inputList and not joint:
+			tabError = True
+			configErrors.append(f'\tCan not use {inputType} without a joint number')
+
+
+	if tabError:
+		configErrors.insert(nextHeader, 'Inputs Tab:')
+		nextHeader = len(configErrors)
+		tabError = False
+	# end of Inputs Tab
+
 
 	if configErrors:
 		config.result = '\n'.join(configErrors)
