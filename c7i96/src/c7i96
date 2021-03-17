@@ -124,18 +124,6 @@ class MainWindow(QMainWindow):
 	def on_actionSaveParameters_triggered(self):
 		card.saveHal(self, 'parameter')
 
-	"""
-	def savePins(self):
-		fp = os.path.join(self.configPath, self.configNameUnderscored + '-pins.txt')
-		with open(fp, 'w') as f:
-			f.writelines(subprocess.getoutput("halcmd show pin"))
-
-	def saveSigs(self):
-		fp = os.path.join(self.configPath, self.configNameUnderscored + '-sigs.txt')
-		with open(fp, 'w') as f:
-			f.writelines(subprocess.getoutput("halcmd show sig"))
-	"""
-
 	@pyqtSlot()
 	def on_actionAbout_triggered(self):
 		dialog = QtWidgets.QDialog()
