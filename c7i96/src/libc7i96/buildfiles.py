@@ -110,15 +110,16 @@ def buildini(parent):
 	# build the [HALUI] section
 	iniContents.append('\n[HALUI]\n')
 
-	# need to loop-a-fy this
+	# this needs to be improved there are 5 axes so axisCB_ + index...
 	for item in parent.axisList:
 		axis = getattr(parent,item).currentData()
-		jointTab = getattr(parent,item).objectName()[7]
-		iniContents.append(f'\n[AXIS_{axis}]\n')
-		iniContents.append(f'MIN_LIMIT = {getattr(parent, "minLimit_" + jointTab).text()}\n')
-		iniContents.append(f'MAX_LIMIT = {getattr(parent, "maxLimit_" + jointTab).text()}\n')
-		iniContents.append(f'MAX_VELOCITY = {getattr(parent, "maxVelocity_" + jointTab).text()}\n')
-		iniContents.append(f'MAX_ACCELERATION = {getattr(parent, "maxAccel_" + jointTab).text()}\n')
+		if axis:
+			jointTab = getattr(parent,item).objectName()[7]
+			iniContents.append(f'\n[AXIS_{axis}]\n')
+			iniContents.append(f'MIN_LIMIT = {getattr(parent, "minLimit_" + jointTab).text()}\n')
+			iniContents.append(f'MAX_LIMIT = {getattr(parent, "maxLimit_" + jointTab).text()}\n')
+			iniContents.append(f'MAX_VELOCITY = {getattr(parent, "maxVelocity_" + jointTab).text()}\n')
+			iniContents.append(f'MAX_ACCELERATION = {getattr(parent, "maxAccel_" + jointTab).text()}\n')
 
 	# need to loop-a-fy this section one day
 	# build the [JOINT_0] section
