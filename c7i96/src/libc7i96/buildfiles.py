@@ -941,33 +941,6 @@ def buildio(parent):
 			netLine = outputDict[outputText]
 			ioContents.append(f'{netLine}hm2_7i96.0.ssr.00.out-0{index}\n')
 
-		"""
-		if outputText == 'Coolant Flood':
-			ioContents.append(f'net flood-output iocontrol.0.coolant-flood => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Coolant Mist':
-			ioContents.append(f'net mist-output iocontrol.0.coolant-mist => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Spindle On':
-			ioContents.append(f'net spindle-on spindle.0.on => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Spindle CW':
-			ioContents.append(f'net spindle-cw spindle.0.forward => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Spindle CCW':
-			ioContents.append(f'net spindle-ccw spindle.0.reverse => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Spindle Brake':
-			ioContents.append(f'net spindle-brake spindle.0.brake => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'E-Stop Out':
-			ioContents.append(f'net estop-loop hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Digital Out 0':
-			ioContents.append(f'net digital-out-0 motion.digital-out-00 => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Digital Out 1':
-			ioContents.append(f'net digital-out-1 motion.digital-out-01 => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Digital Out 2':
-			ioContents.append(f'net digital-out-2 motion.digital-out-02 => hm2_7i96.0.ssr.00.out-0{index}\n')
-		if outputText == 'Digital Out 3':
-			ioContents.append(f'net digital-out-3 motion.digital-out-03 => hm2_7i96.0.ssr.00.out-0{index}\n')
-		"""
-
 	with open(ioFilePath, 'w') as ioFile:
 		ioFile.writelines(ioContents)
 	return True
-
-
