@@ -43,16 +43,17 @@ def buildini(parent):
 
 	# build the [DISPLAY] section maxFeedOverrideLE
 	iniContents.append('\n[DISPLAY]\n')
-	iniContents.append('DISPLAY = {}\n'.format(parent.guiCB.itemData(parent.guiCB.currentIndex())))
-	iniContents.append('POSITION_OFFSET = {}\n'.format(parent.positionOffsetCB.itemData(parent.positionOffsetCB.currentIndex())))
-	iniContents.append('POSITION_FEEDBACK = {}\n'.format(parent.positionFeedbackCB.itemData(parent.positionFeedbackCB.currentIndex())))
-	iniContents.append('MAX_FEED_OVERRIDE = {}\n'.format(parent.maxFeedOverrideSB.value()))
-	iniContents.append('CYCLE_TIME = {}\n'.format('0.1'))
-	iniContents.append('INTRO_GRAPHIC = {}\n'.format('emc2.gif'))
-	iniContents.append('INTRO_TIME = {}\n'.format('0'))
+	iniContents.append(f'DISPLAY = {parent.guiCB.itemData(parent.guiCB.currentIndex())}\n')
+	iniContents.append(f'POSITION_OFFSET = {parent.positionOffsetCB.currentData()}\n')
+	iniContents.append(f'POSITION_FEEDBACK = {parent.positionFeedbackCB.currentData()}\n')
+	iniContents.append(f'MAX_FEED_OVERRIDE = {parent.maxFeedOverrideSB.value()}\n')
+	iniContents.append('CYCLE_TIME = 0.1\n')
+	if parent.splashScreenCB.isChecked():
+		iniContents.append(f'INTRO_GRAPHIC = {parent.introGraphicLE.text()}\n')
+		iniContents.append(f'INTRO_TIME = {parent.splashScreenSB.value()}\n')
 	iniContents.append('OPEN_FILE = "{}"\n'.format(''))
 	if parent.pyvcpCB.isChecked():
-		iniContents.append('PYVCP = {}.xml\n'.format(parent.configNameUnderscored))
+		iniContents.append(f'PYVCP = {parent.configNameUnderscored}.xml\n')
 	if parent.frontToolLatheCB.isChecked():
 		iniContents.append('LATHE = 1\n')
 	if parent.frontToolLatheCB.isChecked():
@@ -63,39 +64,39 @@ def buildini(parent):
 	if len(set(parent.coordinatesLB.text())) == len(parent.coordinatesLB.text()): # 1 joint for each axis
 		iniContents.append('KINEMATICS = {} coordinates={}\n'.format('trivkins', parent.coordinatesLB.text()))
 	else: # more than one joint per axis
-		iniContents.append('KINEMATICS = {} coordinates={} kinstype=BOTH\n'.format('trivkins', parent.coordinatesLB.text()))
-	iniContents.append('JOINTS = {}\n'.format(len(parent.coordinatesLB.text())))
+		iniContents.append(f'KINEMATICS = trivkins coordinates={parent.coordinatesLB.text()} kinstype=BOTH\n')
+	iniContents.append(f'JOINTS = {len(parent.coordinatesLB.text())}\n')
 
 	# build the [EMCIO] section
 	iniContents.append('\n[EMCIO]\n')
-	iniContents.append('EMCIO = {}\n'.format('io'))
-	iniContents.append('CYCLE_TIME = {}\n'.format('0.100'))
+	iniContents.append('EMCIO = io\n')
+	iniContents.append('CYCLE_TIME = 0.100\n')
 	iniContents.append('TOOL_TABLE = tool.tbl\n')
 
 	# build the [RS274NGC] section
 	iniContents.append('\n[RS274NGC]\n')
-	iniContents.append('PARAMETER_FILE = {}.var\n'.format(parent.configNameUnderscored))
+	iniContents.append(f'PARAMETER_FILE = {parent.configNameUnderscored}.var\n')
 
 	# build the [EMCMOT] section
 	iniContents.append('\n[EMCMOT]\n')
-	iniContents.append('EMCMOT = {}\n'.format('motmod'))
-	iniContents.append('SERVO_PERIOD = {}\n'.format(parent.servoPeriodSB.value()))
+	iniContents.append('EMCMOT = motmod\n')
+	iniContents.append(f'SERVO_PERIOD = {parent.servoPeriodSB.value()}\n')
 
 	# build the [TASK] section
 	iniContents.append('\n[TASK]\n')
-	iniContents.append('TASK = {}\n'.format('milltask'))
-	iniContents.append('CYCLE_TIME = {}\n'.format('0.010'))
+	iniContents.append('TASK = milltask\n')
+	iniContents.append('CYCLE_TIME = 0.010\n')
 
 	# build the [TRAJ] section
 	iniContents.append('\n[TRAJ]\n')
-	iniContents.append('COORDINATES = {}\n'.format(parent.coordinatesLB.text()))
-	iniContents.append('LINEAR_UNITS = {}\n'.format(parent.linearUnitsCB.itemData(parent.linearUnitsCB.currentIndex())))
-	iniContents.append('ANGULAR_UNITS = {}\n'.format(parent.angularUnitsCB.itemData(parent.angularUnitsCB.currentIndex())))
-	iniContents.append('MAX_LINEAR_VELOCITY = {}\n'.format(parent.maxLinearVel.text()))
+	iniContents.append(f'COORDINATES = {parent.coordinatesLB.text()}\n')
+	iniContents.append(f'LINEAR_UNITS = {parent.linearUnitsCB.currentData()}\n')
+	iniContents.append(f'ANGULAR_UNITS = {parent.angularUnitsCB.currentData()}\n')
+	iniContents.append(f'MAX_LINEAR_VELOCITY = {parent.maxLinearVel.text()}\n')
 
 	# build the [HAL] section
 	iniContents.append('\n[HAL]\n')
-	iniContents.append('HALFILE = {}.hal\n'.format(parent.configNameUnderscored))
+	iniContents.append(f'HALFILE = {parent.configNameUnderscored}.hal\n')
 	iniContents.append('HALFILE = io.hal\n')
 	if parent.customhalCB.isChecked():
 		iniContents.append('HALFILE = custom.hal\n')
@@ -111,15 +112,15 @@ def buildini(parent):
 
 	# need to loop-a-fy this
 	for item in parent.axisList:
-		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'X':
-			jointTab = getattr(parent,item).objectName()[7]
-			iniContents.append('\n[AXIS_X]\n')
-			iniContents.append('MIN_LIMIT = {}\n'.format(getattr(parent, 'minLimit_' + jointTab).text()))
-			iniContents.append('MAX_LIMIT = {}\n'.format(getattr(parent, 'maxLimit_' + jointTab).text()))
-			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
-			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
-			break
+		axis = getattr(parent,item).currentData()
+		jointTab = getattr(parent,item).objectName()[7]
+		iniContents.append(f'\n[AXIS_{axis}]\n')
+		iniContents.append(f'MIN_LIMIT = {getattr(parent, "minLimit_" + jointTab).text()}\n')
+		iniContents.append(f'MAX_LIMIT = {getattr(parent, "maxLimit_" + jointTab).text()}\n')
+		iniContents.append(f'MAX_VELOCITY = {getattr(parent, "maxVelocity_" + jointTab).text()}\n')
+		iniContents.append(f'MAX_ACCELERATION = {getattr(parent, "maxAccel_" + jointTab).text()}\n')
 
+	"""
 	for item in parent.axisList:
 		if getattr(parent,item).itemData(getattr(parent,item).currentIndex()) == 'Y':
 			jointTab = getattr(parent,item).objectName()[7]
@@ -199,6 +200,7 @@ def buildini(parent):
 			iniContents.append('MAX_VELOCITY = {}\n'.format(getattr(parent, 'maxVelocity_' + jointTab).text()))
 			iniContents.append('MAX_ACCELERATION = {}\n'.format(getattr(parent, 'maxAccel_' + jointTab).text()))
 			break
+	"""
 
 	# need to loop-a-fy this section one day
 	# build the [JOINT_0] section
@@ -210,7 +212,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_0.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_0.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
-		if parent.reverse_0:
+		if parent.reverse_0.isChecked():
 			iniContents.append('SCALE = -{}\n'.format(parent.scale_0.text()))
 		else:
 			iniContents.append('SCALE = {}\n'.format(parent.scale_0.text()))
@@ -260,7 +262,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_1.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_1.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_1.text()))
-		if parent.reverse_1:
+		if parent.reverse_1.isChecked():
 			iniContents.append('SCALE = -{}\n'.format(parent.scale_1.text()))
 		else:
 			iniContents.append('SCALE = {}\n'.format(parent.scale_1.text()))
@@ -308,7 +310,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_2.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_2.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_2.text()))
-		if parent.reverse_2:
+		if parent.reverse_2.isChecked():
 			iniContents.append('SCALE = -{}\n'.format(parent.scale_2.text()))
 		else:
 			iniContents.append('SCALE = {}\n'.format(parent.scale_2.text()))
@@ -356,7 +358,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_3.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_3.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_3.text()))
-		if parent.reverse_3:
+		if parent.reverse_3.isChecked():
 			iniContents.append('SCALE = -{}\n'.format(parent.scale_3.text()))
 		else:
 			iniContents.append('SCALE = {}\n'.format(parent.scale_3.text()))
@@ -404,7 +406,7 @@ def buildini(parent):
 		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_4.text()))
 		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_4.text()))
 		iniContents.append('TYPE = {}\n'.format(parent.axisType_4.text()))
-		if parent.reverse_4:
+		if parent.reverse_4.isChecked():
 			iniContents.append('SCALE = -{}\n'.format(parent.scale_4.text()))
 		else:
 			iniContents.append('SCALE = {}\n'.format(parent.scale_4.text()))
@@ -514,11 +516,12 @@ def buildini(parent):
 
 	# build the [OPTIIONS] section
 	iniContents.append('\n[OPTIONS]\n')
-	iniContents.append('MANUAL_TOOL_CHANGE = {}\n'.format(parent.manualToolChangeCB.isChecked()))
-	iniContents.append('HALUI = {}\n'.format(parent.haluiCB.isChecked()))
-	iniContents.append('PYVCP = {}\n'.format(parent.pyvcpCB.isChecked()))
-	iniContents.append('GLADEVCP = {}\n'.format(parent.gladevcpCB.isChecked()))
-	iniContents.append('LADDER = {}\n'.format(parent.ladderGB.isChecked()))
+	iniContents.append(f'INTRO_GRAPHIC = {parent.splashScreenCB.isChecked()}\n')
+	iniContents.append(f'MANUAL_TOOL_CHANGE = {parent.manualToolChangeCB.isChecked()}\n'.format())
+	iniContents.append(f'HALUI = {parent.haluiCB.isChecked()}\n')
+	iniContents.append(f'PYVCP = {parent.pyvcpCB.isChecked()}\n')
+	iniContents.append(f'GLADEVCP = {parent.gladevcpCB.isChecked()}\n')
+	iniContents.append(f'LADDER = {parent.ladderGB.isChecked()}\n')
 	if parent.ladderGB.isChecked(): # check for any options
 		for option in parent.ladderOptionsList:
 			if getattr(parent, option).value() > 0: #******** work to be done here

@@ -17,6 +17,7 @@ def iniList():
 	iniList.append(['DISPLAY', 'POSITION_OFFSET', 'positionOffsetCB'])
 	iniList.append(['DISPLAY', 'POSITION_FEEDBACK', 'positionFeedbackCB'])
 	iniList.append(['DISPLAY', 'MAX_FEED_OVERRIDE', 'maxFeedOverrideSB'])
+	iniList.append(['DISPLAY', 'INTRO_TIME', 'splashScreenSB'])
 
 	iniList.append(['EMCMOT', 'SERVO_PERIOD', 'servoPeriodSB'])
 
@@ -111,6 +112,7 @@ def iniList():
 	iniList.append(['OUTPUTS', 'OUTPUT_3', 'output_3'])
 	iniList.append(['OUTPUTS', 'OUTPUT_4', 'output_4'])
 
+	iniList.append(['OPTIONS', 'INTRO_GRAPHIC', 'splashScreenCB'])
 	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
 	iniList.append(['OPTIONS', 'HALUI', 'haluiCB'])
 	iniList.append(['OPTIONS', 'PYVCP', 'pyvcpCB'])
