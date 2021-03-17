@@ -1,16 +1,6 @@
 import os
 from datetime import datetime
 
-"""
-	linuxcncDir = os.path.expanduser('~/linuxcnc')
-	test = '~/linuxcnc/configs/' + 'fred'
-	print(os.path.expanduser(self.test))
-	configsDir = os.path.expanduser('~/linuxcnc/configs')
-	gcodeDir = os.path.expanduser('~/linuxcnc/nc_files')
-	subroutineDir = os.path.expanduser('~/linuxcnc/subroutines')
-
-"""
-
 def builddirs(parent):
 	if not os.path.exists(os.path.expanduser('~/linuxcnc')):
 		os.mkdir(os.path.expanduser('~/linuxcnc'))
