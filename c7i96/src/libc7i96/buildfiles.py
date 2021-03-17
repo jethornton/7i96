@@ -110,11 +110,11 @@ def buildini(parent):
 	# build the [HALUI] section
 	iniContents.append('\n[HALUI]\n')
 
-	# this needs to be improved there are 5 axes so axisCB_ + index...
-	for item in parent.axisList:
-		axis = getattr(parent,item).currentData()
+	# build the axes
+	for index in range(5):
+		axis = getattr(parent,'axisCB_' + str(index)).currentData()
 		if axis:
-			jointTab = getattr(parent,item).objectName()[7]
+			jointTab = getattr(parent,'axisCB_' + str(index)).objectName()[7]
 			iniContents.append(f'\n[AXIS_{axis}]\n')
 			iniContents.append(f'MIN_LIMIT = {getattr(parent, "minLimit_" + jointTab).text()}\n')
 			iniContents.append(f'MAX_LIMIT = {getattr(parent, "maxLimit_" + jointTab).text()}\n')
