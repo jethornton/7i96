@@ -135,7 +135,6 @@ def config(parent):
 	# end of Axis Tab
 
 	# check the Inputs Tab for errors
-
 	inputList = ['Home', 'Both Limit', 'Min Limit', 'Max Limit',
 	'Home & Limit', 'Min Limit & Home', 'Max Limit & Home']
 	for index in range(11):
@@ -145,13 +144,11 @@ def config(parent):
 			tabError = True
 			configErrors.append(f'\tCan not use {inputType} without a joint number')
 
-
 	if tabError:
 		configErrors.insert(nextHeader, 'Inputs Tab:')
 		nextHeader = len(configErrors)
 		tabError = False
 	# end of Inputs Tab
-
 
 	if configErrors:
 		config.result = '\n'.join(configErrors)

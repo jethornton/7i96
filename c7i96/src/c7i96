@@ -237,15 +237,15 @@ class MainWindow(QMainWindow):
 		self.copyInfoPB.clicked.connect(self.copyInfo)
 		self.spindleTypeCB.currentIndexChanged.connect(self.spindleTypeChanged)
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
+		#     obj.signal.connect(partial(fun, args1, arg2, ... ))
 		self.cpuPB.clicked.connect(partial(pcinfo.cpuInfo, self))
 		self.nicPB.clicked.connect(partial(pcinfo.nicInfo, self))
 		self.calcNicPB.clicked.connect(partial(pcinfo.nicCalc, self))
 		self.readTmaxPB.clicked.connect(partial(pcinfo.readTmax, self))
-		#     obj.signal.connect(partial(fun, args1, arg2, ... ))
-		self.readCardPB.clicked.connect(partial(card.readCard, self))
-		self.flashPB.clicked.connect(partial(card.flashCard, self))
-		self.reloadPB.clicked.connect(partial(card.reloadCard, self))
-		self.pinsPB.clicked.connect(partial(card.getCardPins, self))
+		self.readPB.clicked.connect(partial(card.readCard, self, '7i96'))
+		self.flashPB.clicked.connect(partial(card.flashCard, self, '7i96'))
+		self.reloadPB.clicked.connect(partial(card.reloadCard, self, '7i96'))
+		self.pinsPB.clicked.connect(partial(card.getPins, self))
 
 	def copyOutput(self):
 		self.qclip.setText(self.outputPTE.toPlainText())
@@ -421,6 +421,7 @@ class MainWindow(QMainWindow):
 				self.spindleInfo2Lbl.setText("Direction on Dir 4")
 				self.tb2p5LB.setText("Direction +")
 				self.tb2p4LB.setText("Direction -")
+				self.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '2':
 				self.spindleInfo1Lbl.setText("UP on Step 4")
 				self.tb2p3LB.setText("UP +")
@@ -428,6 +429,7 @@ class MainWindow(QMainWindow):
 				self.spindleInfo2Lbl.setText("Down on Dir 4")
 				self.tb2p5LB.setText("DOWN +")
 				self.tb2p4LB.setText("DOWN -")
+				self.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '3':
 				self.spindleInfo1Lbl.setText("PDM on Step 4")
 				self.tb2p3LB.setText("PDM +")
@@ -435,6 +437,7 @@ class MainWindow(QMainWindow):
 				self.spindleInfo2Lbl.setText("Direction on Dir 4")
 				self.tb2p5LB.setText("Direction +")
 				self.tb2p4LB.setText("Direction -")
+				self.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
 			if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == '4':
 				self.spindleInfo1Lbl.setText("Direction on Step 4")
 				self.tb2p3LB.setText("Direction +")
@@ -442,6 +445,7 @@ class MainWindow(QMainWindow):
 				self.spindleInfo2Lbl.setText("PWM on Dir 4")
 				self.tb2p5LB.setText("PWM +")
 				self.tb2p4LB.setText("PWM -")
+				self.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
 
 		else:
 			self.spindleGB.setEnabled(False)
@@ -452,37 +456,6 @@ class MainWindow(QMainWindow):
 			self.spindleInfo2Lbl.setText("")
 			self.spindleInfo3Lbl.setText("")
 			self.spindleInfo4Lbl.setText("")
-
-
-		"""
-		pid = '0'
-		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'openLoop':
-			pid = '0'
-			self.ff0_s.setText('1')
-
-			self.spindle = True
-		if self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()) == 'closedLoop':
-			self.spindle = True
-			pid = '0'
-			self.ff0_s.setText('1')
-			self.spindleGB.setEnabled(True)
-			self.encoderGB.setEnabled(True)
-			self.spindlepidGB.setEnabled(True)
-		if not self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()):
-			self.spindle = False
-			pid = ''
-			self.ff0_s.setText('')
-
-		self.p_s.setText(pid)
-		self.i_s.setText(pid)
-		self.d_s.setText(pid)
-		self.ff1_s.setText(pid)
-		self.ff2_s.setText(pid)
-		self.bias_s.setText(pid)
-		self.maxOutput_s.setText(pid)
-		self.maxError_s.setText(pid)
-		self.deadband_s.setText(pid)
-		"""
 
 	def pidSetDefault(self):
 		tab = self.sender().objectName()[-1]

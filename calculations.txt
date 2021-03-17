@@ -8,3 +8,17 @@ in a velocity mode loop (like the stepgen) is corrected by the next
 servo thread period.
 
 A value any greater than 1/servo_period will overcorrect 
+
+Would you connect hm2_7i96.0.encoder.00.velocity to pid.3.feedback?
+
+There's a scale issue, the encoder velocity is in RPS but the spindle commanded
+velocity is in RPM
+
+I guess the options are to scale everything in RPS (using motions RPS speed
+pins) or to scale the encoder feedback velocity to RPM using the scale
+component The latter has the advantage of providing a actual RPM number for
+display
+
+a fully isolated potentiometer replacement device the SPINX1.
+This is a simple small card that takes 3 signals (PWM ENA DIR) and provides a
+potentiometer replacement plus isolated FWD REV and ENA outputs.
