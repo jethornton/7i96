@@ -18,3 +18,11 @@ dch -v 1.2.5
 to build a deb from the top most directory
 dpkg-buildpackage -us -uc
 
+
+# estop
+loadrt estop_latch
+addf estop-latch.0 servo-thread
+net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
+net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
+net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
+net remote-estop estop-latch.0.fault-in <=  parport.0.pin-in10-not

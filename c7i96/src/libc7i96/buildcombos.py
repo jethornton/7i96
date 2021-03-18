@@ -228,7 +228,7 @@ def setupCombo(combo):
 	if combo == 'input':
 		comboList = [
 		['Select', False],
-		['E-Stop In', 'E-Stop In'],
+		['E-Stop', 'E-Stop'],
 		['Home', 'Home'],
 		['Both Limit', 'Both Limit'],
 		['Min Limit', 'Min Limit'],
