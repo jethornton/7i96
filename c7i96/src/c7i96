@@ -2,6 +2,7 @@
 
 import sys, os, configparser, platform, subprocess
 from functools import partial
+from datetime import datetime
 
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt, QProcess
@@ -151,7 +152,14 @@ class MainWindow(QMainWindow):
 		if not self.checkConfig(self):
 			self.errorDialog(self.checkConfig.result)
 			return
-
+		if self.backupCB.isChecked():
+			backupDir = self.configPath + '_backup'
+			if not os.path.exists(backupDir):
+				os.mkdir(backupDir)
+			backupName = os.path.join(backupDir, f'{datetime.now():%m-%d-%y-%H:%M:%S}')
+			backupFiles = self.configPath
+			arguments = ["-rj", backupName, backupFiles]
+			self.extcmd.job(cmd="zip", args=arguments, dest=self.outputPTE)
 		result = self.builddirs(self)
 		if result:
 			result = self.buildini(self)

@@ -21,7 +21,8 @@ class extcmd:
 		self.cleanup = None
 
 	def message(self, text):
-		self.destination.appendPlainText(text)
+		if self.destination:
+			self.destination.appendPlainText(text)
 
 	def pipe_job(self, **kwargs):
 		cmd1 = kwargs.get('cmd1')
@@ -54,7 +55,7 @@ class extcmd:
 		cmd = kwargs.get('cmd')
 		args = kwargs.get('args')
 		self.destination = kwargs.get('dest')
-		self.destination.clear()
+		#self.destination.clear()
 		self.cleanup = kwargs.get('clean')
 		self.p1 = QProcess()
 		if self.destination:
@@ -69,7 +70,8 @@ class extcmd:
 			self.p1.start(cmd, args)
 		else:
 			self.p1.start(cmd)
-		self.message(f"Executing process {self.p1.program()}")
+		if self.destination:
+			self.message(f"Executing process {self.p1.program()}")
 
 	def p1_handle_stderr(self):
 		data = self.p1.readAllStandardError()

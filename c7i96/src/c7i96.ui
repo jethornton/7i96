@@ -5768,6 +5768,22 @@ max speed</string>
          </item>
         </layout>
        </widget>
+       <widget class="QCheckBox" name="backupCB">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>100</y>
+          <width>301</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Make Backup Copies when Building</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="plc">
        <attribute name="title">

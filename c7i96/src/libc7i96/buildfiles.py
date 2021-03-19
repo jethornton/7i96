@@ -16,6 +16,8 @@ def buildini(parent):
 	buildErrors = []
 	buildini.result = ''
 	iniFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.ini')
+	if os.path.isfile(iniFilePath):
+		pass
 
 	if not os.path.exists(parent.configPath):
 		os.mkdir(parent.configPath)
@@ -441,6 +443,7 @@ def buildini(parent):
 	iniContents.append(f'PYVCP = {parent.pyvcpCB.isChecked()}\n')
 	iniContents.append(f'GLADEVCP = {parent.gladevcpCB.isChecked()}\n')
 	iniContents.append(f'LADDER = {parent.ladderGB.isChecked()}\n')
+	iniContents.append(f'BACKUP = {parent.backupCB.isChecked()}\n')
 	if parent.ladderGB.isChecked(): # check for any options
 		for option in parent.ladderOptionsList:
 			if getattr(parent, option).value() > 0: #******** work to be done here

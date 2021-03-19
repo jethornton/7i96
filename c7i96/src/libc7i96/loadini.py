@@ -119,6 +119,7 @@ def iniList():
 	iniList.append(['OPTIONS', 'GLADEVCP', 'gladevcpCB'])
 	iniList.append(['OPTIONS', 'LADDER', 'ladderGB'])
 	iniList.append(['OPTIONS', 'LADDER_RUNGS', 'ladderRungsSB'])
+	iniList.append(['BACKUP', 'BACKUP', 'backupCB'])
 
 	return iniList
 
