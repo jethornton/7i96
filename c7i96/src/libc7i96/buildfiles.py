@@ -9,34 +9,6 @@ def build(parent):
 	buildio(parent)
 	buildmisc(parent)
 
-	"""
-	#result = self.builddirs(self)
-	#if result:
-	result = self.buildini(self)
-	if result:
-		self.statusbar.showMessage('Build Directories Failed')
-		return
-	if result:
-		result = self.buildhal(self)
-	else:
-		self.statusbar.showMessage('Build INI File Failed')
-		return
-	if result:
-		result = self.buildio(self)
-	else:
-		self.statusbar.showMessage('Build HAL Files Failed')
-		return
-	if result:
-		result = self.buildmisc(self)
-	else:
-		self.statusbar.showMessage('Build I/O Files Failed')
-		return
-	if result:
-		self.statusbar.showMessage('Build Files Completed')
-	else:
-		self.statusbar.showMessage('Build Misc Files Failed')
-	"""
-
 def builddirs(parent):
 	if not os.path.exists(os.path.expanduser('~/linuxcnc')):
 		os.mkdir(os.path.expanduser('~/linuxcnc'))
@@ -46,13 +18,12 @@ def builddirs(parent):
 		os.mkdir(os.path.expanduser('~/linuxcnc/nc_files'))
 	if not os.path.exists(os.path.expanduser('~/linuxcnc/subroutines')):
 		os.mkdir(os.path.expanduser('~/linuxcnc/subroutines'))
-	return True
 
 def buildini(parent):
 	buildErrors = []
 	buildini.result = ''
 	iniFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.ini')
-	parent.outputPTE.appendPlainText(f'Building {iniFilePath} File')
+	parent.outputPTE.appendPlainText(f'Building {iniFilePath}')
 
 	if os.path.isfile(iniFilePath):
 		pass
@@ -489,9 +460,6 @@ def buildini(parent):
 
 	with open(iniFilePath, 'w') as iniFile:
 		iniFile.writelines(iniContents)
-	buildini.result = 'Sucess {} file was created'.format(iniFilePath)
-	return True
-
 
 def buildhal(parent):
 	for index in range(11):
@@ -502,7 +470,7 @@ def buildhal(parent):
 		else:
 			external_estop = False
 	halFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.hal')
-	parent.outputPTE.appendPlainText(f'Building {halFilePath} File')
+	parent.outputPTE.appendPlainText(f'Building {halFilePath}')
 
 	halContents = []
 	halContents = ['# This file was created with the 7i96 Wizard on ']
@@ -608,11 +576,10 @@ def buildhal(parent):
 
 	with open(halFilePath, 'w') as halFile:
 		halFile.writelines(halContents)
-	return True
 
 def buildio(parent):
 	ioFilePath = os.path.join(parent.configPath, 'io.hal')
-	parent.outputPTE.appendPlainText(f'Building {ioFilePath} File')
+	parent.outputPTE.appendPlainText(f'Building {ioFilePath}')
 	ioContents = []
 	ioContents = ['# This file was created with the 7i96 Wizard on ']
 	ioContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -685,11 +652,8 @@ def buildio(parent):
 
 	with open(ioFilePath, 'w') as ioFile:
 		ioFile.writelines(ioContents)
-	return True
-
 
 def buildmisc(parent):
-
 	# if Axis is the GUI add the shutup file
 	if parent.guiCB.currentData() == 'axis':
 		shutupFilepath = os.path.expanduser('~/.axisrc')
@@ -697,7 +661,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(shutupFilepath, 'x') as shutupFile:
 				shutupFile.writelines(shutupContents)
-			parent.outputPTE.appendPlainText(f'Building {shutupFilepath} File')
+			parent.outputPTE.appendPlainText(f'Building {shutupFilepath}')
 		except FileExistsError:
 			pass
 
@@ -709,7 +673,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(customFilePath, 'x') as customFile:
 				customFile.writelines(customContents)
-			parent.outputPTE.appendPlainText(f'Building {customFilePath} File')
+			parent.outputPTE.appendPlainText(f'Building {customFilePath}')
 		except FileExistsError:
 			pass
 
@@ -723,7 +687,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(postguiFilePath, 'x') as postguiFile:
 				postguiFile.writelines(postguiContents)
-			parent.outputPTE.appendPlainText(f'Building {postguiFilePath} File')
+			parent.outputPTE.appendPlainText(f'Building {postguiFilePath}')
 		except FileExistsError:
 			pass
 
@@ -738,7 +702,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(shutdownFilePath, 'x') as shutdownFile:
 				shutdownFile.writelines(shutdownContents)
-			parent.outputPTE.appendPlainText(f'Building {shutdownFilePath} File')
+			parent.outputPTE.appendPlainText(f'Building {shutdownFilePath}')
 		except FileExistsError:
 			pass
 
@@ -751,7 +715,7 @@ def buildmisc(parent):
 	try: # if this file exists don't write over it
 		with open(toolFilePath, 'x') as toolFile:
 			toolFile.writelines(toolContents)
-		parent.outputPTE.appendPlainText(f'Building {toolFilePath} File')
+		parent.outputPTE.appendPlainText(f'Building {toolFilePath}')
 	except FileExistsError:
 		pass
 
@@ -781,7 +745,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(pyvcpFilePath, 'x') as pyvcpFile:
 				pyvcpFile.writelines(pyvcpContents)
-			parent.outputPTE.appendPlainText(f'Building {pyvcpFilePath} File')
+			parent.outputPTE.appendPlainText(f'Building {pyvcpFilePath}')
 		except FileExistsError:
 			pass
 
@@ -907,8 +871,6 @@ _/FILES_CLASSICLADDER
 		try: # if this file exists don't write over it
 			with open(ladderFilePath, 'x') as ladderFile:
 				ladderFile.writelines(ladderContents)
-				parent.outputPTE.appendPlainText(f'Building {ladderFilePath} File')
+				parent.outputPTE.appendPlainText(f'Building {ladderFilePath}')
 		except FileExistsError:
 			pass
-	return True
-
