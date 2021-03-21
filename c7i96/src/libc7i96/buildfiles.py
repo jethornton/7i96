@@ -1,6 +1,42 @@
 import os
 from datetime import datetime
 
+def build(parent):
+	parent.outputPTE.appendPlainText('Building Configuration Files')
+	builddirs(parent)
+	buildini(parent)
+	buildhal(parent)
+	buildio(parent)
+	buildmisc(parent)
+
+	"""
+	#result = self.builddirs(self)
+	#if result:
+	result = self.buildini(self)
+	if result:
+		self.statusbar.showMessage('Build Directories Failed')
+		return
+	if result:
+		result = self.buildhal(self)
+	else:
+		self.statusbar.showMessage('Build INI File Failed')
+		return
+	if result:
+		result = self.buildio(self)
+	else:
+		self.statusbar.showMessage('Build HAL Files Failed')
+		return
+	if result:
+		result = self.buildmisc(self)
+	else:
+		self.statusbar.showMessage('Build I/O Files Failed')
+		return
+	if result:
+		self.statusbar.showMessage('Build Files Completed')
+	else:
+		self.statusbar.showMessage('Build Misc Files Failed')
+	"""
+
 def builddirs(parent):
 	if not os.path.exists(os.path.expanduser('~/linuxcnc')):
 		os.mkdir(os.path.expanduser('~/linuxcnc'))
@@ -16,6 +52,8 @@ def buildini(parent):
 	buildErrors = []
 	buildini.result = ''
 	iniFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.ini')
+	parent.outputPTE.appendPlainText(f'Building {iniFilePath} File')
+
 	if os.path.isfile(iniFilePath):
 		pass
 
@@ -464,6 +502,8 @@ def buildhal(parent):
 		else:
 			external_estop = False
 	halFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.hal')
+	parent.outputPTE.appendPlainText(f'Building {halFilePath} File')
+
 	halContents = []
 	halContents = ['# This file was created with the 7i96 Wizard on ']
 	halContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -572,6 +612,7 @@ def buildhal(parent):
 
 def buildio(parent):
 	ioFilePath = os.path.join(parent.configPath, 'io.hal')
+	parent.outputPTE.appendPlainText(f'Building {ioFilePath} File')
 	ioContents = []
 	ioContents = ['# This file was created with the 7i96 Wizard on ']
 	ioContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -656,6 +697,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(shutupFilepath, 'x') as shutupFile:
 				shutupFile.writelines(shutupContents)
+			parent.outputPTE.appendPlainText(f'Building {shutupFilepath} File')
 		except FileExistsError:
 			pass
 
@@ -667,6 +709,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(customFilePath, 'x') as customFile:
 				customFile.writelines(customContents)
+			parent.outputPTE.appendPlainText(f'Building {customFilePath} File')
 		except FileExistsError:
 			pass
 
@@ -680,6 +723,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(postguiFilePath, 'x') as postguiFile:
 				postguiFile.writelines(postguiContents)
+			parent.outputPTE.appendPlainText(f'Building {postguiFilePath} File')
 		except FileExistsError:
 			pass
 
@@ -694,6 +738,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(shutdownFilePath, 'x') as shutdownFile:
 				shutdownFile.writelines(shutdownContents)
+			parent.outputPTE.appendPlainText(f'Building {shutdownFilePath} File')
 		except FileExistsError:
 			pass
 
@@ -706,6 +751,7 @@ def buildmisc(parent):
 	try: # if this file exists don't write over it
 		with open(toolFilePath, 'x') as toolFile:
 			toolFile.writelines(toolContents)
+		parent.outputPTE.appendPlainText(f'Building {toolFilePath} File')
 	except FileExistsError:
 		pass
 
@@ -735,6 +781,7 @@ def buildmisc(parent):
 		try: # if this file exists don't write over it
 			with open(pyvcpFilePath, 'x') as pyvcpFile:
 				pyvcpFile.writelines(pyvcpContents)
+			parent.outputPTE.appendPlainText(f'Building {pyvcpFilePath} File')
 		except FileExistsError:
 			pass
 
@@ -860,6 +907,7 @@ _/FILES_CLASSICLADDER
 		try: # if this file exists don't write over it
 			with open(ladderFilePath, 'x') as ladderFile:
 				ladderFile.writelines(ladderContents)
+				parent.outputPTE.appendPlainText(f'Building {ladderFilePath} File')
 		except FileExistsError:
 			pass
 	return True

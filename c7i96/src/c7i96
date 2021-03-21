@@ -41,6 +41,7 @@ class MainWindow(QMainWindow):
 		self.setWindowTitle(f'7i96 Configuration Tool Version {self.version}')
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
+		self.buildConfig = buildfiles.build
 		self.builddirs = buildfiles.builddirs
 		self.buildini = buildfiles.buildini
 		self.buildhal = buildfiles.buildhal
@@ -149,46 +150,24 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
+		self.outputPTE.clear()
 		if not self.checkConfig(self):
 			self.errorDialog(self.checkConfig.result)
 			return
 		if self.backupCB.isChecked():
-			backupDir = os.path.join(self.configPath, 'backups')
-			if not os.path.exists(backupDir):
-				os.mkdir(backupDir)
+			if os.path.exists(self.configPath): # there is something to backup
+				backupDir = os.path.join(self.configPath, 'backups')
+				if not os.path.exists(backupDir):
+					os.mkdir(backupDir)
+				backupFile = os.path.join(backupDir, f'{datetime.now():%m-%d-%y-%H:%M:%S}')
+				self.outputPTE.appendPlainText(f'Saving Files to {backupFile}')
+				p1 = subprocess.Popen(['find',self.configPath,'-maxdepth','1','-type','f','-print'], stdout=subprocess.PIPE)
+				p2 = subprocess.Popen(['zip','-j',backupFile,'-@'], stdin=p1.stdout, stdout=subprocess.PIPE)
+				p1.stdout.close()
+				output = p2.communicate()[0]
+				self.outputPTE.appendPlainText(output.decode())
 
-			p1 = subprocess.Popen(['find',self.configPath,'-maxdepth','1','-type','f','-print'], stdout=subprocess.PIPE)
-			backupFile = os.path.join(backupDir, f'{datetime.now():%m-%d-%y-%H:%M:%S}')
-			p2 = subprocess.Popen(['zip','-j',backupFile,'-@'], stdin=p1.stdout, stdout=subprocess.PIPE)
-			p1.stdout.close()
-			output = p2.communicate()[0]
-			self.outputPTE.appendPlainText(output.decode())
-
-		result = self.builddirs(self)
-		if result:
-			result = self.buildini(self)
-		else:
-			self.statusbar.showMessage('Build Directories Failed')
-			return
-		if result:
-			result = self.buildhal(self)
-		else:
-			self.statusbar.showMessage('Build INI File Failed')
-			return
-		if result:
-			result = self.buildio(self)
-		else:
-			self.statusbar.showMessage('Build HAL Files Failed')
-			return
-		if result:
-			result = self.buildmisc(self)
-		else:
-			self.statusbar.showMessage('Build I/O Files Failed')
-			return
-		if result:
-			self.statusbar.showMessage('Build Files Completed')
-		else:
-			self.statusbar.showMessage('Build Misc Files Failed')
+		self.buildConfig(self)
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
