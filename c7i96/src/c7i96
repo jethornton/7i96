@@ -153,13 +153,17 @@ class MainWindow(QMainWindow):
 			self.errorDialog(self.checkConfig.result)
 			return
 		if self.backupCB.isChecked():
-			backupDir = self.configPath + '_backup'
+			backupDir = os.path.join(self.configPath, 'backups')
 			if not os.path.exists(backupDir):
 				os.mkdir(backupDir)
-			backupName = os.path.join(backupDir, f'{datetime.now():%m-%d-%y-%H:%M:%S}')
-			backupFiles = self.configPath
-			arguments = ["-rj", backupName, backupFiles]
-			self.extcmd.job(cmd="zip", args=arguments, dest=self.outputPTE)
+
+			p1 = subprocess.Popen(['find',self.configPath,'-maxdepth','1','-type','f','-print'], stdout=subprocess.PIPE)
+			backupFile = os.path.join(backupDir, f'{datetime.now():%m-%d-%y-%H:%M:%S}')
+			p2 = subprocess.Popen(['zip','-j',backupFile,'-@'], stdin=p1.stdout, stdout=subprocess.PIPE)
+			p1.stdout.close()
+			output = p2.communicate()[0]
+			self.outputPTE.appendPlainText(output.decode())
+
 		result = self.builddirs(self)
 		if result:
 			result = self.buildini(self)

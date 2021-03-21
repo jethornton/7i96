@@ -1,9 +1,9 @@
 """
-Usage ext_cmd.job(self, cmd="something", args="",
+Usage extcmd.job(self, cmd="something", args="",
 dest=self.QPlainTextEdit, clean="file to delete when done")
 
 To pipe the output of cmd1 to cmd2 use the following
-Usage ext_cmd.pipe_job(self, cmd1="something", arg1="", cmd2="pipe to",
+Usage extcmd.pipe_job(self, cmd1="something", arg1="", cmd2="pipe to",
 arg2, "", dest=self.QPlainTextEdit)
 """
 def cpuInfo(parent):
