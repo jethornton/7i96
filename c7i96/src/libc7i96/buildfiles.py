@@ -29,7 +29,10 @@ def buildini(parent):
 		pass
 
 	if not os.path.exists(parent.configPath):
-		os.mkdir(parent.configPath)
+		try:
+			os.mkdir(parent.configPath)
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	iniContents = ['# This file was created with the 7i96 Configuration Tool on ']
 	iniContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
@@ -458,8 +461,11 @@ def buildini(parent):
 			if getattr(parent, option).value() > 0: #******** work to be done here
 				iniContents.append('{} = {}\n'.format(getattr(parent, option).property('item'), getattr(parent, option).value()))
 
-	with open(iniFilePath, 'w') as iniFile:
-		iniFile.writelines(iniContents)
+	try:
+		with open(iniFilePath, 'w') as iniFile:
+			iniFile.writelines(iniContents)
+	except OSError:
+		parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 def buildhal(parent):
 	for index in range(11):
@@ -574,8 +580,12 @@ def buildhal(parent):
 			halContents.append('loadrt classicladder_rt\n')
 		halContents.append('addf classicladder.0.refresh servo-thread 1\n')
 
-	with open(halFilePath, 'w') as halFile:
-		halFile.writelines(halContents)
+	try:
+		with open(halFilePath, 'w') as halFile:
+			halFile.writelines(halContents)
+	except OSError:
+		parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
+
 
 def buildio(parent):
 	ioFilePath = os.path.join(parent.configPath, 'io.hal')
@@ -650,8 +660,11 @@ def buildio(parent):
 			netLine = outputDict[outputText]
 			ioContents.append(f'{netLine}hm2_7i96.0.ssr.00.out-0{index}\n')
 
-	with open(ioFilePath, 'w') as ioFile:
-		ioFile.writelines(ioContents)
+	try:
+		with open(ioFilePath, 'w') as ioFile:
+			ioFile.writelines(ioContents)
+	except OSError:
+		parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 def buildmisc(parent):
 	# if Axis is the GUI add the shutup file
@@ -664,6 +677,8 @@ def buildmisc(parent):
 			parent.outputPTE.appendPlainText(f'Building {shutupFilepath}')
 		except FileExistsError:
 			pass
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	if parent.customhalCB.isChecked():
 		customFilePath = os.path.join(parent.configPath, 'custom.hal')
@@ -676,6 +691,8 @@ def buildmisc(parent):
 			parent.outputPTE.appendPlainText(f'Building {customFilePath}')
 		except FileExistsError:
 			pass
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	if parent.postguiCB.isChecked():
 		# create the postgui.hal file if not there
@@ -690,7 +707,8 @@ def buildmisc(parent):
 			parent.outputPTE.appendPlainText(f'Building {postguiFilePath}')
 		except FileExistsError:
 			pass
-
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	if parent.shutdownCB.isChecked():
 		# create the shutdown.hal file if not there
@@ -705,7 +723,8 @@ def buildmisc(parent):
 			parent.outputPTE.appendPlainText(f'Building {shutdownFilePath}')
 		except FileExistsError:
 			pass
-
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	# create the tool file if not there
 	toolFilePath = os.path.join(parent.configPath, 'tool.tbl')
@@ -718,6 +737,8 @@ def buildmisc(parent):
 		parent.outputPTE.appendPlainText(f'Building {toolFilePath}')
 	except FileExistsError:
 		pass
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	# create the var file if not there
 	varFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.var')
@@ -725,6 +746,8 @@ def buildmisc(parent):
 		open(varFilePath, 'x')
 	except FileExistsError:
 		pass
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	# create the pyvcp panel if checked and not there
 	if parent.pyvcpCB.isChecked():
@@ -748,6 +771,8 @@ def buildmisc(parent):
 			parent.outputPTE.appendPlainText(f'Building {pyvcpFilePath}')
 		except FileExistsError:
 			pass
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	# create the clp file if selected
 	if parent.ladderGB.isChecked():
@@ -874,3 +899,5 @@ _/FILES_CLASSICLADDER
 				parent.outputPTE.appendPlainText(f'Building {ladderFilePath}')
 		except FileExistsError:
 			pass
+		except OSError:
+			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
