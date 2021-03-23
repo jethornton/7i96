@@ -737,8 +737,8 @@ def buildmisc(parent):
 		parent.outputPTE.appendPlainText(f'Building {toolFilePath}')
 	except FileExistsError:
 		pass
-		except OSError:
-			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
+	except OSError:
+		parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	# create the var file if not there
 	varFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.var')
@@ -746,8 +746,8 @@ def buildmisc(parent):
 		open(varFilePath, 'x')
 	except FileExistsError:
 		pass
-		except OSError:
-			parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
+	except OSError:
+		parent.outputPTE.appendPlainText(f'OS error\n {traceback.print_exc()}')
 
 	# create the pyvcp panel if checked and not there
 	if parent.pyvcpCB.isChecked():
