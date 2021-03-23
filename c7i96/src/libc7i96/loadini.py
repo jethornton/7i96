@@ -69,6 +69,19 @@ def iniList():
 	iniList.append(['SPINDLE', 'BIAS', 'bias_s'])
 	iniList.append(['SPINDLE', 'MAX_ERROR', 'maxError_s'])
 
+	for i in range(11):
+		iniList.append(['INPUTS', f'INPUT_{i}', f'input_{i}'])
+
+	for i in range(11):
+		iniList.append(['INPUTS', f'INPUT_JOINT_{i}', f'inputJoint_{i}'])
+
+	for i in range(11):
+		iniList.append(['INPUTS', f'INPUT_DIR_{i}', f'inputInvert_{i}'])
+
+	for i in range(6):
+		iniList.append(['OUTPUTS', f'OUTPUT_{i}', f'output_{i}'])
+
+	"""
 	iniList.append(['INPUTS', 'INPUT_0', 'input_0'])
 	iniList.append(['INPUTS', 'INPUT_1', 'input_1'])
 	iniList.append(['INPUTS', 'INPUT_2', 'input_2'])
@@ -111,7 +124,7 @@ def iniList():
 	iniList.append(['OUTPUTS', 'OUTPUT_2', 'output_2'])
 	iniList.append(['OUTPUTS', 'OUTPUT_3', 'output_3'])
 	iniList.append(['OUTPUTS', 'OUTPUT_4', 'output_4'])
-
+	"""
 	iniList.append(['OPTIONS', 'INTRO_GRAPHIC', 'splashScreenCB'])
 	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
 	iniList.append(['OPTIONS', 'HALUI', 'haluiCB'])
