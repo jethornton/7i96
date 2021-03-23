@@ -42,11 +42,13 @@ class MainWindow(QMainWindow):
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
 		self.buildConfig = buildfiles.build
+		"""
 		self.builddirs = buildfiles.builddirs
 		self.buildini = buildfiles.buildini
 		self.buildhal = buildfiles.buildhal
 		self.buildio = buildfiles.buildio
 		self.buildmisc = buildfiles.buildmisc
+		"""
 		self.pcStats = platform.uname()
 		self.qclip = QtWidgets.QApplication.clipboard()
 		self.helpInfo = helptext.descriptions
@@ -108,7 +110,18 @@ class MainWindow(QMainWindow):
 		if fileName:
 			iniFile = (fileName[0])
 			if self.config.read(iniFile):
-				self.iniLoad()
+				if self.config.has_option('7I96', 'VERSION'):
+					iniVersion = self.config['7I96']['VERSION']
+					if iniVersion == self.version:
+						self.iniLoad()
+					else:
+						msg = 'The ini file version is {iniVersion}\n The Configuration Tool version is {self.version}\nTry and open the ini?'
+						if self.errorMsg(msg, 'Version Difference'):
+							self.iniLoad()
+				else:
+					msg = 'This ini file may have been built with an older version\nTry and open?'
+					if self.errorMsg(msg, 'No Version'):
+						self.iniLoad()
 
 	@pyqtSlot()
 	def on_actionSave_triggered(self):

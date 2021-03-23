@@ -38,6 +38,10 @@ def buildini(parent):
 	iniContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
 	iniContents.append('# Changes to most things are ok and will be read by the Configuration Tool\n')
 
+	# build the [7I96] section
+	iniContents.append('\n[7I96]\n')
+	iniContents.append(f'VERSION = {parent.version}\n')
+
 	# build the [EMC] section
 	iniContents.append('\n[EMC]\n')
 	iniContents.append(f'VERSION = {parent.versionLE.text()}\n')
