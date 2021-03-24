@@ -141,246 +141,41 @@ def buildini(parent):
 
 	# need to loop-a-fy this section one day
 	# build the [JOINT_0] section
-	if parent.axisCB_0.itemData(parent.axisCB_0.currentIndex()):
-		iniContents.append('\n[JOINT_0]\n')
-		iniContents.append('AXIS = {}\n'.format(parent.axisCB_0.itemData(parent.axisCB_0.currentIndex())))
-		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_0.text()))
-		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_0.text()))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_0.text()))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_0.text()))
-		iniContents.append('TYPE = {}\n'.format(parent.axisType_0.text()))
-		if parent.reverse_0.isChecked():
-			iniContents.append('SCALE = -{}\n'.format(parent.scale_0.text()))
-		else:
-			iniContents.append('SCALE = {}\n'.format(parent.scale_0.text()))
-		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_0.text()) * 1.2)))
-		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_0.text()) * 1.2)))
-		if parent.units == 'inches':
-			iniContents.append('FERROR = {}\n'.format('0.0002'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
-		else:
-			iniContents.append('FERROR = {}\n'.format('0.0051'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
-		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_0.text()))
-		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_0.text()))
-		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_0.text()))
-		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_0.text()))
-		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_0.text()))
-		iniContents.append('P = {}\n'.format(parent.p_0.text()))
-		iniContents.append('I = {}\n'.format(parent.i_0.text()))
-		iniContents.append('D = {}\n'.format(parent.d_0.text()))
-		iniContents.append('FF0 = {}\n'.format(parent.ff0_0.text()))
-		iniContents.append('FF1 = {}\n'.format(parent.ff1_0.text()))
-		iniContents.append('FF2 = {}\n'.format(parent.ff2_0.text()))
-		iniContents.append('BIAS = {}\n'.format(parent.bias_0.text()))
-		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_0.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_0.text()))
-
-		if parent.home_0.text():
-			iniContents.append('HOME = {}\n'.format(parent.home_0.text()))
-		if parent.homeOffset_0.text():
-			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_0.text()))
-		if parent.homeSearchVel_0.text():
-			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_0.text()))
-		if parent.homeLatchVel_0.text():
-			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_0.text()))
-		if parent.homeSequence_0.text():
-			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_0.text()))
-		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_0.isChecked()))
-		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_0.isChecked()))
-
-
-	# build the [JOINT_1] section
-	if parent.axisCB_1.itemData(parent.axisCB_1.currentIndex()):
-		iniContents.append('\n[JOINT_1]\n')
-		iniContents.append('AXIS = {}\n'.format(parent.axisCB_1.itemData(parent.axisCB_1.currentIndex())))
-		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_1.text()))
-		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_1.text()))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_1.text()))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_1.text()))
-		iniContents.append('TYPE = {}\n'.format(parent.axisType_1.text()))
-		if parent.reverse_1.isChecked():
-			iniContents.append('SCALE = -{}\n'.format(parent.scale_1.text()))
-		else:
-			iniContents.append('SCALE = {}\n'.format(parent.scale_1.text()))
-		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_1.text()) * 1.2)))
-		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_1.text()) * 1.2)))
-		if parent.units == 'inches':
-			iniContents.append('FERROR = {}\n'.format('0.0002'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
-		else:
-			iniContents.append('FERROR = {}\n'.format('0.0051'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
-		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_1.text()))
-		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_1.text()))
-		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_1.text()))
-		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_1.text()))
-		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_1.text()))
-		iniContents.append('P = {}\n'.format(parent.p_1.text()))
-		iniContents.append('I = {}\n'.format(parent.i_1.text()))
-		iniContents.append('D = {}\n'.format(parent.d_1.text()))
-		iniContents.append('FF0 = {}\n'.format(parent.ff0_1.text()))
-		iniContents.append('FF1 = {}\n'.format(parent.ff1_1.text()))
-		iniContents.append('FF2 = {}\n'.format(parent.ff2_1.text()))
-		iniContents.append('BIAS = {}\n'.format(parent.bias_1.text()))
-		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_1.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_1.text()))
-		if parent.home_1.text():
-			iniContents.append('HOME = {}\n'.format(parent.home_1.text()))
-		if parent.homeOffset_1.text():
-			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_1.text()))
-		if parent.homeSearchVel_1.text():
-			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_1.text()))
-		if parent.homeLatchVel_1.text():
-			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_1.text()))
-		if parent.homeSequence_1.text():
-			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_1.text()))
-		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_1.isChecked()))
-		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_1.isChecked()))
-
-	# build the [JOINT_2] section
-	if parent.axisCB_2.itemData(parent.axisCB_2.currentIndex()):
-		iniContents.append('\n[JOINT_2]\n')
-		iniContents.append('AXIS = {}\n'.format(parent.axisCB_2.itemData(parent.axisCB_2.currentIndex())))
-		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_2.text()))
-		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_2.text()))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_2.text()))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_2.text()))
-		iniContents.append('TYPE = {}\n'.format(parent.axisType_2.text()))
-		if parent.reverse_2.isChecked():
-			iniContents.append('SCALE = -{}\n'.format(parent.scale_2.text()))
-		else:
-			iniContents.append('SCALE = {}\n'.format(parent.scale_2.text()))
-		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_2.text()) * 1.2)))
-		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_2.text()) * 1.2)))
-		if parent.units == 'inches':
-			iniContents.append('FERROR = {}\n'.format('0.0002'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
-		else:
-			iniContents.append('FERROR = {}\n'.format('0.0051'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
-		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_2.text()))
-		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_2.text()))
-		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_2.text()))
-		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_2.text()))
-		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_2.text()))
-		iniContents.append('P = {}\n'.format(parent.p_2.text()))
-		iniContents.append('I = {}\n'.format(parent.i_2.text()))
-		iniContents.append('D = {}\n'.format(parent.d_2.text()))
-		iniContents.append('FF0 = {}\n'.format(parent.ff0_2.text()))
-		iniContents.append('FF1 = {}\n'.format(parent.ff1_2.text()))
-		iniContents.append('FF2 = {}\n'.format(parent.ff2_2.text()))
-		iniContents.append('BIAS = {}\n'.format(parent.bias_2.text()))
-		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_2.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_2.text()))
-		if parent.home_2.text():
-			iniContents.append('HOME = {}\n'.format(parent.home_2.text()))
-		if parent.homeOffset_2.text():
-			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_2.text()))
-		if parent.homeSearchVel_2.text():
-			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_2.text()))
-		if parent.homeLatchVel_2.text():
-			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_2.text()))
-		if parent.homeSequence_2.text():
-			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_2.text()))
-		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_2.isChecked()))
-		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_2.isChecked()))
-
-	# build the [JOINT_3] section
-	if parent.axisCB_3.itemData(parent.axisCB_3.currentIndex()):
-		iniContents.append('\n[JOINT_3]\n')
-		iniContents.append('AXIS = {}\n'.format(parent.axisCB_3.itemData(parent.axisCB_3.currentIndex())))
-		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_3.text()))
-		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_3.text()))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_3.text()))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_3.text()))
-		iniContents.append('TYPE = {}\n'.format(parent.axisType_3.text()))
-		if parent.reverse_3.isChecked():
-			iniContents.append('SCALE = -{}\n'.format(parent.scale_3.text()))
-		else:
-			iniContents.append('SCALE = {}\n'.format(parent.scale_3.text()))
-		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_3.text()) * 1.2)))
-		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_3.text()) * 1.2)))
-		if parent.units == 'inches':
-			iniContents.append('FERROR = {}\n'.format('0.0002'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
-		else:
-			iniContents.append('FERROR = {}\n'.format('0.0051'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
-		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_3.text()))
-		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_3.text()))
-		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_3.text()))
-		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_3.text()))
-		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_3.text()))
-		iniContents.append('P = {}\n'.format(parent.p_3.text()))
-		iniContents.append('I = {}\n'.format(parent.i_3.text()))
-		iniContents.append('D = {}\n'.format(parent.d_3.text()))
-		iniContents.append('FF0 = {}\n'.format(parent.ff0_3.text()))
-		iniContents.append('FF1 = {}\n'.format(parent.ff1_3.text()))
-		iniContents.append('FF2 = {}\n'.format(parent.ff2_3.text()))
-		iniContents.append('BIAS = {}\n'.format(parent.bias_3.text()))
-		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_3.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_3.text()))
-		if parent.home_3.text():
-			iniContents.append('HOME = {}\n'.format(parent.home_3.text()))
-		if parent.homeOffset_3.text():
-			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_3.text()))
-		if parent.homeSearchVel_3.text():
-			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_3.text()))
-		if parent.homeLatchVel_3.text():
-			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_3.text()))
-		if parent.homeSequence_3.text():
-			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_3.text()))
-		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_3.isChecked()))
-		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_3.isChecked()))
-
-	# build the [JOINT_4] section
-	if parent.axisCB_4.itemData(parent.axisCB_4.currentIndex()):
-		iniContents.append('\n[JOINT_4]\n')
-		iniContents.append('AXIS = {}\n'.format(parent.axisCB_4.itemData(parent.axisCB_4.currentIndex())))
-		iniContents.append('MIN_LIMIT = {}\n'.format(parent.minLimit_4.text()))
-		iniContents.append('MAX_LIMIT = {}\n'.format(parent.maxLimit_4.text()))
-		iniContents.append('MAX_VELOCITY = {}\n'.format(parent.maxVelocity_4.text()))
-		iniContents.append('MAX_ACCELERATION = {}\n'.format(parent.maxAccel_4.text()))
-		iniContents.append('TYPE = {}\n'.format(parent.axisType_4.text()))
-		if parent.reverse_4.isChecked():
-			iniContents.append('SCALE = -{}\n'.format(parent.scale_4.text()))
-		else:
-			iniContents.append('SCALE = {}\n'.format(parent.scale_4.text()))
-		iniContents.append('STEPGEN_MAX_VEL = {}\n'.format(str(float(parent.maxVelocity_4.text()) * 1.2)))
-		iniContents.append('STEPGEN_MAX_ACC = {}\n'.format(str(float(parent.maxAccel_4.text()) * 1.2)))
-		if parent.units == 'inches':
-			iniContents.append('FERROR = {}\n'.format('0.0002'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0001'))
-		else:
-			iniContents.append('FERROR = {}\n'.format('0.0051'))
-			iniContents.append('MIN_FERROR = {}\n'.format('0.0025'))
-		iniContents.append('DIRSETUP = {}\n'.format(parent.dirSetup_4.text()))
-		iniContents.append('DIRHOLD = {}\n'.format(parent.dirHold_4.text()))
-		iniContents.append('STEPLEN = {}\n'.format(parent.stepTime_4.text()))
-		iniContents.append('STEPSPACE = {}\n'.format(parent.stepSpace_4.text()))
-		iniContents.append('DEADBAND = {}\n'.format(parent.deadband_4.text()))
-		iniContents.append('P = {}\n'.format(parent.p_4.text()))
-		iniContents.append('I = {}\n'.format(parent.i_4.text()))
-		iniContents.append('D = {}\n'.format(parent.d_4.text()))
-		iniContents.append('FF0 = {}\n'.format(parent.ff0_4.text()))
-		iniContents.append('FF1 = {}\n'.format(parent.ff1_4.text()))
-		iniContents.append('FF2 = {}\n'.format(parent.ff2_4.text()))
-		iniContents.append('BIAS = {}\n'.format(parent.bias_4.text()))
-		iniContents.append('MAX_OUTPUT = {}\n'.format(parent.maxOutput_4.text()))
-		iniContents.append('MAX_ERROR = {}\n'.format(parent.maxError_4.text()))
-		if parent.home_4.text():
-			iniContents.append('HOME = {}\n'.format(parent.home_4.text()))
-		if parent.homeOffset_4.text():
-			iniContents.append('HOME_OFFSET = {}\n'.format(parent.homeOffset_4.text()))
-		if parent.homeSearchVel_4.text():
-			iniContents.append('HOME_SEARCH_VEL = {}\n'.format(parent.homeSearchVel_4.text()))
-		if parent.homeLatchVel_4.text():
-			iniContents.append('HOME_LATCH_VEL = {}\n'.format(parent.homeLatchVel_4.text()))
-		if parent.homeSequence_4.text():
-			iniContents.append('HOME_SEQUENCE = {}\n'.format(parent.homeSequence_4.text()))
-		iniContents.append('HOME_USE_INDEX = {}\n'.format(parent.homeUseIndex_4.isChecked()))
-		iniContents.append('HOME_IGNORE_LIMITS = {}\n'.format(parent.homeIgnoreLimits_4.isChecked()))
+	for i in range(5):
+		if getattr(parent, "axisCB_" + str(i)).currentData():
+			iniContents.append(f'\n[JOINT_{i}]\n')
+			iniContents.append(f'AXIS = {getattr(parent, "axisCB_" + str(i)).currentData()}\n')
+			iniContents.append(f'MIN_LIMIT = {getattr(parent, "minLimit_" + str(i)).text()}\n')
+			iniContents.append(f'MAX_LIMIT = {getattr(parent, "maxLimit_" + str(i)).text()}\n')
+			iniContents.append(f'MAX_VELOCITY = {getattr(parent, "maxVelocity_" + str(i)).text()}\n')
+			iniContents.append(f'MAX_ACCELERATION = {getattr(parent, "maxAccel_" + str(i)).text()}\n')
+			iniContents.append(f'TYPE = {getattr(parent, "axisType_" + str(i)).text()}\n')
+			if parent.reverse_0.isChecked():
+				iniContents.append(f'SCALE = -{getattr(parent, "scale_" + str(i)).text()}\n')
+			else:
+				iniContents.append(f'SCALE = {getattr(parent, "scale_" + str(i)).text()}\n')
+			iniContents.append(f'STEPGEN_MAX_VEL = {str(float(getattr(parent, "maxVelocity_" + str(i)).text()) * 1.2)}\n')
+			iniContents.append(f'STEPGEN_MAX_ACC = {str(float(getattr(parent, "maxAccel_" + str(i)).text()) * 1.2)}\n')
+			if parent.units == 'inches':
+				iniContents.append('FERROR = 0.0002\n')
+				iniContents.append('MIN_FERROR = 0.0001\n')
+			else:
+				iniContents.append('FERROR = 0.0051\n')
+				iniContents.append('MIN_FERROR = 0.0025\n')
+			iniContents.append(f'DIRSETUP = {getattr(parent, "dirSetup_" + str(i)).text()}\n')
+			iniContents.append(f'DIRHOLD = {getattr(parent, "dirHold_" + str(i)).text()}\n')
+			iniContents.append(f'STEPLEN = {getattr(parent, "stepTime_" + str(i)).text()}\n')
+			iniContents.append(f'STEPSPACE = {getattr(parent, "stepSpace_" + str(i)).text()}\n')
+			iniContents.append(f'DEADBAND = {getattr(parent, "deadband_" + str(i)).text()}\n')
+			iniContents.append(f'P = {getattr(parent, "p_" + str(i)).text()}\n')
+			iniContents.append(f'I = {getattr(parent, "i_" + str(i)).text()}\n')
+			iniContents.append(f'D = {getattr(parent, "d_" + str(i)).text()}\n')
+			iniContents.append(f'FF0 = {getattr(parent, "ff0_" + str(i)).text()}\n')
+			iniContents.append(f'FF1 = {getattr(parent, "ff1_" + str(i)).text()}\n')
+			iniContents.append(f'FF2 = {getattr(parent, "ff2_" + str(i)).text()}\n')
+			iniContents.append(f'BIAS = {getattr(parent, "bias_" + str(i)).text()}\n')
+			iniContents.append(f'MAX_OUTPUT = {getattr(parent, "maxOutput_" + str(i)).text()}\n')
+			iniContents.append(f'MAX_ERROR = {getattr(parent, "maxError_" + str(i)).text()}\n')
 
 	# build the [SPINDLE] section if enabled
 	#print(parent.spindleTypeCB.currentText())
