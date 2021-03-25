@@ -22,6 +22,18 @@ from libc7i96.dialog import Ui_Dialog as errorDialog
 from libc7i96.help import Ui_Dialog as helpDialog
 from libc7i96.about import Ui_about as aboutDialog
 
+class VersionError(QMainWindow):
+	def __init__(self):
+		super(VersionError, self).__init__()
+		print('wrong python version')
+		msgBox = QMessageBox()
+		msgBox.setIcon(QMessageBox.Warning)
+		msgBox.setWindowTitle('Version Error')
+		msgBox.setText('Python 3.6 or newer is required.\nYour Python is {}'.format(sys.version[0:3]))
+		msgBox.setStandardButtons(QMessageBox.Ok)
+		msgBox.exec()
+		sys.exit()
+
 #UI_FILE = os.path.join(os.path.dirname(__file__), "c7i96.ui")
 
 class MainWindow(QMainWindow):
@@ -587,7 +599,10 @@ class MainWindow(QMainWindow):
 
 def main():
 	app = QApplication(sys.argv)
-	ex = MainWindow()
+	if float(sys.version[0:3]) < 3.6:
+		ex = VersionError()
+	else:
+		ex = MainWindow()
 	sys.exit(app.exec_())
 
 if __name__ == "__main__":
