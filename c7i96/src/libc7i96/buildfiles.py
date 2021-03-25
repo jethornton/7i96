@@ -139,8 +139,7 @@ def buildini(parent):
 			iniContents.append(f'MAX_VELOCITY = {getattr(parent, "maxVelocity_" + jointTab).text()}\n')
 			iniContents.append(f'MAX_ACCELERATION = {getattr(parent, "maxAccel_" + jointTab).text()}\n')
 
-	# need to loop-a-fy this section one day
-	# build the [JOINT_0] section
+	# build the [JOINT_n] sections
 	for i in range(5):
 		if getattr(parent, "axisCB_" + str(i)).currentData():
 			iniContents.append(f'\n[JOINT_{i}]\n')
