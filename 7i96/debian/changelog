@@ -1,16 +1,16 @@
-c7i96 (1.2.5) unstable; urgency=medium
+7i96 (1.2.5) unstable; urgency=medium
 
   * Fix ui import
 
  -- John Thornton <jt@gnipsel.com>  Sun, 14 Mar 2021 09:34:42 -0500
 
-c7i96 (1.0.0) unstable; urgency=medium
+7i96 (1.0.0) unstable; urgency=medium
 
   * New version
 
  -- John Thornton <jt@gnipsel.com>  Thu, 11 Mar 2021 06:55:42 -0600
 
-c7i96 (0.1) unstable; urgency=medium
+7i96 (0.1) unstable; urgency=medium
 
   * Initial release.
   * Restructure files

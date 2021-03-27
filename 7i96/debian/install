@@ -1,0 +1,5 @@
+src/7i96 usr/bin
+src/7i96.ui usr/lib/lib7i96
+src/lib7i96/*.* usr/lib/python3/dist-packages/lib7i96
+src/firmware/*.* usr/lib/lib7i96
+*.desktop usr/share/applications

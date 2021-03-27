@@ -11,12 +11,12 @@ Installing
 
 I now have a Debian deb for installing 7i96!!!
 
-Download the `deb <https://github.com/jethornton/7i96/raw/master/c7i96_1.2.5_all.deb>`_
+Download the `deb <https://github.com/jethornton/7i96/raw/master/7i96_1.2.5_all.deb>`_
 
 Or use wget from a terminal
 ::
 
-	wget https://github.com/jethornton/7i96/raw/master/c7i96_1.2.5_all.deb
+	wget https://github.com/jethornton/7i96/raw/master/7i96_1.2.5_all.deb
 
 If you get `bash: wget: command not found` you can install it from a terminal with
 ::

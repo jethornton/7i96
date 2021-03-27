@@ -4,10 +4,10 @@ pins
 *.xz
 *.buildinfo
 *.changes
-c7i96/src/firmware
-c7i96/debian/c7i96
-c7i96/debian/.debhelper
-c7i96/debian/*.substvars
-c7i96/debian/files
-c7i96/debian/debhelper*
+7i96/src/firmware
+7i96/debian/7i96
+7i96/debian/.debhelper
+7i96/debian/*.substvars
+7i96/debian/files
+7i96/debian/debhelper*
 docs/build
