@@ -37,11 +37,9 @@ class VersionError(QMainWindow):
 class MainWindow(QMainWindow):
 	def __init__(self):
 		super(MainWindow, self).__init__()
-		#uic.loadUi(UI_FILE, self)
 		if os.path.split(sys.argv[0])[0] == '/usr/bin':
 			self.lib_path = '/usr/lib/lib7i96'
 			print('Installed')
-
 		if os.path.split(sys.argv[0])[0] == '.':
 			self.lib_path = os.path.split(os.path.realpath(sys.argv[0]))[0]
 			print('In Development')
