@@ -55,7 +55,6 @@ class MainWindow(QMainWindow):
 		self.helpInfo = helptext.descriptions
 		self.buildCB()
 		self.setupConnections()
-		self.axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
 		self.ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
 			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
 			'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
@@ -333,7 +332,8 @@ class MainWindow(QMainWindow):
 
 	def onAxisChanged(self):
 		coordList = []
-		for item in self.axisList:
+		axisList = ['axisCB_0', 'axisCB_1', 'axisCB_2', 'axisCB_3', 'axisCB_4']
+		for item in axisList:
 			if getattr(self,item).itemData(getattr(self,item).currentIndex()):
 				jointTab = getattr(self,item).objectName()[7]
 				axisLetter = getattr(self,item).itemData(getattr(self,item).currentIndex())
