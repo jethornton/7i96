@@ -14,6 +14,6 @@ The 7i96 Configuration Tool requires Python 3.6 or newer to work.
 See the [documentation](https://jethornton.github.io/7i96/) for installation and
 usage instructions.
 
-Note: The 7i76 requires LinuxCNC 2.8 Uspace or newer to work.
+Note: The 7i96 requires LinuxCNC 2.8 Uspace or newer to work.
 [Debian 10 RT](https://gnipsel.com/linuxcnc/uspace/debian10-rt.html)
-[LinuxCNC 2.8](ttps://gnipsel.com/linuxcnc/uspace/debian10-emc.html)
+[LinuxCNC 2.8](https://gnipsel.com/linuxcnc/uspace/debian10-emc.html)
