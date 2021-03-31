@@ -5573,7 +5573,7 @@ max speed</string>
          <string>On Screen Prompt for Manual Tool Change</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="debugCombo">
+       <widget class="QComboBox" name="debugCB">
         <property name="geometry">
          <rect>
           <x>468</x>
@@ -8017,7 +8017,7 @@ max speed</string>
   <tabstop>manualToolChangeCB</tabstop>
   <tabstop>pyvcpCB</tabstop>
   <tabstop>gladevcpCB</tabstop>
-  <tabstop>debugCombo</tabstop>
+  <tabstop>debugCB</tabstop>
   <tabstop>boardsCB</tabstop>
   <tabstop>scrollArea</tabstop>
   <tabstop>reloadPB</tabstop>

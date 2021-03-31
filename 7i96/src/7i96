@@ -514,7 +514,7 @@ class MainWindow(QMainWindow):
 
 
 		for item in buildcombos.setupCombo('debug'):
-			self.debugCombo.addItem(item[0], item[1])
+			self.debugCB.addItem(item[0], item[1])
 		for i in range(5):
 			for item in buildcombos.setupCombo('drive'):
 				getattr(self, 'driveCB_' + str(i)).addItem(item[0], item[1])

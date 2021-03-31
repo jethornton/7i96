@@ -46,7 +46,7 @@ def buildini(parent):
 	iniContents.append('\n[EMC]\n')
 	iniContents.append(f'VERSION = {parent.versionLE.text()}\n')
 	iniContents.append(f'MACHINE = {parent.configNameUnderscored}\n')
-	iniContents.append(f'DEBUG = {parent.debugCombo.currentText}\n')
+	iniContents.append(f'DEBUG = {parent.debugCB.currentData()}\n')
 
 	# build the [HOSTMOT2] section
 	iniContents.append('\n[HOSTMOT2]\n')
