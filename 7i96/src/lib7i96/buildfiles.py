@@ -87,7 +87,7 @@ def buildini(parent):
 
 	# build the [EMCIO] section
 	iniContents.append('\n[EMCIO]\n')
-	iniContents.append('EMCIO = io\n')
+	iniContents.append('EMCIO = iov2\n')
 	iniContents.append('CYCLE_TIME = 0.100\n')
 	iniContents.append('TOOL_TABLE = tool.tbl\n')
 
@@ -203,8 +203,8 @@ def buildini(parent):
 	iniContents.append('# DO NOT change the inputs text\n')
 	for i in range(11):
 		iniContents.append(f'INPUT_{i} = {getattr(parent, "input_" + str(i)).currentText()}\n')
-		iniContents.append(f'INPUT_DIR{i} = {getattr(parent, "inputInvert_" + str(i)).currentText()}\n')
-		iniContents.append(f'INPUT_JOINT{i} = {getattr(parent, "inputJoint_" + str(i)).currentText()}\n')
+		iniContents.append(f'INPUT_DIR_{i} = {getattr(parent, "inputInvert_" + str(i)).currentText()}\n')
+		iniContents.append(f'INPUT_JOINT_{i} = {getattr(parent, "inputJoint_" + str(i)).currentData()}\n')
 
 	# build the [OUTPUTS] section
 	iniContents.append('\n[OUTPUTS]\n')
@@ -417,7 +417,11 @@ def buildio(parent):
 	'Digital Out 1': 'net digital-out-1 motion.digital-out-01 => ',
 	'Digital Out 2': 'net digital-out-2 motion.digital-out-02 => ',
 	'Digital Out 3': 'net digital-out-3 motion.digital-out-03 => ',
+	'Start Tool Change': '',
+	'Tool Change': '',
+	'Tool Prepare': '',
 	}
+
 
 	# build the outputs
 	for index in range(6):
