@@ -240,7 +240,12 @@ def setupCombo(combo):
 		['Digital In 0', 'Digital In 0'],
 		['Digital In 1', 'Digital In 1'],
 		['Digital In 2', 'Digital In 2'],
-		['Digital In 3', 'Digital In 3']
+		['Digital In 3', 'Digital In 3'],
+		['Start Tool Change Ack', 'start-change-ack'],
+		['Tool Changed', 'tool-changed'],
+		['Tool Prepared', 'tool-prepared'],
+		['Tool Changer Fault', 'toolchanger-fault'],
+		['Tool Changer Clear Fault', 'toolchanger-clear-fault']
 		]
 
 	if combo == 'input_invert':
@@ -263,7 +268,11 @@ def setupCombo(combo):
 		['Digital Out 0', 'Digital Out 0'],
 		['Digital Out 1', 'Digital Out 1'],
 		['Digital Out 2', 'Digital Out 2'],
-		['Digital Out 3', 'Digital Out 3']
+		['Digital Out 3', 'Digital Out 3'],
+		['Start Tool Change', 'start-change'],
+		['Tool Change', 'tool-change'],
+		['Tool Prepare', 'tool-prepare'],
+		['', ''],
 		]
 
 	if combo == 'debug':
