@@ -334,6 +334,19 @@ def setupCombo(combo):
 		['7i96 + G540', '7i96_g540dpl.bit']
 		]
 
+	if combo == 'smartserialcard':
+		comboList = [
+		['Select', 0],
+		['7i64',1],
+		['7i69',2],
+		['7i70',3],
+		['7i71',4],
+		['7i72',5],
+		['7i73',6],
+		['7i84',7],
+		['7i87',8]
+		]
+
 	if combo == 'spindle':
 		comboList = [
 		['None', False],

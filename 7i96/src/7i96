@@ -15,6 +15,7 @@ from lib7i96 import loadini
 from lib7i96 import checkit
 from lib7i96 import buildfiles
 from lib7i96 import card
+from lib7i96 import sscards
 from lib7i96 import pcinfo
 from lib7i96 import extcmd
 from lib7i96 import helptext
@@ -231,6 +232,7 @@ class MainWindow(QMainWindow):
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
 		#     obj.signal.connect(partial(fun, args1, arg2, ... ))
 		self.cpuPB.clicked.connect(partial(pcinfo.cpuInfo, self))
+		self.smartSerialCardCB.currentIndexChanged.connect(partial(sscards.info, self))
 		self.nicPB.clicked.connect(partial(pcinfo.nicInfo, self))
 		self.calcNicPB.clicked.connect(partial(pcinfo.nicCalc, self))
 		self.readTmaxPB.clicked.connect(partial(pcinfo.readTmax, self))
@@ -494,6 +496,8 @@ class MainWindow(QMainWindow):
 			self.positionFeedbackCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('firmware'):
 			self.firmwareCB.addItem(item[0], item[1])
+		for item in buildcombos.setupCombo('smartserialcard'):
+			self.smartSerialCardCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('spindle'):
 			self.spindleTypeCB.addItem(item[0], item[1])
 		for i in range(5):
