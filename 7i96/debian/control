@@ -8,7 +8,7 @@ Priority: optional
 Package: 7i96
 Priority: optional
 Architecture: all
-Depends: python3 (>=3.6), python3-pyqt5, ${misc:Depends}
+Depends: python3 (>=3.6), python3-pyqt5, zip, ${misc:Depends}
 Description: 7i96 Configuration Tool
  This is its extended description
  Each line must have one space at the start
