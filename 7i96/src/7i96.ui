@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string/>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QGroupBox{margin-top:25px;}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -35,7 +38,7 @@ QGroupBox::title {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="machine">
        <attribute name="title">
@@ -211,73 +214,6 @@ QGroupBox::title {
           </property>
          </widget>
         </item>
-        <item row="3" column="0" colspan="3">
-         <widget class="QGroupBox" name="gridGroupBox">
-          <property name="styleSheet">
-           <string notr="true">QGroupBox {
-    font: bold;
-    border: 2px solid silver;
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 7px;
-    padding: 0px 5px 0px 5px;
-}</string>
-          </property>
-          <property name="title">
-           <string> Firmware</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_29">
-           <property name="topMargin">
-            <number>15</number>
-           </property>
-           <item row="1" column="3">
-            <widget class="QPushButton" name="reloadPB">
-             <property name="text">
-              <string>Reload</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QPushButton" name="flashPB">
-             <property name="text">
-              <string>Flash</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QPushButton" name="readPB">
-             <property name="text">
-              <string>Read</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="4">
-            <widget class="QPushButton" name="copyPB">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copy the Output&lt;br/&gt;to the clipboard&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="text">
-              <string>Copy</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QComboBox" name="firmwareCB">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
         <item row="0" column="1" rowspan="3" colspan="2">
          <widget class="QGroupBox" name="gridGroupBox">
           <property name="sizePolicy">
@@ -360,6 +296,92 @@ QGroupBox::title {
             <widget class="QLabel" name="label_60">
              <property name="text">
               <string>PWM Generators</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QGroupBox" name="gridGroupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    font: bold;
+    border: 2px solid silver;
+    border-radius: 6px;
+    margin-top: 6px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 7px;
+    padding: 0px 5px 0px 5px;
+}</string>
+          </property>
+          <property name="title">
+           <string> Firmware</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_29">
+           <property name="topMargin">
+            <number>15</number>
+           </property>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="reloadPB">
+             <property name="text">
+              <string>Reload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="flashPB">
+             <property name="text">
+              <string>Flash</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="readPB">
+             <property name="text">
+              <string>Read</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="copyPB">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copy the Output&lt;br/&gt;to the clipboard&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="text">
+              <string>Copy</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QComboBox" name="firmwareCB">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QGroupBox" name="groupBox_27">
+          <property name="title">
+           <string>Backups</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_66">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="backupCB">
+             <property name="text">
+              <string>Enable Backups</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -5662,9 +5684,9 @@ max speed</string>
            <string>Smart Serial Card</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_58">
-           <item row="0" column="0">
-            <widget class="QComboBox" name="smartSerialCardCB"/>
-           </item>
+           <property name="topMargin">
+            <number>15</number>
+           </property>
            <item row="0" column="1">
             <widget class="QLabel" name="smartSerialInfoLbl">
              <property name="sizePolicy">
@@ -5681,6 +5703,9 @@ max speed</string>
              </property>
             </widget>
            </item>
+           <item row="0" column="0">
+            <widget class="QComboBox" name="smartSerialCardCB"/>
+           </item>
           </layout>
          </widget>
         </item>
@@ -5692,12 +5717,12 @@ max speed</string>
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="page_2">
+          <widget class="QWidget" name="noSS">
            <widget class="QLabel" name="label_420">
             <property name="geometry">
              <rect>
-              <x>30</x>
-              <y>40</y>
+              <x>10</x>
+              <y>10</y>
               <width>241</width>
               <height>20</height>
              </rect>
@@ -5706,126 +5731,3560 @@ max speed</string>
              <string>No Smart Serial Card Selected</string>
             </property>
            </widget>
+           <widget class="QPlainTextEdit" name="plainTextEdit">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>40</y>
+              <width>341</width>
+              <height>311</height>
+             </rect>
+            </property>
+            <property name="plainText">
+             <string>The Smart Serial Card Configuration is very new.
+
+At this time the Smart Serial Card
+will create a net with a signal name and you will have to add the input or output pin name or create simple I/O connections.
+
+The 7i83 and 7i87 are not currently supported.
+
+The Smart Serial Card configuration will not load from the ini file at this time.</string>
+            </property>
+           </widget>
           </widget>
           <widget class="QWidget" name="ss7i64">
-           <widget class="QLabel" name="label_412">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>10</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i64</string>
-            </property>
-           </widget>
+           <layout class="QGridLayout" name="gridLayout_69">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_32">
+              <property name="title">
+               <string>7i64</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_68">
+               <item row="0" column="3">
+                <widget class="QGroupBox" name="groupBox_31">
+                 <property name="title">
+                  <string>Ouputs 12 - 23 P5</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_73">
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i64out_15"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i64out_13"/>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_528">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_529">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_527">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_532">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_526">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_525">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_522">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_523">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_524">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_530">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_531">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i64out_14"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i64out_23"/>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i64out_12"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_486">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i64out_16"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i64out_18"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i64out_17"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i64out_21"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i64out_20"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i64out_19"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i64out_22"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QGroupBox" name="groupBox_29">
+                 <property name="title">
+                  <string>Inputs 12 - 23 P4</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_71">
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i64in_18"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i64in_13"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_499">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_508">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i64in_14"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i64in_23"/>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_506">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_500">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i64in_22"/>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_505">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i64in_16"/>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_507">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_502">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i64in_17"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i64in_15"/>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i64in_12"/>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_501">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i64in_20"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i64in_21"/>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_504">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i64in_19"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_484">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_498">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_503">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_28">
+                 <property name="title">
+                  <string>Inputs 0 - 11 P3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_70">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_489">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_488">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_487">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i64in_9"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i64in_11"/>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_491">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_497">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i64in_2"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i64in_10"/>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_493">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i64in_8"/>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_495">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i64in_5"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i64in_1"/>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_496">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i64in_4"/>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_494">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_492">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i64in_7"/>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i64in_0"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_412">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i64in_3"/>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_490">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i64in_6"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QGroupBox" name="groupBox_30">
+                 <property name="title">
+                  <string>Outputs 0 - 11 P2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_72">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_485">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i64out_0"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_513">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_514">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_519">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_517">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_515">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_516">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_511">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_520">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_512">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_518">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_510">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i64out_1"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i64out_2"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i64out_3"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i64out_4"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i64out_5"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i64out_6"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i64out_7"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i64out_8"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i64out_9"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i64out_10"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i64out_11"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="verticalSpacer_14">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="ss7i69">
-           <widget class="QLabel" name="label_413">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>20</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i69</string>
-            </property>
-           </widget>
+           <layout class="QGridLayout" name="gridLayout_74">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_33">
+              <property name="title">
+               <string>7i69</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_84">
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_40">
+                 <property name="title">
+                  <string>Inputs 0 - 11 P2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_81">
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i69in_6"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i69in_7"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_546">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="0">
+                   <widget class="QLabel" name="label_550">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_548">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_547">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_556">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_413">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_551">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i69in_0"/>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_554">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_555">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i69in_5"/>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_549">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_552">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_553">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i69in_4"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i69in_3"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i69in_1"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i69in_2"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i69in_8"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i69in_9"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i69in_10"/>
+                  </item>
+                  <item row="12" column="1">
+                   <widget class="QComboBox" name="ss7i69in_11"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QGroupBox" name="groupBox_42">
+                 <property name="title">
+                  <string>Inputs 12 - 23 P2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_83">
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_571">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_572">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_570">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_569">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_576">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_575">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_574">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_577">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_578">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_579">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_581">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_580">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i69in_12"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i69in_13"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i69in_14"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i69in_15"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i69in_16"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i69in_17"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i69in_18"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i69in_19"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i69in_20"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i69in_21"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i69in_22"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i69in_23"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QGroupBox" name="groupBox_39">
+                 <property name="title">
+                  <string>Ouputs 12 - 23 P3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_80">
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_535">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_540">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_534">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_533">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_545">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_537">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_544">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_543">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_542">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_536">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_539">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_538">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i69out_12"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i69out_13"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i69out_14"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i69out_15"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i69out_16"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i69out_17"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i69out_18"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i69out_19"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i69out_20"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i69out_21"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i69out_22"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i69out_23"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QGroupBox" name="groupBox_41">
+                 <property name="title">
+                  <string>Outputs 0 - 11 P3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_82">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_557">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i69out_0"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_558">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_559">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_560">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_561">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_562">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_563">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_564">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_565">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_566">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_567">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_568">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i69out_1"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i69out_2"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i69out_3"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i69out_4"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i69out_5"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i69out_6"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i69out_7"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i69out_8"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i69out_9"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i69out_10"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i69out_11"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="verticalSpacer_10">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="ss7i70">
-           <widget class="QLabel" name="label_414">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>20</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i70</string>
-            </property>
-           </widget>
+           <layout class="QGridLayout" name="gridLayout_75">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_34">
+              <property name="title">
+               <string>7i70</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_89">
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_44">
+                 <property name="title">
+                  <string>Inputs 0 - 11 P2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_86">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_595">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_596">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_597">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_598">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_599">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_600">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_601">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_602">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_603">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_604">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i70in_0"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_414">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_605">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i70in_1"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i70in_2"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i70in_3"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i70in_4"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i70in_5"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i70in_6"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i70in_7"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i70in_8"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i70in_9"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i70in_10"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i70in_11"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QGroupBox" name="groupBox_43">
+                 <property name="title">
+                  <string>Inputs 12 - 23 P2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_85">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_585">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_584">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_582">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_583">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_589">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_592">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_590">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_588">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_587">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_591">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_593">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_594">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i70in_12"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i70in_13"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i70in_14"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i70in_15"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i70in_16"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i70in_17"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i70in_18"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i70in_19"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i70in_20"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i70in_21"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i70in_22"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i70in_23"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QGroupBox" name="groupBox_45">
+                 <property name="title">
+                  <string>Inputs 36 - 47 P3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_87">
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_606">
+                    <property name="text">
+                     <string>46</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_614">
+                    <property name="text">
+                     <string>41</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_611">
+                    <property name="text">
+                     <string>38</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_613">
+                    <property name="text">
+                     <string>42</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_612">
+                    <property name="text">
+                     <string>43</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_608">
+                    <property name="text">
+                     <string>45</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_609">
+                    <property name="text">
+                     <string>44</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_610">
+                    <property name="text">
+                     <string>37</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_617">
+                    <property name="text">
+                     <string>47</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_632">
+                    <property name="text">
+                     <string>36</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_618">
+                    <property name="text">
+                     <string>40</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_616">
+                    <property name="text">
+                     <string>39</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i70in_36"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i70in_37"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i70in_38"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i70in_39"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i70in_40"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i70in_41"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i70in_42"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i70in_43"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i70in_44"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i70in_45"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i70in_46"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i70in_47"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QGroupBox" name="groupBox_46">
+                 <property name="title">
+                  <string>Inputs 24 - 35 P3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_88">
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_619">
+                    <property name="text">
+                     <string>24</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_627">
+                    <property name="text">
+                     <string>33</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_626">
+                    <property name="text">
+                     <string>32</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_629">
+                    <property name="text">
+                     <string>35</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_628">
+                    <property name="text">
+                     <string>34</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_631">
+                    <property name="text">
+                     <string>25</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_621">
+                    <property name="text">
+                     <string>27</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_620">
+                    <property name="text">
+                     <string>26</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_624">
+                    <property name="text">
+                     <string>30</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_625">
+                    <property name="text">
+                     <string>31</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_623">
+                    <property name="text">
+                     <string>29</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_622">
+                    <property name="text">
+                     <string>28</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i70in_24"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i70in_25"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i70in_26"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i70in_27"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i70in_28"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i70in_29"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i70in_30"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i70in_31"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i70in_32"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i70in_33"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i70in_34"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i70in_35"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="verticalSpacer_11">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="page">
-           <widget class="QLabel" name="label_415">
-            <property name="geometry">
-             <rect>
-              <x>60</x>
-              <y>40</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i71</string>
-            </property>
-           </widget>
+          <widget class="QWidget" name="ss7i71">
+           <layout class="QGridLayout" name="gridLayout_76">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_35">
+              <property name="title">
+               <string>7i71</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_94">
+               <item row="0" column="1">
+                <widget class="QGroupBox" name="groupBox_47">
+                 <property name="title">
+                  <string>Outputs 12 - 23 TB3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_90">
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_640">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_637">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_638">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_607">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_615">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_630">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_639">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_633">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_634">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_635">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_636">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_586">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i71out_12"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i71out_13"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i71out_14"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i71out_15"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i71out_16"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i71out_17"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i71out_18"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i71out_19"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i71out_20"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i71out_21"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i71out_22"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i71out_23"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QGroupBox" name="groupBox_48">
+                 <property name="title">
+                  <string>Outputs 36 - 47 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_91">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_643">
+                    <property name="text">
+                     <string>38</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_641">
+                    <property name="text">
+                     <string>46</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_652">
+                    <property name="text">
+                     <string>39</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_644">
+                    <property name="text">
+                     <string>42</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_649">
+                    <property name="text">
+                     <string>47</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_647">
+                    <property name="text">
+                     <string>44</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_646">
+                    <property name="text">
+                     <string>45</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_650">
+                    <property name="text">
+                     <string>36</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_648">
+                    <property name="text">
+                     <string>37</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_645">
+                    <property name="text">
+                     <string>43</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_651">
+                    <property name="text">
+                     <string>40</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_642">
+                    <property name="text">
+                     <string>41</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i71out_36"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i71out_37"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i71out_38"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i71out_39"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i71out_40"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i71out_41"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i71out_42"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i71out_43"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i71out_44"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i71out_45"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i71out_46"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i71out_47"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QGroupBox" name="groupBox_49">
+                 <property name="title">
+                  <string>Outputs 24 - 35 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_92">
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_656">
+                    <property name="text">
+                     <string>35</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_654">
+                    <property name="text">
+                     <string>33</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_653">
+                    <property name="text">
+                     <string>24</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_655">
+                    <property name="text">
+                     <string>32</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_660">
+                    <property name="text">
+                     <string>26</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_657">
+                    <property name="text">
+                     <string>34</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_659">
+                    <property name="text">
+                     <string>27</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_662">
+                    <property name="text">
+                     <string>31</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_663">
+                    <property name="text">
+                     <string>29</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_658">
+                    <property name="text">
+                     <string>25</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_664">
+                    <property name="text">
+                     <string>28</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_661">
+                    <property name="text">
+                     <string>30</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i71out_24"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i71out_25"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i71out_26"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i71out_27"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i71out_28"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i71out_29"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i71out_30"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i71out_31"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i71out_32"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i71out_33"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i71out_34"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i71out_35"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_50">
+                 <property name="title">
+                  <string>Outputs 0 - 11 TB3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_93">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_665">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_666">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_667">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_668">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_669">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_670">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_671">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_672">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_673">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_674">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i71out_0"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_415">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_675">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i71out_1"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i71out_2"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i71out_3"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i71out_4"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i71out_5"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i71out_6"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i71out_7"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i71out_8"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i71out_9"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i71out_10"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i71out_11"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="verticalSpacer_13">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="page_3">
-           <widget class="QLabel" name="label_416">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>20</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i72</string>
-            </property>
-           </widget>
+          <widget class="QWidget" name="ss7i72">
+           <layout class="QGridLayout" name="gridLayout_77">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_36">
+              <property name="title">
+               <string>7i72</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_99">
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_51">
+                 <property name="title">
+                  <string>Outputs 0 - 11 TB3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_95">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_676">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_677">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_678">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_679">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_680">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_681">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_682">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_683">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_684">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_685">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i72out_0"/>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_416">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_686">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i72out_1"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i72out_2"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i72out_3"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i72out_4"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i72out_5"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i72out_6"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i72out_7"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i72out_8"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i72out_9"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i72out_10"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i72out_11"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QGroupBox" name="groupBox_52">
+                 <property name="title">
+                  <string>Outputs 12 - 23 TB3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_96">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_687">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_690">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_689">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_692">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_694">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_693">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_688">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_697">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_698">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_696">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_695">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_691">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i72out_12"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i72out_13"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i72out_14"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i72out_15"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i72out_16"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i72out_17"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i72out_18"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i72out_19"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i72out_20"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i72out_21"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i72out_22"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i72out_23"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QGroupBox" name="groupBox_54">
+                 <property name="title">
+                  <string>Outputs 36 - 47 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_98">
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_712">
+                    <property name="text">
+                     <string>41</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_716">
+                    <property name="text">
+                     <string>45</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_717">
+                    <property name="text">
+                     <string>44</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_718">
+                    <property name="text">
+                     <string>37</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_715">
+                    <property name="text">
+                     <string>43</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_721">
+                    <property name="text">
+                     <string>40</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_714">
+                    <property name="text">
+                     <string>42</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_722">
+                    <property name="text">
+                     <string>39</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_720">
+                    <property name="text">
+                     <string>36</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_719">
+                    <property name="text">
+                     <string>47</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_711">
+                    <property name="text">
+                     <string>46</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_713">
+                    <property name="text">
+                     <string>38</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i72out_36"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i72out_37"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i72out_38"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i72out_39"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i72out_40"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i72out_41"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i72out_42"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i72out_43"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i72out_44"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i72out_45"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i72out_46"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i72out_47"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QGroupBox" name="groupBox_53">
+                 <property name="title">
+                  <string>Outputs 24 - 35 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_97">
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_702">
+                    <property name="text">
+                     <string>35</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_701">
+                    <property name="text">
+                     <string>32</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_707">
+                    <property name="text">
+                     <string>30</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_706">
+                    <property name="text">
+                     <string>26</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_700">
+                    <property name="text">
+                     <string>33</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_699">
+                    <property name="text">
+                     <string>24</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_704">
+                    <property name="text">
+                     <string>25</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_709">
+                    <property name="text">
+                     <string>29</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_710">
+                    <property name="text">
+                     <string>28</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_703">
+                    <property name="text">
+                     <string>34</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_705">
+                    <property name="text">
+                     <string>27</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_708">
+                    <property name="text">
+                     <string>31</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i72out_24"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i72out_25"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i72out_26"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i72out_27"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i72out_28"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i72out_29"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i72out_30"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i72out_31"/>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i72out_32"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i72out_33"/>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i72out_34"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i72out_35"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="verticalSpacer_12">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="page_4">
-           <widget class="QLabel" name="label_417">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>40</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i73</string>
-            </property>
-           </widget>
+          <widget class="QWidget" name="ss7i73">
+           <layout class="QGridLayout" name="gridLayout_78">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_37">
+              <property name="title">
+               <string>7i73</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="page_5">
-           <widget class="QLabel" name="label_418">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>20</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i84</string>
-            </property>
-           </widget>
+          <widget class="QWidget" name="ss7i84">
+           <layout class="QGridLayout" name="gridLayout_60">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_22">
+              <property name="title">
+               <string>7i84</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_65">
+               <item row="0" column="3">
+                <widget class="QGroupBox" name="groupBox_26">
+                 <property name="title">
+                  <string>Outputs 8 - 15 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_64">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_460">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_466">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_465">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_467">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_463">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_464">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i84out_8"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i84out_9"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i84out_10"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i84out_13"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i84out_11"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i84out_12"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i84out_15"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i84out_14"/>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_462">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_461">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QGroupBox" name="groupBox_23">
+                 <property name="title">
+                  <string>Outputs 0 - 7 TB3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_61">
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i84out_1"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_454">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_455">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_456">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_457">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_458">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_459">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i84out_2"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i84out_4"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i84out_3"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_453">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_452">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i84out_5"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i84out_7"/>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i84out_0"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i84out_6"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <spacer name="verticalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="3">
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="1" rowspan="2">
+                <widget class="QGroupBox" name="groupBox_25">
+                 <property name="title">
+                  <string>Inputs 16 - 31 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_63">
+                  <item row="13" column="0">
+                   <widget class="QLabel" name="label_449">
+                    <property name="text">
+                     <string>29</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QComboBox" name="ss7i84in_24"/>
+                  </item>
+                  <item row="15" column="1">
+                   <widget class="QComboBox" name="ss7i84in_31"/>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_444">
+                    <property name="text">
+                     <string>24</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="0">
+                   <widget class="QLabel" name="label_448">
+                    <property name="text">
+                     <string>28</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_441">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QComboBox" name="ss7i84in_26"/>
+                  </item>
+                  <item row="14" column="0">
+                   <widget class="QLabel" name="label_450">
+                    <property name="text">
+                     <string>30</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_438">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_439">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i84in_23"/>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_440">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="1">
+                   <widget class="QComboBox" name="ss7i84in_30"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i84in_20"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i84in_21"/>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QComboBox" name="ss7i84in_25"/>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i84in_17"/>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QComboBox" name="ss7i84in_27"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i84in_18"/>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i84in_16"/>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_442">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i84in_22"/>
+                  </item>
+                  <item row="13" column="1">
+                   <widget class="QComboBox" name="ss7i84in_29"/>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_447">
+                    <property name="text">
+                     <string>27</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_436">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i84in_19"/>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_437">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="15" column="0">
+                   <widget class="QLabel" name="label_451">
+                    <property name="text">
+                     <string>31</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_446">
+                    <property name="text">
+                     <string>26</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="1">
+                   <widget class="QComboBox" name="ss7i84in_28"/>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_443">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_445">
+                    <property name="text">
+                     <string>25</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0" rowspan="2">
+                <widget class="QGroupBox" name="groupBox_24">
+                 <property name="title">
+                  <string>Inputs 0 - 15 TB3</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_62">
+                  <item row="14" column="0">
+                   <widget class="QLabel" name="label_434">
+                    <property name="text">
+                     <string>14</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="2">
+                   <widget class="QComboBox" name="ss7i84in_7"/>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QComboBox" name="ss7i84in_1"/>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QComboBox" name="ss7i84in_3"/>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_422">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QComboBox" name="ss7i84in_4"/>
+                  </item>
+                  <item row="13" column="2">
+                   <widget class="QComboBox" name="ss7i84in_13"/>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_431">
+                    <property name="text">
+                     <string>11</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_421">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="2">
+                   <widget class="QComboBox" name="ss7i84in_11"/>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_427">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="2">
+                   <widget class="QComboBox" name="ss7i84in_9"/>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QComboBox" name="ss7i84in_2"/>
+                  </item>
+                  <item row="14" column="2">
+                   <widget class="QComboBox" name="ss7i84in_14"/>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QComboBox" name="ss7i84in_5"/>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QComboBox" name="ss7i84in_6"/>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_430">
+                    <property name="text">
+                     <string>10</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_425">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_426">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="15" column="2">
+                   <widget class="QComboBox" name="ss7i84in_15"/>
+                  </item>
+                  <item row="8" column="2">
+                   <widget class="QComboBox" name="ss7i84in_8"/>
+                  </item>
+                  <item row="10" column="2">
+                   <widget class="QComboBox" name="ss7i84in_10"/>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_429">
+                    <property name="text">
+                     <string>9</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="15" column="0">
+                   <widget class="QLabel" name="label_435">
+                    <property name="text">
+                     <string>15</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_428">
+                    <property name="text">
+                     <string>8</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_418">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_423">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QComboBox" name="ss7i84in_0"/>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_424">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="13" column="0">
+                   <widget class="QLabel" name="label_433">
+                    <property name="text">
+                     <string>13</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="0">
+                   <widget class="QLabel" name="label_432">
+                    <property name="text">
+                     <string>12</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="2">
+                   <widget class="QComboBox" name="ss7i84in_12"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
-          <widget class="QWidget" name="page_6">
-           <widget class="QLabel" name="label_419">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>20</y>
-              <width>71</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>7i87</string>
-            </property>
-           </widget>
+          <widget class="QWidget" name="ss7i87">
+           <layout class="QGridLayout" name="gridLayout_79">
+            <item row="0" column="0">
+             <widget class="QGroupBox" name="groupBox_38">
+              <property name="title">
+               <string>7i87</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_102">
+               <item row="0" column="1">
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox_55">
+                 <property name="title">
+                  <string>Analog Inputs 0 - 7 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_100">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_573">
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_723">
+                    <property name="text">
+                     <string>6</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_731">
+                    <property name="text">
+                     <string>5</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_417">
+                    <property name="text">
+                     <string>0</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_732">
+                    <property name="text">
+                     <string>3</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_725">
+                    <property name="text">
+                     <string>4</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="ss7i87in_0"/>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_727">
+                    <property name="text">
+                     <string>7</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_724">
+                    <property name="text">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLabel" name="label_419">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <spacer name="verticalSpacer_9">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -6042,22 +9501,6 @@ max speed</string>
           </widget>
          </item>
         </layout>
-       </widget>
-       <widget class="QCheckBox" name="backupCB">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>100</y>
-          <width>301</width>
-          <height>26</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Make Backup Copies when Building</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="plc">

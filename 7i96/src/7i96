@@ -14,6 +14,11 @@ from lib7i96 import buildcombos
 from lib7i96 import loadini
 from lib7i96 import checkit
 from lib7i96 import buildfiles
+from lib7i96 import buildini
+from lib7i96 import buildhal
+from lib7i96 import buildio
+from lib7i96 import buildmisc
+from lib7i96 import buildss
 from lib7i96 import card
 from lib7i96 import sscards
 from lib7i96 import pcinfo
@@ -55,6 +60,7 @@ class MainWindow(QMainWindow):
 		self.qclip = QtWidgets.QApplication.clipboard()
 		self.helpInfo = helptext.descriptions
 		self.buildCB()
+		sscards.buildCB(self)
 		self.setupConnections()
 		self.ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
 			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
@@ -168,6 +174,17 @@ class MainWindow(QMainWindow):
 		if not self.checkConfig(self):
 			self.errorDialog(self.checkConfig.result)
 			return
+
+		# check for existance of directories
+		if not os.path.exists(os.path.expanduser('~/linuxcnc')):
+			os.mkdir(os.path.expanduser('~/linuxcnc'))
+		if not os.path.exists(os.path.expanduser('~/linuxcnc/configs')):
+			os.mkdir(os.path.expanduser('~/linuxcnc/configs'))
+		if not os.path.exists(os.path.expanduser('~/linuxcnc/nc_files')):
+			os.mkdir(os.path.expanduser('~/linuxcnc/nc_files'))
+		if not os.path.exists(os.path.expanduser('~/linuxcnc/subroutines')):
+			os.mkdir(os.path.expanduser('~/linuxcnc/subroutines'))
+
 		if self.backupCB.isChecked():
 			if os.path.exists(self.configPath): # there is something to backup
 				backupDir = os.path.join(self.configPath, 'backups')
@@ -181,7 +198,12 @@ class MainWindow(QMainWindow):
 				output = p2.communicate()[0]
 				self.outputPTE.appendPlainText(output.decode())
 
-		self.buildConfig(self)
+		buildini.build(self)
+		buildhal.build(self)
+		buildio.build(self)
+		buildmisc.build(self)
+		if self.smartSerialCardCB.currentData() > 0:
+			buildss.build(self)
 
 	@pyqtSlot()
 	def on_actionSaveAs_triggered(self):
@@ -232,7 +254,7 @@ class MainWindow(QMainWindow):
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
 		#     obj.signal.connect(partial(fun, args1, arg2, ... ))
 		self.cpuPB.clicked.connect(partial(pcinfo.cpuInfo, self))
-		self.smartSerialCardCB.currentIndexChanged.connect(partial(sscards.info, self))
+		self.smartSerialCardCB.currentIndexChanged.connect(partial(sscards.build, self))
 		self.nicPB.clicked.connect(partial(pcinfo.nicInfo, self))
 		self.calcNicPB.clicked.connect(partial(pcinfo.nicCalc, self))
 		self.readTmaxPB.clicked.connect(partial(pcinfo.readTmax, self))
