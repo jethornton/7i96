@@ -61,6 +61,7 @@ class MainWindow(QMainWindow):
 		self.helpInfo = helptext.descriptions
 		self.buildCB()
 		sscards.buildCB(self)
+		sscards.ss7i73setup(self)
 		self.setupConnections()
 		self.ladderOptionsList = ['ladderRungsSB', 'ladderBitsSB', 'ladderWordsSB',
 			'ladderTimersSB', 'iecTimerSB', 'ladderMonostablesSB', 'ladderCountersSB',
@@ -233,6 +234,8 @@ class MainWindow(QMainWindow):
 		self.boardsCB.currentIndexChanged.connect(self.onBoardsChanged)
 		self.firmwareCB.currentIndexChanged.connect(self.onFirmwareChanged)
 		self.servoPeriodSB.valueChanged.connect(self.servoPeriodChanged)
+		self.ss7i73_keypadCB.currentIndexChanged.connect(partial(sscards.ss7i73setup, self))
+		self.ss7i96lcdCB.currentIndexChanged.connect(partial(sscards.ss7i73setup, self))
 
 		for i in range(5):
 			getattr(self, 'axisCB_' + str(i)).currentIndexChanged.connect(self.onAxisChanged)

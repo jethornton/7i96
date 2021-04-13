@@ -150,6 +150,14 @@ def buildCB(parent):
 		for item in outputs:
 			getattr(parent, 'ss7i72out_' + str(i)).addItem(item[0], item[1])
 
+	# 7i73 Combo Boxes
+	parent.ss7i73_keypadCB.addItem('None', ['w5d', 'w6d'])
+	parent.ss7i73_keypadCB.addItem('4x8', ['w5d', 'w6u'])
+	parent.ss7i73_keypadCB.addItem('8x8', ['w5u', 'w6d'])
+
+	parent.ss7i96lcdCB.addItem('None', 'w7d')
+	parent.ss7i96lcdCB.addItem('Enabled', 'w7u')
+
 	# 7i84 Combo Boxes
 	for i in range(32):
 		for item in inputs:
@@ -157,3 +165,125 @@ def buildCB(parent):
 	for i in range(16):
 		for item in outputs:
 			getattr(parent, 'ss7i84out_' + str(i)).addItem(item[0], item[1])
+
+def ss7i73setup(parent):
+	if parent.ss7i96lcdCB.currentData() == 'w7d': # no LCD
+		parent.ss7i96w7Lbl.setText('W7 Down')
+		lcd = False
+	elif parent.ss7i96lcdCB.currentData() == 'w7u': # LCD
+		parent.ss7i96w7Lbl.setText('W7 Up')
+		lcd = True
+	if parent.ss7i73_keypadCB.currentData()[0] == 'w5d':
+		if parent.ss7i73_keypadCB.currentData()[1] == 'w6d': # no keypad
+			parent.ss7i73w5Lbl.setText('W5 Down')
+			parent.ss7i73w6Lbl.setText('W6 Down')
+			keypad = False
+		elif parent.ss7i73_keypadCB.currentData()[1] == 'w6u': # 4x8 keypad
+			parent.ss7i73w5Lbl.setText('W5 Down')
+			parent.ss7i73w6Lbl.setText('W6 Up')
+			keypad = True
+			keys = '4x8'
+	elif parent.ss7i73_keypadCB.currentData()[0] == 'w5u': # 8x8 keypad
+			parent.ss7i73w5Lbl.setText('W5 Up')
+			parent.ss7i73w6Lbl.setText('W6 Down')
+			keypad = True
+			keys = '8x8'
+
+	# No LCD No Keypad
+	if not lcd and not keypad:
+		for i in range(8):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Out {i+10}')
+		for i in range(8,16):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'In {i+8}')
+		for i in range(8):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+2}')
+		for i in range(8,12):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+10}')
+
+	# LCD No Keypad
+	if lcd and not keypad:
+		for i in range(8):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Out {i+6}')
+		for i in range(8,16):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'In {i+8}')
+		for i in range(5):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+2}')
+		for i in range(4,12):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'LCD {i}')
+
+	# LCD 4x8 Keypad
+	if lcd and keypad and keys == '4x8':
+		for i in range(4):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Out {i+6}')
+		for i in range(4,16):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Key {i}')
+		for i in range(5):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+2}')
+		for i in range(4,12):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'LCD {i}')
+
+	# LCD 8x8 Keypad
+	if lcd and keypad and keys == '8x8':
+		for i in range(16):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Key {i}')
+		for i in range(5):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+2}')
+		for i in range(4,12):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'LCD {i}')
+
+	# No LCD 4x8 Keypad
+	if not lcd and keypad and keys == '4x8':
+		for i in range(4):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Out {i+10}')
+		for i in range(4,16):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Key {i}')
+		for i in range(8):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+2}')
+		for i in range(8,12):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+6}')
+
+
+
+	# No LCD 8x8 Keypad
+	if not lcd and keypad and keys == '8x8':
+		for i in range(16):
+			getattr(parent, 'ss7i73keylbl_' + str(i)).setText(f'Key {i}')
+		for i in range(12):
+			getattr(parent, 'ss7i73lcdlbl_' + str(i)).setText(f'Out {i+2}')
+
+	"""
+	if parent.ss7i73_keypadCB.currentData()[0] == 'w5d':
+		if parent.ss7i73_keypadCB.currentData()[1] == 'w6d': # no keypad
+			parent.ss7i73w5Lbl.setText('W5 Down')
+			parent.ss7i73w6Lbl.setText('W6 Down')
+			for i in range(16,24):
+				getattr(parent, 'ss7i73inLbl_' + str(i)).setText(f'In {i}')
+				getattr(parent, 'ss7i73in_'  + str(i)).setEnabled(True)
+			for i in range(6,14):
+				getattr(parent, 'ss7i73outLbl_' + str(i)).setText(f'Out {i}')
+				getattr(parent, 'ss7i73out_'  + str(i)).setEnabled(True)
+
+		elif parent.ss7i73_keypadCB.currentData()[1] == 'w6u': # 4x8 keypad
+			parent.ss7i73w5Lbl.setText('W5 Down')
+			parent.ss7i73w6Lbl.setText('W6 Up')
+			for i in range(6,10):
+				getattr(parent, 'ss7i73outLbl_' + str(i)).setText(f'Key {i-6}')
+				getattr(parent, 'ss7i73out_'  + str(i)).setEnabled(False)
+			for i in range(10,14):
+				getattr(parent, 'ss7i73outLbl_' + str(i)).setText(f'Out {i}')
+				getattr(parent, 'ss7i73out_'  + str(i)).setEnabled(True)
+	elif parent.ss7i73_keypadCB.currentData()[0] == 'w5u': # 8x8 keypad
+			parent.ss7i73w5Lbl.setText('W5 Up')
+			parent.ss7i73w6Lbl.setText('W6 Down')
+			for i in range(6,14):
+				getattr(parent, 'ss7i73outLbl_' + str(i)).setText(f'Key {i-6}')
+				getattr(parent, 'ss7i73out_'  + str(i)).setEnabled(False)
+			for i in range(16,24):
+				getattr(parent, 'ss7i73inLbl_' + str(i)).setText(f'Key {i-8}')
+				getattr(parent, 'ss7i73in_'  + str(i)).setEnabled(False)
+
+	if parent.ss7i96lcdCB.currentData() == 'w7d': # no LCD
+		parent.ss7i96w7Lbl.setText('W7 Down')
+	elif parent.ss7i96lcdCB.currentData() == 'w7u': # LCD
+		parent.ss7i96w7Lbl.setText('W7 Up')
+	"""
