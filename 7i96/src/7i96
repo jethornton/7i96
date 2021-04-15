@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
 			self.lib_path = os.path.split(os.path.realpath(sys.argv[0]))[0]
 			print('In Development')
 		uic.loadUi(os.path.join(self.lib_path, '7i96.ui'), self)
-		self.version = '1.2.5'
+		self.version = '1.2.6'
 		self.config = configparser.ConfigParser(strict=False)
 		self.setWindowTitle(f'7i96 Configuration Tool Version {self.version}')
 		self.configNameUnderscored = ''
@@ -203,7 +203,7 @@ class MainWindow(QMainWindow):
 		buildhal.build(self)
 		buildio.build(self)
 		buildmisc.build(self)
-		if self.smartSerialCardCB.currentData() > 0:
+		if self.smartSerialCardCB.currentData() and self.buildSserialCB.isChecked():
 			buildss.build(self)
 
 	@pyqtSlot()

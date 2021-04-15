@@ -1,3 +1,9 @@
+7i96 (1.2.6) UNRELEASED; urgency=medium
+
+  * Add support for smart serial cards
+
+ -- John Thornton <jt@gnipsel.com>  Thu, 15 Apr 2021 07:25:33 -0500
+
 7i96 (1.2.5) unstable; urgency=medium
 
   * Fix ui import

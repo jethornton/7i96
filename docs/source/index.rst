@@ -17,6 +17,7 @@
    spindle
    inputs
    outputs
+   sserial
    options
    plc
    pins

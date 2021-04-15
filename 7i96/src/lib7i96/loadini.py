@@ -81,50 +81,6 @@ def iniList():
 	for i in range(6):
 		iniList.append(['OUTPUTS', f'OUTPUT_{i}', f'output_{i}'])
 
-	"""
-	iniList.append(['INPUTS', 'INPUT_0', 'input_0'])
-	iniList.append(['INPUTS', 'INPUT_1', 'input_1'])
-	iniList.append(['INPUTS', 'INPUT_2', 'input_2'])
-	iniList.append(['INPUTS', 'INPUT_3', 'input_3'])
-	iniList.append(['INPUTS', 'INPUT_4', 'input_4'])
-	iniList.append(['INPUTS', 'INPUT_5', 'input_5'])
-	iniList.append(['INPUTS', 'INPUT_6', 'input_6'])
-	iniList.append(['INPUTS', 'INPUT_7', 'input_7'])
-	iniList.append(['INPUTS', 'INPUT_8', 'input_8'])
-	iniList.append(['INPUTS', 'INPUT_9', 'input_9'])
-	iniList.append(['INPUTS', 'INPUT_10', 'input_10'])
-
-	iniList.append(['INPUTS', 'INPUT_DIR_0', 'inputInvert_0'])
-	iniList.append(['INPUTS', 'INPUT_DIR_1', 'inputInvert_1'])
-	iniList.append(['INPUTS', 'INPUT_DIR_2', 'inputInvert_2'])
-	iniList.append(['INPUTS', 'INPUT_DIR_3', 'inputInvert_3'])
-	iniList.append(['INPUTS', 'INPUT_DIR_4', 'inputInvert_4'])
-	iniList.append(['INPUTS', 'INPUT_DIR_5', 'inputInvert_5'])
-	iniList.append(['INPUTS', 'INPUT_DIR_6', 'inputInvert_6'])
-	iniList.append(['INPUTS', 'INPUT_DIR_7', 'inputInvert_7'])
-	iniList.append(['INPUTS', 'INPUT_DIR_8', 'inputInvert_8'])
-	iniList.append(['INPUTS', 'INPUT_DIR_9', 'inputInvert_9'])
-	iniList.append(['INPUTS', 'INPUT_DIR_10', 'inputInvert_10'])
-
-
-	iniList.append(['INPUTS', 'INPUT_JOINT_0', 'inputJoint_0'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_1', 'inputJoint_1'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_2', 'inputJoint_2'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_3', 'inputJoint_3'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_4', 'inputJoint_4'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_5', 'inputJoint_5'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_6', 'inputJoint_6'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_7', 'inputJoint_7'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_8', 'inputJoint_8'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_9', 'inputJoint_9'])
-	iniList.append(['INPUTS', 'INPUT_JOINT_10', 'inputJoint_10'])
-
-	iniList.append(['OUTPUTS', 'OUTPUT_0', 'output_0'])
-	iniList.append(['OUTPUTS', 'OUTPUT_1', 'output_1'])
-	iniList.append(['OUTPUTS', 'OUTPUT_2', 'output_2'])
-	iniList.append(['OUTPUTS', 'OUTPUT_3', 'output_3'])
-	iniList.append(['OUTPUTS', 'OUTPUT_4', 'output_4'])
-	"""
 	iniList.append(['OPTIONS', 'INTRO_GRAPHIC', 'splashScreenCB'])
 	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
 	iniList.append(['OPTIONS', 'HALUI', 'haluiCB'])
@@ -132,7 +88,10 @@ def iniList():
 	iniList.append(['OPTIONS', 'GLADEVCP', 'gladevcpCB'])
 	iniList.append(['OPTIONS', 'LADDER', 'ladderGB'])
 	iniList.append(['OPTIONS', 'LADDER_RUNGS', 'ladderRungsSB'])
-	iniList.append(['BACKUP', 'BACKUP', 'backupCB'])
+	iniList.append(['OPTIONS', 'BACKUP', 'backupCB'])
+
+	iniList.append(['SSERIAL', 'SS_CARD', 'smartSerialCardCB'])
+
 
 	return iniList
 

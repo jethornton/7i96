@@ -14,7 +14,7 @@
    <string/>
   </property>
   <property name="styleSheet">
-   <string notr="true">QGroupBox{margin-top:25px;}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -28,7 +28,7 @@
     font: bold;
     border: 2px solid silver;
     border-radius: 6px;
-    margin-top: 6px;
+   padding: 5px;
 }
 
 QGroupBox::title {
@@ -468,7 +468,7 @@ QGroupBox::title {
           <number>9</number>
          </property>
          <property name="topMargin">
-          <number>9</number>
+          <number>15</number>
          </property>
          <property name="rightMargin">
           <number>9</number>
@@ -8752,12 +8752,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                   <item row="23" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_9"/>
                   </item>
-                  <item row="17" column="4">
-                   <widget class="QComboBox" name="ss7i93key_3"/>
-                  </item>
-                  <item row="21" column="4">
-                   <widget class="QComboBox" name="ss7i93key_7"/>
-                  </item>
                   <item row="16" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_2"/>
                   </item>
@@ -8767,12 +8761,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                      <string>Key 0</string>
                     </property>
                    </widget>
-                  </item>
-                  <item row="15" column="4">
-                   <widget class="QComboBox" name="ss7i93key_1"/>
-                  </item>
-                  <item row="26" column="4">
-                   <widget class="QComboBox" name="ss7i93key_12"/>
                   </item>
                   <item row="14" column="5">
                    <widget class="QLabel" name="ss7i73lcdlbl_0">
@@ -8785,13 +8773,10 @@ The Smart Serial Card configuration will not load from the ini file at this time
                    <widget class="QComboBox" name="ss7i73lcd_0"/>
                   </item>
                   <item row="14" column="4">
-                   <widget class="QComboBox" name="ss7i93key_0"/>
+                   <widget class="QComboBox" name="ss7i73key_0"/>
                   </item>
                   <item row="15" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_1"/>
-                  </item>
-                  <item row="25" column="4">
-                   <widget class="QComboBox" name="ss7i93key_11"/>
                   </item>
                   <item row="22" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_8"/>
@@ -8799,32 +8784,11 @@ The Smart Serial Card configuration will not load from the ini file at this time
                   <item row="24" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_10"/>
                   </item>
-                  <item row="24" column="4">
-                   <widget class="QComboBox" name="ss7i93key_10"/>
-                  </item>
-                  <item row="23" column="4">
-                   <widget class="QComboBox" name="ss7i93key_9"/>
-                  </item>
                   <item row="18" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_4"/>
                   </item>
-                  <item row="28" column="4">
-                   <widget class="QComboBox" name="ss7i93key_14"/>
-                  </item>
-                  <item row="27" column="4">
-                   <widget class="QComboBox" name="ss7i93key_13"/>
-                  </item>
-                  <item row="19" column="4">
-                   <widget class="QComboBox" name="ss7i93key_5"/>
-                  </item>
                   <item row="25" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_11"/>
-                  </item>
-                  <item row="16" column="4">
-                   <widget class="QComboBox" name="ss7i93key_2"/>
-                  </item>
-                  <item row="22" column="4">
-                   <widget class="QComboBox" name="ss7i93key_8"/>
                   </item>
                   <item row="20" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_6"/>
@@ -8835,17 +8799,8 @@ The Smart Serial Card configuration will not load from the ini file at this time
                   <item row="17" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_3"/>
                   </item>
-                  <item row="18" column="4">
-                   <widget class="QComboBox" name="ss7i93key_4"/>
-                  </item>
                   <item row="21" column="6">
                    <widget class="QComboBox" name="ss7i73lcd_7"/>
-                  </item>
-                  <item row="20" column="4">
-                   <widget class="QComboBox" name="ss7i93key_6"/>
-                  </item>
-                  <item row="29" column="4">
-                   <widget class="QComboBox" name="ss7i93key_15"/>
                   </item>
                   <item row="15" column="3">
                    <widget class="QLabel" name="ss7i73keylbl_1">
@@ -9028,6 +8983,51 @@ The Smart Serial Card configuration will not load from the ini file at this time
                      <string>LCD 11</string>
                     </property>
                    </widget>
+                  </item>
+                  <item row="15" column="4">
+                   <widget class="QComboBox" name="ss7i73key_1"/>
+                  </item>
+                  <item row="16" column="4">
+                   <widget class="QComboBox" name="ss7i73key_2"/>
+                  </item>
+                  <item row="17" column="4">
+                   <widget class="QComboBox" name="ss7i73key_3"/>
+                  </item>
+                  <item row="18" column="4">
+                   <widget class="QComboBox" name="ss7i73key_4"/>
+                  </item>
+                  <item row="19" column="4">
+                   <widget class="QComboBox" name="ss7i73key_5"/>
+                  </item>
+                  <item row="20" column="4">
+                   <widget class="QComboBox" name="ss7i73key_6"/>
+                  </item>
+                  <item row="21" column="4">
+                   <widget class="QComboBox" name="ss7i73key_7"/>
+                  </item>
+                  <item row="22" column="4">
+                   <widget class="QComboBox" name="ss7i73key_8"/>
+                  </item>
+                  <item row="23" column="4">
+                   <widget class="QComboBox" name="ss7i73key_9"/>
+                  </item>
+                  <item row="24" column="4">
+                   <widget class="QComboBox" name="ss7i73key_10"/>
+                  </item>
+                  <item row="25" column="4">
+                   <widget class="QComboBox" name="ss7i73key_11"/>
+                  </item>
+                  <item row="26" column="4">
+                   <widget class="QComboBox" name="ss7i73key_12"/>
+                  </item>
+                  <item row="27" column="4">
+                   <widget class="QComboBox" name="ss7i73key_13"/>
+                  </item>
+                  <item row="28" column="4">
+                   <widget class="QComboBox" name="ss7i73key_14"/>
+                  </item>
+                  <item row="29" column="4">
+                   <widget class="QComboBox" name="ss7i73key_15"/>
                   </item>
                  </layout>
                 </widget>
@@ -9828,6 +9828,27 @@ The Smart Serial Card configuration will not load from the ini file at this time
                      <string>TextLabel</string>
                     </property>
                    </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="ss7i87in_1"/>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="ss7i87in_2"/>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QComboBox" name="ss7i87in_3"/>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QComboBox" name="ss7i87in_4"/>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QComboBox" name="ss7i87in_5"/>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QComboBox" name="ss7i87in_6"/>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QComboBox" name="ss7i87in_7"/>
                   </item>
                  </layout>
                 </widget>
