@@ -334,7 +334,7 @@ def setupCombo(combo):
 		['7i96 + G540', '7i96_g540dpl.bit']
 		]
 
-	if combo == 'smartserialcard':
+	if combo == 'sscard':
 		comboList = [
 		['Select', False],
 		['7i64', '7i64'],

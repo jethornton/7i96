@@ -1,6 +1,6 @@
 INPUTS = [
 	['Select', False],
-	['Signal Only', ' '],
+	['Signal Only', ''],
 	['Probe', 'motion.probe-input'],
 	['Digital In 0', 'motion.digital-in-00'],
 	['Digital In 1', 'motion.digital-in-01'],
@@ -10,7 +10,7 @@ INPUTS = [
 
 OUTPUTS = [
 	['Select', False],
-	['Signal Only', ' '],
+	['Signal Only', ''],
 	['Coolant Flood', 'iocontrol.0.coolant-flood'],
 	['Coolant Mist', 'iocontrol.0.coolant-mist'],
 	['Spindle On', 'spindle.0.on'],
@@ -56,8 +56,8 @@ def build(parent):
 	'7i84':7,
 	'7i87':8
 	}
-	parent.smartSerialInfoLbl.setText(sscards[parent.smartSerialCardCB.currentText()])
-	parent.smartSerialSW.setCurrentIndex(sspage[parent.smartSerialCardCB.currentText()])
+	parent.smartSerialInfoLbl.setText(sscards[parent.ssCardCB.currentText()])
+	parent.smartSerialSW.setCurrentIndex(sspage[parent.ssCardCB.currentText()])
 
 	pins7i64 = {}
 	pins7i69 = {}

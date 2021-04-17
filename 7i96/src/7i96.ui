@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>839</height>
+    <height>851</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -182,7 +182,7 @@ QGroupBox::title {
              <x>0</x>
              <y>0</y>
              <width>958</width>
-             <height>364</height>
+             <height>356</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout">
@@ -5704,7 +5704,17 @@ max speed</string>
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QComboBox" name="smartSerialCardCB"/>
+            <widget class="QComboBox" name="ssCardCB"/>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="buildSserialCB">
+             <property name="text">
+              <string>Build sserial.hal</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>

@@ -97,7 +97,7 @@ def build(parent):
 	iniContents.append('\n[HAL]\n')
 	iniContents.append(f'HALFILE = {parent.configNameUnderscored}.hal\n')
 	iniContents.append('HALFILE = io.hal\n')
-	if parent.smartSerialCardCB.currentData():
+	if parent.ssCardCB.currentData():
 		iniContents.append('HALFILE = sserial.hal\n')
 	if parent.customhalCB.isChecked():
 		iniContents.append('HALFILE = custom.hal\n')
@@ -211,19 +211,19 @@ def build(parent):
 				iniContents.append('{} = {}\n'.format(getattr(parent, option).property('item'), getattr(parent, option).value()))
 
 	# build the [SSERIAL] section
-	if parent.smartSerialCardCB.currentData():
+	if parent.ssCardCB.currentData():
 		iniContents.append('\n[SSERIAL]\n')
 		iniContents.append('# DO NOT change the sserial text\n')
-		iniContents.append(f'SS_CARD = {parent.smartSerialCardCB.currentText()}\n')
-	if parent.smartSerialCardCB.currentText() == '7i64':
+		iniContents.append(f'ssCardCB = {parent.ssCardCB.currentText()}\n')
+	if parent.ssCardCB.currentText() == '7i64':
 		# 24 ss7i64in_
 		# 24 ss7i64out_
 		for i in range(24):
-			iniContents.append(f'SS_INPUT_{i} = {getattr(parent, "ss7i64in_" + str(i)).currentData()}\n')
+			iniContents.append(f'ss7i64in_{i} = {getattr(parent, "ss7i64in_" + str(i)).currentData()}\n')
 		for i in range(24):
-			iniContents.append(f'SS_OUTPUT_{i} = {getattr(parent, "ss7i64out_" + str(i)).currentData()}\n')
+			iniContents.append(f'ss7i64out_{i} = {getattr(parent, "ss7i64out_" + str(i)).currentData()}\n')
 
-	elif parent.smartSerialCardCB.currentText() == '7i69':
+	elif parent.ssCardCB.currentText() == '7i69':
 		print('here')
 		# 24 ss7i69in_
 		# 24 ss7i69out_
@@ -232,22 +232,22 @@ def build(parent):
 		for i in range(24):
 			iniContents.append(f'SS_OUTPUT_{i} = {getattr(parent, "ss7i69out_" + str(i)).currentData()}\n')
 
-	elif parent.smartSerialCardCB.currentText() == '7i70':
+	elif parent.ssCardCB.currentText() == '7i70':
 		# 48 ss7i70in_
 		for i in range(48):
 			iniContents.append(f'SS_INPUT_{i} = {getattr(parent, "ss7i70in_" + str(i)).currentData()}\n')
 
-	elif parent.smartSerialCardCB.currentText() == '7i71':
+	elif parent.ssCardCB.currentText() == '7i71':
 		# 48 ss7i71out_
 		for i in range(48):
 			iniContents.append(f'SS_OUTPUT_{i} = {getattr(parent, "ss7i71out_" + str(i)).currentData()}\n')
 
-	elif parent.smartSerialCardCB.currentText() == '7i72':
+	elif parent.ssCardCB.currentText() == '7i72':
 		# 48 ss7i72out_
 		for i in range(48):
 			iniContents.append(f'SS_OUTPUT_{i} = {getattr(parent, "ss7i72out_" + str(i)).currentData()}\n')
 
-	elif parent.smartSerialCardCB.currentText() == '7i73':
+	elif parent.ssCardCB.currentText() == '7i73':
 		# 16 ss7i73key_
 		# 12 ss7i73lcd_
 		# 16 ss7i73in_
@@ -261,7 +261,7 @@ def build(parent):
 		for i in range(2):
 			iniContents.append(f'SS_OUTPUT_{i} = {getattr(parent, "ss7i73out_" + str(i)).currentData()}\n')
 
-	elif parent.smartSerialCardCB.currentText() == '7i84':
+	elif parent.ssCardCB.currentText() == '7i84':
 		# 32 ss7i84in_
 		# 16 ss7i84out_
 		for i in range(32):
@@ -269,7 +269,7 @@ def build(parent):
 		for i in range(16):
 			iniContents.append(f'SS_OUTPUT_{i} = {getattr(parent, "ss7i84out_" + str(i)).currentData()}\n')
 
-	elif parent.smartSerialCardCB.currentText() == '7i87':
+	elif parent.ssCardCB.currentText() == '7i87':
 		# 8 ss7i87in_
 		for i in range(8):
 			iniContents.append(f'SS_INPUT_{i} = {getattr(parent, "ss7i87in_" + str(i)).currentData()}\n')

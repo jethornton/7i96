@@ -12,6 +12,7 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog,
 
 from lib7i96 import buildcombos
 from lib7i96 import loadini
+from lib7i96 import loadss
 from lib7i96 import checkit
 from lib7i96 import buildfiles
 from lib7i96 import buildini
@@ -52,6 +53,7 @@ class MainWindow(QMainWindow):
 		uic.loadUi(os.path.join(self.lib_path, '7i96.ui'), self)
 		self.version = '1.2.6'
 		self.config = configparser.ConfigParser(strict=False)
+		self.config.optionxform = str
 		self.setWindowTitle(f'7i96 Configuration Tool Version {self.version}')
 		self.configNameUnderscored = ''
 		self.checkConfig = checkit.config
@@ -108,6 +110,8 @@ class MainWindow(QMainWindow):
 
 	@pyqtSlot()
 	def on_actionOpen_triggered(self):
+		self.tabWidget.setCurrentIndex(0)
+		self.outputPTE.clear()
 		if os.path.isdir(os.path.expanduser('~/linuxcnc/configs')):
 			configsDir = os.path.expanduser('~/linuxcnc/configs')
 		else:
@@ -116,6 +120,7 @@ class MainWindow(QMainWindow):
 		caption="Select Configuration INI File", directory=configsDir,
 		filter='*.ini', options=QFileDialog.DontUseNativeDialog,)
 		if fileName:
+			self.outputPTE.appendPlainText(f'Loading {fileName[0]}')
 			iniFile = (fileName[0])
 			if self.config.read(iniFile):
 				if self.config.has_option('7I96', 'VERSION'):
@@ -172,6 +177,7 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionBuild_triggered(self):
 		self.outputPTE.clear()
+		self.tabWidget.setCurrentIndex(0)
 		if not self.checkConfig(self):
 			self.errorDialog(self.checkConfig.result)
 			return
@@ -203,7 +209,7 @@ class MainWindow(QMainWindow):
 		buildhal.build(self)
 		buildio.build(self)
 		buildmisc.build(self)
-		if self.smartSerialCardCB.currentData() and self.buildSserialCB.isChecked():
+		if self.ssCardCB.currentData() and self.buildSserialCB.isChecked():
 			buildss.build(self)
 
 	@pyqtSlot()
@@ -257,7 +263,7 @@ class MainWindow(QMainWindow):
 		self.linearUnitsCB.currentIndexChanged.connect(self.linearUnitsChanged)
 		#     obj.signal.connect(partial(fun, args1, arg2, ... ))
 		self.cpuPB.clicked.connect(partial(pcinfo.cpuInfo, self))
-		self.smartSerialCardCB.currentIndexChanged.connect(partial(sscards.build, self))
+		self.ssCardCB.currentIndexChanged.connect(partial(sscards.build, self))
 		self.nicPB.clicked.connect(partial(pcinfo.nicInfo, self))
 		self.calcNicPB.clicked.connect(partial(pcinfo.nicCalc, self))
 		self.readTmaxPB.clicked.connect(partial(pcinfo.readTmax, self))
@@ -521,8 +527,8 @@ class MainWindow(QMainWindow):
 			self.positionFeedbackCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('firmware'):
 			self.firmwareCB.addItem(item[0], item[1])
-		for item in buildcombos.setupCombo('smartserialcard'):
-			self.smartSerialCardCB.addItem(item[0], item[1])
+		for item in buildcombos.setupCombo('sscard'):
+			self.ssCardCB.addItem(item[0], item[1])
 		for item in buildcombos.setupCombo('spindle'):
 			self.spindleTypeCB.addItem(item[0], item[1])
 		for i in range(5):
@@ -540,7 +546,6 @@ class MainWindow(QMainWindow):
 		for i in range(6):
 			for item in buildcombos.setupCombo('output'):
 				getattr(self, 'output_' + str(i)).addItem(item[0], item[1])
-
 
 		for item in buildcombos.setupCombo('debug'):
 			self.debugCB.addItem(item[0], item[1])
@@ -576,6 +581,15 @@ class MainWindow(QMainWindow):
 					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
 					if index >= 0:
 						getattr(self, item[2]).setCurrentIndex(index)
+		self.outputPTE.appendPlainText('INI file Loaded')
+
+		if self.config.has_section('SSERIAL'):
+			card = self.config.get('SSERIAL', 'ssCardCB')
+			index = self.ssCardCB.findText(card)
+			if index > 0:
+				self.ssCardCB.setCurrentIndex(index)
+			loadss.load(self, self.config)
+			self.outputPTE.appendPlainText('Smart Serial file Loaded')
 
 	def errorDialog(self, text):
 		dialog = QtWidgets.QDialog()

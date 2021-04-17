@@ -90,7 +90,7 @@ def iniList():
 	iniList.append(['OPTIONS', 'LADDER_RUNGS', 'ladderRungsSB'])
 	iniList.append(['OPTIONS', 'BACKUP', 'backupCB'])
 
-	iniList.append(['SSERIAL', 'SS_CARD', 'smartSerialCardCB'])
+	iniList.append(['SSERIAL', 'SS_CARD', 'ssCardCB'])
 
 
 	return iniList
