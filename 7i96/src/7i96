@@ -93,8 +93,8 @@ class MainWindow(QMainWindow):
 		self.results = ""
 		self.extcmd = extcmd.extcmd()
 		# for testing
-		#self.config.read('/home/john/linuxcnc/configs/7i96/7i96.ini')
-		#self.iniLoad()
+		self.config.read('/home/john/linuxcnc/configs/7i96/7i96.ini')
+		self.iniLoad()
 
 		self.show()
 

@@ -137,7 +137,7 @@ def build(parent):
 	# build the outputs
 	for i in range(6):
 		key = getattr(parent, 'outputPB_' + str(i)).text()
-		if input_dict.get(key, False): # return False if key is not in dictionary
+		if output_dict.get(key, False): # return False if key is not in dictionary
 			contents.append(output_dict[key] + f'hm2_7i96.0.ssr.00.out-0{i}\n')
 		else: # handle special cases
 			if key == 'E Stop Out':
