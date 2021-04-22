@@ -111,8 +111,17 @@ def build(parent):
 				contents.append('net home-all ' + f'hm2_7i96.0.gpio.{i:02}.in{invert}\n')
 				for i in range(5):
 					if getattr(parent, 'axisCB_' + str(i)).currentData():
-						contents.append('net home-all ' + f'joint.{str(i)}.home-sw-in\n')
+						contents.append('net home-all ' + f'joint.{i}.home-sw-in\n')
+			elif key == 'External E Stop':
+				contents.append('\n# External E-Stop\n')
+				contents.append('loadrt estop_latch\n')
+				contents.append('addf estop-latch.0 servo-thread\n')
+				contents.append('net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out\n')
+				contents.append('net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in\n')
+				contents.append('net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset\n')
+				contents.append(f'net remote-estop estop-latch.0.fault-in <= hm2_7i96.0.gpio.{i:02}.in{invert}\n\n')
 
+	"""
 	# build the inputs
 	for index in range(11):
 		inputText = getattr(parent, 'input_' + str(index)).currentText()
@@ -158,6 +167,7 @@ def build(parent):
 			contents.append(f'net digital-input-2 motion.digital-in-02 <= hm2_7i96.0.gpio.{index:02}.in\n')
 		elif inputText == 'Digital In 3':
 			contents.append(f'net digital-input-3 motion.digital-in-03 <= hm2_7i96.0.gpio.{index:02}.in\n')
+	"""
 
 	outputDict = {
 	'Coolant Flood': 'net flood-output iocontrol.0.coolant-flood => ',

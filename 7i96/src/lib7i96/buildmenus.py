@@ -24,7 +24,8 @@ inputs = [{'Not Used':'Select'},
 		{'V Axis':['V Plus', 'V Minus', 'V Enable']},
 		{'W Axis':['W Plus', 'W Minus', 'W Enable']}
 	]},
-	{'I/O Control':['Flood', 'Mist', 'Lube Level', 'Tool Changed', 'Tool Prepared']},
+	{'I/O Control':['Flood', 'Mist', 'Lube Level', 'Tool Changed',
+		'Tool Prepared', 'External E Stop']},
 	{'Motion':['Probe Input', 'Digital 0', 'Digital 1', 'Digital 2', 'Digital 3']}
 ]
 
