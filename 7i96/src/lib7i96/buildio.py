@@ -101,7 +101,7 @@ def build(parent):
 
 	# build inputs from qpushbutton menus
 	for i in range(11):
-		key = getattr(parent, 'inputPb_' + str(i)).text()
+		key = getattr(parent, 'inputPB_' + str(i)).text()
 		invert = '_not' if getattr(parent, 'inputInvertCb_' + str(i)).isChecked() else ''
 		if input_dict.get(key, False): # return False if key is not in dictionary
 			contents.append(input_dict[key] + f'hm2_7i96.0.gpio.{i:02}.in{invert}\n')
@@ -169,7 +169,7 @@ def build(parent):
 			contents.append(f'net digital-input-3 motion.digital-in-03 <= hm2_7i96.0.gpio.{index:02}.in\n')
 	"""
 
-	outputDict = {
+	output_dict = {
 	'Coolant Flood': 'net flood-output iocontrol.0.coolant-flood => ',
 	'Coolant Mist': 'net mist-output iocontrol.0.coolant-mist => ',
 	'Spindle On': 'net spindle-on spindle.0.on => ',
@@ -180,19 +180,38 @@ def build(parent):
 	'Digital Out 0': 'net digital-out-0 motion.digital-out-00 => ',
 	'Digital Out 1': 'net digital-out-1 motion.digital-out-01 => ',
 	'Digital Out 2': 'net digital-out-2 motion.digital-out-02 => ',
-	'Digital Out 3': 'net digital-out-3 motion.digital-out-03 => ',
-	'Start Tool Change': '',
-	'Tool Change': '',
-	'Tool Prepare': '',
+	'Digital Out 3': 'net digital-out-3 motion.digital-out-03 => '
 	}
 
+	#'Start Tool Change': '',
+	#'Tool Change': '',
+	#'Tool Prepare': '',
 
+	# build the outputs
+	for i in range(6):
+		key = getattr(parent, 'outputPB_' + str(i)).text()
+		if input_dict.get(key, False): # return False if key is not in dictionary
+			contents.append(output_dict[key] + f'hm2_7i96.0.ssr.00.out-0{i}.in\n')
+		else: # handle special cases
+			pass
+
+
+	"""
+
+		outputText = getattr(parent, 'outputPB_' + str(index)).text()
+		if outputText != 'Select':
+			netLine = outputDict[outputText]
+			contents.append(f'{netLine}hm2_7i96.0.ssr.00.out-0{index}\n')
+	"""
+
+	"""
 	# build the outputs
 	for index in range(6):
 		outputText = getattr(parent, 'output_' + str(index)).currentText()
 		if outputText != 'Select':
 			netLine = outputDict[outputText]
 			contents.append(f'{netLine}hm2_7i96.0.ssr.00.out-0{index}\n')
+	"""
 
 	try:
 		with open(filePath, 'w') as f:

@@ -29,13 +29,28 @@ inputs = [{'Not Used':'Select'},
 	{'Motion':['Probe Input', 'Digital 0', 'Digital 1', 'Digital 2', 'Digital 3']}
 ]
 
-def build(parent):
+# {'':['', ]},
+# '', 
+outputs = [{'Not Used':'Select'},
+	{'Spindle':['Spindle On', 'Spindle CW', 'Spindle CCW', 'Spindle Brake']},
+	{'I/O Control':['Coolant Flood', 'Coolant Mist', 'Lube Pump',
+		'Tool Change', 'Tool Prepare', 'E Stop Out']},
+	{'Digital Out':['Digital Out 0', 'Digital Out 1', 'Digital Out 2', 'Digital Out 3', ]}
+]
 
+def build(parent):
 	for i in range(11):
-		button = getattr(parent, "inputPb_{}".format(i))
+		button = getattr(parent, "inputPB_{}".format(i))
 		menu = QMenu()
 		menu.triggered.connect(lambda action, button=button: button.setText(action.text()))
 		add_menu(inputs, menu)
+		button.setMenu(menu)
+
+	for i in range(6):
+		button = getattr(parent, "outputPB_{}".format(i))
+		menu = QMenu()
+		menu.triggered.connect(lambda action, button=button: button.setText(action.text()))
+		add_menu(outputs, menu)
 		button.setMenu(menu)
 
 def add_menu(data, menu_obj):

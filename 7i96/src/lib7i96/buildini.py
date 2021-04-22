@@ -181,6 +181,7 @@ def build(parent):
 	iniContents.append('\n# Everything below this line is only used to\n')
 	iniContents.append('# setup the Configuration Tool when loading the ini.\n')
 
+	"""
 	# build the [INPUTS] section
 	iniContents.append('\n[INPUTS]\n')
 	iniContents.append('# DO NOT change the inputs text\n')
@@ -188,19 +189,28 @@ def build(parent):
 		iniContents.append(f'INPUT_{i} = {getattr(parent, "input_" + str(i)).currentText()}\n')
 		iniContents.append(f'INPUT_DIR_{i} = {getattr(parent, "inputInvert_" + str(i)).currentText()}\n')
 		iniContents.append(f'INPUT_JOINT_{i} = {getattr(parent, "inputJoint_" + str(i)).currentData()}\n')
+	"""
 
 	# build the [INPUTS] section from pushbuttons
 	iniContents.append('\n[INPUT_PB]\n')
 	iniContents.append('# DO NOT change the inputs text\n')
 	for i in range(11):
-		iniContents.append(f'INPUT_PB_{i} = {getattr(parent, "inputPb_" + str(i)).text()}\n')
+		iniContents.append(f'INPUT_PB_{i} = {getattr(parent, "inputPB_" + str(i)).text()}\n')
 		iniContents.append(f'INPUT_INVERT_{i} = {getattr(parent, "inputInvertCb_" + str(i)).isChecked()}\n')
 
+	# build the [OUTPUTS] section from pushbuttons
+	iniContents.append('\n[OUTPUT_PB]\n')
+	iniContents.append('# DO NOT change the outputs text\n')
+	for i in range(6):
+		iniContents.append(f'OUTPUT_PB_{i} = {getattr(parent, "outputPB_" + str(i)).text()}\n')
+
+	"""
 	# build the [OUTPUTS] section
 	iniContents.append('\n[OUTPUTS]\n')
 	iniContents.append('# DO NOT change the outputs text\n')
 	for i in range(5):
 		iniContents.append(f'OUTPUT_{i} = {getattr(parent, "output_" + str(i)).currentText()}\n')
+	"""
 
 	# build the [OPTIONS] section
 	iniContents.append('\n[OPTIONS]\n')

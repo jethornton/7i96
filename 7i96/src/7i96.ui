@@ -38,7 +38,7 @@ QGroupBox::title {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="machine">
        <attribute name="title">
@@ -5589,14 +5589,14 @@ max speed</string>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QPushButton" name="inputPb_0">
+          <widget class="QPushButton" name="inputPB_0">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QPushButton" name="inputPb_1">
+          <widget class="QPushButton" name="inputPB_1">
            <property name="text">
             <string>Select</string>
            </property>
@@ -5683,7 +5683,7 @@ max speed</string>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QPushButton" name="inputPb_2">
+          <widget class="QPushButton" name="inputPB_2">
            <property name="text">
             <string>Select</string>
            </property>
@@ -5720,56 +5720,56 @@ max speed</string>
           </widget>
          </item>
          <item row="9" column="1">
-          <widget class="QPushButton" name="inputPb_9">
+          <widget class="QPushButton" name="inputPB_9">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="6" column="1">
-          <widget class="QPushButton" name="inputPb_6">
+          <widget class="QPushButton" name="inputPB_6">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="4" column="1">
-          <widget class="QPushButton" name="inputPb_4">
+          <widget class="QPushButton" name="inputPB_4">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QPushButton" name="inputPb_3">
+          <widget class="QPushButton" name="inputPB_3">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="8" column="1">
-          <widget class="QPushButton" name="inputPb_8">
+          <widget class="QPushButton" name="inputPB_8">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="7" column="1">
-          <widget class="QPushButton" name="inputPb_7">
+          <widget class="QPushButton" name="inputPB_7">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="5" column="1">
-          <widget class="QPushButton" name="inputPb_5">
+          <widget class="QPushButton" name="inputPB_5">
            <property name="text">
             <string>Select</string>
            </property>
           </widget>
          </item>
          <item row="10" column="1">
-          <widget class="QPushButton" name="inputPb_10">
+          <widget class="QPushButton" name="inputPB_10">
            <property name="text">
             <string>Select</string>
            </property>
@@ -5855,10 +5855,10 @@ max speed</string>
        <widget class="QGroupBox" name="gridGroupBox">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>10</y>
+          <x>600</x>
+          <y>30</y>
           <width>341</width>
-          <height>231</height>
+          <height>271</height>
          </rect>
         </property>
         <property name="title">
@@ -5922,6 +5922,105 @@ max speed</string>
           <widget class="QLabel" name="label_293">
            <property name="text">
             <string>Output 5</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_59">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>20</y>
+          <width>341</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Outputs</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_106">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_481">
+           <property name="text">
+            <string>Output 1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_746">
+           <property name="text">
+            <string>Output 3</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_482">
+           <property name="text">
+            <string>Output 4</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_541">
+           <property name="text">
+            <string>Output 5</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_483">
+           <property name="text">
+            <string>Output 2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_521">
+           <property name="text">
+            <string>Output 0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="outputPB_0">
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="outputPB_1">
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="outputPB_2">
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="outputPB_3">
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QPushButton" name="outputPB_4">
+           <property name="text">
+            <string>Select</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QPushButton" name="outputPB_5">
+           <property name="text">
+            <string>Select</string>
            </property>
           </widget>
          </item>

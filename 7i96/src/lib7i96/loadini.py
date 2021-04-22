@@ -80,11 +80,14 @@ def iniList():
 
 	# new inputs using qpushbutton and menu
 	for i in range(11):
-		iniList.append(['INPUT_PB', f'INPUT_PB_{i}', f'inputPb_{i}'])
+		iniList.append(['INPUT_PB', f'INPUT_PB_{i}', f'inputPB_{i}'])
 		iniList.append(['INPUT_PB', f'INPUT_INVERT_{i}', f'inputInvertCb_{i}'])
 
+	# new outputs using qpushbutton
 	for i in range(6):
-		iniList.append(['OUTPUTS', f'OUTPUT_{i}', f'output_{i}'])
+		iniList.append(['OUTPUT_PB', f'OUTPUT_PB_{i}', f'outputPB_{i}'])
+
+	#	iniList.append(['OUTPUTS', f'OUTPUT_{i}', f'output_{i}'])
 
 	iniList.append(['OPTIONS', 'INTRO_GRAPHIC', 'splashScreenCB'])
 	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
