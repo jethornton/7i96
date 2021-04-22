@@ -189,6 +189,13 @@ def build(parent):
 		iniContents.append(f'INPUT_DIR_{i} = {getattr(parent, "inputInvert_" + str(i)).currentText()}\n')
 		iniContents.append(f'INPUT_JOINT_{i} = {getattr(parent, "inputJoint_" + str(i)).currentData()}\n')
 
+	# build the [INPUTS] section from pushbuttons
+	iniContents.append('\n[INPUT_PB]\n')
+	iniContents.append('# DO NOT change the inputs text\n')
+	for i in range(11):
+		iniContents.append(f'INPUT_PB_{i} = {getattr(parent, "inputPb_" + str(i)).text()}\n')
+		iniContents.append(f'INPUT_INVERT_{i} = {getattr(parent, "inputInvertCb_" + str(i)).isChecked()}\n')
+
 	# build the [OUTPUTS] section
 	iniContents.append('\n[OUTPUTS]\n')
 	iniContents.append('# DO NOT change the outputs text\n')

@@ -7,10 +7,11 @@ from datetime import datetime
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtCore import pyqtSlot, Qt, QProcess
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QFileDialog,
-	QLineEdit, QSpinBox, QCheckBox, QComboBox, QLabel, QGroupBox,
-	QDoubleSpinBox, QMessageBox, QInputDialog)
+	QLineEdit, QSpinBox, QCheckBox, QPushButton, QComboBox, QLabel,
+	QGroupBox, QDoubleSpinBox, QMessageBox, QInputDialog)
 
 from lib7i96 import buildcombos
+from lib7i96 import buildmenus
 from lib7i96 import loadini
 from lib7i96 import loadss
 from lib7i96 import checkit
@@ -61,6 +62,7 @@ class MainWindow(QMainWindow):
 		self.pcStats = platform.uname()
 		self.qclip = QtWidgets.QApplication.clipboard()
 		self.helpInfo = helptext.descriptions
+		buildmenus.build(self)
 		self.buildCB()
 		sscards.buildCB(self)
 		sscards.ss7i73setup(self)
@@ -90,6 +92,9 @@ class MainWindow(QMainWindow):
 		self.units = False
 		self.results = ""
 		self.extcmd = extcmd.extcmd()
+		# for testing
+		self.config.read('/home/john/linuxcnc/configs/7i96/7i96.ini')
+		self.iniLoad()
 
 		self.show()
 
@@ -567,20 +572,25 @@ class MainWindow(QMainWindow):
 			if self.config.has_option(item[0], item[1]):
 				if isinstance(getattr(self, item[2]), QLabel):
 					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
-				if isinstance(getattr(self, item[2]), QLineEdit):
+				elif isinstance(getattr(self, item[2]), QLineEdit):
 					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
-				if isinstance(getattr(self, item[2]), QSpinBox):
+				elif isinstance(getattr(self, item[2]), QSpinBox):
 					getattr(self, item[2]).setValue(abs(int(self.config[item[0]][item[1]])))
-				if isinstance(getattr(self, item[2]), QDoubleSpinBox):
+				elif isinstance(getattr(self, item[2]), QDoubleSpinBox):
 					getattr(self, item[2]).setValue(float(self.config[item[0]][item[1]]))
-				if isinstance(getattr(self, item[2]), QCheckBox):
+				elif isinstance(getattr(self, item[2]), QCheckBox):
 					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
-				if isinstance(getattr(self, item[2]), QGroupBox):
+				elif isinstance(getattr(self, item[2]), QGroupBox):
 					getattr(self, item[2]).setChecked(eval(self.config[item[0]][item[1]]))
-				if isinstance(getattr(self, item[2]), QComboBox):
+				elif isinstance(getattr(self, item[2]), QComboBox):
 					index = getattr(self, item[2]).findData(self.config[item[0]][item[1]])
 					if index >= 0:
 						getattr(self, item[2]).setCurrentIndex(index)
+				elif isinstance(getattr(self, item[2]), QPushButton):
+					getattr(self, item[2]).setText(self.config[item[0]][item[1]])
+				else:
+					print(item[2])
+
 		self.outputPTE.appendPlainText('INI file Loaded')
 
 		if self.config.has_section('SSERIAL'):

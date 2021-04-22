@@ -78,6 +78,11 @@ def iniList():
 	for i in range(11):
 		iniList.append(['INPUTS', f'INPUT_DIR_{i}', f'inputInvert_{i}'])
 
+	# new inputs using qpushbutton and menu
+	for i in range(11):
+		iniList.append(['INPUT_PB', f'INPUT_PB_{i}', f'inputPb_{i}'])
+		iniList.append(['INPUT_PB', f'INPUT_INVERT_{i}', f'inputInvertCb_{i}'])
+
 	for i in range(6):
 		iniList.append(['OUTPUTS', f'OUTPUT_{i}', f'output_{i}'])
 
