@@ -225,56 +225,6 @@ def setupCombo(combo):
 		['Actual', 'ACTUAL']
 		]
 
-	if combo == 'input':
-		comboList = [
-		['Select', False],
-		['E-Stop', 'E-Stop'],
-		['Home', 'Home'],
-		['Both Limit', 'Both Limit'],
-		['Min Limit', 'Min Limit'],
-		['Max Limit', 'Max Limit'],
-		['Home & Limit', 'Home & Limit'],
-		['Min Limit & Home', 'Min Limit & Home'],
-		['Max Limit & Home', 'Max Limit & Home'],
-		['Probe', 'Probe'],
-		['Digital In 0', 'Digital In 0'],
-		['Digital In 1', 'Digital In 1'],
-		['Digital In 2', 'Digital In 2'],
-		['Digital In 3', 'Digital In 3'],
-		['Start Tool Change Ack', 'start-change-ack'],
-		['Tool Changed', 'tool-changed'],
-		['Tool Prepared', 'tool-prepared'],
-		['Tool Changer Fault', 'toolchanger-fault'],
-		['Tool Changer Clear Fault', 'toolchanger-clear-fault']
-		]
-
-	if combo == 'input_invert':
-		comboList = [
-		['Select', False],
-		['Normal', 'Normal'],
-		['Inverted', 'Inverted']
-		]
-
-	if combo == 'output':
-		comboList = [
-		['Select', False],
-		['Coolant Flood', 'Coolant Flood'],
-		['Coolant Mist', 'Coolant Mist'],
-		['Spindle On', 'Spindle On'],
-		['Spindle CW', 'Spindle CW'],
-		['Spindle CCW', 'Spindle CCW'],
-		['Spindle Brake', 'Spindle Brake'],
-		['E-Stop Out', 'E-Stop Out'],
-		['Digital Out 0', 'Digital Out 0'],
-		['Digital Out 1', 'Digital Out 1'],
-		['Digital Out 2', 'Digital Out 2'],
-		['Digital Out 3', 'Digital Out 3'],
-		['Start Tool Change', 'start-change'],
-		['Tool Change', 'tool-change'],
-		['Tool Prepare', 'tool-prepare'],
-		['', ''],
-		]
-
 	if combo == 'debug':
 		comboList = [
 		['Debug Off', '0x00000000'],

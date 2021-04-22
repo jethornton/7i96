@@ -69,16 +69,8 @@ def iniList():
 	iniList.append(['SPINDLE', 'BIAS', 'bias_s'])
 	iniList.append(['SPINDLE', 'MAX_ERROR', 'maxError_s'])
 
-	for i in range(11):
-		iniList.append(['INPUTS', f'INPUT_{i}', f'input_{i}'])
 
-	for i in range(11):
-		iniList.append(['INPUTS', f'INPUT_JOINT_{i}', f'inputJoint_{i}'])
-
-	for i in range(11):
-		iniList.append(['INPUTS', f'INPUT_DIR_{i}', f'inputInvert_{i}'])
-
-	# new inputs using qpushbutton and menu
+	# new inputs using qpushbutton
 	for i in range(11):
 		iniList.append(['INPUT_PB', f'INPUT_PB_{i}', f'inputPB_{i}'])
 		iniList.append(['INPUT_PB', f'INPUT_INVERT_{i}', f'inputInvertCb_{i}'])
@@ -86,8 +78,6 @@ def iniList():
 	# new outputs using qpushbutton
 	for i in range(6):
 		iniList.append(['OUTPUT_PB', f'OUTPUT_PB_{i}', f'outputPB_{i}'])
-
-	#	iniList.append(['OUTPUTS', f'OUTPUT_{i}', f'output_{i}'])
 
 	iniList.append(['OPTIONS', 'INTRO_GRAPHIC', 'splashScreenCB'])
 	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
