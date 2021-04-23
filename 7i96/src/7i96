@@ -104,7 +104,7 @@ class MainWindow(QMainWindow):
 		except FileNotFoundError:
 			t = "Mesaflash not found go to\nhttps://github.com/LinuxCNC/mesaflash\nfor installation instructions."
 			self.outputPTE.appendPlainText(t)
-			self.readCardPB.setEnabled(False)
+			self.readPB.setEnabled(False)
 			self.flashPB.setEnabled(False)
 			self.reloadPB.setEnabled(False)
 
