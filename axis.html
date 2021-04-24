@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Axis Tab &mdash; 7i96 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spindle Tab" href="spindle.html" />
+    <link rel="prev" title="Display Tab" href="display.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 7i96
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine.html">Machine Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="display.html">Display Tab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Axis Tab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#joint-tabs">Joint Tabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#axis-group">Axis Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pid-settings">PID Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stepgen-settings">StepGen Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#home-settings">Home Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#joint-information">Joint Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spindle.html">Spindle Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">Outputs Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sserial.html">Smart Serial Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc.html">PLC Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pins.html">Pins Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Info Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pc.html">PC Tab</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">7i96</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Axis Tab</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/axis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="axis-tab">
+<h1>Axis Tab<a class="headerlink" href="#axis-tab" title="Permalink to this headline">¶</a></h1>
+<img alt="_images/axis-tab.png" class="align-center" src="_images/axis-tab.png" />
+<div class="section" id="joint-tabs">
+<h2>Joint Tabs<a class="headerlink" href="#joint-tabs" title="Permalink to this headline">¶</a></h2>
+<p>Configure each joint by starting with joint 0 and don’t skip a joint.</p>
+</div>
+<div class="section" id="axis-group">
+<h2>Axis Group<a class="headerlink" href="#axis-group" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Axis</strong> Select the axis letter</p></li>
+<li><p><strong>Scale</strong> Enter the the number of step pulses for one linear unit (inch or mm)</p></li>
+<li><p><strong>Minimum Limit</strong> Enter the lower number limit in linear units</p></li>
+<li><p><strong>Maximum Limit</strong> Enter the higher number limit in linear units</p></li>
+<li><p><strong>Maximum Velocity</strong> Enter the maximum velocity in linear units per second</p></li>
+<li><p><strong>Maximum Acceleration</strong> Enter the maximum acceleration rate in linear units
+per second per second</p></li>
+</ul>
+</div>
+<div class="section" id="pid-settings">
+<h2>PID Settings<a class="headerlink" href="#pid-settings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Default Values</strong> populates the PID settings with the default values</p></li>
+</ul>
+</div>
+<div class="section" id="stepgen-settings">
+<h2>StepGen Settings<a class="headerlink" href="#stepgen-settings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Use the drop down list to select a drive or manualy enter the numbers for your
+drive.</p></li>
+</ul>
+</div>
+<div class="section" id="home-settings">
+<h2>Home Settings<a class="headerlink" href="#home-settings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Home</strong> Location of home for that axis</p></li>
+<li><p><strong>Home Offset</strong> The amount of offset from the home switch</p></li>
+<li><p><strong>Home Search Velocity</strong> The speed in linear units per second to find the home
+switch</p></li>
+<li><p><strong>Home Latch Velocity</strong> The speed in linear units per second to do the final
+move to the home switch.</p></li>
+<li><p><strong>Home Sequence</strong> The order of homing, must start with 0 or 1 and not skip a
+number</p></li>
+<li><p><strong>Home Use Index</strong> If you have an encoder with index you can select this</p></li>
+<li><p><strong>Home Ignore Limits</strong> If you have shared home and limit switches select this</p></li>
+</ul>
+</div>
+<div class="section" id="joint-information">
+<h2>Joint Information<a class="headerlink" href="#joint-information" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Displays information about that joint after you enter in values in the Axis
+group</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="spindle.html" class="btn btn-neutral float-right" title="Spindle Tab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="display.html" class="btn btn-neutral float-left" title="Display Tab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, John Thornton.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

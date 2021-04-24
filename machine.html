@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Machine Tab &mdash; 7i96 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Display Tab" href="display.html" />
+    <link rel="prev" title="Installing" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 7i96
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Machine Tab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#machine-group">Machine Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#firmware-group">Firmware Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#board-setup-group">Board Setup Group</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="display.html">Display Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="axis.html">Axis Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spindle.html">Spindle Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">Outputs Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sserial.html">Smart Serial Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc.html">PLC Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pins.html">Pins Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Info Tab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pc.html">PC Tab</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">7i96</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Machine Tab</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/machine.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="machine-tab">
+<h1>Machine Tab<a class="headerlink" href="#machine-tab" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="_images/machine-tab.png"><img alt="_images/machine-tab.png" class="align-center" src="_images/machine-tab.png" style="width: 604.5px; height: 558.0px;" /></a>
+<div class="section" id="machine-group">
+<h2>Machine Group<a class="headerlink" href="#machine-group" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>Machine Group</cite> contains overall configuration information for the machine.</p>
+<ul class="simple">
+<li><p><strong>Configuration Name</strong> can be any combination of letters and digits including the dash, underscore and space. Spaces are replaced with an underscore.</p></li>
+<li><p><strong>File Path</strong> displays the actual path to the configuration</p></li>
+<li><p><strong>Linear Units</strong> select from Imperal inch or Metric mm units</p></li>
+<li><p><strong>Angular Units</strong> default is Degree… nothing else is used at this time.</p></li>
+<li><p><strong>Max Linear Velocity</strong> is the maximum linear velocity of all axes combined in
+linear units per second. The maximum linear velocity can be higher than the
+fastest axis to allow all axes to run at their maximum velocity in a combined
+move.</p></li>
+</ul>
+</div>
+<div class="section" id="firmware-group">
+<h2>Firmware Group<a class="headerlink" href="#firmware-group" title="Permalink to this headline">¶</a></h2>
+<p>In <cite>Firmware Group</cite> you can view and change the 7i96 firmware. Before using the
+<cite>Firmware</cite> buttons you must select the IP Address in the <cite>Board Setup Group</cite>.
+The 7i76 must be connected to the PC and 5vdc power supplied.</p>
+<ul class="simple">
+<li><p><strong>Read</strong> Reads the current firmware and displays it in the output window. If
+sucessful then you have the 7i96 configured and connected correctly.</p></li>
+<li><p><strong>Flash</strong> After selecting the firmware the <cite>Flash</cite> button will write the new
+firmware to the 7i96.</p></li>
+<li><p><strong>Reload</strong> After flashing you must either <cite>Reload</cite> or power cycle the 7i96.</p></li>
+<li><p><strong>Copy</strong> Copies the contents of the output window to the clipboard. Then you
+can paste the output to a file for later use.</p></li>
+</ul>
+</div>
+<div class="section" id="board-setup-group">
+<h2>Board Setup Group<a class="headerlink" href="#board-setup-group" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>Board Setup Group</cite> contains options for the 7i96 card.</p>
+<ul class="simple">
+<li><p><strong>Driver</strong> Default is HostMot2 Ethernet</p></li>
+<li><p><strong>IP Address</strong> Select the IP address configured on the 7i96.</p></li>
+<li><p><strong>Step Generators</strong> For future use</p></li>
+<li><p><strong>Encoders</strong> For future use</p></li>
+<li><p><strong>SSerial Port</strong> For future use</p></li>
+</ul>
+<p>Misc.</p>
+<ul class="simple">
+<li><p><strong>Version</strong> should be 1.1 or higher, it is used by the LinuxCNC conversion script.</p></li>
+<li><p><strong>Coordinates</strong> displays the coordinates that are configured in the Axis tab.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="display.html" class="btn btn-neutral float-right" title="Display Tab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, John Thornton.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
