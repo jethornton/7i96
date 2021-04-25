@@ -103,11 +103,11 @@ def build(parent):
 		key = getattr(parent, 'inputPB_' + str(i)).text()
 		invert = '_not' if getattr(parent, 'inputInvertCb_' + str(i)).isChecked() else ''
 		if input_dict.get(key, False): # return False if key is not in dictionary
-			contents.append(input_dict[key] + f'hm2_7i96.0.gpio.{i:02}.in{invert}\n')
+			contents.append(input_dict[key] + f'hm2_7i96.0.gpio.{i:03}.in{invert}\n')
 		else: # handle special cases
 			if key == 'Home All':
 				contents.append('\n# Home All Joints\n')
-				contents.append('net home-all ' + f'hm2_7i96.0.gpio.{i:02}.in{invert}\n')
+				contents.append('net home-all ' + f'hm2_7i96.0.gpio.{i:03}.in{invert}\n')
 				for i in range(5):
 					if getattr(parent, 'axisCB_' + str(i)).currentData():
 						contents.append('net home-all ' + f'joint.{i}.home-sw-in\n')
