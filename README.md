@@ -11,7 +11,7 @@ ini file.
 
 The 7i96 Configuration Tool requires Python 3.6 or newer to work.
 
-See the [documentation](https://jethornton.github.io/7i96/) for installation and
+See the [documentation](https://gnipsel.com/mesa/index.html) for installation and
 usage instructions.
 
 Note: The 7i96 requires LinuxCNC 2.8 Uspace or newer to work.
