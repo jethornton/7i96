@@ -1,9 +1,10 @@
-7i96 (1.3.0) UNRELEASED; urgency=medium
+7i96 (1.3.1) unstable; urgency=medium
 
   * Add support for smart serial cards
   * Add more support for input pins
+  * Add smart serial cards I/O pins menus 
 
- -- John Thornton <jt@gnipsel.com>  Thu, 22 Apr 2021 06:53:49 -0500
+ -- John Thornton <jt@gnipsel.com>  Mon, 26 Apr 2021 18:01:06 -0500
 
 7i96 (1.2.5) unstable; urgency=medium
 
