@@ -28,17 +28,18 @@
     font: bold;
     border: 2px solid silver;
     border-radius: 6px;
-   padding: 5px;
+    margin-top: 6px;
 }
 
 QGroupBox::title {
     subcontrol-origin: margin;
+    top: -5px;
     left: 7px;
     padding: 0px 5px 0px 5px;
 }</string>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="machine">
        <attribute name="title">
@@ -6109,7 +6110,7 @@ max speed</string>
            <enum>QFrame::Box</enum>
           </property>
           <property name="currentIndex">
-           <number>6</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="noSS">
            <widget class="QLabel" name="label_420">
@@ -10465,30 +10466,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="1">
-                   <widget class="QComboBox" name="ss7i84out_8"/>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QComboBox" name="ss7i84out_9"/>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QComboBox" name="ss7i84out_10"/>
-                  </item>
-                  <item row="5" column="1">
-                   <widget class="QComboBox" name="ss7i84out_13"/>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QComboBox" name="ss7i84out_11"/>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QComboBox" name="ss7i84out_12"/>
-                  </item>
-                  <item row="7" column="1">
-                   <widget class="QComboBox" name="ss7i84out_15"/>
-                  </item>
-                  <item row="6" column="1">
-                   <widget class="QComboBox" name="ss7i84out_14"/>
-                  </item>
                   <item row="4" column="0">
                    <widget class="QLabel" name="label_462">
                     <property name="text">
@@ -10509,6 +10486,62 @@ The Smart Serial Card configuration will not load from the ini file at this time
                     </property>
                    </widget>
                   </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="ss7i84out_8">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="ss7i84out_9">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="ss7i84out_10">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QPushButton" name="ss7i84out_11">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="ss7i84out_12">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QPushButton" name="ss7i84out_13">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QPushButton" name="ss7i84out_14">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QPushButton" name="ss7i84out_15">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </widget>
                </item>
@@ -10518,9 +10551,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                   <string>Outputs 0 - 7 TB3</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_61">
-                  <item row="1" column="1">
-                   <widget class="QComboBox" name="ss7i84out_1"/>
-                  </item>
                   <item row="2" column="0">
                    <widget class="QLabel" name="label_454">
                     <property name="text">
@@ -10581,15 +10611,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                     </property>
                    </widget>
                   </item>
-                  <item row="2" column="1">
-                   <widget class="QComboBox" name="ss7i84out_2"/>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QComboBox" name="ss7i84out_4"/>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QComboBox" name="ss7i84out_3"/>
-                  </item>
                   <item row="1" column="0">
                    <widget class="QLabel" name="label_453">
                     <property name="text">
@@ -10610,17 +10631,57 @@ The Smart Serial Card configuration will not load from the ini file at this time
                     </property>
                    </widget>
                   </item>
-                  <item row="5" column="1">
-                   <widget class="QComboBox" name="ss7i84out_5"/>
-                  </item>
-                  <item row="7" column="1">
-                   <widget class="QComboBox" name="ss7i84out_7"/>
-                  </item>
-                  <item row="6" column="1">
-                   <widget class="QComboBox" name="ss7i84out_6"/>
-                  </item>
                   <item row="0" column="1">
                    <widget class="QPushButton" name="ss7i84out_0">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="ss7i84out_1">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="ss7i84out_2">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QPushButton" name="ss7i84out_3">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="ss7i84out_4">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QPushButton" name="ss7i84out_5">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QPushButton" name="ss7i84out_6">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QPushButton" name="ss7i84out_7">
                     <property name="text">
                      <string>Select</string>
                     </property>
@@ -10655,223 +10716,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                  </property>
                 </spacer>
                </item>
-               <item row="0" column="1" rowspan="2">
-                <widget class="QGroupBox" name="groupBox_25">
-                 <property name="title">
-                  <string>Inputs 16 - 31 TB2</string>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_63">
-                  <item row="13" column="0">
-                   <widget class="QLabel" name="label_449">
-                    <property name="text">
-                     <string>29</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="1">
-                   <widget class="QComboBox" name="ss7i84in_24"/>
-                  </item>
-                  <item row="15" column="1">
-                   <widget class="QComboBox" name="ss7i84in_31"/>
-                  </item>
-                  <item row="8" column="0">
-                   <widget class="QLabel" name="label_444">
-                    <property name="text">
-                     <string>24</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="12" column="0">
-                   <widget class="QLabel" name="label_448">
-                    <property name="text">
-                     <string>28</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="0">
-                   <widget class="QLabel" name="label_441">
-                    <property name="text">
-                     <string>21</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="1">
-                   <widget class="QComboBox" name="ss7i84in_26"/>
-                  </item>
-                  <item row="14" column="0">
-                   <widget class="QLabel" name="label_450">
-                    <property name="text">
-                     <string>30</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_438">
-                    <property name="text">
-                     <string>18</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="label_439">
-                    <property name="text">
-                     <string>19</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="1">
-                   <widget class="QComboBox" name="ss7i84in_23"/>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QLabel" name="label_440">
-                    <property name="text">
-                     <string>20</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="14" column="1">
-                   <widget class="QComboBox" name="ss7i84in_30"/>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QComboBox" name="ss7i84in_20"/>
-                  </item>
-                  <item row="5" column="1">
-                   <widget class="QComboBox" name="ss7i84in_21"/>
-                  </item>
-                  <item row="9" column="1">
-                   <widget class="QComboBox" name="ss7i84in_25"/>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QComboBox" name="ss7i84in_17"/>
-                  </item>
-                  <item row="11" column="1">
-                   <widget class="QComboBox" name="ss7i84in_27"/>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QComboBox" name="ss7i84in_18"/>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QComboBox" name="ss7i84in_16"/>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QLabel" name="label_442">
-                    <property name="text">
-                     <string>22</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <widget class="QComboBox" name="ss7i84in_22"/>
-                  </item>
-                  <item row="13" column="1">
-                   <widget class="QComboBox" name="ss7i84in_29"/>
-                  </item>
-                  <item row="11" column="0">
-                   <widget class="QLabel" name="label_447">
-                    <property name="text">
-                     <string>27</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label_436">
-                    <property name="text">
-                     <string>16</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
-                   <widget class="QComboBox" name="ss7i84in_19"/>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_437">
-                    <property name="text">
-                     <string>17</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="15" column="0">
-                   <widget class="QLabel" name="label_451">
-                    <property name="text">
-                     <string>31</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="0">
-                   <widget class="QLabel" name="label_446">
-                    <property name="text">
-                     <string>26</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="12" column="1">
-                   <widget class="QComboBox" name="ss7i84in_28"/>
-                  </item>
-                  <item row="7" column="0">
-                   <widget class="QLabel" name="label_443">
-                    <property name="text">
-                     <string>23</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="9" column="0">
-                   <widget class="QLabel" name="label_445">
-                    <property name="text">
-                     <string>25</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
                <item row="0" column="0" rowspan="2">
                 <widget class="QGroupBox" name="groupBox_24">
                  <property name="title">
@@ -10888,15 +10732,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                     </property>
                    </widget>
                   </item>
-                  <item row="7" column="2">
-                   <widget class="QComboBox" name="ss7i84in_7"/>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QComboBox" name="ss7i84in_1"/>
-                  </item>
-                  <item row="3" column="2">
-                   <widget class="QComboBox" name="ss7i84in_3"/>
-                  </item>
                   <item row="2" column="0">
                    <widget class="QLabel" name="label_422">
                     <property name="text">
@@ -10906,12 +10741,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                      <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
-                  </item>
-                  <item row="4" column="2">
-                   <widget class="QComboBox" name="ss7i84in_4"/>
-                  </item>
-                  <item row="13" column="2">
-                   <widget class="QComboBox" name="ss7i84in_13"/>
                   </item>
                   <item row="11" column="0">
                    <widget class="QLabel" name="label_431">
@@ -10933,9 +10762,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                     </property>
                    </widget>
                   </item>
-                  <item row="11" column="2">
-                   <widget class="QComboBox" name="ss7i84in_11"/>
-                  </item>
                   <item row="7" column="0">
                    <widget class="QLabel" name="label_427">
                     <property name="text">
@@ -10945,21 +10771,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                      <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
-                  </item>
-                  <item row="9" column="2">
-                   <widget class="QComboBox" name="ss7i84in_9"/>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QComboBox" name="ss7i84in_2"/>
-                  </item>
-                  <item row="14" column="2">
-                   <widget class="QComboBox" name="ss7i84in_14"/>
-                  </item>
-                  <item row="5" column="2">
-                   <widget class="QComboBox" name="ss7i84in_5"/>
-                  </item>
-                  <item row="6" column="2">
-                   <widget class="QComboBox" name="ss7i84in_6"/>
                   </item>
                   <item row="10" column="0">
                    <widget class="QLabel" name="label_430">
@@ -10990,15 +10801,6 @@ The Smart Serial Card configuration will not load from the ini file at this time
                      <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
-                  </item>
-                  <item row="15" column="2">
-                   <widget class="QComboBox" name="ss7i84in_15"/>
-                  </item>
-                  <item row="8" column="2">
-                   <widget class="QComboBox" name="ss7i84in_8"/>
-                  </item>
-                  <item row="10" column="2">
-                   <widget class="QComboBox" name="ss7i84in_10"/>
                   </item>
                   <item row="9" column="0">
                    <widget class="QLabel" name="label_429">
@@ -11080,11 +10882,394 @@ The Smart Serial Card configuration will not load from the ini file at this time
                     </property>
                    </widget>
                   </item>
-                  <item row="12" column="2">
-                   <widget class="QComboBox" name="ss7i84in_12"/>
-                  </item>
                   <item row="0" column="2">
                    <widget class="QPushButton" name="ss7i84in_0">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QPushButton" name="ss7i84in_1">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QPushButton" name="ss7i84in_2">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QPushButton" name="ss7i84in_3">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QPushButton" name="ss7i84in_4">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QPushButton" name="ss7i84in_5">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QPushButton" name="ss7i84in_6">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="2">
+                   <widget class="QPushButton" name="ss7i84in_7">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="2">
+                   <widget class="QPushButton" name="ss7i84in_8">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="2">
+                   <widget class="QPushButton" name="ss7i84in_9">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="2">
+                   <widget class="QPushButton" name="ss7i84in_10">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="2">
+                   <widget class="QPushButton" name="ss7i84in_11">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="2">
+                   <widget class="QPushButton" name="ss7i84in_12">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="13" column="2">
+                   <widget class="QPushButton" name="ss7i84in_13">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="2">
+                   <widget class="QPushButton" name="ss7i84in_14">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="15" column="2">
+                   <widget class="QPushButton" name="ss7i84in_15">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1" rowspan="2">
+                <widget class="QGroupBox" name="groupBox_25">
+                 <property name="title">
+                  <string>Inputs 16 - 31 TB2</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_63">
+                  <item row="13" column="0">
+                   <widget class="QLabel" name="label_449">
+                    <property name="text">
+                     <string>29</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="label_444">
+                    <property name="text">
+                     <string>24</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="0">
+                   <widget class="QLabel" name="label_448">
+                    <property name="text">
+                     <string>28</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="label_441">
+                    <property name="text">
+                     <string>21</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="0">
+                   <widget class="QLabel" name="label_450">
+                    <property name="text">
+                     <string>30</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_438">
+                    <property name="text">
+                     <string>18</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_439">
+                    <property name="text">
+                     <string>19</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_440">
+                    <property name="text">
+                     <string>20</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QLabel" name="label_442">
+                    <property name="text">
+                     <string>22</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0">
+                   <widget class="QLabel" name="label_447">
+                    <property name="text">
+                     <string>27</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_436">
+                    <property name="text">
+                     <string>16</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_437">
+                    <property name="text">
+                     <string>17</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="15" column="0">
+                   <widget class="QLabel" name="label_451">
+                    <property name="text">
+                     <string>31</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="0">
+                   <widget class="QLabel" name="label_446">
+                    <property name="text">
+                     <string>26</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="0">
+                   <widget class="QLabel" name="label_443">
+                    <property name="text">
+                     <string>23</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="0">
+                   <widget class="QLabel" name="label_445">
+                    <property name="text">
+                     <string>25</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QPushButton" name="ss7i84in_16">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QPushButton" name="ss7i84in_17">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QPushButton" name="ss7i84in_18">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QPushButton" name="ss7i84in_19">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QPushButton" name="ss7i84in_20">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <widget class="QPushButton" name="ss7i84in_21">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QPushButton" name="ss7i84in_22">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="7" column="1">
+                   <widget class="QPushButton" name="ss7i84in_23">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="1">
+                   <widget class="QPushButton" name="ss7i84in_24">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="9" column="1">
+                   <widget class="QPushButton" name="ss7i84in_25">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QPushButton" name="ss7i84in_26">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="1">
+                   <widget class="QPushButton" name="ss7i84in_27">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="1">
+                   <widget class="QPushButton" name="ss7i84in_28">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="13" column="1">
+                   <widget class="QPushButton" name="ss7i84in_29">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="1">
+                   <widget class="QPushButton" name="ss7i84in_30">
+                    <property name="text">
+                     <string>Select</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="15" column="1">
+                   <widget class="QPushButton" name="ss7i84in_31">
                     <property name="text">
                      <string>Select</string>
                     </property>

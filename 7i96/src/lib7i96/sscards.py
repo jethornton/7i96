@@ -158,14 +158,6 @@ def buildCB(parent):
 		for item in OUTPUTS:
 			getattr(parent, 'ss7i73out_' + str(i)).addItem(item[0], item[1])
 
-	# 7i84 Combo Boxes
-	for i in range(32):
-		for item in INPUTS:
-			getattr(parent, 'ss7i84in_' + str(i)).addItem(item[0], item[1])
-	for i in range(16):
-		for item in OUTPUTS:
-			getattr(parent, 'ss7i84out_' + str(i)).addItem(item[0], item[1])
-
 	# 7i87 Combo Boxes
 	for i in range(8):
 		for item in AIN:
