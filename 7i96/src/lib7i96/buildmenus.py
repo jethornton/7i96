@@ -53,6 +53,13 @@ def build(parent):
 		add_menu(inputs, menu)
 		button.setMenu(menu)
 
+	for i in range(24):
+		button = getattr(parent, "ss7i69in_{}".format(i))
+		menu = QMenu()
+		menu.triggered.connect(lambda action, button=button: button.setText(action.text()))
+		add_menu(inputs, menu)
+		button.setMenu(menu)
+
 	for i in range(6):
 		button = getattr(parent, "outputPB_{}".format(i))
 		menu = QMenu()
@@ -62,6 +69,13 @@ def build(parent):
 
 	for i in range(24):
 		button = getattr(parent, "ss7i64out_{}".format(i))
+		menu = QMenu()
+		menu.triggered.connect(lambda action, button=button: button.setText(action.text()))
+		add_menu(outputs, menu)
+		button.setMenu(menu)
+
+	for i in range(24):
+		button = getattr(parent, "ss7i69out_{}".format(i))
 		menu = QMenu()
 		menu.triggered.connect(lambda action, button=button: button.setText(action.text()))
 		add_menu(outputs, menu)
