@@ -88,6 +88,14 @@ def build(parent):
 		add_menu(outputs, menu)
 		button.setMenu(menu)
 
+	for i in range(48):
+		button = getattr(parent, "ss7i71out_{}".format(i))
+		menu = QMenu()
+		menu.triggered.connect(lambda action, button=button: button.setText(action.text()))
+		add_menu(outputs, menu)
+		button.setMenu(menu)
+
+
 def add_menu(data, menu_obj):
 	if isinstance(data, dict):
 		for k, v in data.items():
