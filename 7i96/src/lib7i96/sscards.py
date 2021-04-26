@@ -143,11 +143,6 @@ def build(parent):
 
 def buildCB(parent):
 
-	# 7i70 Combo Boxes
-	for i in range(48):
-		for item in INPUTS:
-			getattr(parent, 'ss7i70in_' + str(i)).addItem(item[0], item[1])
-
 	# 7i71 Combo Boxes
 	for i in range(48):
 		for item in OUTPUTS:
