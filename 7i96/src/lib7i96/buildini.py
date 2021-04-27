@@ -218,9 +218,9 @@ def build(parent):
 		# 24 ss7i64in_
 		# 24 ss7i64out_
 		for i in range(24):
-			iniContents.append(f'ss7i64in_{i} = {getattr(parent, "ss7i64in_" + str(i)).currentData()}\n')
+			iniContents.append(f'ss7i64in_{i} = {getattr(parent, "ss7i64in_" + str(i)).text()}\n')
 		for i in range(24):
-			iniContents.append(f'ss7i64out_{i} = {getattr(parent, "ss7i64out_" + str(i)).currentData()}\n')
+			iniContents.append(f'ss7i64out_{i} = {getattr(parent, "ss7i64out_" + str(i)).text()}\n')
 
 	elif parent.ssCardCB.currentText() == '7i69':
 		print('here')
