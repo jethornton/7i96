@@ -2,8 +2,8 @@ import os
 from datetime import datetime
 
 def build(parent):
-	for index in range(11):
-		inputText = getattr(parent, 'input_' + str(index)).currentText()
+	for i in range(11):
+		inputText = getattr(parent, 'inputPB_' + str(i)).text()
 		if inputText ==  'E-Stop':
 			external_estop = True
 			break
