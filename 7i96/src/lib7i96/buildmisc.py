@@ -47,7 +47,7 @@ def build(parent):
 
 	if parent.shutdownCB.isChecked():
 		# create the shutdown.hal file if not there
-		postguiFilePath = os.path.join(parent.configPath, 'shutdown.hal')
+		shutdownFilePath = os.path.join(parent.configPath, 'shutdown.hal')
 		shutdownContents = []
 		shutdownContents = ['# Place any HAL commands in this file that you want to run AFTER the GUI shuts down.\n']
 		shutdownContents.append('# this may make it possible to set outputs when LinuxCNC is exited normally.\n')
