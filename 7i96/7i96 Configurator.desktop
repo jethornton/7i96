@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Something
-Comment=7i96 Configuration Tool
+Name=7i96
+Comment=Mesa 7i96 Configuration Tool
 Exec=7i96
 Icon=/usr/share/pixmaps/linuxcncicon.png
 Categories=X-CNC;Development
