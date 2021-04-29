@@ -198,7 +198,11 @@ def build(parent):
 	iniContents.append('\n[OPTIONS]\n')
 	iniContents.append('# DO NOT change the options text\n')
 	iniContents.append(f'INTRO_GRAPHIC = {parent.splashScreenCB.isChecked()}\n')
+	iniContents.append(f'INTRO_GRAPHIC_TIME = {parent.splashScreenSB.value()}\n')
 	iniContents.append(f'MANUAL_TOOL_CHANGE = {parent.manualToolChangeCB.isChecked()}\n'.format())
+	iniContents.append(f'CUSTOM_HAL = {parent.customhalCB.isChecked()}\n')
+	iniContents.append(f'POST_GUI_HAL = {parent.postguiCB.isChecked()}\n')
+	iniContents.append(f'SHUTDOWN_HAL = {parent.shutdownCB.isChecked()}\n')
 	iniContents.append(f'HALUI = {parent.haluiCB.isChecked()}\n')
 	iniContents.append(f'PYVCP = {parent.pyvcpCB.isChecked()}\n')
 	iniContents.append(f'GLADEVCP = {parent.gladevcpCB.isChecked()}\n')
@@ -207,7 +211,7 @@ def build(parent):
 	if parent.ladderGB.isChecked(): # check for any options
 		for option in parent.ladderOptionsList:
 			if getattr(parent, option).value() > 0: #******** work to be done here
-				iniContents.append('{} = {}\n'.format(getattr(parent, option).property('item'), getattr(parent, option).value()))
+				iniContents.append(f'{getattr(parent, option).property("item")} = {getattr(parent, option).value()}\n')
 
 	# build the [SSERIAL] section
 	if parent.ssCardCB.currentData():

@@ -80,14 +80,17 @@ def iniList():
 		iniList.append(['OUTPUT_PB', f'OUTPUT_PB_{i}', f'outputPB_{i}'])
 
 	iniList.append(['OPTIONS', 'INTRO_GRAPHIC', 'splashScreenCB'])
+	iniList.append(['OPTIONS', 'INTRO_GRAPHIC_TIME', 'splashScreenSB'])
 	iniList.append(['OPTIONS', 'MANUAL_TOOL_CHANGE', 'manualToolChangeCB'])
+	iniList.append(['OPTIONS', 'CUSTOM_HAL', 'customhalCB'])
+	iniList.append(['OPTIONS', 'POST_GUI_HAL', 'postguiCB'])
+	iniList.append(['OPTIONS', 'SHUTDOWN_HAL', 'shutdownCB'])
 	iniList.append(['OPTIONS', 'HALUI', 'haluiCB'])
 	iniList.append(['OPTIONS', 'PYVCP', 'pyvcpCB'])
 	iniList.append(['OPTIONS', 'GLADEVCP', 'gladevcpCB'])
 	iniList.append(['OPTIONS', 'LADDER', 'ladderGB'])
 	iniList.append(['OPTIONS', 'LADDER_RUNGS', 'ladderRungsSB'])
 	iniList.append(['OPTIONS', 'BACKUP', 'backupCB'])
-
 	iniList.append(['SSERIAL', 'SS_CARD', 'ssCardCB'])
 
 
