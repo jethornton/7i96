@@ -431,9 +431,9 @@ class MainWindow(QMainWindow):
 		accelTime = maxVelocity / maxAccel
 		getattr(self, 'timeJoint_' + joint).setText(f'{accelTime:.2f} seconds')
 		accelDistance = accelTime * 0.5 * maxVelocity
-		getattr(self, 'distanceJoint_' + joint).setText('f{accelDistance:.2f} {self.units}')
+		getattr(self, 'distanceJoint_' + joint).setText(f'{accelDistance:.2f} {self.units}')
 		stepRate = scale * maxVelocity
-		getattr(self, 'stepRateJoint_' + joint).setText('f{abs(stepRate):.0f} pulses')
+		getattr(self, 'stepRateJoint_' + joint).setText(f'{abs(stepRate):.0f} pulses')
 
 	def spindleTypeChanged(self): 
 		#print(self.spindleTypeCB.itemData(self.spindleTypeCB.currentIndex()))
