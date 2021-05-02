@@ -89,7 +89,7 @@ def build(parent):
 	iniContents.append('\n[TRAJ]\n')
 	iniContents.append(f'COORDINATES = {parent.coordinatesLB.text()}\n')
 	iniContents.append(f'LINEAR_UNITS = {parent.linearUnitsCB.currentData()}\n')
-	iniContents.append(f'ANGULAR_UNITS = {parent.angularUnitsCB.currentData()}\n')
+	iniContents.append('ANGULAR_UNITS = degree\n')
 	iniContents.append(f'MAX_LINEAR_VELOCITY = {parent.maxLinearVel.text()}\n')
 
 	# build the [HAL] section

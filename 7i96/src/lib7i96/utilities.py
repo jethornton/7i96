@@ -83,3 +83,10 @@ def plcOptions():
 	'ladderInputsSB', 'ladderOutputsSB', 'ladderExpresionsSB',
 	'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 	'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
+
+
+def fileNew(parent):
+	parent.errorMsgOk('Close the Tool,\n Then open', 'Info!')
+
+def fileSaveAs(parent):
+	parent.errorMsgOk('Change the Name,\n Then Save', 'Info!')
