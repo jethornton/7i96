@@ -47,9 +47,8 @@ def build(parent):
 	iniContents.append(f'POSITION_FEEDBACK = {parent.positionFeedbackCB.currentData()}\n')
 	iniContents.append(f'MAX_FEED_OVERRIDE = {parent.maxFeedOverrideSB.value()}\n')
 	iniContents.append('CYCLE_TIME = 0.1\n')
-	if parent.splashScreenCB.isChecked():
-		iniContents.append(f'INTRO_GRAPHIC = {parent.introGraphicLE.text()}\n')
-		iniContents.append(f'INTRO_TIME = {parent.splashScreenSB.value()}\n')
+	iniContents.append(f'INTRO_GRAPHIC = {parent.introGraphicLE.text()}\n')
+	iniContents.append(f'INTRO_TIME = {parent.splashScreenSB.value()}\n')
 	iniContents.append('OPEN_FILE = "{}"\n'.format(''))
 	if parent.pyvcpCB.isChecked():
 		iniContents.append(f'PYVCP = {parent.configNameUnderscored}.xml\n')
