@@ -55,43 +55,41 @@ def getPins(parent):
 		arguments = ["-f", "temp.hal"]
 		parent.extcmd.job(cmd="halrun", args=arguments, dest=parent.pinsPTE, clean='temp.hal')
 
-def saveHal(parent, item):
+def savePins(parent):
 	if parent.configName.text() == '':
 		parent.errorMsgOk('A Configuration\nmust be loaded', 'Error')
 		return
 	if not "0x48414c32" in subprocess.getoutput('ipcs'):
 		parent.errorMsgOk(f'LinuxCNC must be running\nthe {parent.configName.text()} configuration', 'Error')
 		return
-	print(f'Getting {item}')
-	parent.results = subprocess.getoutput(f"halcmd show {item}")
-	fp = os.path.join(parent.configPath, parent.configNameUnderscored + f'-{item}.txt')
+	parent.results = subprocess.getoutput('halcmd show pin')
+	fp = os.path.join(parent.configPath, parent.configNameUnderscored + '-pins.txt')
 	with open(fp, 'w') as f:
 		f.writelines(parent.results)
-	parent.statusbar.showMessage(f'{item}s saved to {fp}')
+	parent.statusbar.showMessage(f'Pins saved to {fp}')
 
-def saveHalSignals(parent):
+def saveSignals(parent):
 	if parent.configName.text() == '':
 		parent.errorMsgOk('A Configuration\nmust be loaded', 'Error')
 		return
 	if not "0x48414c32" in subprocess.getoutput('ipcs'):
 		parent.errorMsgOk(f'LinuxCNC must be running\nthe {parent.configName.text()} configuration', 'Error')
 		return
-	parent.results = subprocess.getoutput("halcmd show sig")
+	parent.results = subprocess.getoutput('halcmd show sig')
 	fp = os.path.join(parent.configPath, parent.configNameUnderscored + '-sigs.txt')
 	with open(fp, 'w') as f:
 		f.writelines(parent.results)
 	parent.statusbar.showMessage(f'Signals saved to {fp}')
 
-def saveHalParameters(parent):
+def saveParameters(parent):
 	if parent.configName.text() == '':
 		parent.errorMsgOk('A Configuration\nmust be loaded', 'Error')
 		return
 	if not "0x48414c32" in subprocess.getoutput('ipcs'):
 		parent.errorMsgOk(f'LinuxCNC must be running\nthe {parent.configName.text()} configuration', 'Error')
 		return
-	parent.results = subprocess.getoutput("halcmd show parameter")
+	parent.results = subprocess.getoutput('halcmd show parameter')
 	fp = os.path.join(parent.configPath, parent.configNameUnderscored + '-parameters.txt')
 	with open(fp, 'w') as f:
 		f.writelines(parent.results)
 	parent.statusbar.showMessage(f'Parameters saved to {fp}')
-

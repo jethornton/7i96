@@ -1,5 +1,13 @@
 import os, subprocess
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QApplication
+
+def isNumber(s):
+	try:
+		s[-1].isdigit()
+		float(s)
+		return True
+	except ValueError:
+		return False
 
 def checks(parent):
 	try:
@@ -23,7 +31,7 @@ def axisChanged(parent):
 	else:
 		getattr(parent, f'axisType_{joint}').setText('')
 	coordList = []
-	for i in range(6):
+	for i in range(parent.card['joints']):
 		axisLetter = getattr(parent, f'axisCB_{i}').currentText()
 		if axisLetter != 'Select':
 			coordList.append(axisLetter)
@@ -84,9 +92,86 @@ def plcOptions():
 	'ladderSectionsSB', 'ladderSymbolsSB', 'ladderS32InputsSB',
 	'ladderS32OuputsSB', 'ladderFloatInputsSB', 'ladderFloatOutputsSB']
 
+def updateAxisInfo(parent):
+	if parent.sender().objectName() == 'actionOpen':
+		return
+	joint = parent.sender().objectName()[-1]
+	scale = getattr(parent, 'scale_' + joint).text()
+	if scale and isNumber(scale):
+		scale = float(scale)
+	else:
+		return
+
+	maxVelocity = getattr(parent, 'maxVelocity_' + joint).text()
+	if maxVelocity and isNumber(maxVelocity):
+		maxVelocity = float(maxVelocity)
+	else:
+		return
+
+	maxAccel = getattr(parent, 'maxAccel_' + joint).text()
+	if maxAccel and isNumber(maxAccel):
+		maxAccel = float(maxAccel)
+	else:
+		return
+
+	if not parent.linearUnitsCB.currentData():
+		parent.errorDialog('Machine Tab:\nLinear Units must be selected')
+		return
+	accelTime = maxVelocity / maxAccel
+	getattr(parent, 'timeJoint_' + joint).setText(f'{accelTime:.2f} seconds')
+	accelDistance = accelTime * 0.5 * maxVelocity
+	getattr(parent, 'distanceJoint_' + joint).setText(f'{accelDistance:.2f} {parent.linearUnitsCB.currentData()}')
+	stepRate = scale * maxVelocity
+	getattr(parent, 'stepRateJoint_' + joint).setText(f'{abs(stepRate):.0f} pulses')
+
+def spindleTypeChanged(parent): 
+	#print(parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()))
+	if parent.spindleTypeCB.currentData():
+		parent.spindleGB.setEnabled(True)
+		parent.spindleInfoGB.setEnabled(True)
+		parent.encoderGB.setEnabled(True)
+		parent.spindlepidGB.setEnabled(True)
+		if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()) == '1':
+			parent.spindleInfo1Lbl.setText("PWM on Step 4")
+			parent.tb2p3LB.setText("PWM +")
+			parent.tb2p2LB.setText("PWM -")
+			parent.spindleInfo2Lbl.setText("Direction on Dir 4")
+			parent.tb2p5LB.setText("Direction +")
+			parent.tb2p4LB.setText("Direction -")
+			parent.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
+		if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()) == '2':
+			parent.spindleInfo1Lbl.setText("UP on Step 4")
+			parent.tb2p3LB.setText("UP +")
+			parent.tb2p2LB.setText("UP -")
+			parent.spindleInfo2Lbl.setText("Down on Dir 4")
+			parent.tb2p5LB.setText("DOWN +")
+			parent.tb2p4LB.setText("DOWN -")
+			parent.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
+		if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()) == '3':
+			parent.spindleInfo1Lbl.setText("PDM on Step 4")
+			parent.tb2p3LB.setText("PDM +")
+			parent.tb2p2LB.setText("PDM -")
+			parent.spindleInfo2Lbl.setText("Direction on Dir 4")
+			parent.tb2p5LB.setText("Direction +")
+			parent.tb2p4LB.setText("Direction -")
+			parent.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
+		if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()) == '4':
+			parent.spindleInfo1Lbl.setText("Direction on Step 4")
+			parent.tb2p3LB.setText("Direction +")
+			parent.tb2p2LB.setText("Direction -")
+			parent.spindleInfo2Lbl.setText("PWM on Dir 4")
+			parent.tb2p5LB.setText("PWM +")
+			parent.tb2p4LB.setText("PWM -")
+			parent.spindleInfo3Lbl.setText("Select Enable on the Outputs tab")
+
 
 def fileNew(parent):
 	parent.errorMsgOk('Close the Tool,\n Then open', 'Info!')
 
 def fileSaveAs(parent):
 	parent.errorMsgOk('Change the Name,\n Then Save', 'Info!')
+
+def copyOutput(parent):
+	qclip = QApplication.clipboard()
+	qclip.setText(parent.outputPTE.toPlainText())
+	parent.statusbar.showMessage('Output copied to clipboard')

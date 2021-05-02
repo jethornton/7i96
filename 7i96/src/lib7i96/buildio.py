@@ -101,7 +101,7 @@ def build(parent):
 	# build inputs from qpushbutton menus
 	for i in range(11):
 		key = getattr(parent, 'inputPB_' + str(i)).text()
-		invert = '_not' if getattr(parent, 'inputInvertCb_' + str(i)).isChecked() else ''
+		invert = '_not' if getattr(parent, 'inputInvertCB_' + str(i)).isChecked() else ''
 		if input_dict.get(key, False): # return False if key is not in dictionary
 			contents.append(input_dict[key] + f'hm2_7i96.0.gpio.{i:03}.in{invert}\n')
 		else: # handle special cases

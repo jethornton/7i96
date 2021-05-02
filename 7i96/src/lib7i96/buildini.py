@@ -19,8 +19,8 @@ def build(parent):
 	iniContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
 	iniContents.append('# Changes to most things are ok and will be read by the Configuration Tool\n')
 
-	# build the [7I96] section
-	iniContents.append('\n[7I96]\n')
+	# build the [7i96] section
+	iniContents.append('\n[7i96]\n')
 	iniContents.append(f'VERSION = {parent.version}\n')
 
 	# build the [EMC] section
@@ -137,7 +137,7 @@ def build(parent):
 				iniContents.append(f'SCALE = {getattr(parent, "scale_" + str(i)).text()}\n')
 			iniContents.append(f'STEPGEN_MAX_VEL = {str(float(getattr(parent, "maxVelocity_" + str(i)).text()) * 1.2)}\n')
 			iniContents.append(f'STEPGEN_MAX_ACC = {str(float(getattr(parent, "maxAccel_" + str(i)).text()) * 1.2)}\n')
-			if parent.units == 'inches':
+			if parent.linearUnitsCB.currentData()  == 'inches':
 				iniContents.append('FERROR = 0.0002\n')
 				iniContents.append('MIN_FERROR = 0.0001\n')
 			else:
@@ -185,7 +185,7 @@ def build(parent):
 	iniContents.append('# DO NOT change the inputs text\n')
 	for i in range(11):
 		iniContents.append(f'INPUT_PB_{i} = {getattr(parent, "inputPB_" + str(i)).text()}\n')
-		iniContents.append(f'INPUT_INVERT_{i} = {getattr(parent, "inputInvertCb_" + str(i)).isChecked()}\n')
+		iniContents.append(f'INPUT_INVERT_{i} = {getattr(parent, "inputInvertCB_" + str(i)).isChecked()}\n')
 
 	# build the [OUTPUTS] section from pushbuttons
 	iniContents.append('\n[OUTPUT_PB]\n')
@@ -196,7 +196,7 @@ def build(parent):
 	# build the [OPTIONS] section
 	iniContents.append('\n[OPTIONS]\n')
 	iniContents.append('# DO NOT change the options text\n')
-	iniContents.append(f'INTRO_GRAPHIC = {parent.splashScreenCB.isChecked()}\n')
+	iniContents.append(f'INTRO_GRAPHIC = {parent.introGraphicLE.text()}\n')
 	iniContents.append(f'INTRO_GRAPHIC_TIME = {parent.splashScreenSB.value()}\n')
 	iniContents.append(f'MANUAL_TOOL_CHANGE = {parent.manualToolChangeCB.isChecked()}\n'.format())
 	iniContents.append(f'CUSTOM_HAL = {parent.customhalCB.isChecked()}\n')

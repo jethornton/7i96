@@ -14,8 +14,7 @@ from lib7i96 import buildcombos
 from lib7i96 import buildmenus
 from lib7i96 import loadini
 from lib7i96 import loadss
-from lib7i96 import checkit
-from lib7i96 import buildfiles
+from lib7i96 import checkconfig
 from lib7i96 import buildini
 from lib7i96 import buildhal
 from lib7i96 import buildio
@@ -49,27 +48,39 @@ class MainWindow(QMainWindow):
 		if os.path.split(sys.argv[0])[0] == '/usr/bin':
 			self.lib_path = '/usr/lib/lib7i96'
 			print('Installed')
+			devel = False
+			if len(sys.argv) > 1:
+				if sys.argv[1] == 'devel':
+					devel = True
 		if os.path.split(sys.argv[0])[0] == '.':
 			self.lib_path = os.path.split(os.path.realpath(sys.argv[0]))[0]
 			print('In Development')
+			devel = True
 		uic.loadUi(os.path.join(self.lib_path, '7i96.ui'), self)
 		self.version = '1.3.1'
 		self.config = configparser.ConfigParser(strict=False)
 		self.config.optionxform = str
 		self.setWindowTitle(f'7i96 Configuration Tool Version {self.version}')
-		self.configNameUnderscored = ''
-		self.checkConfig = checkit.config
-		self.buildConfig = buildfiles.build
-		self.pcStats = platform.uname()
-		self.qclip = QtWidgets.QApplication.clipboard()
-		self.helpInfo = helptext.descriptions
-		buildmenus.build(self)
-		utilities.checks(self)
+		self.card = {'type':'7i96', 'joints': 5, 'inputs': 11, 'outputs': 12}
 
+		#self.configNameUnderscored = ''
+		#self.checkConfig = checkit.config
+		#self.buildConfig = buildfiles.build
+		#self.pcStats = platform.uname()
+		#self.qclip = QApplication.clipboard()
+		#self.helpInfo = helptext.descriptions
+		buildmenus.build(self)
+		buildcombos.build(self)
+		utilities.checks(self)
+		self.extcmd = extcmd.extcmd()
+		self.ladderOptionsList = utilities.plcOptions()
+		#self.axes = 0
+		self.setupConnections()
+
+		"""
 		self.buildCB()
 		sscards.buildCB(self)
 		sscards.ss7i73setup(self)
-		self.setupConnections()
 		self.ladderOptionsList = utilities.plcOptions()
 
 		self.firmware = {
@@ -90,12 +101,31 @@ class MainWindow(QMainWindow):
 		self.units = False
 		self.results = ""
 		self.extcmd = extcmd.extcmd()
-		# for testing
-		#self.config.read('/home/john/linuxcnc/configs/7i96/7i96.ini')
-		#self.iniLoad()
-		self.card = {'type':'7i96', 'joints': 5, 'inputs': 11, 'outputs': 12}
+		"""
+
+		#self.testing()
+		if devel:
+			loadini.openini(self, '/home/john/linuxcnc/configs/7i96/7i96.ini')
 		self.show()
 
+	def testing(self):
+		self.configName.setText('7i96')
+		self.linearUnitsCB.setCurrentIndex(1)
+		self.maxLinearVel.setText('5')
+		self.ipAddressCB.setCurrentIndex(1)
+		self.guiCB.setCurrentIndex(1)
+		self.positionOffsetCB.setCurrentIndex(1)
+		self.positionFeedbackCB.setCurrentIndex(1)
+		self.axisCB_0.setCurrentIndex(1)
+		self.driveCB_0.setCurrentIndex(3)
+		self.scale_0.setText('1000')
+		self.minLimit_0.setText('0')
+		self.maxLimit_0.setText('25')
+		self.maxVelocity_0.setText('5')
+		self.maxAccel_0.setText('15')
+		#self..setText('')
+
+	"""
 	# Auto connected menu action callbacks
 	@pyqtSlot()
 	def on_actionFileNew_triggered(self):
@@ -226,8 +256,49 @@ class MainWindow(QMainWindow):
 	@pyqtSlot()
 	def on_actionPCHelp_triggered(self):
 		self.help(30)
+	"""
 
 	def setupConnections(self):
+		self.configName.textChanged[str].connect(partial(utilities.configNameChanged, self))
+		self.spindleTypeCB.currentIndexChanged.connect(partial(utilities.spindleTypeChanged, self))
+		self.ssCardCB.currentIndexChanged.connect(partial(sscards.build, self))
+		self.actionNew.triggered.connect(partial(utilities.fileNew, self))
+		self.actionOpen.triggered.connect(partial(loadini.openini, self))
+		self.actionSavePins.triggered.connect(partial(card.savePins, self))
+		self.actionSaveSignals.triggered.connect(partial(card.saveSignals, self))
+		self.actionSaveParameters.triggered.connect(partial(card.saveParameters, self))
+		self.actionSave.triggered.connect(self.buildfiles)
+		self.actionSaveAs.triggered.connect(partial(utilities.fileSaveAs, self))
+		self.actionCheck.triggered.connect(partial(checkconfig.checkit, self))
+		self.actionBuild.triggered.connect(self.buildfiles)
+		for i in range(self.card['joints']):
+			getattr(self, f'axisCB_{i}').currentIndexChanged.connect(partial(utilities.axisChanged, self))
+		for i in range(self.card['joints']):
+			getattr(self, f'scale_{i}').textChanged.connect(partial(utilities.updateAxisInfo, self))
+		for i in range(self.card['joints']):
+			getattr(self, f'maxVelocity_{i}').textChanged.connect(partial(utilities.updateAxisInfo, self))
+		for i in range(self.card['joints']):
+			getattr(self, f'maxAccel_{i}').textChanged.connect(partial(utilities.updateAxisInfo, self))
+		for i in range(self.card['joints']):
+			getattr(self, f'pidDefault_{i}').clicked.connect(partial(utilities.pidSetDefault, self))
+		self.pidDefault_s.clicked.connect(partial(utilities.pidSetDefault, self))
+		for i in range(self.card['joints']):
+			getattr(self, 'driveCB_' + str(i)).currentIndexChanged.connect(partial(utilities.driveChanged, self))
+		self.actionTabHelp.triggered.connect(partial(self.help, 0))
+		self.actionBuildHelp.triggered.connect(partial(self.help, 20))
+		self.actionPCHelp.triggered.connect(partial(self.help, 30))
+		self.copyPB.clicked.connect(partial(utilities.copyOutput, self))
+		self.cpuPB.clicked.connect(partial(pcinfo.cpuInfo, self))
+		self.nicPB.clicked.connect(partial(pcinfo.nicInfo, self))
+		self.calcNicPB.clicked.connect(partial(pcinfo.nicCalc, self))
+		self.readTmaxPB.clicked.connect(partial(pcinfo.readTmax, self))
+		self.readPB.clicked.connect(partial(card.readCard, self, '7i96'))
+		self.flashPB.clicked.connect(partial(card.flashCard, self, '7i96'))
+		self.reloadPB.clicked.connect(partial(card.reloadCard, self, '7i96'))
+		self.pinsPB.clicked.connect(partial(card.getPins, self))
+
+
+		"""
 		self.configName.textChanged[str].connect(self.onConfigNameChanged)
 		self.maxLinearVel.textChanged[str].connect(self.onMaxLinearVelChanged)
 		self.boardsCB.currentIndexChanged.connect(self.onBoardsChanged)
@@ -264,6 +335,7 @@ class MainWindow(QMainWindow):
 		self.flashPB.clicked.connect(partial(card.flashCard, self, '7i96'))
 		self.reloadPB.clicked.connect(partial(card.reloadCard, self, '7i96'))
 		self.pinsPB.clicked.connect(partial(card.getPins, self))
+		"""
 
 	def copyOutput(self):
 		self.qclip.setText(self.outputPTE.toPlainText())
@@ -592,6 +664,17 @@ class MainWindow(QMainWindow):
 		dialog.ui.setupUi(dialog)
 		dialog.ui.label.setText(text)
 		dialog.exec_()
+
+	def buildfiles(self):
+		if not checkconfig.checkit(self):
+			self.outputPTE.appendPlainText('Build Failed')
+			return
+		buildini.build(self)
+		buildhal.build(self)
+		buildio.build(self)
+		buildmisc.build(self)
+		if self.ssCardCB.currentData():
+			buildss.build(self)
 
 	def errorMsg(self, text, title=None):
 		msgBox = QMessageBox()

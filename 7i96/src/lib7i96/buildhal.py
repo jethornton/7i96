@@ -2,21 +2,15 @@ import os
 from datetime import datetime
 
 def build(parent):
-	for i in range(11):
-		inputText = getattr(parent, 'inputPB_' + str(i)).text()
-		if inputText ==  'E-Stop':
-			external_estop = True
-			break
-		else:
-			external_estop = False
 	halFilePath = os.path.join(parent.configPath, parent.configNameUnderscored + '.hal')
 	parent.outputPTE.appendPlainText(f'Building {halFilePath}')
 
 	halContents = []
-	halContents = ['# This file was created with the 7i96 Wizard on ']
+	halContents = ['# This file was created with the 7i95 Configuration Tool on ']
 	halContents.append(datetime.now().strftime('%b %d %Y %H:%M:%S') + '\n')
 	halContents.append('# If you make changes to this file DO NOT run the configuration tool again!\n')
 	halContents.append('# This file will be replaced with a new file if you do!\n\n')
+
 	# build the standard header
 	halContents.append('# kinematics\n')
 	halContents.append('loadrt [KINS]KINEMATICS\n\n')
@@ -25,7 +19,7 @@ def build(parent):
 	halContents.append('servo_period_nsec=[EMCMOT]SERVO_PERIOD ')
 	halContents.append('num_joints=[KINS]JOINTS\n\n')
 	halContents.append('# standard components\n')
-	halContents.append('loadrt pid num_chan={} \n\n'.format(len(parent.coordinatesLB.text())))
+	halContents.append(f'loadrt pid num_chan={parent.axes} \n\n')
 	halContents.append('# hostmot2 driver\n')
 	halContents.append('loadrt hostmot2\n\n')
 	halContents.append('loadrt [HOSTMOT2](DRIVER) ')
@@ -41,41 +35,41 @@ def build(parent):
 	halContents.append('addf motion-controller servo-thread\n')
 	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.dpll.01.timer-us -100\n')
 	halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.timer-number 1 \n')
-	for index in range(len(parent.coordinatesLB.text())):
-		halContents.append('addf pid.{}.do-pid-calcs servo-thread\n'.format(str(index)))
+	for i in range(len(parent.coordinatesLB.text())):
+		halContents.append(f'addf pid.{i}.do-pid-calcs servo-thread\n')
 	halContents.append('addf hm2_[HOSTMOT2](BOARD).0.write servo-thread\n')
-	for index in range(len(parent.coordinatesLB.text())):
-		halContents.append('\n# Joint {0}\n'.format(str(index)))
+	for i in range(parent.axes):
+		halContents.append(f'\n# Joint {i}\n')
 		halContents.append('# axis enable chain\n')
-		halContents.append('newsig emcmot.{0}.enable bit\n'.format(str(index)))
-		halContents.append('sets emcmot.{0}.enable FALSE\n'.format(str(index)))
-		halContents.append('net emcmot.{0}.enable <= joint.{0}.amp-enable-out\n'.format(str(index)))
-		halContents.append('net emcmot.{0}.enable => hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.enable pid.{0}.enable\n\n'.format(str(index)))
+		halContents.append(f'newsig emcmot.{i}.enable bit\n')
+		halContents.append(f'sets emcmot.{i}.enable FALSE\n')
+		halContents.append(f'net emcmot.{i}.enable <= joint.{i}.amp-enable-out\n')
+		halContents.append(f'net emcmot.{i}.enable => hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.enable pid.{i}.enable\n\n')
 		halContents.append('# position command and feedback\n')
-		halContents.append('net emcmot.{0}.pos-cmd joint.{0}.motor-pos-cmd => pid.{0}.command\n'.format(str(index)))
-		halContents.append('net motor.{0}.pos-fb <= hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.position-fb joint.{0}.motor-pos-fb pid.{0}.feedback\n'.format(str(index)))
-		halContents.append('net motor.{0}.command pid.{0}.output hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.velocity-cmd\n'.format(str(index)))
-		halContents.append('setp pid.{}.error-previous-target true\n\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.dirsetup [JOINT_{0}]DIRSETUP\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.dirhold [JOINT_{0}]DIRHOLD\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.steplen [JOINT_{0}]STEPLEN\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.stepspace [JOINT_{0}]STEPSPACE\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.position-scale [JOINT_{0}]SCALE\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.maxvel [JOINT_{0}]STEPGEN_MAX_VEL\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{0}.maxaccel [JOINT_{0}]STEPGEN_MAX_ACC\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{}.step_type 0\n'.format(str(index)))
-		halContents.append('setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{}.control-type 1\n\n'.format(str(index)))
+		halContents.append(f'net emcmot.{i}.pos-cmd joint.{i}.motor-pos-cmd => pid.{i}.command\n')
+		halContents.append(f'net motor.{i}.pos-fb <= hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.position-fb joint.{i}.motor-pos-fb pid.{i}.feedback\n')
+		halContents.append(f'net motor.{i}.command pid.{i}.output hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.velocity-cmd\n')
+		halContents.append(f'setp pid.{i}.error-previous-target true\n\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.dirsetup [JOINT_{i}]DIRSETUP\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.dirhold [JOINT_{i}]DIRHOLD\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.steplen [JOINT_{i}]STEPLEN\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.stepspace [JOINT_{i}]STEPSPACE\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.position-scale [JOINT_{i}]SCALE\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.maxvel [JOINT_{i}]STEPGEN_MAX_VEL\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.maxaccel [JOINT_{i}]STEPGEN_MAX_ACC\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.step_type 0\n')
+		halContents.append(f'setp hm2_[HOSTMOT2](BOARD).0.stepgen.0{i}.control-type 1\n\n')
 
-		halContents.append('setp pid.{0}.Pgain [JOINT_{0}]P\n'.format(str(index)))
-		halContents.append('setp pid.{0}.Igain [JOINT_{0}]I\n'.format(str(index)))
-		halContents.append('setp pid.{0}.Dgain [JOINT_{0}]D\n'.format(str(index)))
-		halContents.append('setp pid.{0}.bias [JOINT_{0}]BIAS\n'.format(str(index)))
-		halContents.append('setp pid.{0}.FF0 [JOINT_{0}]FF0\n'.format(str(index)))
-		halContents.append('setp pid.{0}.FF1 [JOINT_{0}]FF1\n'.format(str(index)))
-		halContents.append('setp pid.{0}.FF2 [JOINT_{0}]FF2\n'.format(str(index)))
-		halContents.append('setp pid.{0}.deadband [JOINT_{0}]DEADBAND\n'.format(str(index)))
-		halContents.append('setp pid.{0}.maxoutput [JOINT_{0}]MAX_OUTPUT\n'.format(str(index)))
-		halContents.append('setp pid.{0}.maxerror [JOINT_{0}]MAX_ERROR\n'.format(str(index)))
+		halContents.append(f'setp pid.{i}.Pgain [JOINT_{i}]P\n')
+		halContents.append(f'setp pid.{i}.Igain [JOINT_{i}]I\n')
+		halContents.append(f'setp pid.{i}.Dgain [JOINT_{i}]D\n')
+		halContents.append(f'setp pid.{i}.bias [JOINT_{i}]BIAS\n')
+		halContents.append(f'setp pid.{i}.FF0 [JOINT_{i}]FF0\n')
+		halContents.append(f'setp pid.{i}.FF1 [JOINT_{i}]FF1\n')
+		halContents.append(f'setp pid.{i}.FF2 [JOINT_{i}]FF2\n')
+		halContents.append(f'setp pid.{i}.deadband [JOINT_{i}]DEADBAND\n')
+		halContents.append(f'setp pid.{i}.maxoutput [JOINT_{i}]MAX_OUTPUT\n')
+		halContents.append(f'setp pid.{i}.maxerror [JOINT_{i}]MAX_ERROR\n')
 
 	if parent.spindleTypeCB.itemData(parent.spindleTypeCB.currentIndex()):
 		halContents.append('\n# Spindle\n')
@@ -87,14 +81,6 @@ def build(parent):
 
 	halContents.append('\n# Standard I/O Block - EStop, Etc\n')
 	halContents.append('# create a signal for the estop loopback\n')
-	for index in range(11):
-		inputText = getattr(parent, 'input_' + str(index)).currentText()
-
-	if external_estop:
-		halContents.append('loadrt estop_latch\n')
-		halContents.append('addf estop-latch.0 servo-thread\n')
-	else:
-		halContents.append('net estop-loop iocontrol.0.user-enable-out => iocontrol.0.emc-enable-in\n')
 
 	if parent.manualToolChangeCB.isChecked():
 		halContents.append('\n# create signals for tool loading loopback\n')
@@ -109,7 +95,7 @@ def build(parent):
 			if getattr(parent, option).value() > 0:
 				ladderOptions.append(getattr(parent, option).property('option') + '=' + str(getattr(parent, option).value()))
 		if ladderOptions:
-				halContents.append('loadrt classicladder_rt {}\n'.format(' '.join(ladderOptions)))
+				halContents.append(f'loadrt classicladder_rt {" ".join(ladderOptions)}\n')
 		else:
 			halContents.append('loadrt classicladder_rt\n')
 		halContents.append('addf classicladder.0.refresh servo-thread 1\n')

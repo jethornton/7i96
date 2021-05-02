@@ -5329,7 +5329,7 @@ max speed</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_105">
          <item row="0" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_0">
+          <widget class="QCheckBox" name="inputInvertCB_0">
            <property name="text">
             <string>Invert</string>
            </property>
@@ -5523,70 +5523,70 @@ max speed</string>
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_1">
+          <widget class="QCheckBox" name="inputInvertCB_1">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="2" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_2">
+          <widget class="QCheckBox" name="inputInvertCB_2">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="3" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_3">
+          <widget class="QCheckBox" name="inputInvertCB_3">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="4" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_4">
+          <widget class="QCheckBox" name="inputInvertCB_4">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="5" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_5">
+          <widget class="QCheckBox" name="inputInvertCB_5">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="6" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_6">
+          <widget class="QCheckBox" name="inputInvertCB_6">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="7" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_7">
+          <widget class="QCheckBox" name="inputInvertCB_7">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="8" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_8">
+          <widget class="QCheckBox" name="inputInvertCB_8">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="9" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_9">
+          <widget class="QCheckBox" name="inputInvertCB_9">
            <property name="text">
             <string>Invert</string>
            </property>
           </widget>
          </item>
          <item row="10" column="2">
-          <widget class="QCheckBox" name="inputInvertCb_10">
+          <widget class="QCheckBox" name="inputInvertCB_10">
            <property name="text">
             <string>Invert</string>
            </property>
@@ -13099,7 +13099,7 @@ The Smart Serial Card configuration will not load from the ini file at this time
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QComboBox" name="speedCB">
+          <widget class="QComboBox" name="cpuSpeedCB">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -13337,11 +13337,12 @@ The Smart Serial Card configuration will not load from the ini file at this time
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
-    <addaction name="actionSavePins"/>
-    <addaction name="actionSaveSignals"/>
-    <addaction name="actionSaveParameters"/>
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionSavePins"/>
+    <addaction name="actionSaveParameters"/>
+    <addaction name="actionSaveSignals"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -13673,7 +13674,7 @@ The Smart Serial Card configuration will not load from the ini file at this time
   <tabstop>tabWidget_2</tabstop>
   <tabstop>scrollArea_4</tabstop>
   <tabstop>calcNicPB</tabstop>
-  <tabstop>speedCB</tabstop>
+  <tabstop>cpuSpeedCB</tabstop>
   <tabstop>cpuSpeedLE</tabstop>
   <tabstop>tMaxLE</tabstop>
   <tabstop>scrollArea_3</tabstop>
