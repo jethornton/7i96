@@ -15,7 +15,7 @@ def nicInfo(parent):
 def nicCalc(parent):
 	if parent.tMaxLE.text() != '' and parent.cpuSpeedLE.text() != '':
 		tMax = int(int(parent.tMaxLE.text()) / 1000)
-		cpuSpeed = float(parent.cpuSpeedLE.text()) * parent.speedCB.itemData(parent.speedCB.currentIndex())
+		cpuSpeed = float(parent.cpuSpeedLE.text()) * parent.speedCB.currentData()
 		packetTime = tMax / cpuSpeed
 		parent.packetTimeLB.setText('{:.1%}'.format(packetTime))
 		threshold = (cpuSpeed * 0.7) / cpuSpeed

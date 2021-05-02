@@ -64,6 +64,8 @@ class MainWindow(QMainWindow):
 		self.qclip = QtWidgets.QApplication.clipboard()
 		self.helpInfo = helptext.descriptions
 		buildmenus.build(self)
+		utilities.checks(self)
+
 		self.buildCB()
 		sscards.buildCB(self)
 		sscards.ss7i73setup(self)
@@ -85,25 +87,14 @@ class MainWindow(QMainWindow):
 		'7i96_g540dpl.bit':['3', '9', '0']
 		}
 
-		self.checks()
 		self.units = False
 		self.results = ""
 		self.extcmd = extcmd.extcmd()
 		# for testing
 		#self.config.read('/home/john/linuxcnc/configs/7i96/7i96.ini')
 		#self.iniLoad()
-
+		self.card = {'type':'7i96', 'joints': 5, 'inputs': 11, 'outputs': 12}
 		self.show()
-
-	def checks(self):
-		try:
-			subprocess.check_output('mesaflash', encoding='UTF-8')
-		except FileNotFoundError:
-			t = "Mesaflash not found go to\nhttps://github.com/LinuxCNC/mesaflash\nfor installation instructions."
-			self.outputPTE.appendPlainText(t)
-			self.readPB.setEnabled(False)
-			self.flashPB.setEnabled(False)
-			self.reloadPB.setEnabled(False)
 
 	# Auto connected menu action callbacks
 	@pyqtSlot()
