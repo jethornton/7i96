@@ -34,11 +34,16 @@ def build(parent):
 	iniContents.append('DRIVER = hm2_eth\n')
 	iniContents.append(f'IPADDRESS = {parent.ipAddressCB.currentData()}\n')
 	iniContents.append('BOARD = 7i96\n')
-	iniContents.append(f'STEPGENS = {str(parent.stepgensCB.currentData())}\n')
-	iniContents.append(f'ENCODERS = {str(parent.encodersCB.currentData())}\n')
-	iniContents.append(f'PWMS = {str(parent.pwmsCB.currentData())}\n')
-	iniContents.append(f'SSERIAL_PORT = {str(parent.sserialSB.value())}\n')
-	iniContents.append(f'FIRMWARE = {parent.firmwareCB.currentData()}\n')
+	if parent.stepgensCB.currentData():
+		iniContents.append(f'STEPGENS = {str(parent.stepgensCB.currentData())}\n')
+	if parent.encodersCB.currentData():
+		iniContents.append(f'ENCODERS = {str(parent.encodersCB.currentData())}\n')
+	if parent.pwmgensCB.currentData():
+		iniContents.append(f'PWMS = {str(parent.pwmgensCB.currentData())}\n')
+	if parent.sserialPortCB.currentData():
+		iniContents.append(f'SSERIAL_PORT = {parent.sserialPortCB.currentData()}\n')
+	if parent.firmwareCB.currentData():
+		iniContents.append(f'FIRMWARE = {parent.firmwareCB.currentData()}\n')
 
 	# build the [DISPLAY] section maxFeedOverrideLE
 	iniContents.append('\n[DISPLAY]\n')
